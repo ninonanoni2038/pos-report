@@ -20,12 +20,14 @@ const headerLine = lines[0];
 const headers = headerLine.split(',');
 
 // 型ヒントを抽出
-const columnTypes: Record<string, 'int' | 'string' | 'date'> = {};
+const columnTypes: Record<string, 'int' | 'string' | 'date' | 'enum'> = {};
 const columnNames = headers.map(h => {
-  const match = h.match(/^(.*?)(?::(int|date))?$/);
+  const match = h.match(/^(.*?)(?::(int|date|enum))?$/);
   if (match) {
     const name = match[1];
-    const type = match[2] === 'int' ? 'int' : match[2] === 'date' ? 'date' : 'string';
+    const type = match[2] === 'int' ? 'int' :
+                match[2] === 'date' ? 'date' :
+                match[2] === 'enum' ? 'enum' : 'string';
     columnTypes[name] = type;
     return name;
   }
@@ -46,6 +48,8 @@ const converted = records.map((row: any) => {
       newRow[key] = row[key] === '' ? null : Number(row[key]);
     } else if (columnTypes[key] === 'date') {
       newRow[key] = row[key]; // 文字列のまま保持し、TS出力時にnew Dateで出力
+    } else if (columnTypes[key] === 'enum') {
+      newRow[key] = row[key]; // 文字列のまま保持し、TS出力時にそのまま出力（enum値として）
     } else {
       newRow[key] = row[key];
     }
@@ -61,6 +65,8 @@ function toTsLiteral(obj: any): string {
   const props = Object.entries(obj).map(([k, v]) => {
     if (columnTypes[k] === 'date') {
       return `  ${k}: new Date('${v}'),`;
+    } else if (columnTypes[k] === 'enum') {
+      return `  ${k}: ${v},`; // enum値はクォートなしで出力
     } else if (typeof v === 'string') {
       return `  ${k}: '${v}',`;
     } else {

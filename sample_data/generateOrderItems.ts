@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // ファイルパス
-const ordersPath = path.join(__dirname, 'orders', 'orders.csv');
+const ordersPath = path.join(__dirname, 'orders', 'orders.ts');
 const productsPath = path.join(__dirname, 'products', 'products.ts');
 const outputPath = path.join(__dirname, 'order_items', 'order_items.csv');
 
@@ -16,13 +16,9 @@ async function main() {
   const productsModule = await import(productsPath + '?ts');
   const products = productsModule.products;
 
-  // orders.csvの読み込み
-  const ordersCsv = fs.readFileSync(ordersPath, 'utf-8');
-  const orderLines = ordersCsv.split(/\r?\n/).filter((line: string) => line && !line.startsWith('orderId'));
-  const orders = orderLines.map((line: string) => {
-    const [orderId, completedAt, customerId] = line.split(',');
-    return { orderId: Number(orderId), completedAt };
-  });
+  // orders.tsの読み込み
+  const ordersModule = await import(ordersPath + '?ts');
+  const orders = ordersModule.orders;
 
   // メニューごとにproductsを分類
   const lunchProducts = products.filter((p: any) => p.menu.includes('ランチ'));
@@ -50,11 +46,13 @@ async function main() {
   }
 
   // メイン処理
-  const lines: string[] = ['orderItemId:int,orderId:int,productId:int,quantity:int'];
+  const orderItems: { orderItemId: number, orderId: number, productId: number, quantity: number }[] = [];
   let orderItemId = 1;
 
   for (const order of orders) {
-    const isLunchOrder = isLunch(order.completedAt);
+    // completedAtがDateオブジェクトなので、ISOString形式に変換してから判定
+    const completedAtStr = order.completedAt.toISOString();
+    const isLunchOrder = isLunch(completedAtStr);
     const productPool = isLunchOrder ? lunchProducts : dinnerProducts;
     const classified = classifyProducts(productPool);
 
@@ -76,10 +74,20 @@ async function main() {
 
     for (const p of selected) {
       const quantity = randInt(1, 3);
-      lines.push(`${orderItemId},${order.orderId},${p.productId},${quantity}`);
-      orderItemId++;
+      orderItems.push({
+        orderItemId: orderItemId++,
+        orderId: order.orderId,
+        productId: p.productId,
+        quantity
+      });
     }
   }
+
+  // CSVに変換して出力
+  const lines = ['orderItemId:int,orderId:int,productId:int,quantity:int'];
+  orderItems.forEach(item => {
+    lines.push(`${item.orderItemId},${item.orderId},${item.productId},${item.quantity}`);
+  });
 
   fs.writeFileSync(outputPath, lines.join('\n'), 'utf-8');
   console.log(`order_items.csvを生成しました: ${outputPath}`);

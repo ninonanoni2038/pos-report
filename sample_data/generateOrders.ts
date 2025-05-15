@@ -29,19 +29,20 @@ function randInt(min: number, max: number): number {
 
 // customerIdを均等に分布させるための配列
 function createCustomerIdPool(total: number, maxId: number): number[] {
-  const pool: number[] = [];
-  let id = 1;
-  for (let i = 0; i < total; i++) {
-    pool.push(id);
-    id++;
-    if (id > maxId) id = 1;
+  // 1からmaxIdまでの全ての数値を含む配列を生成
+  const allIds: number[] = [];
+  for (let id = 1; id <= maxId; id++) {
+    allIds.push(id);
   }
-  // シャッフル
-  for (let i = pool.length - 1; i > 0; i--) {
+  
+  // 配列をシャッフル
+  for (let i = allIds.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [pool[i], pool[j]] = [pool[j], pool[i]];
+    [allIds[i], allIds[j]] = [allIds[j], allIds[i]];
   }
-  return pool;
+  
+  // シャッフルした配列から必要な数だけ取得
+  return allIds.slice(0, total);
 }
 
 // メイン処理

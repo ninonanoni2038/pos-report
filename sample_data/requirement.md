@@ -1,4 +1,4 @@
-# "/restaurants/:id/sales"と"/restaurants/:id/reports"の画面再設計のためのダミーデータ要件
+# うりと"/restaurants/:id/reports"の画面再設計のためのダミーデータ要件
 
 コードベースを分析した結果、以下のデータ構造が必要であることがわかりました。
 
