@@ -20,12 +20,12 @@ const headerLine = lines[0];
 const headers = headerLine.split(',');
 
 // 型ヒントを抽出
-const columnTypes: Record<string, 'int' | 'string'> = {};
+const columnTypes: Record<string, 'int' | 'string' | 'date'> = {};
 const columnNames = headers.map(h => {
-  const match = h.match(/^(.*?)(?::(int))?$/);
+  const match = h.match(/^(.*?)(?::(int|date))?$/);
   if (match) {
     const name = match[1];
-    const type = match[2] === 'int' ? 'int' : 'string';
+    const type = match[2] === 'int' ? 'int' : match[2] === 'date' ? 'date' : 'string';
     columnTypes[name] = type;
     return name;
   }
@@ -44,6 +44,8 @@ const converted = records.map((row: any) => {
   for (const key of Object.keys(row)) {
     if (columnTypes[key] === 'int') {
       newRow[key] = row[key] === '' ? null : Number(row[key]);
+    } else if (columnTypes[key] === 'date') {
+      newRow[key] = row[key]; // 文字列のまま保持し、TS出力時にnew Dateで出力
     } else {
       newRow[key] = row[key];
     }
@@ -51,10 +53,15 @@ const converted = records.map((row: any) => {
   return newRow;
 });
 
+// 変数名をCSVファイル名から自動生成
+const varName = path.basename(csvPath, path.extname(csvPath));
+
 // オブジェクトをTypeScriptのリテラル形式で出力する関数
 function toTsLiteral(obj: any): string {
   const props = Object.entries(obj).map(([k, v]) => {
-    if (typeof v === 'string') {
+    if (columnTypes[k] === 'date') {
+      return `  ${k}: new Date('${v}'),`;
+    } else if (typeof v === 'string') {
       return `  ${k}: '${v}',`;
     } else {
       return `  ${k}: ${v},`;
@@ -65,7 +72,7 @@ ${props.join('\n')}
 }`;
 }
 
-const tsArray = `export const products = [
+const tsArray = `export const ${varName} = [
 ${converted.map(toTsLiteral).join(',\n')}
 ] as const;\n`;
 
