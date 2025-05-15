@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ColorPaletteViewer from './pages/ColorPaletteViewer';
+import SalesAnalysisPage from './pages/SalesAnalysisPage';
 import MainLayout from './layouts/MainLayout';
 import './App.css';
 
@@ -15,7 +16,8 @@ function App() {
         <Route path="/*" element={
           <MainLayout>
             <Routes>
-              <Route path="/" element={<DummyTop />} />
+              <Route path="/" element={<SalesAnalysisPage />} />
+              <Route path="/sales" element={<SalesAnalysisPage />} />
               {/* 他のページをここに追加 */}
             </Routes>
           </MainLayout>
