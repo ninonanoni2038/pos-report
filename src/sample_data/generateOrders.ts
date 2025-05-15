@@ -46,10 +46,10 @@ function createCustomerIdPool(total: number, maxId: number): number[] {
 }
 
 // メイン処理
-const lines: string[] = ['orderId:int,completedAt:date,customerId:int'];
+const lines: string[] = ['orderId:int,completedAt:date,customerId:int,partySize:int'];
 let customerIdPool: number[] = [];
-// orderIdを一旦外し、completedAt, customerIdのみで生成
-const allOrders: { completedAt: string, customerId: number }[] = [];
+// orderIdを一旦外し、completedAt, customerId, partySizeのみで生成
+const allOrders: { completedAt: string, customerId: number, partySize: number }[] = [];
 
 for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
   const ordersToday = randInt(minOrdersPerDay, maxOrdersPerDay);
@@ -70,7 +70,11 @@ for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
     const timeStr = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:${String(second).padStart(2, '0')}`;
     const completedAt = `${dateStr}T${timeStr}`;
     const customerId = customerIdPool[i];
-    allOrders.push({ completedAt, customerId });
+    
+    // 人数を生成（1〜6人）
+    const partySize = randInt(1, 6);
+    
+    allOrders.push({ completedAt, customerId, partySize });
   }
 }
 
@@ -79,7 +83,7 @@ allOrders.sort((a, b) => new Date(a.completedAt).getTime() - new Date(b.complete
 
 // ソート後にorderIdを1から順に付与してCSV出力
 allOrders.forEach((o, idx) => {
-  lines.push(`${idx + 1},${o.completedAt},${o.customerId}`);
+  lines.push(`${idx + 1},${o.completedAt},${o.customerId},${o.partySize}`);
 });
 
 fs.writeFileSync(outputPath, lines.join('\n'), 'utf-8');
