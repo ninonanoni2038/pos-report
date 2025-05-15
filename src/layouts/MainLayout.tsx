@@ -26,6 +26,10 @@ const SideMenu: React.FC = () => {
         borderRight: `1px solid ${Border.LowEmphasis}`,
         display: 'flex',
         flexDirection: 'column',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        zIndex: 100,
       }}
     >
       {/* レストラン名 */}
@@ -73,17 +77,57 @@ const SideMenu: React.FC = () => {
 };
 
 const Header: React.FC = () => (
-  <div style={{ height: 64, background: Surface.Primary, borderBottom: `1px solid ${Border.LowEmphasis}`, display: 'flex', alignItems: 'center', padding: '0 32px', fontWeight: 'bold', fontSize: 22, color: Text.Primary }}>
+  <div style={{
+    height: 64,
+    background: Surface.Primary,
+    borderBottom: `1px solid ${Border.LowEmphasis}`,
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 32px',
+    fontWeight: 'bold',
+    fontSize: 22,
+    color: Text.Primary,
+    position: 'fixed',
+    top: 0,
+    left: SIDE_MENU_WIDTH,
+    right: 0,
+    zIndex: 90,
+    boxSizing: 'border-box',
+  }}>
     売上分析
   </div>
 );
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div style={{ display: 'flex', height: '100vh' }}>
+  <div style={{
+    display: 'flex',
+    minHeight: '100vh',
+    background: Background.Default,
+  }}>
     <SideMenu />
-    <div style={{ flex: 1, background: Background.Default, display: 'flex', flexDirection: 'column' }}>
+    <div style={{
+      flex: 1,
+      marginLeft: SIDE_MENU_WIDTH,
+      background: Background.Default,
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+      width: `calc(100% - ${SIDE_MENU_WIDTH}px)`,
+      position: 'relative',
+    }}>
       <Header />
-      <main style={{ flex: 1 }}>{children}</main>
+      <main style={{
+        marginTop: 64,
+        background: Background.Default,
+        minHeight: 'calc(100vh - 64px)',
+        padding: '16px',
+        boxSizing: 'border-box',
+        width: '100%',
+        overflowX: 'hidden',
+        overflowY: 'auto',
+      }}>
+        {children}
+      </main>
     </div>
   </div>
 );
