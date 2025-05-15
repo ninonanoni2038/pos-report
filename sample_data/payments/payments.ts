@@ -1,12 +1,11 @@
-// 決済方法のenum定義
 export enum PaymentMethod {
-  CREDIT_CARD_ONLINE = 'CREDIT_CARD_ONLINE',
-  PAYPAY = 'PAYPAY',
-  LINE_PAY = 'LINE_PAY',
-  RAKUTEN_PAY = 'RAKUTEN_PAY',
+  QR_CODE_ONSITE = 'QR_CODE_ONSITE',
   CASH = 'CASH',
   CREDIT_CARD_ONSITE = 'CREDIT_CARD_ONSITE',
-  QR_CODE_ONSITE = 'QR_CODE_ONSITE'
+  PAYPAY = 'PAYPAY',
+  CREDIT_CARD_ONLINE = 'CREDIT_CARD_ONLINE',
+  LINE_PAY = 'LINE_PAY',
+  RAKUTEN_PAY = 'RAKUTEN_PAY'
 }
 
 export const payments = [
@@ -29,7 +28,7 @@ export const payments = [
 {
   paymentId: 3,
   orderId: 3,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9300,
   fee: 298,
   paymentTime: new Date('2024-03-01T02:54:36.000Z'),
@@ -37,7 +36,7 @@ export const payments = [
 {
   paymentId: 4,
   orderId: 4,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 9200,
   fee: 230,
   paymentTime: new Date('2024-03-01T03:07:45.000Z'),
@@ -45,7 +44,7 @@ export const payments = [
 {
   paymentId: 5,
   orderId: 5,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 25500,
   fee: 0,
   paymentTime: new Date('2024-03-01T03:12:21.000Z'),
@@ -53,7 +52,7 @@ export const payments = [
 {
   paymentId: 6,
   orderId: 6,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 24000,
   fee: 888,
   paymentTime: new Date('2024-03-01T03:34:06.000Z'),
@@ -61,7 +60,7 @@ export const payments = [
 {
   paymentId: 7,
   orderId: 7,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9000,
   fee: 308,
   paymentTime: new Date('2024-03-01T03:41:35.000Z'),
@@ -69,7 +68,7 @@ export const payments = [
 {
   paymentId: 8,
   orderId: 8,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15700,
   fee: 0,
   paymentTime: new Date('2024-03-01T04:03:06.000Z'),
@@ -77,7 +76,7 @@ export const payments = [
 {
   paymentId: 9,
   orderId: 9,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8900,
   fee: 300,
   paymentTime: new Date('2024-03-01T04:28:43.000Z'),
@@ -85,7 +84,7 @@ export const payments = [
 {
   paymentId: 10,
   orderId: 10,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15500,
   fee: 502,
   paymentTime: new Date('2024-03-01T08:10:20.000Z'),
@@ -93,7 +92,7 @@ export const payments = [
 {
   paymentId: 11,
   orderId: 11,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12700,
   fee: 405,
   paymentTime: new Date('2024-03-01T08:53:42.000Z'),
@@ -101,7 +100,7 @@ export const payments = [
 {
   paymentId: 12,
   orderId: 12,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17700,
   fee: 0,
   paymentTime: new Date('2024-03-01T08:55:47.000Z'),
@@ -109,7 +108,7 @@ export const payments = [
 {
   paymentId: 13,
   orderId: 13,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 19600,
   fee: 402,
   paymentTime: new Date('2024-03-01T09:11:38.000Z'),
@@ -117,7 +116,7 @@ export const payments = [
 {
   paymentId: 14,
   orderId: 14,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 19100,
   fee: 478,
   paymentTime: new Date('2024-03-01T09:19:12.000Z'),
@@ -125,7 +124,7 @@ export const payments = [
 {
   paymentId: 15,
   orderId: 15,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 17700,
   fee: 443,
   paymentTime: new Date('2024-03-01T10:23:43.000Z'),
@@ -133,7 +132,7 @@ export const payments = [
 {
   paymentId: 16,
   orderId: 16,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7000,
   fee: 0,
   paymentTime: new Date('2024-03-01T10:49:35.000Z'),
@@ -141,7 +140,7 @@ export const payments = [
 {
   paymentId: 17,
   orderId: 17,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11100,
   fee: 249,
   paymentTime: new Date('2024-03-01T10:55:55.000Z'),
@@ -149,7 +148,7 @@ export const payments = [
 {
   paymentId: 18,
   orderId: 18,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6500,
   fee: 162,
   paymentTime: new Date('2024-03-01T11:10:14.000Z'),
@@ -157,7 +156,7 @@ export const payments = [
 {
   paymentId: 19,
   orderId: 19,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 3400,
   fee: 0,
   paymentTime: new Date('2024-03-01T11:29:00.000Z'),
@@ -165,7 +164,7 @@ export const payments = [
 {
   paymentId: 20,
   orderId: 20,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 9500,
   fee: 238,
   paymentTime: new Date('2024-03-01T12:11:41.000Z'),
@@ -173,7 +172,7 @@ export const payments = [
 {
   paymentId: 21,
   orderId: 21,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14800,
   fee: 468,
   paymentTime: new Date('2024-03-01T12:39:28.000Z'),
@@ -181,7 +180,7 @@ export const payments = [
 {
   paymentId: 22,
   orderId: 22,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 2800,
   fee: 70,
   paymentTime: new Date('2024-03-01T12:51:10.000Z'),
@@ -189,7 +188,7 @@ export const payments = [
 {
   paymentId: 23,
   orderId: 23,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10700,
   fee: 381,
   paymentTime: new Date('2024-03-01T12:57:08.000Z'),
@@ -197,7 +196,7 @@ export const payments = [
 {
   paymentId: 24,
   orderId: 24,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 3700,
   fee: 93,
   paymentTime: new Date('2024-03-01T13:11:08.000Z'),
@@ -205,7 +204,7 @@ export const payments = [
 {
   paymentId: 25,
   orderId: 25,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6700,
   fee: 208,
   paymentTime: new Date('2024-03-01T13:46:15.000Z'),
@@ -213,7 +212,7 @@ export const payments = [
 {
   paymentId: 26,
   orderId: 26,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 8500,
   fee: 250,
   paymentTime: new Date('2024-03-01T14:35:15.000Z'),
@@ -221,7 +220,7 @@ export const payments = [
 {
   paymentId: 27,
   orderId: 27,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12600,
   fee: 315,
   paymentTime: new Date('2024-03-01T14:43:53.000Z'),
@@ -229,7 +228,7 @@ export const payments = [
 {
   paymentId: 28,
   orderId: 28,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 23700,
   fee: 736,
   paymentTime: new Date('2024-03-01T14:42:25.000Z'),
@@ -237,7 +236,7 @@ export const payments = [
 {
   paymentId: 29,
   orderId: 29,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 9800,
   fee: 245,
   paymentTime: new Date('2024-03-01T14:45:11.000Z'),
@@ -245,7 +244,7 @@ export const payments = [
 {
   paymentId: 30,
   orderId: 30,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 27300,
   fee: 780,
   paymentTime: new Date('2024-03-01T14:56:31.000Z'),
@@ -253,7 +252,7 @@ export const payments = [
 {
   paymentId: 31,
   orderId: 31,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4300,
   fee: 0,
   paymentTime: new Date('2024-03-02T02:06:58.000Z'),
@@ -261,7 +260,7 @@ export const payments = [
 {
   paymentId: 32,
   orderId: 32,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6400,
   fee: 131,
   paymentTime: new Date('2024-03-02T02:50:52.000Z'),
@@ -269,7 +268,7 @@ export const payments = [
 {
   paymentId: 33,
   orderId: 33,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11700,
   fee: 396,
   paymentTime: new Date('2024-03-02T03:40:37.000Z'),
@@ -277,7 +276,7 @@ export const payments = [
 {
   paymentId: 34,
   orderId: 34,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12100,
   fee: 0,
   paymentTime: new Date('2024-03-02T04:07:54.000Z'),
@@ -285,7 +284,7 @@ export const payments = [
 {
   paymentId: 35,
   orderId: 35,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20600,
   fee: 0,
   paymentTime: new Date('2024-03-02T04:10:27.000Z'),
@@ -293,7 +292,7 @@ export const payments = [
 {
   paymentId: 36,
   orderId: 36,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 26600,
   fee: 0,
   paymentTime: new Date('2024-03-02T04:11:32.000Z'),
@@ -301,7 +300,7 @@ export const payments = [
 {
   paymentId: 37,
   orderId: 37,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15200,
   fee: 479,
   paymentTime: new Date('2024-03-02T04:16:46.000Z'),
@@ -309,7 +308,7 @@ export const payments = [
 {
   paymentId: 38,
   orderId: 38,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9500,
   fee: 219,
   paymentTime: new Date('2024-03-02T04:46:19.000Z'),
@@ -317,7 +316,7 @@ export const payments = [
 {
   paymentId: 39,
   orderId: 39,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5000,
   fee: 155,
   paymentTime: new Date('2024-03-02T04:56:13.000Z'),
@@ -325,7 +324,7 @@ export const payments = [
 {
   paymentId: 40,
   orderId: 40,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15400,
   fee: 506,
   paymentTime: new Date('2024-03-02T05:01:28.000Z'),
@@ -333,7 +332,7 @@ export const payments = [
 {
   paymentId: 41,
   orderId: 41,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7200,
   fee: 238,
   paymentTime: new Date('2024-03-02T10:03:12.000Z'),
@@ -341,7 +340,7 @@ export const payments = [
 {
   paymentId: 42,
   orderId: 42,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9700,
   fee: 303,
   paymentTime: new Date('2024-03-02T10:11:24.000Z'),
@@ -349,7 +348,7 @@ export const payments = [
 {
   paymentId: 43,
   orderId: 43,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12000,
   fee: 417,
   paymentTime: new Date('2024-03-02T11:54:52.000Z'),
@@ -357,7 +356,7 @@ export const payments = [
 {
   paymentId: 44,
   orderId: 44,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5600,
   fee: 0,
   paymentTime: new Date('2024-03-02T11:54:49.000Z'),
@@ -365,7 +364,7 @@ export const payments = [
 {
   paymentId: 45,
   orderId: 45,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10300,
   fee: 0,
   paymentTime: new Date('2024-03-02T12:03:49.000Z'),
@@ -373,7 +372,7 @@ export const payments = [
 {
   paymentId: 46,
   orderId: 46,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6600,
   fee: 230,
   paymentTime: new Date('2024-03-02T12:45:25.000Z'),
@@ -381,7 +380,7 @@ export const payments = [
 {
   paymentId: 47,
   orderId: 47,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 9000,
   fee: 225,
   paymentTime: new Date('2024-03-02T13:04:38.000Z'),
@@ -389,7 +388,7 @@ export const payments = [
 {
   paymentId: 48,
   orderId: 48,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6700,
   fee: 229,
   paymentTime: new Date('2024-03-02T13:21:10.000Z'),
@@ -397,7 +396,7 @@ export const payments = [
 {
   paymentId: 49,
   orderId: 49,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20100,
   fee: 0,
   paymentTime: new Date('2024-03-02T14:28:14.000Z'),
@@ -405,7 +404,7 @@ export const payments = [
 {
   paymentId: 50,
   orderId: 50,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13300,
   fee: 445,
   paymentTime: new Date('2024-03-03T02:03:34.000Z'),
@@ -413,7 +412,7 @@ export const payments = [
 {
   paymentId: 51,
   orderId: 51,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17400,
   fee: 380,
   paymentTime: new Date('2024-03-03T02:09:39.000Z'),
@@ -421,7 +420,7 @@ export const payments = [
 {
   paymentId: 52,
   orderId: 52,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 9200,
   fee: 269,
   paymentTime: new Date('2024-03-03T02:16:44.000Z'),
@@ -429,7 +428,7 @@ export const payments = [
 {
   paymentId: 53,
   orderId: 53,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12900,
   fee: 323,
   paymentTime: new Date('2024-03-03T02:31:58.000Z'),
@@ -437,7 +436,7 @@ export const payments = [
 {
   paymentId: 54,
   orderId: 54,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17800,
   fee: 378,
   paymentTime: new Date('2024-03-03T02:33:59.000Z'),
@@ -445,7 +444,7 @@ export const payments = [
 {
   paymentId: 55,
   orderId: 55,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 21700,
   fee: 722,
   paymentTime: new Date('2024-03-03T02:46:09.000Z'),
@@ -453,7 +452,7 @@ export const payments = [
 {
   paymentId: 56,
   orderId: 56,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19400,
   fee: 0,
   paymentTime: new Date('2024-03-03T03:32:57.000Z'),
@@ -461,7 +460,7 @@ export const payments = [
 {
   paymentId: 57,
   orderId: 57,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 13700,
   fee: 385,
   paymentTime: new Date('2024-03-03T03:37:08.000Z'),
@@ -469,7 +468,7 @@ export const payments = [
 {
   paymentId: 58,
   orderId: 58,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12900,
   fee: 423,
   paymentTime: new Date('2024-03-03T03:50:35.000Z'),
@@ -477,7 +476,7 @@ export const payments = [
 {
   paymentId: 59,
   orderId: 59,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10900,
   fee: 0,
   paymentTime: new Date('2024-03-03T04:04:50.000Z'),
@@ -485,7 +484,7 @@ export const payments = [
 {
   paymentId: 60,
   orderId: 60,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9200,
   fee: 220,
   paymentTime: new Date('2024-03-03T04:04:01.000Z'),
@@ -493,7 +492,7 @@ export const payments = [
 {
   paymentId: 61,
   orderId: 61,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10800,
   fee: 0,
   paymentTime: new Date('2024-03-03T04:22:10.000Z'),
@@ -501,7 +500,7 @@ export const payments = [
 {
   paymentId: 62,
   orderId: 62,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6600,
   fee: 165,
   paymentTime: new Date('2024-03-03T04:23:57.000Z'),
@@ -509,7 +508,7 @@ export const payments = [
 {
   paymentId: 63,
   orderId: 63,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11300,
   fee: 0,
   paymentTime: new Date('2024-03-03T04:42:40.000Z'),
@@ -517,7 +516,7 @@ export const payments = [
 {
   paymentId: 64,
   orderId: 64,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11500,
   fee: 253,
   paymentTime: new Date('2024-03-03T04:50:53.000Z'),
@@ -525,7 +524,7 @@ export const payments = [
 {
   paymentId: 65,
   orderId: 65,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10400,
   fee: 0,
   paymentTime: new Date('2024-03-03T08:45:27.000Z'),
@@ -533,7 +532,7 @@ export const payments = [
 {
   paymentId: 66,
   orderId: 66,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4200,
   fee: 133,
   paymentTime: new Date('2024-03-03T11:24:57.000Z'),
@@ -541,7 +540,7 @@ export const payments = [
 {
   paymentId: 67,
   orderId: 67,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12100,
   fee: 303,
   paymentTime: new Date('2024-03-03T12:17:06.000Z'),
@@ -549,7 +548,7 @@ export const payments = [
 {
   paymentId: 68,
   orderId: 68,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7300,
   fee: 228,
   paymentTime: new Date('2024-03-03T13:43:06.000Z'),
@@ -557,7 +556,7 @@ export const payments = [
 {
   paymentId: 69,
   orderId: 69,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 22800,
   fee: 570,
   paymentTime: new Date('2024-03-03T14:05:10.000Z'),
@@ -565,7 +564,7 @@ export const payments = [
 {
   paymentId: 70,
   orderId: 70,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17000,
   fee: 0,
   paymentTime: new Date('2024-03-03T14:21:51.000Z'),
@@ -573,7 +572,7 @@ export const payments = [
 {
   paymentId: 71,
   orderId: 71,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 22900,
   fee: 0,
   paymentTime: new Date('2024-03-03T14:32:47.000Z'),
@@ -581,7 +580,7 @@ export const payments = [
 {
   paymentId: 72,
   orderId: 72,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8000,
   fee: 0,
   paymentTime: new Date('2024-03-04T02:21:07.000Z'),
@@ -589,7 +588,7 @@ export const payments = [
 {
   paymentId: 73,
   orderId: 73,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16600,
   fee: 0,
   paymentTime: new Date('2024-03-04T02:37:53.000Z'),
@@ -597,7 +596,7 @@ export const payments = [
 {
   paymentId: 74,
   orderId: 74,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20100,
   fee: 639,
   paymentTime: new Date('2024-03-04T02:43:20.000Z'),
@@ -605,7 +604,7 @@ export const payments = [
 {
   paymentId: 75,
   orderId: 75,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 19400,
   fee: 443,
   paymentTime: new Date('2024-03-04T02:40:49.000Z'),
@@ -613,7 +612,7 @@ export const payments = [
 {
   paymentId: 76,
   orderId: 76,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14800,
   fee: 454,
   paymentTime: new Date('2024-03-04T03:29:50.000Z'),
@@ -621,7 +620,7 @@ export const payments = [
 {
   paymentId: 77,
   orderId: 77,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9500,
   fee: 314,
   paymentTime: new Date('2024-03-04T03:43:15.000Z'),
@@ -629,7 +628,7 @@ export const payments = [
 {
   paymentId: 78,
   orderId: 78,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6200,
   fee: 191,
   paymentTime: new Date('2024-03-04T04:36:23.000Z'),
@@ -637,7 +636,7 @@ export const payments = [
 {
   paymentId: 79,
   orderId: 79,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12700,
   fee: 479,
   paymentTime: new Date('2024-03-04T04:42:15.000Z'),
@@ -645,7 +644,7 @@ export const payments = [
 {
   paymentId: 80,
   orderId: 80,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 20000,
   fee: 719,
   paymentTime: new Date('2024-03-04T04:47:11.000Z'),
@@ -653,7 +652,7 @@ export const payments = [
 {
   paymentId: 81,
   orderId: 81,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7900,
   fee: 0,
   paymentTime: new Date('2024-03-04T04:58:37.000Z'),
@@ -661,7 +660,7 @@ export const payments = [
 {
   paymentId: 82,
   orderId: 82,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 20400,
   fee: 681,
   paymentTime: new Date('2024-03-04T08:09:04.000Z'),
@@ -669,7 +668,7 @@ export const payments = [
 {
   paymentId: 83,
   orderId: 83,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15600,
   fee: 545,
   paymentTime: new Date('2024-03-04T08:53:51.000Z'),
@@ -677,7 +676,7 @@ export const payments = [
 {
   paymentId: 84,
   orderId: 84,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13700,
   fee: 0,
   paymentTime: new Date('2024-03-04T10:04:24.000Z'),
@@ -685,7 +684,7 @@ export const payments = [
 {
   paymentId: 85,
   orderId: 85,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 25800,
   fee: 724,
   paymentTime: new Date('2024-03-04T10:27:00.000Z'),
@@ -693,7 +692,7 @@ export const payments = [
 {
   paymentId: 86,
   orderId: 86,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4000,
   fee: 129,
   paymentTime: new Date('2024-03-04T11:37:55.000Z'),
@@ -701,7 +700,7 @@ export const payments = [
 {
   paymentId: 87,
   orderId: 87,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16100,
   fee: 508,
   paymentTime: new Date('2024-03-05T02:15:04.000Z'),
@@ -709,7 +708,7 @@ export const payments = [
 {
   paymentId: 88,
   orderId: 88,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13600,
   fee: 432,
   paymentTime: new Date('2024-03-05T02:24:50.000Z'),
@@ -717,7 +716,7 @@ export const payments = [
 {
   paymentId: 89,
   orderId: 89,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 21000,
   fee: 705,
   paymentTime: new Date('2024-03-05T02:25:57.000Z'),
@@ -725,7 +724,7 @@ export const payments = [
 {
   paymentId: 90,
   orderId: 90,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12800,
   fee: 0,
   paymentTime: new Date('2024-03-05T02:29:34.000Z'),
@@ -733,7 +732,7 @@ export const payments = [
 {
   paymentId: 91,
   orderId: 91,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 13100,
   fee: 363,
   paymentTime: new Date('2024-03-05T02:42:29.000Z'),
@@ -741,7 +740,7 @@ export const payments = [
 {
   paymentId: 92,
   orderId: 92,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19600,
   fee: 0,
   paymentTime: new Date('2024-03-05T02:43:46.000Z'),
@@ -749,7 +748,7 @@ export const payments = [
 {
   paymentId: 93,
   orderId: 93,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17400,
   fee: 650,
   paymentTime: new Date('2024-03-05T03:44:25.000Z'),
@@ -757,7 +756,7 @@ export const payments = [
 {
   paymentId: 94,
   orderId: 94,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11200,
   fee: 280,
   paymentTime: new Date('2024-03-05T03:46:16.000Z'),
@@ -765,7 +764,7 @@ export const payments = [
 {
   paymentId: 95,
   orderId: 95,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7600,
   fee: 0,
   paymentTime: new Date('2024-03-05T04:13:00.000Z'),
@@ -773,7 +772,7 @@ export const payments = [
 {
   paymentId: 96,
   orderId: 96,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9000,
   fee: 298,
   paymentTime: new Date('2024-03-05T04:19:32.000Z'),
@@ -781,7 +780,7 @@ export const payments = [
 {
   paymentId: 97,
   orderId: 97,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 19100,
   fee: 392,
   paymentTime: new Date('2024-03-05T04:28:15.000Z'),
@@ -789,7 +788,7 @@ export const payments = [
 {
   paymentId: 98,
   orderId: 98,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8500,
   fee: 213,
   paymentTime: new Date('2024-03-05T04:30:56.000Z'),
@@ -797,7 +796,7 @@ export const payments = [
 {
   paymentId: 99,
   orderId: 99,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10700,
   fee: 268,
   paymentTime: new Date('2024-03-05T04:39:53.000Z'),
@@ -805,7 +804,7 @@ export const payments = [
 {
   paymentId: 100,
   orderId: 100,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14000,
   fee: 487,
   paymentTime: new Date('2024-03-05T08:42:22.000Z'),
@@ -813,7 +812,7 @@ export const payments = [
 {
   paymentId: 101,
   orderId: 101,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11500,
   fee: 0,
   paymentTime: new Date('2024-03-05T09:06:20.000Z'),
@@ -821,7 +820,7 @@ export const payments = [
 {
   paymentId: 102,
   orderId: 102,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14000,
   fee: 0,
   paymentTime: new Date('2024-03-05T09:08:28.000Z'),
@@ -829,7 +828,7 @@ export const payments = [
 {
   paymentId: 103,
   orderId: 103,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13800,
   fee: 458,
   paymentTime: new Date('2024-03-05T09:10:25.000Z'),
@@ -837,7 +836,7 @@ export const payments = [
 {
   paymentId: 104,
   orderId: 104,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 24300,
   fee: 819,
   paymentTime: new Date('2024-03-05T09:27:24.000Z'),
@@ -845,7 +844,7 @@ export const payments = [
 {
   paymentId: 105,
   orderId: 105,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7600,
   fee: 0,
   paymentTime: new Date('2024-03-05T10:15:50.000Z'),
@@ -853,7 +852,7 @@ export const payments = [
 {
   paymentId: 106,
   orderId: 106,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6500,
   fee: 0,
   paymentTime: new Date('2024-03-05T11:05:35.000Z'),
@@ -861,7 +860,7 @@ export const payments = [
 {
   paymentId: 107,
   orderId: 107,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9600,
   fee: 291,
   paymentTime: new Date('2024-03-05T11:14:07.000Z'),
@@ -869,7 +868,7 @@ export const payments = [
 {
   paymentId: 108,
   orderId: 108,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7300,
   fee: 270,
   paymentTime: new Date('2024-03-05T11:23:54.000Z'),
@@ -877,7 +876,7 @@ export const payments = [
 {
   paymentId: 109,
   orderId: 109,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7100,
   fee: 157,
   paymentTime: new Date('2024-03-05T11:53:37.000Z'),
@@ -885,7 +884,7 @@ export const payments = [
 {
   paymentId: 110,
   orderId: 110,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4600,
   fee: 0,
   paymentTime: new Date('2024-03-05T12:29:41.000Z'),
@@ -893,7 +892,7 @@ export const payments = [
 {
   paymentId: 111,
   orderId: 111,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4600,
   fee: 161,
   paymentTime: new Date('2024-03-05T13:01:41.000Z'),
@@ -901,7 +900,7 @@ export const payments = [
 {
   paymentId: 112,
   orderId: 112,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9900,
   fee: 0,
   paymentTime: new Date('2024-03-05T14:06:24.000Z'),
@@ -909,7 +908,7 @@ export const payments = [
 {
   paymentId: 113,
   orderId: 113,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10800,
   fee: 360,
   paymentTime: new Date('2024-03-05T14:10:43.000Z'),
@@ -917,7 +916,7 @@ export const payments = [
 {
   paymentId: 114,
   orderId: 114,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 19900,
   fee: 695,
   paymentTime: new Date('2024-03-05T14:10:11.000Z'),
@@ -925,7 +924,7 @@ export const payments = [
 {
   paymentId: 115,
   orderId: 115,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13800,
   fee: 426,
   paymentTime: new Date('2024-03-05T14:29:26.000Z'),
@@ -933,7 +932,7 @@ export const payments = [
 {
   paymentId: 116,
   orderId: 116,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9400,
   fee: 309,
   paymentTime: new Date('2024-03-05T14:38:50.000Z'),
@@ -941,7 +940,7 @@ export const payments = [
 {
   paymentId: 117,
   orderId: 117,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14200,
   fee: 474,
   paymentTime: new Date('2024-03-06T02:21:45.000Z'),
@@ -949,7 +948,7 @@ export const payments = [
 {
   paymentId: 118,
   orderId: 118,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 21100,
   fee: 0,
   paymentTime: new Date('2024-03-06T03:00:06.000Z'),
@@ -957,7 +956,7 @@ export const payments = [
 {
   paymentId: 119,
   orderId: 119,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6700,
   fee: 0,
   paymentTime: new Date('2024-03-06T03:05:16.000Z'),
@@ -965,7 +964,7 @@ export const payments = [
 {
   paymentId: 120,
   orderId: 120,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 11300,
   fee: 317,
   paymentTime: new Date('2024-03-06T04:05:14.000Z'),
@@ -973,7 +972,7 @@ export const payments = [
 {
   paymentId: 121,
   orderId: 121,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9000,
   fee: 311,
   paymentTime: new Date('2024-03-06T04:49:19.000Z'),
@@ -981,7 +980,7 @@ export const payments = [
 {
   paymentId: 122,
   orderId: 122,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9800,
   fee: 304,
   paymentTime: new Date('2024-03-06T08:59:44.000Z'),
@@ -989,7 +988,7 @@ export const payments = [
 {
   paymentId: 123,
   orderId: 123,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11400,
   fee: 377,
   paymentTime: new Date('2024-03-06T09:12:52.000Z'),
@@ -997,7 +996,7 @@ export const payments = [
 {
   paymentId: 124,
   orderId: 124,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16800,
   fee: 370,
   paymentTime: new Date('2024-03-06T09:50:16.000Z'),
@@ -1005,7 +1004,7 @@ export const payments = [
 {
   paymentId: 125,
   orderId: 125,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13600,
   fee: 0,
   paymentTime: new Date('2024-03-06T09:51:19.000Z'),
@@ -1013,7 +1012,7 @@ export const payments = [
 {
   paymentId: 126,
   orderId: 126,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8200,
   fee: 248,
   paymentTime: new Date('2024-03-06T10:01:11.000Z'),
@@ -1021,7 +1020,7 @@ export const payments = [
 {
   paymentId: 127,
   orderId: 127,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6300,
   fee: 216,
   paymentTime: new Date('2024-03-06T10:25:48.000Z'),
@@ -1029,7 +1028,7 @@ export const payments = [
 {
   paymentId: 128,
   orderId: 128,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18700,
   fee: 581,
   paymentTime: new Date('2024-03-06T10:52:18.000Z'),
@@ -1037,7 +1036,7 @@ export const payments = [
 {
   paymentId: 129,
   orderId: 129,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8300,
   fee: 250,
   paymentTime: new Date('2024-03-06T11:24:02.000Z'),
@@ -1045,7 +1044,7 @@ export const payments = [
 {
   paymentId: 130,
   orderId: 130,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 3500,
   fee: 121,
   paymentTime: new Date('2024-03-06T12:10:49.000Z'),
@@ -1053,7 +1052,7 @@ export const payments = [
 {
   paymentId: 131,
   orderId: 131,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8700,
   fee: 325,
   paymentTime: new Date('2024-03-06T12:43:07.000Z'),
@@ -1061,7 +1060,7 @@ export const payments = [
 {
   paymentId: 132,
   orderId: 132,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12400,
   fee: 310,
   paymentTime: new Date('2024-03-06T14:08:09.000Z'),
@@ -1069,7 +1068,7 @@ export const payments = [
 {
   paymentId: 133,
   orderId: 133,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7700,
   fee: 233,
   paymentTime: new Date('2024-03-06T14:54:38.000Z'),
@@ -1077,7 +1076,7 @@ export const payments = [
 {
   paymentId: 134,
   orderId: 134,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 16400,
   fee: 410,
   paymentTime: new Date('2024-03-06T15:03:07.000Z'),
@@ -1085,7 +1084,7 @@ export const payments = [
 {
   paymentId: 135,
   orderId: 135,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12400,
   fee: 0,
   paymentTime: new Date('2024-03-07T02:27:40.000Z'),
@@ -1093,7 +1092,7 @@ export const payments = [
 {
   paymentId: 136,
   orderId: 136,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7900,
   fee: 198,
   paymentTime: new Date('2024-03-07T02:35:51.000Z'),
@@ -1101,7 +1100,7 @@ export const payments = [
 {
   paymentId: 137,
   orderId: 137,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14200,
   fee: 0,
   paymentTime: new Date('2024-03-07T02:33:11.000Z'),
@@ -1109,7 +1108,7 @@ export const payments = [
 {
   paymentId: 138,
   orderId: 138,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12500,
   fee: 313,
   paymentTime: new Date('2024-03-07T02:54:16.000Z'),
@@ -1117,7 +1116,7 @@ export const payments = [
 {
   paymentId: 139,
   orderId: 139,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14700,
   fee: 500,
   paymentTime: new Date('2024-03-07T02:55:53.000Z'),
@@ -1125,7 +1124,7 @@ export const payments = [
 {
   paymentId: 140,
   orderId: 140,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16700,
   fee: 0,
   paymentTime: new Date('2024-03-07T02:58:58.000Z'),
@@ -1133,7 +1132,7 @@ export const payments = [
 {
   paymentId: 141,
   orderId: 141,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7900,
   fee: 270,
   paymentTime: new Date('2024-03-07T03:36:07.000Z'),
@@ -1141,7 +1140,7 @@ export const payments = [
 {
   paymentId: 142,
   orderId: 142,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9000,
   fee: 280,
   paymentTime: new Date('2024-03-07T03:54:59.000Z'),
@@ -1149,7 +1148,7 @@ export const payments = [
 {
   paymentId: 143,
   orderId: 143,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6800,
   fee: 0,
   paymentTime: new Date('2024-03-07T04:34:46.000Z'),
@@ -1157,7 +1156,7 @@ export const payments = [
 {
   paymentId: 144,
   orderId: 144,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 17400,
   fee: 435,
   paymentTime: new Date('2024-03-07T04:35:52.000Z'),
@@ -1165,7 +1164,7 @@ export const payments = [
 {
   paymentId: 145,
   orderId: 145,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6100,
   fee: 227,
   paymentTime: new Date('2024-03-07T04:40:58.000Z'),
@@ -1173,7 +1172,7 @@ export const payments = [
 {
   paymentId: 146,
   orderId: 146,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8800,
   fee: 331,
   paymentTime: new Date('2024-03-07T08:51:09.000Z'),
@@ -1181,7 +1180,7 @@ export const payments = [
 {
   paymentId: 147,
   orderId: 147,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 20000,
   fee: 589,
   paymentTime: new Date('2024-03-07T09:13:27.000Z'),
@@ -1189,7 +1188,7 @@ export const payments = [
 {
   paymentId: 148,
   orderId: 148,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 19300,
   fee: 620,
   paymentTime: new Date('2024-03-07T10:15:09.000Z'),
@@ -1197,7 +1196,7 @@ export const payments = [
 {
   paymentId: 149,
   orderId: 149,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5600,
   fee: 172,
   paymentTime: new Date('2024-03-07T11:07:28.000Z'),
@@ -1205,7 +1204,7 @@ export const payments = [
 {
   paymentId: 150,
   orderId: 150,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10100,
   fee: 334,
   paymentTime: new Date('2024-03-07T12:25:11.000Z'),
@@ -1213,7 +1212,7 @@ export const payments = [
 {
   paymentId: 151,
   orderId: 151,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10100,
   fee: 304,
   paymentTime: new Date('2024-03-07T12:32:44.000Z'),
@@ -1221,7 +1220,7 @@ export const payments = [
 {
   paymentId: 152,
   orderId: 152,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10000,
   fee: 343,
   paymentTime: new Date('2024-03-07T13:35:49.000Z'),
@@ -1229,7 +1228,7 @@ export const payments = [
 {
   paymentId: 153,
   orderId: 153,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6100,
   fee: 153,
   paymentTime: new Date('2024-03-07T14:01:30.000Z'),
@@ -1237,7 +1236,7 @@ export const payments = [
 {
   paymentId: 154,
   orderId: 154,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14000,
   fee: 0,
   paymentTime: new Date('2024-03-07T14:58:22.000Z'),
@@ -1245,7 +1244,7 @@ export const payments = [
 {
   paymentId: 155,
   orderId: 155,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20100,
   fee: 0,
   paymentTime: new Date('2024-03-08T02:05:32.000Z'),
@@ -1253,7 +1252,7 @@ export const payments = [
 {
   paymentId: 156,
   orderId: 156,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 6300,
   fee: 177,
   paymentTime: new Date('2024-03-08T02:15:59.000Z'),
@@ -1261,7 +1260,7 @@ export const payments = [
 {
   paymentId: 157,
   orderId: 157,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 9900,
   fee: 287,
   paymentTime: new Date('2024-03-08T02:14:12.000Z'),
@@ -1269,7 +1268,7 @@ export const payments = [
 {
   paymentId: 158,
   orderId: 158,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16300,
   fee: 0,
   paymentTime: new Date('2024-03-08T02:31:25.000Z'),
@@ -1277,7 +1276,7 @@ export const payments = [
 {
   paymentId: 159,
   orderId: 159,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6300,
   fee: 194,
   paymentTime: new Date('2024-03-08T02:36:42.000Z'),
@@ -1285,7 +1284,7 @@ export const payments = [
 {
   paymentId: 160,
   orderId: 160,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8500,
   fee: 0,
   paymentTime: new Date('2024-03-08T02:47:59.000Z'),
@@ -1293,7 +1292,7 @@ export const payments = [
 {
   paymentId: 161,
   orderId: 161,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8200,
   fee: 263,
   paymentTime: new Date('2024-03-08T02:56:21.000Z'),
@@ -1301,7 +1300,7 @@ export const payments = [
 {
   paymentId: 162,
   orderId: 162,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10400,
   fee: 314,
   paymentTime: new Date('2024-03-08T03:27:12.000Z'),
@@ -1309,7 +1308,7 @@ export const payments = [
 {
   paymentId: 163,
   orderId: 163,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 15000,
   fee: 344,
   paymentTime: new Date('2024-03-08T03:59:50.000Z'),
@@ -1317,7 +1316,7 @@ export const payments = [
 {
   paymentId: 164,
   orderId: 164,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 26800,
   fee: 825,
   paymentTime: new Date('2024-03-08T04:10:33.000Z'),
@@ -1325,7 +1324,7 @@ export const payments = [
 {
   paymentId: 165,
   orderId: 165,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 19000,
   fee: 574,
   paymentTime: new Date('2024-03-08T04:08:35.000Z'),
@@ -1333,7 +1332,7 @@ export const payments = [
 {
   paymentId: 166,
   orderId: 166,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18400,
   fee: 564,
   paymentTime: new Date('2024-03-08T04:23:11.000Z'),
@@ -1341,7 +1340,7 @@ export const payments = [
 {
   paymentId: 167,
   orderId: 167,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19900,
   fee: 0,
   paymentTime: new Date('2024-03-08T04:32:33.000Z'),
@@ -1349,7 +1348,7 @@ export const payments = [
 {
   paymentId: 168,
   orderId: 168,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10400,
   fee: 381,
   paymentTime: new Date('2024-03-08T04:40:40.000Z'),
@@ -1357,7 +1356,7 @@ export const payments = [
 {
   paymentId: 169,
   orderId: 169,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6900,
   fee: 0,
   paymentTime: new Date('2024-03-08T04:36:41.000Z'),
@@ -1365,7 +1364,7 @@ export const payments = [
 {
   paymentId: 170,
   orderId: 170,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17900,
   fee: 0,
   paymentTime: new Date('2024-03-08T04:56:07.000Z'),
@@ -1373,7 +1372,7 @@ export const payments = [
 {
   paymentId: 171,
   orderId: 171,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16000,
   fee: 0,
   paymentTime: new Date('2024-03-08T09:33:40.000Z'),
@@ -1381,7 +1380,7 @@ export const payments = [
 {
   paymentId: 172,
   orderId: 172,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10200,
   fee: 309,
   paymentTime: new Date('2024-03-08T09:36:15.000Z'),
@@ -1389,7 +1388,7 @@ export const payments = [
 {
   paymentId: 173,
   orderId: 173,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12000,
   fee: 394,
   paymentTime: new Date('2024-03-08T10:06:40.000Z'),
@@ -1397,7 +1396,7 @@ export const payments = [
 {
   paymentId: 174,
   orderId: 174,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8900,
   fee: 0,
   paymentTime: new Date('2024-03-08T10:15:28.000Z'),
@@ -1405,7 +1404,7 @@ export const payments = [
 {
   paymentId: 175,
   orderId: 175,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13400,
   fee: 0,
   paymentTime: new Date('2024-03-08T10:54:07.000Z'),
@@ -1413,7 +1412,7 @@ export const payments = [
 {
   paymentId: 176,
   orderId: 176,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5800,
   fee: 197,
   paymentTime: new Date('2024-03-08T11:14:11.000Z'),
@@ -1421,7 +1420,7 @@ export const payments = [
 {
   paymentId: 177,
   orderId: 177,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4900,
   fee: 0,
   paymentTime: new Date('2024-03-08T12:18:39.000Z'),
@@ -1429,7 +1428,7 @@ export const payments = [
 {
   paymentId: 178,
   orderId: 178,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6700,
   fee: 229,
   paymentTime: new Date('2024-03-08T12:32:32.000Z'),
@@ -1437,7 +1436,7 @@ export const payments = [
 {
   paymentId: 179,
   orderId: 179,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8700,
   fee: 0,
   paymentTime: new Date('2024-03-08T12:53:30.000Z'),
@@ -1445,7 +1444,7 @@ export const payments = [
 {
   paymentId: 180,
   orderId: 180,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6500,
   fee: 161,
   paymentTime: new Date('2024-03-08T13:26:34.000Z'),
@@ -1453,7 +1452,7 @@ export const payments = [
 {
   paymentId: 181,
   orderId: 181,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7300,
   fee: 227,
   paymentTime: new Date('2024-03-08T14:01:39.000Z'),
@@ -1461,7 +1460,7 @@ export const payments = [
 {
   paymentId: 182,
   orderId: 182,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8600,
   fee: 321,
   paymentTime: new Date('2024-03-08T14:35:10.000Z'),
@@ -1469,7 +1468,7 @@ export const payments = [
 {
   paymentId: 183,
   orderId: 183,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 15300,
   fee: 383,
   paymentTime: new Date('2024-03-08T14:34:32.000Z'),
@@ -1477,7 +1476,7 @@ export const payments = [
 {
   paymentId: 184,
   orderId: 184,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6500,
   fee: 202,
   paymentTime: new Date('2024-03-09T02:06:16.000Z'),
@@ -1485,7 +1484,7 @@ export const payments = [
 {
   paymentId: 185,
   orderId: 185,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6700,
   fee: 0,
   paymentTime: new Date('2024-03-09T02:15:38.000Z'),
@@ -1493,7 +1492,7 @@ export const payments = [
 {
   paymentId: 186,
   orderId: 186,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18600,
   fee: 574,
   paymentTime: new Date('2024-03-09T02:28:36.000Z'),
@@ -1501,7 +1500,7 @@ export const payments = [
 {
   paymentId: 187,
   orderId: 187,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8500,
   fee: 295,
   paymentTime: new Date('2024-03-09T02:31:25.000Z'),
@@ -1509,7 +1508,7 @@ export const payments = [
 {
   paymentId: 188,
   orderId: 188,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 13900,
   fee: 407,
   paymentTime: new Date('2024-03-09T02:37:49.000Z'),
@@ -1517,7 +1516,7 @@ export const payments = [
 {
   paymentId: 189,
   orderId: 189,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11700,
   fee: 268,
   paymentTime: new Date('2024-03-09T02:39:39.000Z'),
@@ -1525,7 +1524,7 @@ export const payments = [
 {
   paymentId: 190,
   orderId: 190,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13000,
   fee: 412,
   paymentTime: new Date('2024-03-09T03:39:44.000Z'),
@@ -1533,7 +1532,7 @@ export const payments = [
 {
   paymentId: 191,
   orderId: 191,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 22400,
   fee: 765,
   paymentTime: new Date('2024-03-09T03:52:53.000Z'),
@@ -1541,7 +1540,7 @@ export const payments = [
 {
   paymentId: 192,
   orderId: 192,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4600,
   fee: 154,
   paymentTime: new Date('2024-03-09T04:28:03.000Z'),
@@ -1549,7 +1548,7 @@ export const payments = [
 {
   paymentId: 193,
   orderId: 193,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14700,
   fee: 469,
   paymentTime: new Date('2024-03-09T04:39:25.000Z'),
@@ -1557,7 +1556,7 @@ export const payments = [
 {
   paymentId: 194,
   orderId: 194,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15000,
   fee: 499,
   paymentTime: new Date('2024-03-09T09:27:31.000Z'),
@@ -1565,7 +1564,7 @@ export const payments = [
 {
   paymentId: 195,
   orderId: 195,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11800,
   fee: 238,
   paymentTime: new Date('2024-03-09T10:22:24.000Z'),
@@ -1573,7 +1572,7 @@ export const payments = [
 {
   paymentId: 196,
   orderId: 196,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7100,
   fee: 175,
   paymentTime: new Date('2024-03-09T10:39:02.000Z'),
@@ -1581,7 +1580,7 @@ export const payments = [
 {
   paymentId: 197,
   orderId: 197,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7800,
   fee: 258,
   paymentTime: new Date('2024-03-09T11:03:59.000Z'),
@@ -1589,7 +1588,7 @@ export const payments = [
 {
   paymentId: 198,
   orderId: 198,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7500,
   fee: 270,
   paymentTime: new Date('2024-03-09T12:15:32.000Z'),
@@ -1597,7 +1596,7 @@ export const payments = [
 {
   paymentId: 199,
   orderId: 199,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6200,
   fee: 0,
   paymentTime: new Date('2024-03-09T12:48:58.000Z'),
@@ -1605,7 +1604,7 @@ export const payments = [
 {
   paymentId: 200,
   orderId: 200,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 9800,
   fee: 245,
   paymentTime: new Date('2024-03-09T12:49:29.000Z'),
@@ -1613,7 +1612,7 @@ export const payments = [
 {
   paymentId: 201,
   orderId: 201,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 3200,
   fee: 97,
   paymentTime: new Date('2024-03-09T12:57:28.000Z'),
@@ -1621,7 +1620,7 @@ export const payments = [
 {
   paymentId: 202,
   orderId: 202,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5600,
   fee: 191,
   paymentTime: new Date('2024-03-09T13:00:51.000Z'),
@@ -1629,7 +1628,7 @@ export const payments = [
 {
   paymentId: 203,
   orderId: 203,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 4800,
   fee: 120,
   paymentTime: new Date('2024-03-09T13:02:28.000Z'),
@@ -1637,7 +1636,7 @@ export const payments = [
 {
   paymentId: 204,
   orderId: 204,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11500,
   fee: 436,
   paymentTime: new Date('2024-03-09T13:43:55.000Z'),
@@ -1645,7 +1644,7 @@ export const payments = [
 {
   paymentId: 205,
   orderId: 205,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5200,
   fee: 164,
   paymentTime: new Date('2024-03-09T13:44:46.000Z'),
@@ -1653,7 +1652,7 @@ export const payments = [
 {
   paymentId: 206,
   orderId: 206,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9900,
   fee: 0,
   paymentTime: new Date('2024-03-09T13:48:10.000Z'),
@@ -1661,7 +1660,7 @@ export const payments = [
 {
   paymentId: 207,
   orderId: 207,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12900,
   fee: 323,
   paymentTime: new Date('2024-03-09T14:15:35.000Z'),
@@ -1669,7 +1668,7 @@ export const payments = [
 {
   paymentId: 208,
   orderId: 208,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 15600,
   fee: 358,
   paymentTime: new Date('2024-03-09T14:21:58.000Z'),
@@ -1677,7 +1676,7 @@ export const payments = [
 {
   paymentId: 209,
   orderId: 209,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 22500,
   fee: 563,
   paymentTime: new Date('2024-03-10T03:14:19.000Z'),
@@ -1685,7 +1684,7 @@ export const payments = [
 {
   paymentId: 210,
   orderId: 210,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 26900,
   fee: 868,
   paymentTime: new Date('2024-03-10T03:32:14.000Z'),
@@ -1693,7 +1692,7 @@ export const payments = [
 {
   paymentId: 211,
   orderId: 211,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13500,
   fee: 489,
   paymentTime: new Date('2024-03-10T03:32:07.000Z'),
@@ -1701,7 +1700,7 @@ export const payments = [
 {
   paymentId: 212,
   orderId: 212,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6900,
   fee: 172,
   paymentTime: new Date('2024-03-10T03:46:25.000Z'),
@@ -1709,7 +1708,7 @@ export const payments = [
 {
   paymentId: 213,
   orderId: 213,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 11600,
   fee: 335,
   paymentTime: new Date('2024-03-10T03:56:37.000Z'),
@@ -1717,7 +1716,7 @@ export const payments = [
 {
   paymentId: 214,
   orderId: 214,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9600,
   fee: 222,
   paymentTime: new Date('2024-03-10T04:07:35.000Z'),
@@ -1725,7 +1724,7 @@ export const payments = [
 {
   paymentId: 215,
   orderId: 215,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16300,
   fee: 0,
   paymentTime: new Date('2024-03-10T04:05:54.000Z'),
@@ -1733,7 +1732,7 @@ export const payments = [
 {
   paymentId: 216,
   orderId: 216,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5300,
   fee: 183,
   paymentTime: new Date('2024-03-10T04:38:37.000Z'),
@@ -1741,7 +1740,7 @@ export const payments = [
 {
   paymentId: 217,
   orderId: 217,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18100,
   fee: 616,
   paymentTime: new Date('2024-03-10T04:50:31.000Z'),
@@ -1749,7 +1748,7 @@ export const payments = [
 {
   paymentId: 218,
   orderId: 218,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 23500,
   fee: 862,
   paymentTime: new Date('2024-03-10T09:35:23.000Z'),
@@ -1757,7 +1756,7 @@ export const payments = [
 {
   paymentId: 219,
   orderId: 219,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5800,
   fee: 183,
   paymentTime: new Date('2024-03-10T09:38:56.000Z'),
@@ -1765,7 +1764,7 @@ export const payments = [
 {
   paymentId: 220,
   orderId: 220,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7500,
   fee: 268,
   paymentTime: new Date('2024-03-10T11:31:28.000Z'),
@@ -1773,7 +1772,7 @@ export const payments = [
 {
   paymentId: 221,
   orderId: 221,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8800,
   fee: 220,
   paymentTime: new Date('2024-03-10T12:59:17.000Z'),
@@ -1781,7 +1780,7 @@ export const payments = [
 {
   paymentId: 222,
   orderId: 222,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4800,
   fee: 160,
   paymentTime: new Date('2024-03-10T13:21:34.000Z'),
@@ -1789,7 +1788,7 @@ export const payments = [
 {
   paymentId: 223,
   orderId: 223,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12400,
   fee: 0,
   paymentTime: new Date('2024-03-10T13:36:27.000Z'),
@@ -1797,7 +1796,7 @@ export const payments = [
 {
   paymentId: 224,
   orderId: 224,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4600,
   fee: 174,
   paymentTime: new Date('2024-03-10T13:37:34.000Z'),
@@ -1805,7 +1804,7 @@ export const payments = [
 {
   paymentId: 225,
   orderId: 225,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4600,
   fee: 159,
   paymentTime: new Date('2024-03-10T13:45:55.000Z'),
@@ -1813,7 +1812,7 @@ export const payments = [
 {
   paymentId: 226,
   orderId: 226,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 22500,
   fee: 489,
   paymentTime: new Date('2024-03-11T02:07:16.000Z'),
@@ -1821,7 +1820,7 @@ export const payments = [
 {
   paymentId: 227,
   orderId: 227,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11700,
   fee: 364,
   paymentTime: new Date('2024-03-11T02:08:09.000Z'),
@@ -1829,7 +1828,7 @@ export const payments = [
 {
   paymentId: 228,
   orderId: 228,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6500,
   fee: 0,
   paymentTime: new Date('2024-03-11T02:15:25.000Z'),
@@ -1837,7 +1836,7 @@ export const payments = [
 {
   paymentId: 229,
   orderId: 229,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10800,
   fee: 0,
   paymentTime: new Date('2024-03-11T02:45:28.000Z'),
@@ -1845,7 +1844,7 @@ export const payments = [
 {
   paymentId: 230,
   orderId: 230,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11600,
   fee: 0,
   paymentTime: new Date('2024-03-11T02:59:29.000Z'),
@@ -1853,7 +1852,7 @@ export const payments = [
 {
   paymentId: 231,
   orderId: 231,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9800,
   fee: 346,
   paymentTime: new Date('2024-03-11T03:36:20.000Z'),
@@ -1861,7 +1860,7 @@ export const payments = [
 {
   paymentId: 232,
   orderId: 232,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19500,
   fee: 0,
   paymentTime: new Date('2024-03-11T03:44:24.000Z'),
@@ -1869,7 +1868,7 @@ export const payments = [
 {
   paymentId: 233,
   orderId: 233,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10800,
   fee: 345,
   paymentTime: new Date('2024-03-11T04:18:04.000Z'),
@@ -1877,7 +1876,7 @@ export const payments = [
 {
   paymentId: 234,
   orderId: 234,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 24800,
   fee: 539,
   paymentTime: new Date('2024-03-11T04:33:56.000Z'),
@@ -1885,7 +1884,7 @@ export const payments = [
 {
   paymentId: 235,
   orderId: 235,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15000,
   fee: 0,
   paymentTime: new Date('2024-03-11T04:38:23.000Z'),
@@ -1893,7 +1892,7 @@ export const payments = [
 {
   paymentId: 236,
   orderId: 236,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16600,
   fee: 391,
   paymentTime: new Date('2024-03-11T04:47:43.000Z'),
@@ -1901,7 +1900,7 @@ export const payments = [
 {
   paymentId: 237,
   orderId: 237,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8900,
   fee: 281,
   paymentTime: new Date('2024-03-11T04:55:18.000Z'),
@@ -1909,7 +1908,7 @@ export const payments = [
 {
   paymentId: 238,
   orderId: 238,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13000,
   fee: 459,
   paymentTime: new Date('2024-03-11T08:23:16.000Z'),
@@ -1917,7 +1916,7 @@ export const payments = [
 {
   paymentId: 239,
   orderId: 239,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14300,
   fee: 451,
   paymentTime: new Date('2024-03-11T09:08:39.000Z'),
@@ -1925,7 +1924,7 @@ export const payments = [
 {
   paymentId: 240,
   orderId: 240,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9800,
   fee: 312,
   paymentTime: new Date('2024-03-11T09:35:41.000Z'),
@@ -1933,7 +1932,7 @@ export const payments = [
 {
   paymentId: 241,
   orderId: 241,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11200,
   fee: 411,
   paymentTime: new Date('2024-03-11T10:16:30.000Z'),
@@ -1941,7 +1940,7 @@ export const payments = [
 {
   paymentId: 242,
   orderId: 242,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13300,
   fee: 0,
   paymentTime: new Date('2024-03-11T10:48:09.000Z'),
@@ -1949,7 +1948,7 @@ export const payments = [
 {
   paymentId: 243,
   orderId: 243,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10700,
   fee: 371,
   paymentTime: new Date('2024-03-11T10:50:25.000Z'),
@@ -1957,7 +1956,7 @@ export const payments = [
 {
   paymentId: 244,
   orderId: 244,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10000,
   fee: 313,
   paymentTime: new Date('2024-03-11T14:14:15.000Z'),
@@ -1965,7 +1964,7 @@ export const payments = [
 {
   paymentId: 245,
   orderId: 245,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12300,
   fee: 405,
   paymentTime: new Date('2024-03-11T14:15:31.000Z'),
@@ -1973,7 +1972,7 @@ export const payments = [
 {
   paymentId: 246,
   orderId: 246,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8200,
   fee: 0,
   paymentTime: new Date('2024-03-11T14:24:28.000Z'),
@@ -1981,7 +1980,7 @@ export const payments = [
 {
   paymentId: 247,
   orderId: 247,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14200,
   fee: 0,
   paymentTime: new Date('2024-03-11T14:30:12.000Z'),
@@ -1989,7 +1988,7 @@ export const payments = [
 {
   paymentId: 248,
   orderId: 248,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11600,
   fee: 351,
   paymentTime: new Date('2024-03-12T02:05:23.000Z'),
@@ -1997,7 +1996,7 @@ export const payments = [
 {
   paymentId: 249,
   orderId: 249,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8300,
   fee: 0,
   paymentTime: new Date('2024-03-12T02:19:11.000Z'),
@@ -2005,7 +2004,7 @@ export const payments = [
 {
   paymentId: 250,
   orderId: 250,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 12300,
   fee: 345,
   paymentTime: new Date('2024-03-12T02:33:50.000Z'),
@@ -2013,7 +2012,7 @@ export const payments = [
 {
   paymentId: 251,
   orderId: 251,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14600,
   fee: 470,
   paymentTime: new Date('2024-03-12T02:43:30.000Z'),
@@ -2021,7 +2020,7 @@ export const payments = [
 {
   paymentId: 252,
   orderId: 252,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15100,
   fee: 0,
   paymentTime: new Date('2024-03-12T02:52:54.000Z'),
@@ -2029,7 +2028,7 @@ export const payments = [
 {
   paymentId: 253,
   orderId: 253,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8800,
   fee: 305,
   paymentTime: new Date('2024-03-12T03:17:45.000Z'),
@@ -2037,7 +2036,7 @@ export const payments = [
 {
   paymentId: 254,
   orderId: 254,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 15800,
   fee: 452,
   paymentTime: new Date('2024-03-12T03:24:59.000Z'),
@@ -2045,7 +2044,7 @@ export const payments = [
 {
   paymentId: 255,
   orderId: 255,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12200,
   fee: 391,
   paymentTime: new Date('2024-03-12T03:33:21.000Z'),
@@ -2053,7 +2052,7 @@ export const payments = [
 {
   paymentId: 256,
   orderId: 256,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10000,
   fee: 0,
   paymentTime: new Date('2024-03-12T03:35:49.000Z'),
@@ -2061,7 +2060,7 @@ export const payments = [
 {
   paymentId: 257,
   orderId: 257,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18700,
   fee: 590,
   paymentTime: new Date('2024-03-12T03:36:11.000Z'),
@@ -2069,7 +2068,7 @@ export const payments = [
 {
   paymentId: 258,
   orderId: 258,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11200,
   fee: 0,
   paymentTime: new Date('2024-03-12T03:38:44.000Z'),
@@ -2077,7 +2076,7 @@ export const payments = [
 {
   paymentId: 259,
   orderId: 259,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 11300,
   fee: 325,
   paymentTime: new Date('2024-03-12T03:40:47.000Z'),
@@ -2085,7 +2084,7 @@ export const payments = [
 {
   paymentId: 260,
   orderId: 260,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12700,
   fee: 382,
   paymentTime: new Date('2024-03-12T03:54:52.000Z'),
@@ -2093,7 +2092,7 @@ export const payments = [
 {
   paymentId: 261,
   orderId: 261,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 23400,
   fee: 714,
   paymentTime: new Date('2024-03-12T03:59:39.000Z'),
@@ -2101,7 +2100,7 @@ export const payments = [
 {
   paymentId: 262,
   orderId: 262,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 26600,
   fee: 555,
   paymentTime: new Date('2024-03-12T04:17:20.000Z'),
@@ -2109,7 +2108,7 @@ export const payments = [
 {
   paymentId: 263,
   orderId: 263,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15400,
   fee: 0,
   paymentTime: new Date('2024-03-12T04:26:54.000Z'),
@@ -2117,7 +2116,7 @@ export const payments = [
 {
   paymentId: 264,
   orderId: 264,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7700,
   fee: 265,
   paymentTime: new Date('2024-03-12T04:34:34.000Z'),
@@ -2125,7 +2124,7 @@ export const payments = [
 {
   paymentId: 265,
   orderId: 265,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15300,
   fee: 0,
   paymentTime: new Date('2024-03-12T08:25:52.000Z'),
@@ -2133,7 +2132,7 @@ export const payments = [
 {
   paymentId: 266,
   orderId: 266,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11000,
   fee: 346,
   paymentTime: new Date('2024-03-12T08:35:57.000Z'),
@@ -2141,7 +2140,7 @@ export const payments = [
 {
   paymentId: 267,
   orderId: 267,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 26100,
   fee: 849,
   paymentTime: new Date('2024-03-12T09:04:47.000Z'),
@@ -2149,7 +2148,7 @@ export const payments = [
 {
   paymentId: 268,
   orderId: 268,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15800,
   fee: 561,
   paymentTime: new Date('2024-03-12T09:09:39.000Z'),
@@ -2157,7 +2156,7 @@ export const payments = [
 {
   paymentId: 269,
   orderId: 269,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6600,
   fee: 206,
   paymentTime: new Date('2024-03-12T11:02:18.000Z'),
@@ -2165,7 +2164,7 @@ export const payments = [
 {
   paymentId: 270,
   orderId: 270,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11200,
   fee: 404,
   paymentTime: new Date('2024-03-12T13:28:11.000Z'),
@@ -2173,7 +2172,7 @@ export const payments = [
 {
   paymentId: 271,
   orderId: 271,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6800,
   fee: 219,
   paymentTime: new Date('2024-03-12T14:24:52.000Z'),
@@ -2181,7 +2180,7 @@ export const payments = [
 {
   paymentId: 272,
   orderId: 272,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14400,
   fee: 0,
   paymentTime: new Date('2024-03-13T02:24:11.000Z'),
@@ -2189,7 +2188,7 @@ export const payments = [
 {
   paymentId: 273,
   orderId: 273,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8700,
   fee: 0,
   paymentTime: new Date('2024-03-13T02:32:24.000Z'),
@@ -2197,7 +2196,7 @@ export const payments = [
 {
   paymentId: 274,
   orderId: 274,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8800,
   fee: 268,
   paymentTime: new Date('2024-03-13T02:59:01.000Z'),
@@ -2205,7 +2204,7 @@ export const payments = [
 {
   paymentId: 275,
   orderId: 275,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13300,
   fee: 460,
   paymentTime: new Date('2024-03-13T03:02:49.000Z'),
@@ -2213,7 +2212,7 @@ export const payments = [
 {
   paymentId: 276,
   orderId: 276,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17100,
   fee: 615,
   paymentTime: new Date('2024-03-13T04:04:54.000Z'),
@@ -2221,7 +2220,7 @@ export const payments = [
 {
   paymentId: 277,
   orderId: 277,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 15600,
   fee: 352,
   paymentTime: new Date('2024-03-13T04:35:56.000Z'),
@@ -2229,7 +2228,7 @@ export const payments = [
 {
   paymentId: 278,
   orderId: 278,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 13900,
   fee: 348,
   paymentTime: new Date('2024-03-13T04:56:14.000Z'),
@@ -2237,7 +2236,7 @@ export const payments = [
 {
   paymentId: 279,
   orderId: 279,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11300,
   fee: 428,
   paymentTime: new Date('2024-03-13T08:16:07.000Z'),
@@ -2245,7 +2244,7 @@ export const payments = [
 {
   paymentId: 280,
   orderId: 280,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7200,
   fee: 0,
   paymentTime: new Date('2024-03-13T08:44:48.000Z'),
@@ -2253,7 +2252,7 @@ export const payments = [
 {
   paymentId: 281,
   orderId: 281,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 19100,
   fee: 393,
   paymentTime: new Date('2024-03-13T09:26:50.000Z'),
@@ -2261,7 +2260,7 @@ export const payments = [
 {
   paymentId: 282,
   orderId: 282,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9800,
   fee: 0,
   paymentTime: new Date('2024-03-13T09:30:07.000Z'),
@@ -2269,7 +2268,7 @@ export const payments = [
 {
   paymentId: 283,
   orderId: 283,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6900,
   fee: 166,
   paymentTime: new Date('2024-03-13T11:58:59.000Z'),
@@ -2277,7 +2276,7 @@ export const payments = [
 {
   paymentId: 284,
   orderId: 284,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 10400,
   fee: 296,
   paymentTime: new Date('2024-03-13T11:59:15.000Z'),
@@ -2285,7 +2284,7 @@ export const payments = [
 {
   paymentId: 285,
   orderId: 285,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7200,
   fee: 233,
   paymentTime: new Date('2024-03-13T14:07:33.000Z'),
@@ -2293,7 +2292,7 @@ export const payments = [
 {
   paymentId: 286,
   orderId: 286,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 23600,
   fee: 590,
   paymentTime: new Date('2024-03-13T14:43:47.000Z'),
@@ -2301,7 +2300,7 @@ export const payments = [
 {
   paymentId: 287,
   orderId: 287,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8800,
   fee: 303,
   paymentTime: new Date('2024-03-14T02:22:58.000Z'),
@@ -2309,7 +2308,7 @@ export const payments = [
 {
   paymentId: 288,
   orderId: 288,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9200,
   fee: 0,
   paymentTime: new Date('2024-03-14T02:46:32.000Z'),
@@ -2317,7 +2316,7 @@ export const payments = [
 {
   paymentId: 289,
   orderId: 289,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10400,
   fee: 0,
   paymentTime: new Date('2024-03-14T03:23:06.000Z'),
@@ -2325,7 +2324,7 @@ export const payments = [
 {
   paymentId: 290,
   orderId: 290,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20100,
   fee: 701,
   paymentTime: new Date('2024-03-14T03:26:14.000Z'),
@@ -2333,7 +2332,7 @@ export const payments = [
 {
   paymentId: 291,
   orderId: 291,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11100,
   fee: 391,
   paymentTime: new Date('2024-03-14T03:30:59.000Z'),
@@ -2341,7 +2340,7 @@ export const payments = [
 {
   paymentId: 292,
   orderId: 292,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7900,
   fee: 198,
   paymentTime: new Date('2024-03-14T03:59:37.000Z'),
@@ -2349,7 +2348,7 @@ export const payments = [
 {
   paymentId: 293,
   orderId: 293,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12800,
   fee: 475,
   paymentTime: new Date('2024-03-14T04:09:38.000Z'),
@@ -2357,7 +2356,7 @@ export const payments = [
 {
   paymentId: 294,
   orderId: 294,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17900,
   fee: 544,
   paymentTime: new Date('2024-03-14T04:12:30.000Z'),
@@ -2365,7 +2364,7 @@ export const payments = [
 {
   paymentId: 295,
   orderId: 295,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8100,
   fee: 283,
   paymentTime: new Date('2024-03-14T04:18:11.000Z'),
@@ -2373,7 +2372,7 @@ export const payments = [
 {
   paymentId: 296,
   orderId: 296,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5700,
   fee: 186,
   paymentTime: new Date('2024-03-14T04:21:17.000Z'),
@@ -2381,7 +2380,7 @@ export const payments = [
 {
   paymentId: 297,
   orderId: 297,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8900,
   fee: 223,
   paymentTime: new Date('2024-03-14T04:30:19.000Z'),
@@ -2389,7 +2388,7 @@ export const payments = [
 {
   paymentId: 298,
   orderId: 298,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 18600,
   fee: 0,
   paymentTime: new Date('2024-03-14T04:28:58.000Z'),
@@ -2397,7 +2396,7 @@ export const payments = [
 {
   paymentId: 299,
   orderId: 299,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10200,
   fee: 255,
   paymentTime: new Date('2024-03-14T04:38:51.000Z'),
@@ -2405,7 +2404,7 @@ export const payments = [
 {
   paymentId: 300,
   orderId: 300,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 15900,
   fee: 398,
   paymentTime: new Date('2024-03-14T08:46:15.000Z'),
@@ -2413,7 +2412,7 @@ export const payments = [
 {
   paymentId: 301,
   orderId: 301,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15500,
   fee: 0,
   paymentTime: new Date('2024-03-14T08:56:21.000Z'),
@@ -2421,7 +2420,7 @@ export const payments = [
 {
   paymentId: 302,
   orderId: 302,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 22400,
   fee: 805,
   paymentTime: new Date('2024-03-14T09:45:07.000Z'),
@@ -2429,7 +2428,7 @@ export const payments = [
 {
   paymentId: 303,
   orderId: 303,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10500,
   fee: 0,
   paymentTime: new Date('2024-03-14T12:36:07.000Z'),
@@ -2437,7 +2436,7 @@ export const payments = [
 {
   paymentId: 304,
   orderId: 304,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4700,
   fee: 168,
   paymentTime: new Date('2024-03-14T12:55:47.000Z'),
@@ -2445,7 +2444,7 @@ export const payments = [
 {
   paymentId: 305,
   orderId: 305,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16200,
   fee: 0,
   paymentTime: new Date('2024-03-14T14:37:46.000Z'),
@@ -2453,7 +2452,7 @@ export const payments = [
 {
   paymentId: 306,
   orderId: 306,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 15600,
   fee: 343,
   paymentTime: new Date('2024-03-15T02:01:16.000Z'),
@@ -2461,7 +2460,7 @@ export const payments = [
 {
   paymentId: 307,
   orderId: 307,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13500,
   fee: 434,
   paymentTime: new Date('2024-03-15T03:15:09.000Z'),
@@ -2469,7 +2468,7 @@ export const payments = [
 {
   paymentId: 308,
   orderId: 308,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 22200,
   fee: 0,
   paymentTime: new Date('2024-03-15T03:28:38.000Z'),
@@ -2477,7 +2476,7 @@ export const payments = [
 {
   paymentId: 309,
   orderId: 309,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11900,
   fee: 393,
   paymentTime: new Date('2024-03-15T03:45:28.000Z'),
@@ -2485,7 +2484,7 @@ export const payments = [
 {
   paymentId: 310,
   orderId: 310,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12200,
   fee: 407,
   paymentTime: new Date('2024-03-15T03:53:52.000Z'),
@@ -2493,7 +2492,7 @@ export const payments = [
 {
   paymentId: 311,
   orderId: 311,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 8800,
   fee: 253,
   paymentTime: new Date('2024-03-15T04:39:09.000Z'),
@@ -2501,7 +2500,7 @@ export const payments = [
 {
   paymentId: 312,
   orderId: 312,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11500,
   fee: 352,
   paymentTime: new Date('2024-03-15T04:35:19.000Z'),
@@ -2509,7 +2508,7 @@ export const payments = [
 {
   paymentId: 313,
   orderId: 313,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 16300,
   fee: 408,
   paymentTime: new Date('2024-03-15T04:36:59.000Z'),
@@ -2517,7 +2516,7 @@ export const payments = [
 {
   paymentId: 314,
   orderId: 314,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11600,
   fee: 290,
   paymentTime: new Date('2024-03-15T08:41:52.000Z'),
@@ -2525,7 +2524,7 @@ export const payments = [
 {
   paymentId: 315,
   orderId: 315,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11100,
   fee: 0,
   paymentTime: new Date('2024-03-15T09:33:08.000Z'),
@@ -2533,7 +2532,7 @@ export const payments = [
 {
   paymentId: 316,
   orderId: 316,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6700,
   fee: 226,
   paymentTime: new Date('2024-03-15T09:38:21.000Z'),
@@ -2541,7 +2540,7 @@ export const payments = [
 {
   paymentId: 317,
   orderId: 317,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10800,
   fee: 226,
   paymentTime: new Date('2024-03-15T10:14:25.000Z'),
@@ -2549,7 +2548,7 @@ export const payments = [
 {
   paymentId: 318,
   orderId: 318,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 5200,
   fee: 149,
   paymentTime: new Date('2024-03-15T10:32:05.000Z'),
@@ -2557,7 +2556,7 @@ export const payments = [
 {
   paymentId: 319,
   orderId: 319,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13500,
   fee: 447,
   paymentTime: new Date('2024-03-15T10:33:59.000Z'),
@@ -2565,7 +2564,7 @@ export const payments = [
 {
   paymentId: 320,
   orderId: 320,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20000,
   fee: 0,
   paymentTime: new Date('2024-03-15T10:56:22.000Z'),
@@ -2573,7 +2572,7 @@ export const payments = [
 {
   paymentId: 321,
   orderId: 321,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9800,
   fee: 348,
   paymentTime: new Date('2024-03-15T11:23:57.000Z'),
@@ -2581,7 +2580,7 @@ export const payments = [
 {
   paymentId: 322,
   orderId: 322,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5200,
   fee: 170,
   paymentTime: new Date('2024-03-15T12:33:38.000Z'),
@@ -2589,7 +2588,7 @@ export const payments = [
 {
   paymentId: 323,
   orderId: 323,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6800,
   fee: 140,
   paymentTime: new Date('2024-03-15T12:51:26.000Z'),
@@ -2597,7 +2596,7 @@ export const payments = [
 {
   paymentId: 324,
   orderId: 324,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7800,
   fee: 246,
   paymentTime: new Date('2024-03-15T12:54:57.000Z'),
@@ -2605,7 +2604,7 @@ export const payments = [
 {
   paymentId: 325,
   orderId: 325,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10500,
   fee: 328,
   paymentTime: new Date('2024-03-15T14:52:44.000Z'),
@@ -2613,7 +2612,7 @@ export const payments = [
 {
   paymentId: 326,
   orderId: 326,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8600,
   fee: 0,
   paymentTime: new Date('2024-03-16T02:17:08.000Z'),
@@ -2621,7 +2620,7 @@ export const payments = [
 {
   paymentId: 327,
   orderId: 327,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14100,
   fee: 456,
   paymentTime: new Date('2024-03-16T02:43:51.000Z'),
@@ -2629,7 +2628,7 @@ export const payments = [
 {
   paymentId: 328,
   orderId: 328,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9900,
   fee: 314,
   paymentTime: new Date('2024-03-16T02:57:21.000Z'),
@@ -2637,7 +2636,7 @@ export const payments = [
 {
   paymentId: 329,
   orderId: 329,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8200,
   fee: 0,
   paymentTime: new Date('2024-03-16T03:12:32.000Z'),
@@ -2645,7 +2644,7 @@ export const payments = [
 {
   paymentId: 330,
   orderId: 330,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10200,
   fee: 224,
   paymentTime: new Date('2024-03-16T03:18:39.000Z'),
@@ -2653,7 +2652,7 @@ export const payments = [
 {
   paymentId: 331,
   orderId: 331,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10300,
   fee: 239,
   paymentTime: new Date('2024-03-16T03:32:28.000Z'),
@@ -2661,7 +2660,7 @@ export const payments = [
 {
   paymentId: 332,
   orderId: 332,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 18300,
   fee: 0,
   paymentTime: new Date('2024-03-16T03:36:12.000Z'),
@@ -2669,7 +2668,7 @@ export const payments = [
 {
   paymentId: 333,
   orderId: 333,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4800,
   fee: 163,
   paymentTime: new Date('2024-03-16T03:48:12.000Z'),
@@ -2677,7 +2676,7 @@ export const payments = [
 {
   paymentId: 334,
   orderId: 334,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 26400,
   fee: 841,
   paymentTime: new Date('2024-03-16T03:52:54.000Z'),
@@ -2685,7 +2684,7 @@ export const payments = [
 {
   paymentId: 335,
   orderId: 335,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12200,
   fee: 0,
   paymentTime: new Date('2024-03-16T03:57:54.000Z'),
@@ -2693,7 +2692,7 @@ export const payments = [
 {
   paymentId: 336,
   orderId: 336,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12900,
   fee: 323,
   paymentTime: new Date('2024-03-16T04:01:00.000Z'),
@@ -2701,7 +2700,7 @@ export const payments = [
 {
   paymentId: 337,
   orderId: 337,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16300,
   fee: 0,
   paymentTime: new Date('2024-03-16T04:14:51.000Z'),
@@ -2709,7 +2708,7 @@ export const payments = [
 {
   paymentId: 338,
   orderId: 338,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 21600,
   fee: 813,
   paymentTime: new Date('2024-03-16T04:16:24.000Z'),
@@ -2717,7 +2716,7 @@ export const payments = [
 {
   paymentId: 339,
   orderId: 339,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7600,
   fee: 242,
   paymentTime: new Date('2024-03-16T04:27:52.000Z'),
@@ -2725,7 +2724,7 @@ export const payments = [
 {
   paymentId: 340,
   orderId: 340,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13800,
   fee: 318,
   paymentTime: new Date('2024-03-16T04:44:35.000Z'),
@@ -2733,7 +2732,7 @@ export const payments = [
 {
   paymentId: 341,
   orderId: 341,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18800,
   fee: 670,
   paymentTime: new Date('2024-03-16T08:28:37.000Z'),
@@ -2741,7 +2740,7 @@ export const payments = [
 {
   paymentId: 342,
   orderId: 342,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13400,
   fee: 308,
   paymentTime: new Date('2024-03-16T09:20:48.000Z'),
@@ -2749,7 +2748,7 @@ export const payments = [
 {
   paymentId: 343,
   orderId: 343,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11700,
   fee: 260,
   paymentTime: new Date('2024-03-16T09:46:41.000Z'),
@@ -2757,7 +2756,7 @@ export const payments = [
 {
   paymentId: 344,
   orderId: 344,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15200,
   fee: 509,
   paymentTime: new Date('2024-03-16T09:53:00.000Z'),
@@ -2765,7 +2764,7 @@ export const payments = [
 {
   paymentId: 345,
   orderId: 345,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14300,
   fee: 456,
   paymentTime: new Date('2024-03-16T09:54:48.000Z'),
@@ -2773,7 +2772,7 @@ export const payments = [
 {
   paymentId: 346,
   orderId: 346,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4400,
   fee: 144,
   paymentTime: new Date('2024-03-16T11:22:43.000Z'),
@@ -2781,7 +2780,7 @@ export const payments = [
 {
   paymentId: 347,
   orderId: 347,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7100,
   fee: 0,
   paymentTime: new Date('2024-03-16T11:29:20.000Z'),
@@ -2789,7 +2788,7 @@ export const payments = [
 {
   paymentId: 348,
   orderId: 348,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9700,
   fee: 359,
   paymentTime: new Date('2024-03-16T11:36:05.000Z'),
@@ -2797,7 +2796,7 @@ export const payments = [
 {
   paymentId: 349,
   orderId: 349,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7000,
   fee: 212,
   paymentTime: new Date('2024-03-16T12:00:02.000Z'),
@@ -2805,7 +2804,7 @@ export const payments = [
 {
   paymentId: 350,
   orderId: 350,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8900,
   fee: 287,
   paymentTime: new Date('2024-03-16T12:36:34.000Z'),
@@ -2813,7 +2812,7 @@ export const payments = [
 {
   paymentId: 351,
   orderId: 351,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14300,
   fee: 308,
   paymentTime: new Date('2024-03-16T14:17:20.000Z'),
@@ -2821,7 +2820,7 @@ export const payments = [
 {
   paymentId: 352,
   orderId: 352,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 9200,
   fee: 258,
   paymentTime: new Date('2024-03-17T02:12:57.000Z'),
@@ -2829,7 +2828,7 @@ export const payments = [
 {
   paymentId: 353,
   orderId: 353,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8400,
   fee: 0,
   paymentTime: new Date('2024-03-17T02:23:43.000Z'),
@@ -2837,7 +2836,7 @@ export const payments = [
 {
   paymentId: 354,
   orderId: 354,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12700,
   fee: 317,
   paymentTime: new Date('2024-03-17T02:27:53.000Z'),
@@ -2845,7 +2844,7 @@ export const payments = [
 {
   paymentId: 355,
   orderId: 355,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10000,
   fee: 378,
   paymentTime: new Date('2024-03-17T02:29:40.000Z'),
@@ -2853,7 +2852,7 @@ export const payments = [
 {
   paymentId: 356,
   orderId: 356,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20000,
   fee: 671,
   paymentTime: new Date('2024-03-17T03:10:34.000Z'),
@@ -2861,7 +2860,7 @@ export const payments = [
 {
   paymentId: 357,
   orderId: 357,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13500,
   fee: 0,
   paymentTime: new Date('2024-03-17T03:58:48.000Z'),
@@ -2869,7 +2868,7 @@ export const payments = [
 {
   paymentId: 358,
   orderId: 358,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20000,
   fee: 679,
   paymentTime: new Date('2024-03-17T04:03:58.000Z'),
@@ -2877,7 +2876,7 @@ export const payments = [
 {
   paymentId: 359,
   orderId: 359,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8700,
   fee: 0,
   paymentTime: new Date('2024-03-17T08:17:41.000Z'),
@@ -2885,7 +2884,7 @@ export const payments = [
 {
   paymentId: 360,
   orderId: 360,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17400,
   fee: 400,
   paymentTime: new Date('2024-03-17T09:50:10.000Z'),
@@ -2893,7 +2892,7 @@ export const payments = [
 {
   paymentId: 361,
   orderId: 361,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4300,
   fee: 132,
   paymentTime: new Date('2024-03-17T11:29:47.000Z'),
@@ -2901,7 +2900,7 @@ export const payments = [
 {
   paymentId: 362,
   orderId: 362,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8700,
   fee: 292,
   paymentTime: new Date('2024-03-17T11:33:47.000Z'),
@@ -2909,7 +2908,7 @@ export const payments = [
 {
   paymentId: 363,
   orderId: 363,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 9200,
   fee: 230,
   paymentTime: new Date('2024-03-17T11:33:38.000Z'),
@@ -2917,7 +2916,7 @@ export const payments = [
 {
   paymentId: 364,
   orderId: 364,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7200,
   fee: 262,
   paymentTime: new Date('2024-03-17T11:50:48.000Z'),
@@ -2925,7 +2924,7 @@ export const payments = [
 {
   paymentId: 365,
   orderId: 365,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10000,
   fee: 323,
   paymentTime: new Date('2024-03-17T12:11:12.000Z'),
@@ -2933,7 +2932,7 @@ export const payments = [
 {
   paymentId: 366,
   orderId: 366,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5600,
   fee: 183,
   paymentTime: new Date('2024-03-17T12:20:21.000Z'),
@@ -2941,7 +2940,7 @@ export const payments = [
 {
   paymentId: 367,
   orderId: 367,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 4000,
   fee: 99,
   paymentTime: new Date('2024-03-17T12:34:38.000Z'),
@@ -2949,7 +2948,7 @@ export const payments = [
 {
   paymentId: 368,
   orderId: 368,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9600,
   fee: 316,
   paymentTime: new Date('2024-03-17T12:44:49.000Z'),
@@ -2957,7 +2956,7 @@ export const payments = [
 {
   paymentId: 369,
   orderId: 369,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9600,
   fee: 325,
   paymentTime: new Date('2024-03-17T12:48:39.000Z'),
@@ -2965,7 +2964,7 @@ export const payments = [
 {
   paymentId: 370,
   orderId: 370,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8100,
   fee: 253,
   paymentTime: new Date('2024-03-17T13:00:15.000Z'),
@@ -2973,7 +2972,7 @@ export const payments = [
 {
   paymentId: 371,
   orderId: 371,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 3600,
   fee: 101,
   paymentTime: new Date('2024-03-17T12:57:23.000Z'),
@@ -2981,7 +2980,7 @@ export const payments = [
 {
   paymentId: 372,
   orderId: 372,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5800,
   fee: 188,
   paymentTime: new Date('2024-03-17T13:21:49.000Z'),
@@ -2989,7 +2988,7 @@ export const payments = [
 {
   paymentId: 373,
   orderId: 373,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8700,
   fee: 288,
   paymentTime: new Date('2024-03-17T13:28:59.000Z'),
@@ -2997,7 +2996,7 @@ export const payments = [
 {
   paymentId: 374,
   orderId: 374,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5900,
   fee: 196,
   paymentTime: new Date('2024-03-17T13:43:18.000Z'),
@@ -3005,7 +3004,7 @@ export const payments = [
 {
   paymentId: 375,
   orderId: 375,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9400,
   fee: 303,
   paymentTime: new Date('2024-03-17T13:47:22.000Z'),
@@ -3013,7 +3012,7 @@ export const payments = [
 {
   paymentId: 376,
   orderId: 376,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5100,
   fee: 165,
   paymentTime: new Date('2024-03-17T13:55:59.000Z'),
@@ -3021,7 +3020,7 @@ export const payments = [
 {
   paymentId: 377,
   orderId: 377,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13000,
   fee: 392,
   paymentTime: new Date('2024-03-17T14:55:40.000Z'),
@@ -3029,7 +3028,7 @@ export const payments = [
 {
   paymentId: 378,
   orderId: 378,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15900,
   fee: 0,
   paymentTime: new Date('2024-03-18T02:02:52.000Z'),
@@ -3037,7 +3036,7 @@ export const payments = [
 {
   paymentId: 379,
   orderId: 379,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 23000,
   fee: 706,
   paymentTime: new Date('2024-03-18T02:06:24.000Z'),
@@ -3045,7 +3044,7 @@ export const payments = [
 {
   paymentId: 380,
   orderId: 380,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8000,
   fee: 167,
   paymentTime: new Date('2024-03-18T02:43:14.000Z'),
@@ -3053,7 +3052,7 @@ export const payments = [
 {
   paymentId: 381,
   orderId: 381,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 15400,
   fee: 318,
   paymentTime: new Date('2024-03-18T03:04:46.000Z'),
@@ -3061,7 +3060,7 @@ export const payments = [
 {
   paymentId: 382,
   orderId: 382,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10800,
   fee: 0,
   paymentTime: new Date('2024-03-18T03:31:11.000Z'),
@@ -3069,7 +3068,7 @@ export const payments = [
 {
   paymentId: 383,
   orderId: 383,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 18200,
   fee: 413,
   paymentTime: new Date('2024-03-18T03:46:01.000Z'),
@@ -3077,7 +3076,7 @@ export const payments = [
 {
   paymentId: 384,
   orderId: 384,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9800,
   fee: 0,
   paymentTime: new Date('2024-03-18T03:58:39.000Z'),
@@ -3085,7 +3084,7 @@ export const payments = [
 {
   paymentId: 385,
   orderId: 385,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 20100,
   fee: 503,
   paymentTime: new Date('2024-03-18T04:48:46.000Z'),
@@ -3093,7 +3092,7 @@ export const payments = [
 {
   paymentId: 386,
   orderId: 386,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11800,
   fee: 294,
   paymentTime: new Date('2024-03-18T04:53:44.000Z'),
@@ -3101,7 +3100,7 @@ export const payments = [
 {
   paymentId: 387,
   orderId: 387,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12100,
   fee: 420,
   paymentTime: new Date('2024-03-18T10:21:07.000Z'),
@@ -3109,7 +3108,7 @@ export const payments = [
 {
   paymentId: 388,
   orderId: 388,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7000,
   fee: 175,
   paymentTime: new Date('2024-03-18T10:38:02.000Z'),
@@ -3117,7 +3116,7 @@ export const payments = [
 {
   paymentId: 389,
   orderId: 389,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5100,
   fee: 159,
   paymentTime: new Date('2024-03-18T12:08:33.000Z'),
@@ -3125,7 +3124,7 @@ export const payments = [
 {
   paymentId: 390,
   orderId: 390,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4600,
   fee: 157,
   paymentTime: new Date('2024-03-18T12:24:25.000Z'),
@@ -3133,7 +3132,7 @@ export const payments = [
 {
   paymentId: 391,
   orderId: 391,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9300,
   fee: 216,
   paymentTime: new Date('2024-03-18T13:40:22.000Z'),
@@ -3141,7 +3140,7 @@ export const payments = [
 {
   paymentId: 392,
   orderId: 392,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9400,
   fee: 321,
   paymentTime: new Date('2024-03-18T14:42:40.000Z'),
@@ -3149,7 +3148,7 @@ export const payments = [
 {
   paymentId: 393,
   orderId: 393,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18800,
   fee: 637,
   paymentTime: new Date('2024-03-19T02:18:19.000Z'),
@@ -3157,7 +3156,7 @@ export const payments = [
 {
   paymentId: 394,
   orderId: 394,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 16100,
   fee: 403,
   paymentTime: new Date('2024-03-19T02:32:49.000Z'),
@@ -3165,7 +3164,7 @@ export const payments = [
 {
   paymentId: 395,
   orderId: 395,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 21600,
   fee: 746,
   paymentTime: new Date('2024-03-19T02:45:31.000Z'),
@@ -3173,7 +3172,7 @@ export const payments = [
 {
   paymentId: 396,
   orderId: 396,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7600,
   fee: 245,
   paymentTime: new Date('2024-03-19T02:49:03.000Z'),
@@ -3181,7 +3180,7 @@ export const payments = [
 {
   paymentId: 397,
   orderId: 397,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7000,
   fee: 245,
   paymentTime: new Date('2024-03-19T03:06:37.000Z'),
@@ -3189,7 +3188,7 @@ export const payments = [
 {
   paymentId: 398,
   orderId: 398,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9700,
   fee: 0,
   paymentTime: new Date('2024-03-19T03:32:16.000Z'),
@@ -3197,7 +3196,7 @@ export const payments = [
 {
   paymentId: 399,
   orderId: 399,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15200,
   fee: 490,
   paymentTime: new Date('2024-03-19T03:41:50.000Z'),
@@ -3205,7 +3204,7 @@ export const payments = [
 {
   paymentId: 400,
   orderId: 400,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13600,
   fee: 0,
   paymentTime: new Date('2024-03-19T03:47:14.000Z'),
@@ -3213,7 +3212,7 @@ export const payments = [
 {
   paymentId: 401,
   orderId: 401,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19800,
   fee: 0,
   paymentTime: new Date('2024-03-19T03:52:15.000Z'),
@@ -3221,7 +3220,7 @@ export const payments = [
 {
   paymentId: 402,
   orderId: 402,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12800,
   fee: 429,
   paymentTime: new Date('2024-03-19T03:53:45.000Z'),
@@ -3229,7 +3228,7 @@ export const payments = [
 {
   paymentId: 403,
   orderId: 403,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8400,
   fee: 301,
   paymentTime: new Date('2024-03-19T04:05:58.000Z'),
@@ -3237,7 +3236,7 @@ export const payments = [
 {
   paymentId: 404,
   orderId: 404,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12800,
   fee: 406,
   paymentTime: new Date('2024-03-19T04:25:11.000Z'),
@@ -3245,7 +3244,7 @@ export const payments = [
 {
   paymentId: 405,
   orderId: 405,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6100,
   fee: 198,
   paymentTime: new Date('2024-03-19T08:29:52.000Z'),
@@ -3253,7 +3252,7 @@ export const payments = [
 {
   paymentId: 406,
   orderId: 406,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11400,
   fee: 378,
   paymentTime: new Date('2024-03-19T09:12:33.000Z'),
@@ -3261,7 +3260,7 @@ export const payments = [
 {
   paymentId: 407,
   orderId: 407,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13200,
   fee: 0,
   paymentTime: new Date('2024-03-19T09:32:20.000Z'),
@@ -3269,7 +3268,7 @@ export const payments = [
 {
   paymentId: 408,
   orderId: 408,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15500,
   fee: 0,
   paymentTime: new Date('2024-03-19T10:10:17.000Z'),
@@ -3277,7 +3276,7 @@ export const payments = [
 {
   paymentId: 409,
   orderId: 409,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 16600,
   fee: 415,
   paymentTime: new Date('2024-03-19T10:21:14.000Z'),
@@ -3285,7 +3284,7 @@ export const payments = [
 {
   paymentId: 410,
   orderId: 410,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 11400,
   fee: 319,
   paymentTime: new Date('2024-03-19T11:03:00.000Z'),
@@ -3293,7 +3292,7 @@ export const payments = [
 {
   paymentId: 411,
   orderId: 411,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9000,
   fee: 0,
   paymentTime: new Date('2024-03-19T11:31:40.000Z'),
@@ -3301,7 +3300,7 @@ export const payments = [
 {
   paymentId: 412,
   orderId: 412,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6000,
   fee: 0,
   paymentTime: new Date('2024-03-19T11:52:24.000Z'),
@@ -3309,7 +3308,7 @@ export const payments = [
 {
   paymentId: 413,
   orderId: 413,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4700,
   fee: 155,
   paymentTime: new Date('2024-03-19T13:55:03.000Z'),
@@ -3317,7 +3316,7 @@ export const payments = [
 {
   paymentId: 414,
   orderId: 414,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14400,
   fee: 479,
   paymentTime: new Date('2024-03-19T14:22:47.000Z'),
@@ -3325,7 +3324,7 @@ export const payments = [
 {
   paymentId: 415,
   orderId: 415,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9200,
   fee: 223,
   paymentTime: new Date('2024-03-19T14:31:03.000Z'),
@@ -3333,7 +3332,7 @@ export const payments = [
 {
   paymentId: 416,
   orderId: 416,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7100,
   fee: 0,
   paymentTime: new Date('2024-03-19T14:53:34.000Z'),
@@ -3341,7 +3340,7 @@ export const payments = [
 {
   paymentId: 417,
   orderId: 417,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11600,
   fee: 0,
   paymentTime: new Date('2024-03-19T15:01:12.000Z'),
@@ -3349,7 +3348,7 @@ export const payments = [
 {
   paymentId: 418,
   orderId: 418,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18600,
   fee: 668,
   paymentTime: new Date('2024-03-20T02:07:32.000Z'),
@@ -3357,7 +3356,7 @@ export const payments = [
 {
   paymentId: 419,
   orderId: 419,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11900,
   fee: 408,
   paymentTime: new Date('2024-03-20T02:05:35.000Z'),
@@ -3365,7 +3364,7 @@ export const payments = [
 {
   paymentId: 420,
   orderId: 420,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16900,
   fee: 411,
   paymentTime: new Date('2024-03-20T02:15:15.000Z'),
@@ -3373,7 +3372,7 @@ export const payments = [
 {
   paymentId: 421,
   orderId: 421,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11100,
   fee: 354,
   paymentTime: new Date('2024-03-20T02:35:21.000Z'),
@@ -3381,7 +3380,7 @@ export const payments = [
 {
   paymentId: 422,
   orderId: 422,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11300,
   fee: 373,
   paymentTime: new Date('2024-03-20T02:46:51.000Z'),
@@ -3389,7 +3388,7 @@ export const payments = [
 {
   paymentId: 423,
   orderId: 423,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9700,
   fee: 0,
   paymentTime: new Date('2024-03-20T03:03:21.000Z'),
@@ -3397,7 +3396,7 @@ export const payments = [
 {
   paymentId: 424,
   orderId: 424,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12900,
   fee: 446,
   paymentTime: new Date('2024-03-20T03:29:39.000Z'),
@@ -3405,7 +3404,7 @@ export const payments = [
 {
   paymentId: 425,
   orderId: 425,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8500,
   fee: 0,
   paymentTime: new Date('2024-03-20T03:29:51.000Z'),
@@ -3413,7 +3412,7 @@ export const payments = [
 {
   paymentId: 426,
   orderId: 426,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13100,
   fee: 0,
   paymentTime: new Date('2024-03-20T03:42:50.000Z'),
@@ -3421,7 +3420,7 @@ export const payments = [
 {
   paymentId: 427,
   orderId: 427,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5000,
   fee: 177,
   paymentTime: new Date('2024-03-20T03:42:35.000Z'),
@@ -3429,7 +3428,7 @@ export const payments = [
 {
   paymentId: 428,
   orderId: 428,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13700,
   fee: 469,
   paymentTime: new Date('2024-03-20T04:02:57.000Z'),
@@ -3437,7 +3436,7 @@ export const payments = [
 {
   paymentId: 429,
   orderId: 429,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12500,
   fee: 0,
   paymentTime: new Date('2024-03-20T04:18:27.000Z'),
@@ -3445,7 +3444,7 @@ export const payments = [
 {
   paymentId: 430,
   orderId: 430,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 21400,
   fee: 662,
   paymentTime: new Date('2024-03-20T04:18:55.000Z'),
@@ -3453,7 +3452,7 @@ export const payments = [
 {
   paymentId: 431,
   orderId: 431,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9800,
   fee: 367,
   paymentTime: new Date('2024-03-20T04:24:15.000Z'),
@@ -3461,7 +3460,7 @@ export const payments = [
 {
   paymentId: 432,
   orderId: 432,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 18800,
   fee: 550,
   paymentTime: new Date('2024-03-20T04:33:57.000Z'),
@@ -3469,7 +3468,7 @@ export const payments = [
 {
   paymentId: 433,
   orderId: 433,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15300,
   fee: 469,
   paymentTime: new Date('2024-03-20T04:38:23.000Z'),
@@ -3477,7 +3476,7 @@ export const payments = [
 {
   paymentId: 434,
   orderId: 434,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12300,
   fee: 291,
   paymentTime: new Date('2024-03-20T05:01:06.000Z'),
@@ -3485,7 +3484,7 @@ export const payments = [
 {
   paymentId: 435,
   orderId: 435,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 24100,
   fee: 790,
   paymentTime: new Date('2024-03-20T08:11:29.000Z'),
@@ -3493,7 +3492,7 @@ export const payments = [
 {
   paymentId: 436,
   orderId: 436,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8000,
   fee: 0,
   paymentTime: new Date('2024-03-20T09:53:37.000Z'),
@@ -3501,7 +3500,7 @@ export const payments = [
 {
   paymentId: 437,
   orderId: 437,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14200,
   fee: 300,
   paymentTime: new Date('2024-03-20T10:05:28.000Z'),
@@ -3509,7 +3508,7 @@ export const payments = [
 {
   paymentId: 438,
   orderId: 438,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12800,
   fee: 485,
   paymentTime: new Date('2024-03-20T10:25:23.000Z'),
@@ -3517,7 +3516,7 @@ export const payments = [
 {
   paymentId: 439,
   orderId: 439,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10300,
   fee: 233,
   paymentTime: new Date('2024-03-20T11:39:41.000Z'),
@@ -3525,7 +3524,7 @@ export const payments = [
 {
   paymentId: 440,
   orderId: 440,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8700,
   fee: 209,
   paymentTime: new Date('2024-03-20T11:46:21.000Z'),
@@ -3533,7 +3532,7 @@ export const payments = [
 {
   paymentId: 441,
   orderId: 441,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8900,
   fee: 0,
   paymentTime: new Date('2024-03-20T12:38:57.000Z'),
@@ -3541,7 +3540,7 @@ export const payments = [
 {
   paymentId: 442,
   orderId: 442,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5900,
   fee: 202,
   paymentTime: new Date('2024-03-20T13:24:43.000Z'),
@@ -3549,7 +3548,7 @@ export const payments = [
 {
   paymentId: 443,
   orderId: 443,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13100,
   fee: 309,
   paymentTime: new Date('2024-03-20T14:18:17.000Z'),
@@ -3557,7 +3556,7 @@ export const payments = [
 {
   paymentId: 444,
   orderId: 444,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 8600,
   fee: 238,
   paymentTime: new Date('2024-03-21T03:03:48.000Z'),
@@ -3565,7 +3564,7 @@ export const payments = [
 {
   paymentId: 445,
   orderId: 445,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11800,
   fee: 0,
   paymentTime: new Date('2024-03-21T03:06:49.000Z'),
@@ -3573,7 +3572,7 @@ export const payments = [
 {
   paymentId: 446,
   orderId: 446,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5800,
   fee: 196,
   paymentTime: new Date('2024-03-21T03:31:05.000Z'),
@@ -3581,7 +3580,7 @@ export const payments = [
 {
   paymentId: 447,
   orderId: 447,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 14100,
   fee: 417,
   paymentTime: new Date('2024-03-21T03:50:11.000Z'),
@@ -3589,7 +3588,7 @@ export const payments = [
 {
   paymentId: 448,
   orderId: 448,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13100,
   fee: 430,
   paymentTime: new Date('2024-03-21T04:25:09.000Z'),
@@ -3597,7 +3596,7 @@ export const payments = [
 {
   paymentId: 449,
   orderId: 449,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12700,
   fee: 463,
   paymentTime: new Date('2024-03-21T04:48:29.000Z'),
@@ -3605,7 +3604,7 @@ export const payments = [
 {
   paymentId: 450,
   orderId: 450,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12500,
   fee: 275,
   paymentTime: new Date('2024-03-21T09:51:50.000Z'),
@@ -3613,7 +3612,7 @@ export const payments = [
 {
   paymentId: 451,
   orderId: 451,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7800,
   fee: 195,
   paymentTime: new Date('2024-03-21T11:40:24.000Z'),
@@ -3621,7 +3620,7 @@ export const payments = [
 {
   paymentId: 452,
   orderId: 452,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7200,
   fee: 0,
   paymentTime: new Date('2024-03-21T11:46:27.000Z'),
@@ -3629,7 +3628,7 @@ export const payments = [
 {
   paymentId: 453,
   orderId: 453,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9100,
   fee: 310,
   paymentTime: new Date('2024-03-21T12:09:40.000Z'),
@@ -3637,7 +3636,7 @@ export const payments = [
 {
   paymentId: 454,
   orderId: 454,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10000,
   fee: 250,
   paymentTime: new Date('2024-03-21T14:15:57.000Z'),
@@ -3645,7 +3644,7 @@ export const payments = [
 {
   paymentId: 455,
   orderId: 455,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 24400,
   fee: 778,
   paymentTime: new Date('2024-03-21T14:26:01.000Z'),
@@ -3653,7 +3652,7 @@ export const payments = [
 {
   paymentId: 456,
   orderId: 456,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10600,
   fee: 0,
   paymentTime: new Date('2024-03-22T02:15:41.000Z'),
@@ -3661,7 +3660,7 @@ export const payments = [
 {
   paymentId: 457,
   orderId: 457,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9200,
   fee: 0,
   paymentTime: new Date('2024-03-22T02:19:25.000Z'),
@@ -3669,7 +3668,7 @@ export const payments = [
 {
   paymentId: 458,
   orderId: 458,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15900,
   fee: 0,
   paymentTime: new Date('2024-03-22T02:54:40.000Z'),
@@ -3677,7 +3676,7 @@ export const payments = [
 {
   paymentId: 459,
   orderId: 459,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 23600,
   fee: 720,
   paymentTime: new Date('2024-03-22T03:02:43.000Z'),
@@ -3685,7 +3684,7 @@ export const payments = [
 {
   paymentId: 460,
   orderId: 460,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9600,
   fee: 301,
   paymentTime: new Date('2024-03-22T03:24:27.000Z'),
@@ -3693,7 +3692,7 @@ export const payments = [
 {
   paymentId: 461,
   orderId: 461,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12900,
   fee: 298,
   paymentTime: new Date('2024-03-22T03:34:19.000Z'),
@@ -3701,7 +3700,7 @@ export const payments = [
 {
   paymentId: 462,
   orderId: 462,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10300,
   fee: 355,
   paymentTime: new Date('2024-03-22T03:52:36.000Z'),
@@ -3709,7 +3708,7 @@ export const payments = [
 {
   paymentId: 463,
   orderId: 463,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11000,
   fee: 336,
   paymentTime: new Date('2024-03-22T04:00:25.000Z'),
@@ -3717,7 +3716,7 @@ export const payments = [
 {
   paymentId: 464,
   orderId: 464,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8300,
   fee: 0,
   paymentTime: new Date('2024-03-22T04:01:57.000Z'),
@@ -3725,7 +3724,7 @@ export const payments = [
 {
   paymentId: 465,
   orderId: 465,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17300,
   fee: 532,
   paymentTime: new Date('2024-03-22T04:13:06.000Z'),
@@ -3733,7 +3732,7 @@ export const payments = [
 {
   paymentId: 466,
   orderId: 466,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 22300,
   fee: 753,
   paymentTime: new Date('2024-03-22T04:49:56.000Z'),
@@ -3741,7 +3740,7 @@ export const payments = [
 {
   paymentId: 467,
   orderId: 467,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18400,
   fee: 678,
   paymentTime: new Date('2024-03-22T09:23:02.000Z'),
@@ -3749,7 +3748,7 @@ export const payments = [
 {
   paymentId: 468,
   orderId: 468,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 24800,
   fee: 833,
   paymentTime: new Date('2024-03-22T09:47:37.000Z'),
@@ -3757,7 +3756,7 @@ export const payments = [
 {
   paymentId: 469,
   orderId: 469,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 3500,
   fee: 88,
   paymentTime: new Date('2024-03-22T11:47:01.000Z'),
@@ -3765,7 +3764,7 @@ export const payments = [
 {
   paymentId: 470,
   orderId: 470,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 22900,
   fee: 742,
   paymentTime: new Date('2024-03-22T14:26:10.000Z'),
@@ -3773,7 +3772,7 @@ export const payments = [
 {
   paymentId: 471,
   orderId: 471,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15500,
   fee: 0,
   paymentTime: new Date('2024-03-22T14:46:16.000Z'),
@@ -3781,7 +3780,7 @@ export const payments = [
 {
   paymentId: 472,
   orderId: 472,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10800,
   fee: 398,
   paymentTime: new Date('2024-03-23T02:38:35.000Z'),
@@ -3789,7 +3788,7 @@ export const payments = [
 {
   paymentId: 473,
   orderId: 473,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11200,
   fee: 224,
   paymentTime: new Date('2024-03-23T03:29:59.000Z'),
@@ -3797,7 +3796,7 @@ export const payments = [
 {
   paymentId: 474,
   orderId: 474,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7600,
   fee: 251,
   paymentTime: new Date('2024-03-23T03:42:02.000Z'),
@@ -3805,7 +3804,7 @@ export const payments = [
 {
   paymentId: 475,
   orderId: 475,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 24900,
   fee: 0,
   paymentTime: new Date('2024-03-23T03:52:34.000Z'),
@@ -3813,7 +3812,7 @@ export const payments = [
 {
   paymentId: 476,
   orderId: 476,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 15300,
   fee: 429,
   paymentTime: new Date('2024-03-23T04:46:40.000Z'),
@@ -3821,7 +3820,7 @@ export const payments = [
 {
   paymentId: 477,
   orderId: 477,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14000,
   fee: 315,
   paymentTime: new Date('2024-03-23T10:28:12.000Z'),
@@ -3829,7 +3828,7 @@ export const payments = [
 {
   paymentId: 478,
   orderId: 478,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10400,
   fee: 225,
   paymentTime: new Date('2024-03-23T11:01:13.000Z'),
@@ -3837,7 +3836,7 @@ export const payments = [
 {
   paymentId: 479,
   orderId: 479,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9900,
   fee: 0,
   paymentTime: new Date('2024-03-23T12:01:52.000Z'),
@@ -3845,7 +3844,7 @@ export const payments = [
 {
   paymentId: 480,
   orderId: 480,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7300,
   fee: 222,
   paymentTime: new Date('2024-03-23T12:13:44.000Z'),
@@ -3853,7 +3852,7 @@ export const payments = [
 {
   paymentId: 481,
   orderId: 481,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11300,
   fee: 379,
   paymentTime: new Date('2024-03-23T13:04:15.000Z'),
@@ -3861,7 +3860,7 @@ export const payments = [
 {
   paymentId: 482,
   orderId: 482,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9600,
   fee: 322,
   paymentTime: new Date('2024-03-23T14:35:10.000Z'),
@@ -3869,7 +3868,7 @@ export const payments = [
 {
   paymentId: 483,
   orderId: 483,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 19000,
   fee: 656,
   paymentTime: new Date('2024-03-24T02:09:43.000Z'),
@@ -3877,7 +3876,7 @@ export const payments = [
 {
   paymentId: 484,
   orderId: 484,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14900,
   fee: 0,
   paymentTime: new Date('2024-03-24T02:20:15.000Z'),
@@ -3885,7 +3884,7 @@ export const payments = [
 {
   paymentId: 485,
   orderId: 485,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8400,
   fee: 183,
   paymentTime: new Date('2024-03-24T03:27:37.000Z'),
@@ -3893,7 +3892,7 @@ export const payments = [
 {
   paymentId: 486,
   orderId: 486,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7600,
   fee: 248,
   paymentTime: new Date('2024-03-24T03:53:25.000Z'),
@@ -3901,7 +3900,7 @@ export const payments = [
 {
   paymentId: 487,
   orderId: 487,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 28400,
   fee: 710,
   paymentTime: new Date('2024-03-24T04:00:40.000Z'),
@@ -3909,7 +3908,7 @@ export const payments = [
 {
   paymentId: 488,
   orderId: 488,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14000,
   fee: 349,
   paymentTime: new Date('2024-03-24T04:21:22.000Z'),
@@ -3917,7 +3916,7 @@ export const payments = [
 {
   paymentId: 489,
   orderId: 489,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 23200,
   fee: 556,
   paymentTime: new Date('2024-03-24T04:45:53.000Z'),
@@ -3925,7 +3924,7 @@ export const payments = [
 {
   paymentId: 490,
   orderId: 490,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 16500,
   fee: 561,
   paymentTime: new Date('2024-03-24T09:42:19.000Z'),
@@ -3933,7 +3932,7 @@ export const payments = [
 {
   paymentId: 491,
   orderId: 491,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10800,
   fee: 0,
   paymentTime: new Date('2024-03-24T10:01:10.000Z'),
@@ -3941,7 +3940,7 @@ export const payments = [
 {
   paymentId: 492,
   orderId: 492,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 21500,
   fee: 0,
   paymentTime: new Date('2024-03-24T10:57:02.000Z'),
@@ -3949,7 +3948,7 @@ export const payments = [
 {
   paymentId: 493,
   orderId: 493,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5800,
   fee: 193,
   paymentTime: new Date('2024-03-24T11:59:20.000Z'),
@@ -3957,7 +3956,7 @@ export const payments = [
 {
   paymentId: 494,
   orderId: 494,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10900,
   fee: 345,
   paymentTime: new Date('2024-03-24T12:54:52.000Z'),
@@ -3965,7 +3964,7 @@ export const payments = [
 {
   paymentId: 495,
   orderId: 495,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 9500,
   fee: 284,
   paymentTime: new Date('2024-03-24T13:55:51.000Z'),
@@ -3973,7 +3972,7 @@ export const payments = [
 {
   paymentId: 496,
   orderId: 496,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17200,
   fee: 535,
   paymentTime: new Date('2024-03-25T02:27:15.000Z'),
@@ -3981,7 +3980,7 @@ export const payments = [
 {
   paymentId: 497,
   orderId: 497,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6300,
   fee: 0,
   paymentTime: new Date('2024-03-25T02:45:16.000Z'),
@@ -3989,7 +3988,7 @@ export const payments = [
 {
   paymentId: 498,
   orderId: 498,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 19200,
   fee: 665,
   paymentTime: new Date('2024-03-25T03:07:11.000Z'),
@@ -3997,7 +3996,7 @@ export const payments = [
 {
   paymentId: 499,
   orderId: 499,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15000,
   fee: 0,
   paymentTime: new Date('2024-03-25T04:19:22.000Z'),
@@ -4005,7 +4004,7 @@ export const payments = [
 {
   paymentId: 500,
   orderId: 500,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5800,
   fee: 200,
   paymentTime: new Date('2024-03-25T04:52:06.000Z'),
@@ -4013,7 +4012,7 @@ export const payments = [
 {
   paymentId: 501,
   orderId: 501,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20300,
   fee: 0,
   paymentTime: new Date('2024-03-25T04:57:23.000Z'),
@@ -4021,7 +4020,7 @@ export const payments = [
 {
   paymentId: 502,
   orderId: 502,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10700,
   fee: 265,
   paymentTime: new Date('2024-03-25T05:00:33.000Z'),
@@ -4029,7 +4028,7 @@ export const payments = [
 {
   paymentId: 503,
   orderId: 503,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10800,
   fee: 0,
   paymentTime: new Date('2024-03-25T10:20:17.000Z'),
@@ -4037,7 +4036,7 @@ export const payments = [
 {
   paymentId: 504,
   orderId: 504,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9300,
   fee: 316,
   paymentTime: new Date('2024-03-25T11:06:04.000Z'),
@@ -4045,7 +4044,7 @@ export const payments = [
 {
   paymentId: 505,
   orderId: 505,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 4600,
   fee: 115,
   paymentTime: new Date('2024-03-25T12:00:27.000Z'),
@@ -4053,7 +4052,7 @@ export const payments = [
 {
   paymentId: 506,
   orderId: 506,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12900,
   fee: 323,
   paymentTime: new Date('2024-03-25T14:20:26.000Z'),
@@ -4061,7 +4060,7 @@ export const payments = [
 {
   paymentId: 507,
   orderId: 507,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14700,
   fee: 460,
   paymentTime: new Date('2024-03-26T02:11:48.000Z'),
@@ -4069,7 +4068,7 @@ export const payments = [
 {
   paymentId: 508,
   orderId: 508,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18700,
   fee: 641,
   paymentTime: new Date('2024-03-26T02:22:04.000Z'),
@@ -4077,7 +4076,7 @@ export const payments = [
 {
   paymentId: 509,
   orderId: 509,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18600,
   fee: 642,
   paymentTime: new Date('2024-03-26T02:54:26.000Z'),
@@ -4085,7 +4084,7 @@ export const payments = [
 {
   paymentId: 510,
   orderId: 510,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 31200,
   fee: 0,
   paymentTime: new Date('2024-03-26T04:16:28.000Z'),
@@ -4093,7 +4092,7 @@ export const payments = [
 {
   paymentId: 511,
   orderId: 511,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6300,
   fee: 0,
   paymentTime: new Date('2024-03-26T04:26:33.000Z'),
@@ -4101,7 +4100,7 @@ export const payments = [
 {
   paymentId: 512,
   orderId: 512,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14900,
   fee: 451,
   paymentTime: new Date('2024-03-26T08:07:33.000Z'),
@@ -4109,7 +4108,7 @@ export const payments = [
 {
   paymentId: 513,
   orderId: 513,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5200,
   fee: 0,
   paymentTime: new Date('2024-03-26T08:57:57.000Z'),
@@ -4117,7 +4116,7 @@ export const payments = [
 {
   paymentId: 514,
   orderId: 514,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9500,
   fee: 0,
   paymentTime: new Date('2024-03-26T09:04:30.000Z'),
@@ -4125,7 +4124,7 @@ export const payments = [
 {
   paymentId: 515,
   orderId: 515,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12400,
   fee: 470,
   paymentTime: new Date('2024-03-26T10:01:26.000Z'),
@@ -4133,7 +4132,7 @@ export const payments = [
 {
   paymentId: 516,
   orderId: 516,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8100,
   fee: 203,
   paymentTime: new Date('2024-03-26T12:35:08.000Z'),
@@ -4141,7 +4140,7 @@ export const payments = [
 {
   paymentId: 517,
   orderId: 517,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18800,
   fee: 590,
   paymentTime: new Date('2024-03-26T14:14:57.000Z'),
@@ -4149,7 +4148,7 @@ export const payments = [
 {
   paymentId: 518,
   orderId: 518,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8300,
   fee: 0,
   paymentTime: new Date('2024-03-27T02:08:26.000Z'),
@@ -4157,7 +4156,7 @@ export const payments = [
 {
   paymentId: 519,
   orderId: 519,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14000,
   fee: 330,
   paymentTime: new Date('2024-03-27T02:26:35.000Z'),
@@ -4165,7 +4164,7 @@ export const payments = [
 {
   paymentId: 520,
   orderId: 520,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8400,
   fee: 291,
   paymentTime: new Date('2024-03-27T03:33:10.000Z'),
@@ -4173,7 +4172,7 @@ export const payments = [
 {
   paymentId: 521,
   orderId: 521,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7100,
   fee: 0,
   paymentTime: new Date('2024-03-27T03:33:48.000Z'),
@@ -4181,7 +4180,7 @@ export const payments = [
 {
   paymentId: 522,
   orderId: 522,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9500,
   fee: 0,
   paymentTime: new Date('2024-03-27T04:03:10.000Z'),
@@ -4189,7 +4188,7 @@ export const payments = [
 {
   paymentId: 523,
   orderId: 523,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 24500,
   fee: 716,
   paymentTime: new Date('2024-03-27T04:17:30.000Z'),
@@ -4197,7 +4196,7 @@ export const payments = [
 {
   paymentId: 524,
   orderId: 524,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20500,
   fee: 697,
   paymentTime: new Date('2024-03-27T08:51:33.000Z'),
@@ -4205,7 +4204,7 @@ export const payments = [
 {
   paymentId: 525,
   orderId: 525,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6500,
   fee: 0,
   paymentTime: new Date('2024-03-27T12:09:37.000Z'),
@@ -4213,7 +4212,7 @@ export const payments = [
 {
   paymentId: 526,
   orderId: 526,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 8300,
   fee: 226,
   paymentTime: new Date('2024-03-27T12:46:26.000Z'),
@@ -4221,7 +4220,7 @@ export const payments = [
 {
   paymentId: 527,
   orderId: 527,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6800,
   fee: 215,
   paymentTime: new Date('2024-03-27T13:03:55.000Z'),
@@ -4229,7 +4228,7 @@ export const payments = [
 {
   paymentId: 528,
   orderId: 528,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6200,
   fee: 226,
   paymentTime: new Date('2024-03-27T13:07:01.000Z'),
@@ -4237,7 +4236,7 @@ export const payments = [
 {
   paymentId: 529,
   orderId: 529,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12000,
   fee: 381,
   paymentTime: new Date('2024-03-27T14:07:41.000Z'),
@@ -4245,7 +4244,7 @@ export const payments = [
 {
   paymentId: 530,
   orderId: 530,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 14700,
   fee: 368,
   paymentTime: new Date('2024-03-27T14:54:29.000Z'),
@@ -4253,7 +4252,7 @@ export const payments = [
 {
   paymentId: 531,
   orderId: 531,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8500,
   fee: 0,
   paymentTime: new Date('2024-03-27T15:00:38.000Z'),
@@ -4261,7 +4260,7 @@ export const payments = [
 {
   paymentId: 532,
   orderId: 532,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14500,
   fee: 0,
   paymentTime: new Date('2024-03-28T02:04:02.000Z'),
@@ -4269,7 +4268,7 @@ export const payments = [
 {
   paymentId: 533,
   orderId: 533,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 19100,
   fee: 641,
   paymentTime: new Date('2024-03-28T02:33:15.000Z'),
@@ -4277,7 +4276,7 @@ export const payments = [
 {
   paymentId: 534,
   orderId: 534,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16900,
   fee: 527,
   paymentTime: new Date('2024-03-28T03:01:30.000Z'),
@@ -4285,7 +4284,7 @@ export const payments = [
 {
   paymentId: 535,
   orderId: 535,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6300,
   fee: 199,
   paymentTime: new Date('2024-03-28T03:10:52.000Z'),
@@ -4293,7 +4292,7 @@ export const payments = [
 {
   paymentId: 536,
   orderId: 536,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14500,
   fee: 439,
   paymentTime: new Date('2024-03-28T03:08:01.000Z'),
@@ -4301,7 +4300,7 @@ export const payments = [
 {
   paymentId: 537,
   orderId: 537,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9400,
   fee: 304,
   paymentTime: new Date('2024-03-28T04:06:38.000Z'),
@@ -4309,7 +4308,7 @@ export const payments = [
 {
   paymentId: 538,
   orderId: 538,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12300,
   fee: 404,
   paymentTime: new Date('2024-03-28T04:16:02.000Z'),
@@ -4317,7 +4316,7 @@ export const payments = [
 {
   paymentId: 539,
   orderId: 539,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13900,
   fee: 460,
   paymentTime: new Date('2024-03-28T04:22:30.000Z'),
@@ -4325,7 +4324,7 @@ export const payments = [
 {
   paymentId: 540,
   orderId: 540,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 21400,
   fee: 469,
   paymentTime: new Date('2024-03-28T04:54:17.000Z'),
@@ -4333,7 +4332,7 @@ export const payments = [
 {
   paymentId: 541,
   orderId: 541,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7700,
   fee: 193,
   paymentTime: new Date('2024-03-28T09:15:56.000Z'),
@@ -4341,7 +4340,7 @@ export const payments = [
 {
   paymentId: 542,
   orderId: 542,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10800,
   fee: 342,
   paymentTime: new Date('2024-03-28T09:32:26.000Z'),
@@ -4349,7 +4348,7 @@ export const payments = [
 {
   paymentId: 543,
   orderId: 543,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17800,
   fee: 590,
   paymentTime: new Date('2024-03-28T09:44:46.000Z'),
@@ -4357,7 +4356,7 @@ export const payments = [
 {
   paymentId: 544,
   orderId: 544,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 22900,
   fee: 0,
   paymentTime: new Date('2024-03-28T09:58:25.000Z'),
@@ -4365,7 +4364,7 @@ export const payments = [
 {
   paymentId: 545,
   orderId: 545,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 21200,
   fee: 676,
   paymentTime: new Date('2024-03-28T10:08:05.000Z'),
@@ -4373,7 +4372,7 @@ export const payments = [
 {
   paymentId: 546,
   orderId: 546,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14500,
   fee: 0,
   paymentTime: new Date('2024-03-28T11:05:22.000Z'),
@@ -4381,7 +4380,7 @@ export const payments = [
 {
   paymentId: 547,
   orderId: 547,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4400,
   fee: 152,
   paymentTime: new Date('2024-03-28T11:04:26.000Z'),
@@ -4389,7 +4388,7 @@ export const payments = [
 {
   paymentId: 548,
   orderId: 548,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11200,
   fee: 339,
   paymentTime: new Date('2024-03-28T11:11:43.000Z'),
@@ -4397,7 +4396,7 @@ export const payments = [
 {
   paymentId: 549,
   orderId: 549,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 7600,
   fee: 223,
   paymentTime: new Date('2024-03-28T11:18:11.000Z'),
@@ -4405,7 +4404,7 @@ export const payments = [
 {
   paymentId: 550,
   orderId: 550,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 5600,
   fee: 140,
   paymentTime: new Date('2024-03-28T11:31:42.000Z'),
@@ -4413,7 +4412,7 @@ export const payments = [
 {
   paymentId: 551,
   orderId: 551,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 7300,
   fee: 218,
   paymentTime: new Date('2024-03-28T11:35:30.000Z'),
@@ -4421,7 +4420,7 @@ export const payments = [
 {
   paymentId: 552,
   orderId: 552,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6000,
   fee: 221,
   paymentTime: new Date('2024-03-28T13:07:56.000Z'),
@@ -4429,7 +4428,7 @@ export const payments = [
 {
   paymentId: 553,
   orderId: 553,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8700,
   fee: 304,
   paymentTime: new Date('2024-03-28T13:08:44.000Z'),
@@ -4437,7 +4436,7 @@ export const payments = [
 {
   paymentId: 554,
   orderId: 554,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15400,
   fee: 520,
   paymentTime: new Date('2024-03-28T14:13:50.000Z'),
@@ -4445,7 +4444,7 @@ export const payments = [
 {
   paymentId: 555,
   orderId: 555,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10000,
   fee: 337,
   paymentTime: new Date('2024-03-28T14:51:28.000Z'),
@@ -4453,7 +4452,7 @@ export const payments = [
 {
   paymentId: 556,
   orderId: 556,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13200,
   fee: 402,
   paymentTime: new Date('2024-03-29T02:02:00.000Z'),
@@ -4461,7 +4460,7 @@ export const payments = [
 {
   paymentId: 557,
   orderId: 557,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8000,
   fee: 263,
   paymentTime: new Date('2024-03-29T02:16:25.000Z'),
@@ -4469,7 +4468,7 @@ export const payments = [
 {
   paymentId: 558,
   orderId: 558,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12300,
   fee: 426,
   paymentTime: new Date('2024-03-29T02:22:27.000Z'),
@@ -4477,7 +4476,7 @@ export const payments = [
 {
   paymentId: 559,
   orderId: 559,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10000,
   fee: 210,
   paymentTime: new Date('2024-03-29T02:28:48.000Z'),
@@ -4485,7 +4484,7 @@ export const payments = [
 {
   paymentId: 560,
   orderId: 560,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 18500,
   fee: 0,
   paymentTime: new Date('2024-03-29T02:53:18.000Z'),
@@ -4493,7 +4492,7 @@ export const payments = [
 {
   paymentId: 561,
   orderId: 561,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10400,
   fee: 320,
   paymentTime: new Date('2024-03-29T03:00:56.000Z'),
@@ -4501,7 +4500,7 @@ export const payments = [
 {
   paymentId: 562,
   orderId: 562,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8300,
   fee: 208,
   paymentTime: new Date('2024-03-29T03:29:48.000Z'),
@@ -4509,7 +4508,7 @@ export const payments = [
 {
   paymentId: 563,
   orderId: 563,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 15000,
   fee: 375,
   paymentTime: new Date('2024-03-29T03:34:04.000Z'),
@@ -4517,7 +4516,7 @@ export const payments = [
 {
   paymentId: 564,
   orderId: 564,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12300,
   fee: 0,
   paymentTime: new Date('2024-03-29T04:33:14.000Z'),
@@ -4525,7 +4524,7 @@ export const payments = [
 {
   paymentId: 565,
   orderId: 565,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 24000,
   fee: 491,
   paymentTime: new Date('2024-03-29T04:34:34.000Z'),
@@ -4533,7 +4532,7 @@ export const payments = [
 {
   paymentId: 566,
   orderId: 566,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10600,
   fee: 228,
   paymentTime: new Date('2024-03-29T08:11:53.000Z'),
@@ -4541,7 +4540,7 @@ export const payments = [
 {
   paymentId: 567,
   orderId: 567,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10200,
   fee: 323,
   paymentTime: new Date('2024-03-29T08:33:16.000Z'),
@@ -4549,7 +4548,7 @@ export const payments = [
 {
   paymentId: 568,
   orderId: 568,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10000,
   fee: 0,
   paymentTime: new Date('2024-03-29T09:04:03.000Z'),
@@ -4557,7 +4556,7 @@ export const payments = [
 {
   paymentId: 569,
   orderId: 569,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20300,
   fee: 0,
   paymentTime: new Date('2024-03-29T09:31:09.000Z'),
@@ -4565,7 +4564,7 @@ export const payments = [
 {
   paymentId: 570,
   orderId: 570,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6000,
   fee: 0,
   paymentTime: new Date('2024-03-29T09:52:17.000Z'),
@@ -4573,7 +4572,7 @@ export const payments = [
 {
   paymentId: 571,
   orderId: 571,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11700,
   fee: 0,
   paymentTime: new Date('2024-03-29T09:55:40.000Z'),
@@ -4581,7 +4580,7 @@ export const payments = [
 {
   paymentId: 572,
   orderId: 572,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9200,
   fee: 223,
   paymentTime: new Date('2024-03-29T09:56:58.000Z'),
@@ -4589,7 +4588,7 @@ export const payments = [
 {
   paymentId: 573,
   orderId: 573,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 17700,
   fee: 514,
   paymentTime: new Date('2024-03-29T10:00:52.000Z'),
@@ -4597,7 +4596,7 @@ export const payments = [
 {
   paymentId: 574,
   orderId: 574,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 3900,
   fee: 96,
   paymentTime: new Date('2024-03-29T11:39:18.000Z'),
@@ -4605,7 +4604,7 @@ export const payments = [
 {
   paymentId: 575,
   orderId: 575,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11800,
   fee: 377,
   paymentTime: new Date('2024-03-29T12:33:21.000Z'),
@@ -4613,7 +4612,7 @@ export const payments = [
 {
   paymentId: 576,
   orderId: 576,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14400,
   fee: 0,
   paymentTime: new Date('2024-03-30T02:16:28.000Z'),
@@ -4621,7 +4620,7 @@ export const payments = [
 {
   paymentId: 577,
   orderId: 577,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15000,
   fee: 483,
   paymentTime: new Date('2024-03-30T02:35:28.000Z'),
@@ -4629,7 +4628,7 @@ export const payments = [
 {
   paymentId: 578,
   orderId: 578,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9800,
   fee: 299,
   paymentTime: new Date('2024-03-30T03:22:05.000Z'),
@@ -4637,7 +4636,7 @@ export const payments = [
 {
   paymentId: 579,
   orderId: 579,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6200,
   fee: 0,
   paymentTime: new Date('2024-03-30T03:42:54.000Z'),
@@ -4645,7 +4644,7 @@ export const payments = [
 {
   paymentId: 580,
   orderId: 580,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 25300,
   fee: 0,
   paymentTime: new Date('2024-03-30T04:12:20.000Z'),
@@ -4653,7 +4652,7 @@ export const payments = [
 {
   paymentId: 581,
   orderId: 581,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 20700,
   fee: 495,
   paymentTime: new Date('2024-03-30T04:22:20.000Z'),
@@ -4661,7 +4660,7 @@ export const payments = [
 {
   paymentId: 582,
   orderId: 582,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17600,
   fee: 533,
   paymentTime: new Date('2024-03-30T04:35:14.000Z'),
@@ -4669,7 +4668,7 @@ export const payments = [
 {
   paymentId: 583,
   orderId: 583,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10300,
   fee: 351,
   paymentTime: new Date('2024-03-30T04:58:39.000Z'),
@@ -4677,7 +4676,7 @@ export const payments = [
 {
   paymentId: 584,
   orderId: 584,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6700,
   fee: 168,
   paymentTime: new Date('2024-03-30T10:40:58.000Z'),
@@ -4685,7 +4684,7 @@ export const payments = [
 {
   paymentId: 585,
   orderId: 585,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18900,
   fee: 670,
   paymentTime: new Date('2024-03-30T10:42:01.000Z'),
@@ -4693,7 +4692,7 @@ export const payments = [
 {
   paymentId: 586,
   orderId: 586,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10200,
   fee: 0,
   paymentTime: new Date('2024-03-30T11:04:31.000Z'),
@@ -4701,7 +4700,7 @@ export const payments = [
 {
   paymentId: 587,
   orderId: 587,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9900,
   fee: 347,
   paymentTime: new Date('2024-03-30T11:16:44.000Z'),
@@ -4709,7 +4708,7 @@ export const payments = [
 {
   paymentId: 588,
   orderId: 588,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6900,
   fee: 233,
   paymentTime: new Date('2024-03-30T12:42:27.000Z'),
@@ -4717,7 +4716,7 @@ export const payments = [
 {
   paymentId: 589,
   orderId: 589,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6700,
   fee: 225,
   paymentTime: new Date('2024-03-30T13:34:09.000Z'),
@@ -4725,7 +4724,7 @@ export const payments = [
 {
   paymentId: 590,
   orderId: 590,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 18800,
   fee: 528,
   paymentTime: new Date('2024-03-31T02:22:31.000Z'),
@@ -4733,7 +4732,7 @@ export const payments = [
 {
   paymentId: 591,
   orderId: 591,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13800,
   fee: 0,
   paymentTime: new Date('2024-03-31T02:21:59.000Z'),
@@ -4741,7 +4740,7 @@ export const payments = [
 {
   paymentId: 592,
   orderId: 592,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15700,
   fee: 0,
   paymentTime: new Date('2024-03-31T02:34:23.000Z'),
@@ -4749,7 +4748,7 @@ export const payments = [
 {
   paymentId: 593,
   orderId: 593,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16000,
   fee: 377,
   paymentTime: new Date('2024-03-31T02:38:50.000Z'),
@@ -4757,7 +4756,7 @@ export const payments = [
 {
   paymentId: 594,
   orderId: 594,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20300,
   fee: 637,
   paymentTime: new Date('2024-03-31T02:41:06.000Z'),
@@ -4765,7 +4764,7 @@ export const payments = [
 {
   paymentId: 595,
   orderId: 595,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 22200,
   fee: 549,
   paymentTime: new Date('2024-03-31T02:53:05.000Z'),
@@ -4773,7 +4772,7 @@ export const payments = [
 {
   paymentId: 596,
   orderId: 596,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19600,
   fee: 0,
   paymentTime: new Date('2024-03-31T02:59:53.000Z'),
@@ -4781,7 +4780,7 @@ export const payments = [
 {
   paymentId: 597,
   orderId: 597,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8300,
   fee: 0,
   paymentTime: new Date('2024-03-31T03:22:56.000Z'),
@@ -4789,7 +4788,7 @@ export const payments = [
 {
   paymentId: 598,
   orderId: 598,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16100,
   fee: 484,
   paymentTime: new Date('2024-03-31T03:40:48.000Z'),
@@ -4797,7 +4796,7 @@ export const payments = [
 {
   paymentId: 599,
   orderId: 599,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10000,
   fee: 250,
   paymentTime: new Date('2024-03-31T03:46:19.000Z'),
@@ -4805,7 +4804,7 @@ export const payments = [
 {
   paymentId: 600,
   orderId: 600,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 18000,
   fee: 0,
   paymentTime: new Date('2024-03-31T04:02:04.000Z'),
@@ -4813,7 +4812,7 @@ export const payments = [
 {
   paymentId: 601,
   orderId: 601,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8800,
   fee: 0,
   paymentTime: new Date('2024-03-31T04:13:39.000Z'),
@@ -4821,7 +4820,7 @@ export const payments = [
 {
   paymentId: 602,
   orderId: 602,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14700,
   fee: 0,
   paymentTime: new Date('2024-03-31T04:32:50.000Z'),
@@ -4829,7 +4828,7 @@ export const payments = [
 {
   paymentId: 603,
   orderId: 603,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 24900,
   fee: 0,
   paymentTime: new Date('2024-03-31T08:08:23.000Z'),
@@ -4837,7 +4836,7 @@ export const payments = [
 {
   paymentId: 604,
   orderId: 604,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12000,
   fee: 0,
   paymentTime: new Date('2024-03-31T08:30:49.000Z'),
@@ -4845,7 +4844,7 @@ export const payments = [
 {
   paymentId: 605,
   orderId: 605,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11000,
   fee: 0,
   paymentTime: new Date('2024-03-31T11:41:34.000Z'),
@@ -4853,7 +4852,7 @@ export const payments = [
 {
   paymentId: 606,
   orderId: 606,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11000,
   fee: 351,
   paymentTime: new Date('2024-03-31T12:07:49.000Z'),
@@ -4861,7 +4860,7 @@ export const payments = [
 {
   paymentId: 607,
   orderId: 607,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7800,
   fee: 294,
   paymentTime: new Date('2024-03-31T12:08:31.000Z'),
@@ -4869,7 +4868,7 @@ export const payments = [
 {
   paymentId: 608,
   orderId: 608,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5500,
   fee: 190,
   paymentTime: new Date('2024-03-31T12:32:06.000Z'),
@@ -4877,7 +4876,7 @@ export const payments = [
 {
   paymentId: 609,
   orderId: 609,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7100,
   fee: 0,
   paymentTime: new Date('2024-03-31T12:48:45.000Z'),
@@ -4885,7 +4884,7 @@ export const payments = [
 {
   paymentId: 610,
   orderId: 610,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6800,
   fee: 230,
   paymentTime: new Date('2024-03-31T12:46:43.000Z'),
@@ -4893,7 +4892,7 @@ export const payments = [
 {
   paymentId: 611,
   orderId: 611,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4400,
   fee: 137,
   paymentTime: new Date('2024-03-31T13:26:58.000Z'),
@@ -4901,7 +4900,7 @@ export const payments = [
 {
   paymentId: 612,
   orderId: 612,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11000,
   fee: 353,
   paymentTime: new Date('2024-03-31T14:37:26.000Z'),
@@ -4909,7 +4908,7 @@ export const payments = [
 {
   paymentId: 613,
   orderId: 613,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11400,
   fee: 285,
   paymentTime: new Date('2024-03-31T14:53:49.000Z'),
@@ -4917,7 +4916,7 @@ export const payments = [
 {
   paymentId: 614,
   orderId: 614,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18500,
   fee: 628,
   paymentTime: new Date('2024-04-01T03:27:52.000Z'),
@@ -4925,7 +4924,7 @@ export const payments = [
 {
   paymentId: 615,
   orderId: 615,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 16400,
   fee: 500,
   paymentTime: new Date('2024-04-01T03:37:31.000Z'),
@@ -4933,7 +4932,7 @@ export const payments = [
 {
   paymentId: 616,
   orderId: 616,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8700,
   fee: 309,
   paymentTime: new Date('2024-04-01T04:11:48.000Z'),
@@ -4941,7 +4940,7 @@ export const payments = [
 {
   paymentId: 617,
   orderId: 617,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5700,
   fee: 0,
   paymentTime: new Date('2024-04-01T04:39:35.000Z'),
@@ -4949,7 +4948,7 @@ export const payments = [
 {
   paymentId: 618,
   orderId: 618,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8800,
   fee: 216,
   paymentTime: new Date('2024-04-01T04:55:42.000Z'),
@@ -4957,7 +4956,7 @@ export const payments = [
 {
   paymentId: 619,
   orderId: 619,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7200,
   fee: 0,
   paymentTime: new Date('2024-04-01T09:22:01.000Z'),
@@ -4965,7 +4964,7 @@ export const payments = [
 {
   paymentId: 620,
   orderId: 620,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8800,
   fee: 210,
   paymentTime: new Date('2024-04-01T09:57:34.000Z'),
@@ -4973,7 +4972,7 @@ export const payments = [
 {
   paymentId: 621,
   orderId: 621,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7500,
   fee: 0,
   paymentTime: new Date('2024-04-01T11:48:53.000Z'),
@@ -4981,7 +4980,7 @@ export const payments = [
 {
   paymentId: 622,
   orderId: 622,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6900,
   fee: 0,
   paymentTime: new Date('2024-04-01T12:09:26.000Z'),
@@ -4989,7 +4988,7 @@ export const payments = [
 {
   paymentId: 623,
   orderId: 623,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6700,
   fee: 168,
   paymentTime: new Date('2024-04-01T13:02:32.000Z'),
@@ -4997,7 +4996,7 @@ export const payments = [
 {
   paymentId: 624,
   orderId: 624,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 5700,
   fee: 143,
   paymentTime: new Date('2024-04-01T13:20:46.000Z'),
@@ -5005,7 +5004,7 @@ export const payments = [
 {
   paymentId: 625,
   orderId: 625,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9500,
   fee: 0,
   paymentTime: new Date('2024-04-01T13:22:39.000Z'),
@@ -5013,7 +5012,7 @@ export const payments = [
 {
   paymentId: 626,
   orderId: 626,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 16400,
   fee: 587,
   paymentTime: new Date('2024-04-02T02:32:32.000Z'),
@@ -5021,7 +5020,7 @@ export const payments = [
 {
   paymentId: 627,
   orderId: 627,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 23800,
   fee: 0,
   paymentTime: new Date('2024-04-02T02:51:05.000Z'),
@@ -5029,7 +5028,7 @@ export const payments = [
 {
   paymentId: 628,
   orderId: 628,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14200,
   fee: 464,
   paymentTime: new Date('2024-04-02T02:57:03.000Z'),
@@ -5037,7 +5036,7 @@ export const payments = [
 {
   paymentId: 629,
   orderId: 629,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10300,
   fee: 258,
   paymentTime: new Date('2024-04-02T03:02:00.000Z'),
@@ -5045,7 +5044,7 @@ export const payments = [
 {
   paymentId: 630,
   orderId: 630,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 21400,
   fee: 0,
   paymentTime: new Date('2024-04-02T03:02:22.000Z'),
@@ -5053,7 +5052,7 @@ export const payments = [
 {
   paymentId: 631,
   orderId: 631,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 15200,
   fee: 380,
   paymentTime: new Date('2024-04-02T03:06:11.000Z'),
@@ -5061,7 +5060,7 @@ export const payments = [
 {
   paymentId: 632,
   orderId: 632,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15300,
   fee: 0,
   paymentTime: new Date('2024-04-02T03:13:14.000Z'),
@@ -5069,7 +5068,7 @@ export const payments = [
 {
   paymentId: 633,
   orderId: 633,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10200,
   fee: 0,
   paymentTime: new Date('2024-04-02T03:28:02.000Z'),
@@ -5077,7 +5076,7 @@ export const payments = [
 {
   paymentId: 634,
   orderId: 634,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10900,
   fee: 0,
   paymentTime: new Date('2024-04-02T03:51:27.000Z'),
@@ -5085,7 +5084,7 @@ export const payments = [
 {
   paymentId: 635,
   orderId: 635,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9000,
   fee: 213,
   paymentTime: new Date('2024-04-02T04:26:28.000Z'),
@@ -5093,7 +5092,7 @@ export const payments = [
 {
   paymentId: 636,
   orderId: 636,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8000,
   fee: 252,
   paymentTime: new Date('2024-04-02T04:53:20.000Z'),
@@ -5101,7 +5100,7 @@ export const payments = [
 {
   paymentId: 637,
   orderId: 637,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 22700,
   fee: 861,
   paymentTime: new Date('2024-04-02T04:55:58.000Z'),
@@ -5109,7 +5108,7 @@ export const payments = [
 {
   paymentId: 638,
   orderId: 638,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15900,
   fee: 490,
   paymentTime: new Date('2024-04-02T08:25:34.000Z'),
@@ -5117,7 +5116,7 @@ export const payments = [
 {
   paymentId: 639,
   orderId: 639,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 22800,
   fee: 508,
   paymentTime: new Date('2024-04-02T08:45:29.000Z'),
@@ -5125,7 +5124,7 @@ export const payments = [
 {
   paymentId: 640,
   orderId: 640,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12200,
   fee: 0,
   paymentTime: new Date('2024-04-02T10:19:49.000Z'),
@@ -5133,7 +5132,7 @@ export const payments = [
 {
   paymentId: 641,
   orderId: 641,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13500,
   fee: 468,
   paymentTime: new Date('2024-04-02T10:29:38.000Z'),
@@ -5141,7 +5140,7 @@ export const payments = [
 {
   paymentId: 642,
   orderId: 642,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11500,
   fee: 392,
   paymentTime: new Date('2024-04-02T10:36:33.000Z'),
@@ -5149,7 +5148,7 @@ export const payments = [
 {
   paymentId: 643,
   orderId: 643,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8500,
   fee: 301,
   paymentTime: new Date('2024-04-02T11:31:23.000Z'),
@@ -5157,7 +5156,7 @@ export const payments = [
 {
   paymentId: 644,
   orderId: 644,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6100,
   fee: 126,
   paymentTime: new Date('2024-04-02T12:52:45.000Z'),
@@ -5165,7 +5164,7 @@ export const payments = [
 {
   paymentId: 645,
   orderId: 645,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7400,
   fee: 168,
   paymentTime: new Date('2024-04-02T12:54:08.000Z'),
@@ -5173,7 +5172,7 @@ export const payments = [
 {
   paymentId: 646,
   orderId: 646,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 4900,
   fee: 123,
   paymentTime: new Date('2024-04-02T13:02:41.000Z'),
@@ -5181,7 +5180,7 @@ export const payments = [
 {
   paymentId: 647,
   orderId: 647,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8700,
   fee: 287,
   paymentTime: new Date('2024-04-02T13:17:24.000Z'),
@@ -5189,7 +5188,7 @@ export const payments = [
 {
   paymentId: 648,
   orderId: 648,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 4300,
   fee: 122,
   paymentTime: new Date('2024-04-02T13:48:13.000Z'),
@@ -5197,7 +5196,7 @@ export const payments = [
 {
   paymentId: 649,
   orderId: 649,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13100,
   fee: 395,
   paymentTime: new Date('2024-04-02T14:42:21.000Z'),
@@ -5205,7 +5204,7 @@ export const payments = [
 {
   paymentId: 650,
   orderId: 650,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8400,
   fee: 0,
   paymentTime: new Date('2024-04-02T14:59:26.000Z'),
@@ -5213,7 +5212,7 @@ export const payments = [
 {
   paymentId: 651,
   orderId: 651,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6900,
   fee: 0,
   paymentTime: new Date('2024-04-03T02:38:35.000Z'),
@@ -5221,7 +5220,7 @@ export const payments = [
 {
   paymentId: 652,
   orderId: 652,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10300,
   fee: 0,
   paymentTime: new Date('2024-04-03T03:01:00.000Z'),
@@ -5229,7 +5228,7 @@ export const payments = [
 {
   paymentId: 653,
   orderId: 653,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 26500,
   fee: 896,
   paymentTime: new Date('2024-04-03T03:08:04.000Z'),
@@ -5237,7 +5236,7 @@ export const payments = [
 {
   paymentId: 654,
   orderId: 654,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20600,
   fee: 705,
   paymentTime: new Date('2024-04-03T03:10:05.000Z'),
@@ -5245,7 +5244,7 @@ export const payments = [
 {
   paymentId: 655,
   orderId: 655,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12300,
   fee: 253,
   paymentTime: new Date('2024-04-03T03:19:53.000Z'),
@@ -5253,7 +5252,7 @@ export const payments = [
 {
   paymentId: 656,
   orderId: 656,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 3500,
   fee: 127,
   paymentTime: new Date('2024-04-03T03:25:00.000Z'),
@@ -5261,7 +5260,7 @@ export const payments = [
 {
   paymentId: 657,
   orderId: 657,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8800,
   fee: 0,
   paymentTime: new Date('2024-04-03T03:30:31.000Z'),
@@ -5269,7 +5268,7 @@ export const payments = [
 {
   paymentId: 658,
   orderId: 658,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 13600,
   fee: 340,
   paymentTime: new Date('2024-04-03T03:36:45.000Z'),
@@ -5277,7 +5276,7 @@ export const payments = [
 {
   paymentId: 659,
   orderId: 659,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10000,
   fee: 0,
   paymentTime: new Date('2024-04-03T04:09:26.000Z'),
@@ -5285,7 +5284,7 @@ export const payments = [
 {
   paymentId: 660,
   orderId: 660,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9400,
   fee: 319,
   paymentTime: new Date('2024-04-03T04:44:19.000Z'),
@@ -5293,7 +5292,7 @@ export const payments = [
 {
   paymentId: 661,
   orderId: 661,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15500,
   fee: 481,
   paymentTime: new Date('2024-04-03T08:55:38.000Z'),
@@ -5301,7 +5300,7 @@ export const payments = [
 {
   paymentId: 662,
   orderId: 662,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13600,
   fee: 477,
   paymentTime: new Date('2024-04-03T09:08:36.000Z'),
@@ -5309,7 +5308,7 @@ export const payments = [
 {
   paymentId: 663,
   orderId: 663,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12200,
   fee: 406,
   paymentTime: new Date('2024-04-03T11:03:58.000Z'),
@@ -5317,7 +5316,7 @@ export const payments = [
 {
   paymentId: 664,
   orderId: 664,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10200,
   fee: 0,
   paymentTime: new Date('2024-04-03T11:40:31.000Z'),
@@ -5325,7 +5324,7 @@ export const payments = [
 {
   paymentId: 665,
   orderId: 665,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4800,
   fee: 0,
   paymentTime: new Date('2024-04-03T12:25:36.000Z'),
@@ -5333,7 +5332,7 @@ export const payments = [
 {
   paymentId: 666,
   orderId: 666,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5200,
   fee: 180,
   paymentTime: new Date('2024-04-03T13:00:53.000Z'),
@@ -5341,7 +5340,7 @@ export const payments = [
 {
   paymentId: 667,
   orderId: 667,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9700,
   fee: 339,
   paymentTime: new Date('2024-04-04T02:23:40.000Z'),
@@ -5349,7 +5348,7 @@ export const payments = [
 {
   paymentId: 668,
   orderId: 668,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 14700,
   fee: 430,
   paymentTime: new Date('2024-04-04T02:26:12.000Z'),
@@ -5357,7 +5356,7 @@ export const payments = [
 {
   paymentId: 669,
   orderId: 669,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 19700,
   fee: 605,
   paymentTime: new Date('2024-04-04T02:28:19.000Z'),
@@ -5365,7 +5364,7 @@ export const payments = [
 {
   paymentId: 670,
   orderId: 670,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 12200,
   fee: 362,
   paymentTime: new Date('2024-04-04T02:27:50.000Z'),
@@ -5373,7 +5372,7 @@ export const payments = [
 {
   paymentId: 671,
   orderId: 671,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16300,
   fee: 490,
   paymentTime: new Date('2024-04-04T02:29:07.000Z'),
@@ -5381,7 +5380,7 @@ export const payments = [
 {
   paymentId: 672,
   orderId: 672,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 10000,
   fee: 282,
   paymentTime: new Date('2024-04-04T02:53:42.000Z'),
@@ -5389,7 +5388,7 @@ export const payments = [
 {
   paymentId: 673,
   orderId: 673,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 16800,
   fee: 420,
   paymentTime: new Date('2024-04-04T03:15:53.000Z'),
@@ -5397,7 +5396,7 @@ export const payments = [
 {
   paymentId: 674,
   orderId: 674,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10900,
   fee: 335,
   paymentTime: new Date('2024-04-04T03:18:12.000Z'),
@@ -5405,7 +5404,7 @@ export const payments = [
 {
   paymentId: 675,
   orderId: 675,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 22600,
   fee: 486,
   paymentTime: new Date('2024-04-04T03:20:38.000Z'),
@@ -5413,7 +5412,7 @@ export const payments = [
 {
   paymentId: 676,
   orderId: 676,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15200,
   fee: 460,
   paymentTime: new Date('2024-04-04T03:27:10.000Z'),
@@ -5421,7 +5420,7 @@ export const payments = [
 {
   paymentId: 677,
   orderId: 677,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8200,
   fee: 0,
   paymentTime: new Date('2024-04-04T03:33:53.000Z'),
@@ -5429,7 +5428,7 @@ export const payments = [
 {
   paymentId: 678,
   orderId: 678,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17700,
   fee: 390,
   paymentTime: new Date('2024-04-04T03:41:39.000Z'),
@@ -5437,7 +5436,7 @@ export const payments = [
 {
   paymentId: 679,
   orderId: 679,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13900,
   fee: 0,
   paymentTime: new Date('2024-04-04T03:46:57.000Z'),
@@ -5445,7 +5444,7 @@ export const payments = [
 {
   paymentId: 680,
   orderId: 680,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11400,
   fee: 285,
   paymentTime: new Date('2024-04-04T03:46:39.000Z'),
@@ -5453,7 +5452,7 @@ export const payments = [
 {
   paymentId: 681,
   orderId: 681,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16200,
   fee: 368,
   paymentTime: new Date('2024-04-04T04:01:39.000Z'),
@@ -5461,7 +5460,7 @@ export const payments = [
 {
   paymentId: 682,
   orderId: 682,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 18400,
   fee: 525,
   paymentTime: new Date('2024-04-04T04:04:46.000Z'),
@@ -5469,7 +5468,7 @@ export const payments = [
 {
   paymentId: 683,
   orderId: 683,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14800,
   fee: 459,
   paymentTime: new Date('2024-04-04T04:18:30.000Z'),
@@ -5477,7 +5476,7 @@ export const payments = [
 {
   paymentId: 684,
   orderId: 684,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16800,
   fee: 575,
   paymentTime: new Date('2024-04-04T04:21:09.000Z'),
@@ -5485,7 +5484,7 @@ export const payments = [
 {
   paymentId: 685,
   orderId: 685,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10400,
   fee: 314,
   paymentTime: new Date('2024-04-04T04:25:31.000Z'),
@@ -5493,7 +5492,7 @@ export const payments = [
 {
   paymentId: 686,
   orderId: 686,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15900,
   fee: 600,
   paymentTime: new Date('2024-04-04T04:29:33.000Z'),
@@ -5501,7 +5500,7 @@ export const payments = [
 {
   paymentId: 687,
   orderId: 687,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12900,
   fee: 0,
   paymentTime: new Date('2024-04-04T04:53:08.000Z'),
@@ -5509,7 +5508,7 @@ export const payments = [
 {
   paymentId: 688,
   orderId: 688,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10100,
   fee: 0,
   paymentTime: new Date('2024-04-04T04:58:57.000Z'),
@@ -5517,7 +5516,7 @@ export const payments = [
 {
   paymentId: 689,
   orderId: 689,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14400,
   fee: 455,
   paymentTime: new Date('2024-04-04T08:39:55.000Z'),
@@ -5525,7 +5524,7 @@ export const payments = [
 {
   paymentId: 690,
   orderId: 690,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14900,
   fee: 0,
   paymentTime: new Date('2024-04-04T08:53:31.000Z'),
@@ -5533,7 +5532,7 @@ export const payments = [
 {
   paymentId: 691,
   orderId: 691,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8000,
   fee: 200,
   paymentTime: new Date('2024-04-04T09:54:24.000Z'),
@@ -5541,7 +5540,7 @@ export const payments = [
 {
   paymentId: 692,
   orderId: 692,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 3600,
   fee: 130,
   paymentTime: new Date('2024-04-04T11:01:27.000Z'),
@@ -5549,7 +5548,7 @@ export const payments = [
 {
   paymentId: 693,
   orderId: 693,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8300,
   fee: 208,
   paymentTime: new Date('2024-04-04T13:41:47.000Z'),
@@ -5557,7 +5556,7 @@ export const payments = [
 {
   paymentId: 694,
   orderId: 694,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6800,
   fee: 233,
   paymentTime: new Date('2024-04-04T13:58:05.000Z'),
@@ -5565,7 +5564,7 @@ export const payments = [
 {
   paymentId: 695,
   orderId: 695,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 14700,
   fee: 368,
   paymentTime: new Date('2024-04-04T14:16:17.000Z'),
@@ -5573,7 +5572,7 @@ export const payments = [
 {
   paymentId: 696,
   orderId: 696,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7100,
   fee: 230,
   paymentTime: new Date('2024-04-04T14:21:08.000Z'),
@@ -5581,7 +5580,7 @@ export const payments = [
 {
   paymentId: 697,
   orderId: 697,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 23000,
   fee: 0,
   paymentTime: new Date('2024-04-05T02:36:46.000Z'),
@@ -5589,7 +5588,7 @@ export const payments = [
 {
   paymentId: 698,
   orderId: 698,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12600,
   fee: 0,
   paymentTime: new Date('2024-04-05T02:36:50.000Z'),
@@ -5597,7 +5596,7 @@ export const payments = [
 {
   paymentId: 699,
   orderId: 699,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17600,
   fee: 0,
   paymentTime: new Date('2024-04-05T02:43:36.000Z'),
@@ -5605,7 +5604,7 @@ export const payments = [
 {
   paymentId: 700,
   orderId: 700,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11300,
   fee: 386,
   paymentTime: new Date('2024-04-05T03:04:27.000Z'),
@@ -5613,7 +5612,7 @@ export const payments = [
 {
   paymentId: 701,
   orderId: 701,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16100,
   fee: 515,
   paymentTime: new Date('2024-04-05T03:11:15.000Z'),
@@ -5621,7 +5620,7 @@ export const payments = [
 {
   paymentId: 702,
   orderId: 702,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17000,
   fee: 545,
   paymentTime: new Date('2024-04-05T03:13:41.000Z'),
@@ -5629,7 +5628,7 @@ export const payments = [
 {
   paymentId: 703,
   orderId: 703,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7400,
   fee: 0,
   paymentTime: new Date('2024-04-05T04:04:44.000Z'),
@@ -5637,7 +5636,7 @@ export const payments = [
 {
   paymentId: 704,
   orderId: 704,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12500,
   fee: 313,
   paymentTime: new Date('2024-04-05T04:02:42.000Z'),
@@ -5645,7 +5644,7 @@ export const payments = [
 {
   paymentId: 705,
   orderId: 705,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12800,
   fee: 320,
   paymentTime: new Date('2024-04-05T04:33:25.000Z'),
@@ -5653,7 +5652,7 @@ export const payments = [
 {
   paymentId: 706,
   orderId: 706,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9300,
   fee: 283,
   paymentTime: new Date('2024-04-05T04:40:56.000Z'),
@@ -5661,7 +5660,7 @@ export const payments = [
 {
   paymentId: 707,
   orderId: 707,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6900,
   fee: 141,
   paymentTime: new Date('2024-04-05T04:45:13.000Z'),
@@ -5669,7 +5668,7 @@ export const payments = [
 {
   paymentId: 708,
   orderId: 708,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 19200,
   fee: 435,
   paymentTime: new Date('2024-04-05T04:48:27.000Z'),
@@ -5677,7 +5676,7 @@ export const payments = [
 {
   paymentId: 709,
   orderId: 709,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 19200,
   fee: 480,
   paymentTime: new Date('2024-04-05T04:57:18.000Z'),
@@ -5685,7 +5684,7 @@ export const payments = [
 {
   paymentId: 710,
   orderId: 710,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 22000,
   fee: 752,
   paymentTime: new Date('2024-04-05T08:24:31.000Z'),
@@ -5693,7 +5692,7 @@ export const payments = [
 {
   paymentId: 711,
   orderId: 711,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10100,
   fee: 324,
   paymentTime: new Date('2024-04-05T08:29:47.000Z'),
@@ -5701,7 +5700,7 @@ export const payments = [
 {
   paymentId: 712,
   orderId: 712,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9600,
   fee: 324,
   paymentTime: new Date('2024-04-05T08:46:06.000Z'),
@@ -5709,7 +5708,7 @@ export const payments = [
 {
   paymentId: 713,
   orderId: 713,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6500,
   fee: 229,
   paymentTime: new Date('2024-04-05T08:55:24.000Z'),
@@ -5717,7 +5716,7 @@ export const payments = [
 {
   paymentId: 714,
   orderId: 714,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14100,
   fee: 469,
   paymentTime: new Date('2024-04-05T10:03:45.000Z'),
@@ -5725,7 +5724,7 @@ export const payments = [
 {
   paymentId: 715,
   orderId: 715,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14900,
   fee: 453,
   paymentTime: new Date('2024-04-05T10:23:56.000Z'),
@@ -5733,7 +5732,7 @@ export const payments = [
 {
   paymentId: 716,
   orderId: 716,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16200,
   fee: 0,
   paymentTime: new Date('2024-04-05T10:46:33.000Z'),
@@ -5741,7 +5740,7 @@ export const payments = [
 {
   paymentId: 717,
   orderId: 717,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6300,
   fee: 0,
   paymentTime: new Date('2024-04-05T11:20:01.000Z'),
@@ -5749,7 +5748,7 @@ export const payments = [
 {
   paymentId: 718,
   orderId: 718,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6400,
   fee: 0,
   paymentTime: new Date('2024-04-05T13:29:03.000Z'),
@@ -5757,7 +5756,7 @@ export const payments = [
 {
   paymentId: 719,
   orderId: 719,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 4600,
   fee: 134,
   paymentTime: new Date('2024-04-05T13:42:02.000Z'),
@@ -5765,7 +5764,7 @@ export const payments = [
 {
   paymentId: 720,
   orderId: 720,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8400,
   fee: 210,
   paymentTime: new Date('2024-04-05T13:50:50.000Z'),
@@ -5773,7 +5772,7 @@ export const payments = [
 {
   paymentId: 721,
   orderId: 721,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14000,
   fee: 478,
   paymentTime: new Date('2024-04-05T14:05:53.000Z'),
@@ -5781,7 +5780,7 @@ export const payments = [
 {
   paymentId: 722,
   orderId: 722,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 15000,
   fee: 307,
   paymentTime: new Date('2024-04-05T14:29:24.000Z'),
@@ -5789,7 +5788,7 @@ export const payments = [
 {
   paymentId: 723,
   orderId: 723,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 4400,
   fee: 89,
   paymentTime: new Date('2024-04-06T02:14:15.000Z'),
@@ -5797,7 +5796,7 @@ export const payments = [
 {
   paymentId: 724,
   orderId: 724,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9500,
   fee: 343,
   paymentTime: new Date('2024-04-06T02:13:49.000Z'),
@@ -5805,7 +5804,7 @@ export const payments = [
 {
   paymentId: 725,
   orderId: 725,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15400,
   fee: 0,
   paymentTime: new Date('2024-04-06T02:19:34.000Z'),
@@ -5813,7 +5812,7 @@ export const payments = [
 {
   paymentId: 726,
   orderId: 726,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 28100,
   fee: 602,
   paymentTime: new Date('2024-04-06T02:54:14.000Z'),
@@ -5821,7 +5820,7 @@ export const payments = [
 {
   paymentId: 727,
   orderId: 727,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14000,
   fee: 301,
   paymentTime: new Date('2024-04-06T03:02:22.000Z'),
@@ -5829,7 +5828,7 @@ export const payments = [
 {
   paymentId: 728,
   orderId: 728,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10300,
   fee: 320,
   paymentTime: new Date('2024-04-06T03:08:40.000Z'),
@@ -5837,7 +5836,7 @@ export const payments = [
 {
   paymentId: 729,
   orderId: 729,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13300,
   fee: 331,
   paymentTime: new Date('2024-04-06T03:19:44.000Z'),
@@ -5845,7 +5844,7 @@ export const payments = [
 {
   paymentId: 730,
   orderId: 730,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 12700,
   fee: 373,
   paymentTime: new Date('2024-04-06T03:21:35.000Z'),
@@ -5853,7 +5852,7 @@ export const payments = [
 {
   paymentId: 731,
   orderId: 731,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15400,
   fee: 471,
   paymentTime: new Date('2024-04-06T04:16:13.000Z'),
@@ -5861,7 +5860,7 @@ export const payments = [
 {
   paymentId: 732,
   orderId: 732,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8600,
   fee: 0,
   paymentTime: new Date('2024-04-06T04:14:18.000Z'),
@@ -5869,7 +5868,7 @@ export const payments = [
 {
   paymentId: 733,
   orderId: 733,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15500,
   fee: 0,
   paymentTime: new Date('2024-04-06T04:22:57.000Z'),
@@ -5877,7 +5876,7 @@ export const payments = [
 {
   paymentId: 734,
   orderId: 734,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11500,
   fee: 0,
   paymentTime: new Date('2024-04-06T04:48:03.000Z'),
@@ -5885,7 +5884,7 @@ export const payments = [
 {
   paymentId: 735,
   orderId: 735,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 29700,
   fee: 1012,
   paymentTime: new Date('2024-04-06T04:59:26.000Z'),
@@ -5893,7 +5892,7 @@ export const payments = [
 {
   paymentId: 736,
   orderId: 736,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13100,
   fee: 448,
   paymentTime: new Date('2024-04-06T08:31:15.000Z'),
@@ -5901,7 +5900,7 @@ export const payments = [
 {
   paymentId: 737,
   orderId: 737,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12900,
   fee: 391,
   paymentTime: new Date('2024-04-06T09:12:40.000Z'),
@@ -5909,7 +5908,7 @@ export const payments = [
 {
   paymentId: 738,
   orderId: 738,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8800,
   fee: 220,
   paymentTime: new Date('2024-04-06T10:39:08.000Z'),
@@ -5917,7 +5916,7 @@ export const payments = [
 {
   paymentId: 739,
   orderId: 739,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 3500,
   fee: 0,
   paymentTime: new Date('2024-04-06T11:36:00.000Z'),
@@ -5925,7 +5924,7 @@ export const payments = [
 {
   paymentId: 740,
   orderId: 740,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7300,
   fee: 252,
   paymentTime: new Date('2024-04-06T11:37:24.000Z'),
@@ -5933,7 +5932,7 @@ export const payments = [
 {
   paymentId: 741,
   orderId: 741,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9300,
   fee: 232,
   paymentTime: new Date('2024-04-06T11:42:34.000Z'),
@@ -5941,7 +5940,7 @@ export const payments = [
 {
   paymentId: 742,
   orderId: 742,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 5000,
   fee: 123,
   paymentTime: new Date('2024-04-06T11:48:20.000Z'),
@@ -5949,7 +5948,7 @@ export const payments = [
 {
   paymentId: 743,
   orderId: 743,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8900,
   fee: 0,
   paymentTime: new Date('2024-04-06T12:35:26.000Z'),
@@ -5957,7 +5956,7 @@ export const payments = [
 {
   paymentId: 744,
   orderId: 744,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10500,
   fee: 344,
   paymentTime: new Date('2024-04-06T12:54:30.000Z'),
@@ -5965,7 +5964,7 @@ export const payments = [
 {
   paymentId: 745,
   orderId: 745,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4200,
   fee: 143,
   paymentTime: new Date('2024-04-06T13:00:35.000Z'),
@@ -5973,7 +5972,7 @@ export const payments = [
 {
   paymentId: 746,
   orderId: 746,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 3200,
   fee: 97,
   paymentTime: new Date('2024-04-06T13:54:39.000Z'),
@@ -5981,7 +5980,7 @@ export const payments = [
 {
   paymentId: 747,
   orderId: 747,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12200,
   fee: 455,
   paymentTime: new Date('2024-04-06T13:58:25.000Z'),
@@ -5989,7 +5988,7 @@ export const payments = [
 {
   paymentId: 748,
   orderId: 748,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9500,
   fee: 0,
   paymentTime: new Date('2024-04-06T13:57:49.000Z'),
@@ -5997,7 +5996,7 @@ export const payments = [
 {
   paymentId: 749,
   orderId: 749,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9900,
   fee: 341,
   paymentTime: new Date('2024-04-06T14:28:59.000Z'),
@@ -6005,7 +6004,7 @@ export const payments = [
 {
   paymentId: 750,
   orderId: 750,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10600,
   fee: 265,
   paymentTime: new Date('2024-04-06T14:38:17.000Z'),
@@ -6013,7 +6012,7 @@ export const payments = [
 {
   paymentId: 751,
   orderId: 751,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12000,
   fee: 374,
   paymentTime: new Date('2024-04-07T02:04:16.000Z'),
@@ -6021,7 +6020,7 @@ export const payments = [
 {
   paymentId: 752,
   orderId: 752,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 19700,
   fee: 602,
   paymentTime: new Date('2024-04-07T02:12:15.000Z'),
@@ -6029,7 +6028,7 @@ export const payments = [
 {
   paymentId: 753,
   orderId: 753,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 5600,
   fee: 138,
   paymentTime: new Date('2024-04-07T02:18:22.000Z'),
@@ -6037,7 +6036,7 @@ export const payments = [
 {
   paymentId: 754,
   orderId: 754,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 23700,
   fee: 481,
   paymentTime: new Date('2024-04-07T02:16:10.000Z'),
@@ -6045,7 +6044,7 @@ export const payments = [
 {
   paymentId: 755,
   orderId: 755,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11400,
   fee: 285,
   paymentTime: new Date('2024-04-07T02:19:03.000Z'),
@@ -6053,7 +6052,7 @@ export const payments = [
 {
   paymentId: 756,
   orderId: 756,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9200,
   fee: 215,
   paymentTime: new Date('2024-04-07T02:36:18.000Z'),
@@ -6061,7 +6060,7 @@ export const payments = [
 {
   paymentId: 757,
   orderId: 757,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8400,
   fee: 0,
   paymentTime: new Date('2024-04-07T02:34:22.000Z'),
@@ -6069,7 +6068,7 @@ export const payments = [
 {
   paymentId: 758,
   orderId: 758,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18500,
   fee: 620,
   paymentTime: new Date('2024-04-07T02:44:37.000Z'),
@@ -6077,7 +6076,7 @@ export const payments = [
 {
   paymentId: 759,
   orderId: 759,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 15200,
   fee: 428,
   paymentTime: new Date('2024-04-07T02:49:55.000Z'),
@@ -6085,7 +6084,7 @@ export const payments = [
 {
   paymentId: 760,
   orderId: 760,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 23000,
   fee: 534,
   paymentTime: new Date('2024-04-07T03:06:36.000Z'),
@@ -6093,7 +6092,7 @@ export const payments = [
 {
   paymentId: 761,
   orderId: 761,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 19700,
   fee: 592,
   paymentTime: new Date('2024-04-07T03:26:26.000Z'),
@@ -6101,7 +6100,7 @@ export const payments = [
 {
   paymentId: 762,
   orderId: 762,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12300,
   fee: 0,
   paymentTime: new Date('2024-04-07T03:45:23.000Z'),
@@ -6109,7 +6108,7 @@ export const payments = [
 {
   paymentId: 763,
   orderId: 763,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17100,
   fee: 391,
   paymentTime: new Date('2024-04-07T03:46:14.000Z'),
@@ -6117,7 +6116,7 @@ export const payments = [
 {
   paymentId: 764,
   orderId: 764,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16000,
   fee: 0,
   paymentTime: new Date('2024-04-07T03:59:12.000Z'),
@@ -6125,7 +6124,7 @@ export const payments = [
 {
   paymentId: 765,
   orderId: 765,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 17000,
   fee: 425,
   paymentTime: new Date('2024-04-07T08:20:43.000Z'),
@@ -6133,7 +6132,7 @@ export const payments = [
 {
   paymentId: 766,
   orderId: 766,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19100,
   fee: 0,
   paymentTime: new Date('2024-04-07T08:32:41.000Z'),
@@ -6141,7 +6140,7 @@ export const payments = [
 {
   paymentId: 767,
   orderId: 767,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8500,
   fee: 279,
   paymentTime: new Date('2024-04-07T09:23:56.000Z'),
@@ -6149,7 +6148,7 @@ export const payments = [
 {
   paymentId: 768,
   orderId: 768,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20200,
   fee: 0,
   paymentTime: new Date('2024-04-07T09:51:09.000Z'),
@@ -6157,7 +6156,7 @@ export const payments = [
 {
   paymentId: 769,
   orderId: 769,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 14800,
   fee: 370,
   paymentTime: new Date('2024-04-07T10:34:25.000Z'),
@@ -6165,7 +6164,7 @@ export const payments = [
 {
   paymentId: 770,
   orderId: 770,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 18100,
   fee: 0,
   paymentTime: new Date('2024-04-07T10:54:22.000Z'),
@@ -6173,7 +6172,7 @@ export const payments = [
 {
   paymentId: 771,
   orderId: 771,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10800,
   fee: 342,
   paymentTime: new Date('2024-04-07T11:36:51.000Z'),
@@ -6181,7 +6180,7 @@ export const payments = [
 {
   paymentId: 772,
   orderId: 772,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 9200,
   fee: 267,
   paymentTime: new Date('2024-04-07T11:47:14.000Z'),
@@ -6189,7 +6188,7 @@ export const payments = [
 {
   paymentId: 773,
   orderId: 773,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5300,
   fee: 0,
   paymentTime: new Date('2024-04-07T11:57:48.000Z'),
@@ -6197,7 +6196,7 @@ export const payments = [
 {
   paymentId: 774,
   orderId: 774,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11700,
   fee: 376,
   paymentTime: new Date('2024-04-07T12:29:07.000Z'),
@@ -6205,7 +6204,7 @@ export const payments = [
 {
   paymentId: 775,
   orderId: 775,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 2900,
   fee: 66,
   paymentTime: new Date('2024-04-07T13:06:57.000Z'),
@@ -6213,7 +6212,7 @@ export const payments = [
 {
   paymentId: 776,
   orderId: 776,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13200,
   fee: 427,
   paymentTime: new Date('2024-04-07T14:01:10.000Z'),
@@ -6221,7 +6220,7 @@ export const payments = [
 {
   paymentId: 777,
   orderId: 777,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16500,
   fee: 400,
   paymentTime: new Date('2024-04-07T14:16:53.000Z'),
@@ -6229,7 +6228,7 @@ export const payments = [
 {
   paymentId: 778,
   orderId: 778,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13500,
   fee: 435,
   paymentTime: new Date('2024-04-07T14:35:49.000Z'),
@@ -6237,7 +6236,7 @@ export const payments = [
 {
   paymentId: 779,
   orderId: 779,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19600,
   fee: 0,
   paymentTime: new Date('2024-04-08T02:13:30.000Z'),
@@ -6245,7 +6244,7 @@ export const payments = [
 {
   paymentId: 780,
   orderId: 780,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7900,
   fee: 259,
   paymentTime: new Date('2024-04-08T03:13:14.000Z'),
@@ -6253,7 +6252,7 @@ export const payments = [
 {
   paymentId: 781,
   orderId: 781,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14900,
   fee: 0,
   paymentTime: new Date('2024-04-08T03:45:34.000Z'),
@@ -6261,7 +6260,7 @@ export const payments = [
 {
   paymentId: 782,
   orderId: 782,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10200,
   fee: 354,
   paymentTime: new Date('2024-04-08T04:08:21.000Z'),
@@ -6269,7 +6268,7 @@ export const payments = [
 {
   paymentId: 783,
   orderId: 783,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11500,
   fee: 0,
   paymentTime: new Date('2024-04-08T04:16:35.000Z'),
@@ -6277,7 +6276,7 @@ export const payments = [
 {
   paymentId: 784,
   orderId: 784,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7400,
   fee: 228,
   paymentTime: new Date('2024-04-08T04:55:48.000Z'),
@@ -6285,7 +6284,7 @@ export const payments = [
 {
   paymentId: 785,
   orderId: 785,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6900,
   fee: 215,
   paymentTime: new Date('2024-04-08T04:58:50.000Z'),
@@ -6293,7 +6292,7 @@ export const payments = [
 {
   paymentId: 786,
   orderId: 786,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13700,
   fee: 427,
   paymentTime: new Date('2024-04-08T08:08:13.000Z'),
@@ -6301,7 +6300,7 @@ export const payments = [
 {
   paymentId: 787,
   orderId: 787,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14900,
   fee: 0,
   paymentTime: new Date('2024-04-08T08:31:12.000Z'),
@@ -6309,7 +6308,7 @@ export const payments = [
 {
   paymentId: 788,
   orderId: 788,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7100,
   fee: 0,
   paymentTime: new Date('2024-04-08T08:39:02.000Z'),
@@ -6317,7 +6316,7 @@ export const payments = [
 {
   paymentId: 789,
   orderId: 789,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16900,
   fee: 0,
   paymentTime: new Date('2024-04-08T09:21:38.000Z'),
@@ -6325,7 +6324,7 @@ export const payments = [
 {
   paymentId: 790,
   orderId: 790,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13900,
   fee: 425,
   paymentTime: new Date('2024-04-08T10:39:19.000Z'),
@@ -6333,7 +6332,7 @@ export const payments = [
 {
   paymentId: 791,
   orderId: 791,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7300,
   fee: 237,
   paymentTime: new Date('2024-04-08T11:07:42.000Z'),
@@ -6341,7 +6340,7 @@ export const payments = [
 {
   paymentId: 792,
   orderId: 792,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9500,
   fee: 309,
   paymentTime: new Date('2024-04-08T11:54:07.000Z'),
@@ -6349,7 +6348,7 @@ export const payments = [
 {
   paymentId: 793,
   orderId: 793,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7200,
   fee: 0,
   paymentTime: new Date('2024-04-08T12:40:05.000Z'),
@@ -6357,7 +6356,7 @@ export const payments = [
 {
   paymentId: 794,
   orderId: 794,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8900,
   fee: 194,
   paymentTime: new Date('2024-04-08T14:02:59.000Z'),
@@ -6365,7 +6364,7 @@ export const payments = [
 {
   paymentId: 795,
   orderId: 795,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9200,
   fee: 219,
   paymentTime: new Date('2024-04-09T02:12:57.000Z'),
@@ -6373,7 +6372,7 @@ export const payments = [
 {
   paymentId: 796,
   orderId: 796,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 26900,
   fee: 890,
   paymentTime: new Date('2024-04-09T02:29:09.000Z'),
@@ -6381,7 +6380,7 @@ export const payments = [
 {
   paymentId: 797,
   orderId: 797,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7800,
   fee: 0,
   paymentTime: new Date('2024-04-09T02:38:27.000Z'),
@@ -6389,7 +6388,7 @@ export const payments = [
 {
   paymentId: 798,
   orderId: 798,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12200,
   fee: 402,
   paymentTime: new Date('2024-04-09T03:05:06.000Z'),
@@ -6397,7 +6396,7 @@ export const payments = [
 {
   paymentId: 799,
   orderId: 799,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 14000,
   fee: 418,
   paymentTime: new Date('2024-04-09T03:08:40.000Z'),
@@ -6405,7 +6404,7 @@ export const payments = [
 {
   paymentId: 800,
   orderId: 800,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11200,
   fee: 368,
   paymentTime: new Date('2024-04-09T04:11:24.000Z'),
@@ -6413,7 +6412,7 @@ export const payments = [
 {
   paymentId: 801,
   orderId: 801,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 22300,
   fee: 753,
   paymentTime: new Date('2024-04-09T08:24:07.000Z'),
@@ -6421,7 +6420,7 @@ export const payments = [
 {
   paymentId: 802,
   orderId: 802,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12500,
   fee: 465,
   paymentTime: new Date('2024-04-09T09:08:07.000Z'),
@@ -6429,7 +6428,7 @@ export const payments = [
 {
   paymentId: 803,
   orderId: 803,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14700,
   fee: 504,
   paymentTime: new Date('2024-04-09T09:45:55.000Z'),
@@ -6437,7 +6436,7 @@ export const payments = [
 {
   paymentId: 804,
   orderId: 804,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17100,
   fee: 555,
   paymentTime: new Date('2024-04-09T10:54:32.000Z'),
@@ -6445,7 +6444,7 @@ export const payments = [
 {
   paymentId: 805,
   orderId: 805,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7100,
   fee: 221,
   paymentTime: new Date('2024-04-09T12:32:46.000Z'),
@@ -6453,7 +6452,7 @@ export const payments = [
 {
   paymentId: 806,
   orderId: 806,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11000,
   fee: 338,
   paymentTime: new Date('2024-04-10T02:19:05.000Z'),
@@ -6461,7 +6460,7 @@ export const payments = [
 {
   paymentId: 807,
   orderId: 807,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11300,
   fee: 257,
   paymentTime: new Date('2024-04-10T02:31:14.000Z'),
@@ -6469,7 +6468,7 @@ export const payments = [
 {
   paymentId: 808,
   orderId: 808,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20500,
   fee: 667,
   paymentTime: new Date('2024-04-10T03:03:29.000Z'),
@@ -6477,7 +6476,7 @@ export const payments = [
 {
   paymentId: 809,
   orderId: 809,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9500,
   fee: 318,
   paymentTime: new Date('2024-04-10T03:06:06.000Z'),
@@ -6485,7 +6484,7 @@ export const payments = [
 {
   paymentId: 810,
   orderId: 810,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 24400,
   fee: 583,
   paymentTime: new Date('2024-04-10T03:18:41.000Z'),
@@ -6493,7 +6492,7 @@ export const payments = [
 {
   paymentId: 811,
   orderId: 811,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4900,
   fee: 152,
   paymentTime: new Date('2024-04-10T03:49:00.000Z'),
@@ -6501,7 +6500,7 @@ export const payments = [
 {
   paymentId: 812,
   orderId: 812,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10600,
   fee: 364,
   paymentTime: new Date('2024-04-10T03:54:01.000Z'),
@@ -6509,7 +6508,7 @@ export const payments = [
 {
   paymentId: 813,
   orderId: 813,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 23400,
   fee: 565,
   paymentTime: new Date('2024-04-10T04:14:55.000Z'),
@@ -6517,7 +6516,7 @@ export const payments = [
 {
   paymentId: 814,
   orderId: 814,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9600,
   fee: 229,
   paymentTime: new Date('2024-04-10T04:21:52.000Z'),
@@ -6525,7 +6524,7 @@ export const payments = [
 {
   paymentId: 815,
   orderId: 815,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14200,
   fee: 438,
   paymentTime: new Date('2024-04-10T04:24:39.000Z'),
@@ -6533,7 +6532,7 @@ export const payments = [
 {
   paymentId: 816,
   orderId: 816,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13300,
   fee: 429,
   paymentTime: new Date('2024-04-10T04:25:44.000Z'),
@@ -6541,7 +6540,7 @@ export const payments = [
 {
   paymentId: 817,
   orderId: 817,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9500,
   fee: 204,
   paymentTime: new Date('2024-04-10T04:44:44.000Z'),
@@ -6549,7 +6548,7 @@ export const payments = [
 {
   paymentId: 818,
   orderId: 818,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12200,
   fee: 0,
   paymentTime: new Date('2024-04-10T04:47:30.000Z'),
@@ -6557,7 +6556,7 @@ export const payments = [
 {
   paymentId: 819,
   orderId: 819,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7400,
   fee: 236,
   paymentTime: new Date('2024-04-10T04:51:59.000Z'),
@@ -6565,7 +6564,7 @@ export const payments = [
 {
   paymentId: 820,
   orderId: 820,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13400,
   fee: 0,
   paymentTime: new Date('2024-04-10T04:53:59.000Z'),
@@ -6573,7 +6572,7 @@ export const payments = [
 {
   paymentId: 821,
   orderId: 821,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10300,
   fee: 311,
   paymentTime: new Date('2024-04-10T08:01:14.000Z'),
@@ -6581,7 +6580,7 @@ export const payments = [
 {
   paymentId: 822,
   orderId: 822,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17600,
   fee: 593,
   paymentTime: new Date('2024-04-10T10:00:43.000Z'),
@@ -6589,7 +6588,7 @@ export const payments = [
 {
   paymentId: 823,
   orderId: 823,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10700,
   fee: 358,
   paymentTime: new Date('2024-04-10T10:39:09.000Z'),
@@ -6597,7 +6596,7 @@ export const payments = [
 {
   paymentId: 824,
   orderId: 824,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6700,
   fee: 225,
   paymentTime: new Date('2024-04-10T11:21:32.000Z'),
@@ -6605,7 +6604,7 @@ export const payments = [
 {
   paymentId: 825,
   orderId: 825,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7800,
   fee: 237,
   paymentTime: new Date('2024-04-10T11:21:30.000Z'),
@@ -6613,7 +6612,7 @@ export const payments = [
 {
   paymentId: 826,
   orderId: 826,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9700,
   fee: 358,
   paymentTime: new Date('2024-04-10T12:07:03.000Z'),
@@ -6621,7 +6620,7 @@ export const payments = [
 {
   paymentId: 827,
   orderId: 827,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11700,
   fee: 0,
   paymentTime: new Date('2024-04-10T12:49:53.000Z'),
@@ -6629,7 +6628,7 @@ export const payments = [
 {
   paymentId: 828,
   orderId: 828,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 5900,
   fee: 148,
   paymentTime: new Date('2024-04-10T13:51:26.000Z'),
@@ -6637,7 +6636,7 @@ export const payments = [
 {
   paymentId: 829,
   orderId: 829,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12300,
   fee: 270,
   paymentTime: new Date('2024-04-10T14:05:32.000Z'),
@@ -6645,7 +6644,7 @@ export const payments = [
 {
   paymentId: 830,
   orderId: 830,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10000,
   fee: 0,
   paymentTime: new Date('2024-04-10T14:29:08.000Z'),
@@ -6653,7 +6652,7 @@ export const payments = [
 {
   paymentId: 831,
   orderId: 831,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 10100,
   fee: 296,
   paymentTime: new Date('2024-04-10T14:38:14.000Z'),
@@ -6661,7 +6660,7 @@ export const payments = [
 {
   paymentId: 832,
   orderId: 832,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11200,
   fee: 0,
   paymentTime: new Date('2024-04-10T14:55:33.000Z'),
@@ -6669,7 +6668,7 @@ export const payments = [
 {
   paymentId: 833,
   orderId: 833,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6800,
   fee: 0,
   paymentTime: new Date('2024-04-10T14:58:59.000Z'),
@@ -6677,7 +6676,7 @@ export const payments = [
 {
   paymentId: 834,
   orderId: 834,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8000,
   fee: 191,
   paymentTime: new Date('2024-04-11T02:06:22.000Z'),
@@ -6685,7 +6684,7 @@ export const payments = [
 {
   paymentId: 835,
   orderId: 835,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 30000,
   fee: 904,
   paymentTime: new Date('2024-04-11T02:09:19.000Z'),
@@ -6693,7 +6692,7 @@ export const payments = [
 {
   paymentId: 836,
   orderId: 836,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12200,
   fee: 249,
   paymentTime: new Date('2024-04-11T02:27:54.000Z'),
@@ -6701,7 +6700,7 @@ export const payments = [
 {
   paymentId: 837,
   orderId: 837,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5700,
   fee: 0,
   paymentTime: new Date('2024-04-11T02:32:00.000Z'),
@@ -6709,7 +6708,7 @@ export const payments = [
 {
   paymentId: 838,
   orderId: 838,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10700,
   fee: 347,
   paymentTime: new Date('2024-04-11T03:34:17.000Z'),
@@ -6717,7 +6716,7 @@ export const payments = [
 {
   paymentId: 839,
   orderId: 839,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9400,
   fee: 318,
   paymentTime: new Date('2024-04-11T03:53:25.000Z'),
@@ -6725,7 +6724,7 @@ export const payments = [
 {
   paymentId: 840,
   orderId: 840,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8900,
   fee: 195,
   paymentTime: new Date('2024-04-11T03:57:48.000Z'),
@@ -6733,7 +6732,7 @@ export const payments = [
 {
   paymentId: 841,
   orderId: 841,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15100,
   fee: 0,
   paymentTime: new Date('2024-04-11T04:06:51.000Z'),
@@ -6741,7 +6740,7 @@ export const payments = [
 {
   paymentId: 842,
   orderId: 842,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 27500,
   fee: 834,
   paymentTime: new Date('2024-04-11T04:28:25.000Z'),
@@ -6749,7 +6748,7 @@ export const payments = [
 {
   paymentId: 843,
   orderId: 843,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8900,
   fee: 293,
   paymentTime: new Date('2024-04-11T04:34:44.000Z'),
@@ -6757,7 +6756,7 @@ export const payments = [
 {
   paymentId: 844,
   orderId: 844,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4500,
   fee: 136,
   paymentTime: new Date('2024-04-11T08:20:28.000Z'),
@@ -6765,7 +6764,7 @@ export const payments = [
 {
   paymentId: 845,
   orderId: 845,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13500,
   fee: 328,
   paymentTime: new Date('2024-04-11T08:25:26.000Z'),
@@ -6773,7 +6772,7 @@ export const payments = [
 {
   paymentId: 846,
   orderId: 846,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10900,
   fee: 273,
   paymentTime: new Date('2024-04-11T09:11:02.000Z'),
@@ -6781,7 +6780,7 @@ export const payments = [
 {
   paymentId: 847,
   orderId: 847,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14600,
   fee: 327,
   paymentTime: new Date('2024-04-11T10:11:56.000Z'),
@@ -6789,7 +6788,7 @@ export const payments = [
 {
   paymentId: 848,
   orderId: 848,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13400,
   fee: 0,
   paymentTime: new Date('2024-04-11T10:19:28.000Z'),
@@ -6797,7 +6796,7 @@ export const payments = [
 {
   paymentId: 849,
   orderId: 849,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12500,
   fee: 313,
   paymentTime: new Date('2024-04-11T10:48:32.000Z'),
@@ -6805,7 +6804,7 @@ export const payments = [
 {
   paymentId: 850,
   orderId: 850,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 3600,
   fee: 120,
   paymentTime: new Date('2024-04-11T12:40:08.000Z'),
@@ -6813,7 +6812,7 @@ export const payments = [
 {
   paymentId: 851,
   orderId: 851,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5700,
   fee: 0,
   paymentTime: new Date('2024-04-11T12:55:40.000Z'),
@@ -6821,7 +6820,7 @@ export const payments = [
 {
   paymentId: 852,
   orderId: 852,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9600,
   fee: 318,
   paymentTime: new Date('2024-04-12T02:35:25.000Z'),
@@ -6829,7 +6828,7 @@ export const payments = [
 {
   paymentId: 853,
   orderId: 853,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 9700,
   fee: 243,
   paymentTime: new Date('2024-04-12T02:51:49.000Z'),
@@ -6837,7 +6836,7 @@ export const payments = [
 {
   paymentId: 854,
   orderId: 854,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15700,
   fee: 479,
   paymentTime: new Date('2024-04-12T02:56:50.000Z'),
@@ -6845,7 +6844,7 @@ export const payments = [
 {
   paymentId: 855,
   orderId: 855,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 23900,
   fee: 565,
   paymentTime: new Date('2024-04-12T03:14:58.000Z'),
@@ -6853,7 +6852,7 @@ export const payments = [
 {
   paymentId: 856,
   orderId: 856,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 24400,
   fee: 768,
   paymentTime: new Date('2024-04-12T04:28:48.000Z'),
@@ -6861,7 +6860,7 @@ export const payments = [
 {
   paymentId: 857,
   orderId: 857,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 23700,
   fee: 759,
   paymentTime: new Date('2024-04-12T04:32:33.000Z'),
@@ -6869,7 +6868,7 @@ export const payments = [
 {
   paymentId: 858,
   orderId: 858,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9800,
   fee: 0,
   paymentTime: new Date('2024-04-12T04:35:25.000Z'),
@@ -6877,7 +6876,7 @@ export const payments = [
 {
   paymentId: 859,
   orderId: 859,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 22500,
   fee: 0,
   paymentTime: new Date('2024-04-12T09:25:32.000Z'),
@@ -6885,7 +6884,7 @@ export const payments = [
 {
   paymentId: 860,
   orderId: 860,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 19300,
   fee: 400,
   paymentTime: new Date('2024-04-12T09:50:31.000Z'),
@@ -6893,7 +6892,7 @@ export const payments = [
 {
   paymentId: 861,
   orderId: 861,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5900,
   fee: 201,
   paymentTime: new Date('2024-04-12T12:10:09.000Z'),
@@ -6901,7 +6900,7 @@ export const payments = [
 {
   paymentId: 862,
   orderId: 862,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 3500,
   fee: 0,
   paymentTime: new Date('2024-04-12T12:10:48.000Z'),
@@ -6909,7 +6908,7 @@ export const payments = [
 {
   paymentId: 863,
   orderId: 863,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 5700,
   fee: 143,
   paymentTime: new Date('2024-04-12T12:52:37.000Z'),
@@ -6917,7 +6916,7 @@ export const payments = [
 {
   paymentId: 864,
   orderId: 864,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15900,
   fee: 551,
   paymentTime: new Date('2024-04-12T14:17:20.000Z'),
@@ -6925,7 +6924,7 @@ export const payments = [
 {
   paymentId: 865,
   orderId: 865,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 24600,
   fee: 865,
   paymentTime: new Date('2024-04-13T02:25:20.000Z'),
@@ -6933,7 +6932,7 @@ export const payments = [
 {
   paymentId: 866,
   orderId: 866,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6500,
   fee: 214,
   paymentTime: new Date('2024-04-13T02:55:54.000Z'),
@@ -6941,7 +6940,7 @@ export const payments = [
 {
   paymentId: 867,
   orderId: 867,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10400,
   fee: 363,
   paymentTime: new Date('2024-04-13T02:57:36.000Z'),
@@ -6949,7 +6948,7 @@ export const payments = [
 {
   paymentId: 868,
   orderId: 868,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17800,
   fee: 604,
   paymentTime: new Date('2024-04-13T03:04:04.000Z'),
@@ -6957,7 +6956,7 @@ export const payments = [
 {
   paymentId: 869,
   orderId: 869,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19500,
   fee: 0,
   paymentTime: new Date('2024-04-13T03:00:26.000Z'),
@@ -6965,7 +6964,7 @@ export const payments = [
 {
   paymentId: 870,
   orderId: 870,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9500,
   fee: 326,
   paymentTime: new Date('2024-04-13T03:12:53.000Z'),
@@ -6973,7 +6972,7 @@ export const payments = [
 {
   paymentId: 871,
   orderId: 871,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 19800,
   fee: 679,
   paymentTime: new Date('2024-04-13T03:15:16.000Z'),
@@ -6981,7 +6980,7 @@ export const payments = [
 {
   paymentId: 872,
   orderId: 872,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11300,
   fee: 232,
   paymentTime: new Date('2024-04-13T03:24:22.000Z'),
@@ -6989,7 +6988,7 @@ export const payments = [
 {
   paymentId: 873,
   orderId: 873,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9700,
   fee: 309,
   paymentTime: new Date('2024-04-13T03:46:06.000Z'),
@@ -6997,7 +6996,7 @@ export const payments = [
 {
   paymentId: 874,
   orderId: 874,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9000,
   fee: 224,
   paymentTime: new Date('2024-04-13T03:50:48.000Z'),
@@ -7005,7 +7004,7 @@ export const payments = [
 {
   paymentId: 875,
   orderId: 875,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8200,
   fee: 205,
   paymentTime: new Date('2024-04-13T03:50:30.000Z'),
@@ -7013,7 +7012,7 @@ export const payments = [
 {
   paymentId: 876,
   orderId: 876,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18300,
   fee: 618,
   paymentTime: new Date('2024-04-13T03:52:15.000Z'),
@@ -7021,7 +7020,7 @@ export const payments = [
 {
   paymentId: 877,
   orderId: 877,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15200,
   fee: 0,
   paymentTime: new Date('2024-04-13T04:44:09.000Z'),
@@ -7029,7 +7028,7 @@ export const payments = [
 {
   paymentId: 878,
   orderId: 878,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11200,
   fee: 240,
   paymentTime: new Date('2024-04-13T04:53:54.000Z'),
@@ -7037,7 +7036,7 @@ export const payments = [
 {
   paymentId: 879,
   orderId: 879,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 24300,
   fee: 835,
   paymentTime: new Date('2024-04-13T08:35:18.000Z'),
@@ -7045,7 +7044,7 @@ export const payments = [
 {
   paymentId: 880,
   orderId: 880,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7600,
   fee: 240,
   paymentTime: new Date('2024-04-13T09:21:33.000Z'),
@@ -7053,7 +7052,7 @@ export const payments = [
 {
   paymentId: 881,
   orderId: 881,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17600,
   fee: 363,
   paymentTime: new Date('2024-04-13T09:32:35.000Z'),
@@ -7061,7 +7060,7 @@ export const payments = [
 {
   paymentId: 882,
   orderId: 882,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 3900,
   fee: 138,
   paymentTime: new Date('2024-04-13T10:02:48.000Z'),
@@ -7069,7 +7068,7 @@ export const payments = [
 {
   paymentId: 883,
   orderId: 883,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 9800,
   fee: 245,
   paymentTime: new Date('2024-04-13T10:15:10.000Z'),
@@ -7077,7 +7076,7 @@ export const payments = [
 {
   paymentId: 884,
   orderId: 884,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9200,
   fee: 343,
   paymentTime: new Date('2024-04-13T10:20:58.000Z'),
@@ -7085,7 +7084,7 @@ export const payments = [
 {
   paymentId: 885,
   orderId: 885,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 5400,
   fee: 158,
   paymentTime: new Date('2024-04-13T11:04:42.000Z'),
@@ -7093,7 +7092,7 @@ export const payments = [
 {
   paymentId: 886,
   orderId: 886,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 7400,
   fee: 217,
   paymentTime: new Date('2024-04-13T11:15:23.000Z'),
@@ -7101,7 +7100,7 @@ export const payments = [
 {
   paymentId: 887,
   orderId: 887,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10200,
   fee: 240,
   paymentTime: new Date('2024-04-13T11:49:04.000Z'),
@@ -7109,7 +7108,7 @@ export const payments = [
 {
   paymentId: 888,
   orderId: 888,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16800,
   fee: 342,
   paymentTime: new Date('2024-04-13T14:09:04.000Z'),
@@ -7117,7 +7116,7 @@ export const payments = [
 {
   paymentId: 889,
   orderId: 889,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8900,
   fee: 280,
   paymentTime: new Date('2024-04-13T14:18:03.000Z'),
@@ -7125,7 +7124,7 @@ export const payments = [
 {
   paymentId: 890,
   orderId: 890,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10500,
   fee: 0,
   paymentTime: new Date('2024-04-14T02:30:09.000Z'),
@@ -7133,7 +7132,7 @@ export const payments = [
 {
   paymentId: 891,
   orderId: 891,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8600,
   fee: 277,
   paymentTime: new Date('2024-04-14T02:29:24.000Z'),
@@ -7141,7 +7140,7 @@ export const payments = [
 {
   paymentId: 892,
   orderId: 892,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13800,
   fee: 447,
   paymentTime: new Date('2024-04-14T02:35:06.000Z'),
@@ -7149,7 +7148,7 @@ export const payments = [
 {
   paymentId: 893,
   orderId: 893,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 19400,
   fee: 530,
   paymentTime: new Date('2024-04-14T02:37:07.000Z'),
@@ -7157,7 +7156,7 @@ export const payments = [
 {
   paymentId: 894,
   orderId: 894,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17100,
   fee: 369,
   paymentTime: new Date('2024-04-14T02:42:41.000Z'),
@@ -7165,7 +7164,7 @@ export const payments = [
 {
   paymentId: 895,
   orderId: 895,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15100,
   fee: 518,
   paymentTime: new Date('2024-04-14T03:00:06.000Z'),
@@ -7173,7 +7172,7 @@ export const payments = [
 {
   paymentId: 896,
   orderId: 896,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17600,
   fee: 577,
   paymentTime: new Date('2024-04-14T03:36:38.000Z'),
@@ -7181,7 +7180,7 @@ export const payments = [
 {
   paymentId: 897,
   orderId: 897,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 25700,
   fee: 780,
   paymentTime: new Date('2024-04-14T04:07:57.000Z'),
@@ -7189,7 +7188,7 @@ export const payments = [
 {
   paymentId: 898,
   orderId: 898,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16000,
   fee: 533,
   paymentTime: new Date('2024-04-14T04:11:04.000Z'),
@@ -7197,7 +7196,7 @@ export const payments = [
 {
   paymentId: 899,
   orderId: 899,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 20500,
   fee: 476,
   paymentTime: new Date('2024-04-14T04:11:12.000Z'),
@@ -7205,7 +7204,7 @@ export const payments = [
 {
   paymentId: 900,
   orderId: 900,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14100,
   fee: 488,
   paymentTime: new Date('2024-04-14T04:22:21.000Z'),
@@ -7213,7 +7212,7 @@ export const payments = [
 {
   paymentId: 901,
   orderId: 901,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 15700,
   fee: 383,
   paymentTime: new Date('2024-04-14T04:47:05.000Z'),
@@ -7221,7 +7220,7 @@ export const payments = [
 {
   paymentId: 902,
   orderId: 902,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9900,
   fee: 366,
   paymentTime: new Date('2024-04-14T04:58:08.000Z'),
@@ -7229,7 +7228,7 @@ export const payments = [
 {
   paymentId: 903,
   orderId: 903,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10700,
   fee: 353,
   paymentTime: new Date('2024-04-14T08:22:58.000Z'),
@@ -7237,7 +7236,7 @@ export const payments = [
 {
   paymentId: 904,
   orderId: 904,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8300,
   fee: 0,
   paymentTime: new Date('2024-04-14T08:50:15.000Z'),
@@ -7245,7 +7244,7 @@ export const payments = [
 {
   paymentId: 905,
   orderId: 905,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 24500,
   fee: 693,
   paymentTime: new Date('2024-04-14T09:01:06.000Z'),
@@ -7253,7 +7252,7 @@ export const payments = [
 {
   paymentId: 906,
   orderId: 906,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 11600,
   fee: 341,
   paymentTime: new Date('2024-04-14T09:18:34.000Z'),
@@ -7261,7 +7260,7 @@ export const payments = [
 {
   paymentId: 907,
   orderId: 907,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 17800,
   fee: 525,
   paymentTime: new Date('2024-04-14T09:59:33.000Z'),
@@ -7269,7 +7268,7 @@ export const payments = [
 {
   paymentId: 908,
   orderId: 908,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15400,
   fee: 561,
   paymentTime: new Date('2024-04-14T10:31:33.000Z'),
@@ -7277,7 +7276,7 @@ export const payments = [
 {
   paymentId: 909,
   orderId: 909,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12000,
   fee: 0,
   paymentTime: new Date('2024-04-14T10:50:06.000Z'),
@@ -7285,7 +7284,7 @@ export const payments = [
 {
   paymentId: 910,
   orderId: 910,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4000,
   fee: 121,
   paymentTime: new Date('2024-04-14T12:56:52.000Z'),
@@ -7293,7 +7292,7 @@ export const payments = [
 {
   paymentId: 911,
   orderId: 911,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 14100,
   fee: 388,
   paymentTime: new Date('2024-04-14T13:58:23.000Z'),
@@ -7301,7 +7300,7 @@ export const payments = [
 {
   paymentId: 912,
   orderId: 912,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14700,
   fee: 508,
   paymentTime: new Date('2024-04-14T14:02:18.000Z'),
@@ -7309,7 +7308,7 @@ export const payments = [
 {
   paymentId: 913,
   orderId: 913,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10800,
   fee: 240,
   paymentTime: new Date('2024-04-14T14:30:06.000Z'),
@@ -7317,7 +7316,7 @@ export const payments = [
 {
   paymentId: 914,
   orderId: 914,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15900,
   fee: 0,
   paymentTime: new Date('2024-04-14T14:37:51.000Z'),
@@ -7325,7 +7324,7 @@ export const payments = [
 {
   paymentId: 915,
   orderId: 915,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12000,
   fee: 269,
   paymentTime: new Date('2024-04-15T02:17:11.000Z'),
@@ -7333,7 +7332,7 @@ export const payments = [
 {
   paymentId: 916,
   orderId: 916,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16100,
   fee: 0,
   paymentTime: new Date('2024-04-15T02:18:47.000Z'),
@@ -7341,7 +7340,7 @@ export const payments = [
 {
   paymentId: 917,
   orderId: 917,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 31100,
   fee: 1040,
   paymentTime: new Date('2024-04-15T02:24:09.000Z'),
@@ -7349,7 +7348,7 @@ export const payments = [
 {
   paymentId: 918,
   orderId: 918,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8000,
   fee: 0,
   paymentTime: new Date('2024-04-15T02:23:34.000Z'),
@@ -7357,7 +7356,7 @@ export const payments = [
 {
   paymentId: 919,
   orderId: 919,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16100,
   fee: 505,
   paymentTime: new Date('2024-04-15T02:33:04.000Z'),
@@ -7365,7 +7364,7 @@ export const payments = [
 {
   paymentId: 920,
   orderId: 920,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11500,
   fee: 0,
   paymentTime: new Date('2024-04-15T02:39:12.000Z'),
@@ -7373,7 +7372,7 @@ export const payments = [
 {
   paymentId: 921,
   orderId: 921,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14100,
   fee: 500,
   paymentTime: new Date('2024-04-15T02:53:05.000Z'),
@@ -7381,7 +7380,7 @@ export const payments = [
 {
   paymentId: 922,
   orderId: 922,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9000,
   fee: 0,
   paymentTime: new Date('2024-04-15T03:05:41.000Z'),
@@ -7389,7 +7388,7 @@ export const payments = [
 {
   paymentId: 923,
   orderId: 923,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14100,
   fee: 0,
   paymentTime: new Date('2024-04-15T03:09:37.000Z'),
@@ -7397,7 +7396,7 @@ export const payments = [
 {
   paymentId: 924,
   orderId: 924,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6800,
   fee: 252,
   paymentTime: new Date('2024-04-15T03:10:31.000Z'),
@@ -7405,7 +7404,7 @@ export const payments = [
 {
   paymentId: 925,
   orderId: 925,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12700,
   fee: 383,
   paymentTime: new Date('2024-04-15T04:24:58.000Z'),
@@ -7413,7 +7412,7 @@ export const payments = [
 {
   paymentId: 926,
   orderId: 926,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14500,
   fee: 502,
   paymentTime: new Date('2024-04-15T04:28:50.000Z'),
@@ -7421,7 +7420,7 @@ export const payments = [
 {
   paymentId: 927,
   orderId: 927,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16500,
   fee: 0,
   paymentTime: new Date('2024-04-15T04:37:47.000Z'),
@@ -7429,7 +7428,7 @@ export const payments = [
 {
   paymentId: 928,
   orderId: 928,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10800,
   fee: 363,
   paymentTime: new Date('2024-04-15T04:40:12.000Z'),
@@ -7437,7 +7436,7 @@ export const payments = [
 {
   paymentId: 929,
   orderId: 929,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 21800,
   fee: 0,
   paymentTime: new Date('2024-04-15T04:58:37.000Z'),
@@ -7445,7 +7444,7 @@ export const payments = [
 {
   paymentId: 930,
   orderId: 930,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13500,
   fee: 0,
   paymentTime: new Date('2024-04-15T05:02:39.000Z'),
@@ -7453,7 +7452,7 @@ export const payments = [
 {
   paymentId: 931,
   orderId: 931,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9300,
   fee: 298,
   paymentTime: new Date('2024-04-15T08:07:28.000Z'),
@@ -7461,7 +7460,7 @@ export const payments = [
 {
   paymentId: 932,
   orderId: 932,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5300,
   fee: 177,
   paymentTime: new Date('2024-04-15T08:09:38.000Z'),
@@ -7469,7 +7468,7 @@ export const payments = [
 {
   paymentId: 933,
   orderId: 933,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7300,
   fee: 248,
   paymentTime: new Date('2024-04-15T08:41:24.000Z'),
@@ -7477,7 +7476,7 @@ export const payments = [
 {
   paymentId: 934,
   orderId: 934,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12500,
   fee: 0,
   paymentTime: new Date('2024-04-15T09:27:20.000Z'),
@@ -7485,7 +7484,7 @@ export const payments = [
 {
   paymentId: 935,
   orderId: 935,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8500,
   fee: 0,
   paymentTime: new Date('2024-04-15T10:15:41.000Z'),
@@ -7493,7 +7492,7 @@ export const payments = [
 {
   paymentId: 936,
   orderId: 936,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11400,
   fee: 359,
   paymentTime: new Date('2024-04-15T10:17:55.000Z'),
@@ -7501,7 +7500,7 @@ export const payments = [
 {
   paymentId: 937,
   orderId: 937,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7000,
   fee: 158,
   paymentTime: new Date('2024-04-15T11:08:03.000Z'),
@@ -7509,7 +7508,7 @@ export const payments = [
 {
   paymentId: 938,
   orderId: 938,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7700,
   fee: 0,
   paymentTime: new Date('2024-04-15T11:20:01.000Z'),
@@ -7517,7 +7516,7 @@ export const payments = [
 {
   paymentId: 939,
   orderId: 939,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 3100,
   fee: 0,
   paymentTime: new Date('2024-04-15T12:26:01.000Z'),
@@ -7525,7 +7524,7 @@ export const payments = [
 {
   paymentId: 940,
   orderId: 940,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8200,
   fee: 274,
   paymentTime: new Date('2024-04-15T13:37:50.000Z'),
@@ -7533,7 +7532,7 @@ export const payments = [
 {
   paymentId: 941,
   orderId: 941,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5000,
   fee: 0,
   paymentTime: new Date('2024-04-15T13:46:59.000Z'),
@@ -7541,7 +7540,7 @@ export const payments = [
 {
   paymentId: 942,
   orderId: 942,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11900,
   fee: 298,
   paymentTime: new Date('2024-04-15T14:30:12.000Z'),
@@ -7549,7 +7548,7 @@ export const payments = [
 {
   paymentId: 943,
   orderId: 943,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10500,
   fee: 0,
   paymentTime: new Date('2024-04-15T14:40:30.000Z'),
@@ -7557,7 +7556,7 @@ export const payments = [
 {
   paymentId: 944,
   orderId: 944,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18800,
   fee: 638,
   paymentTime: new Date('2024-04-16T02:55:37.000Z'),
@@ -7565,7 +7564,7 @@ export const payments = [
 {
   paymentId: 945,
   orderId: 945,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8800,
   fee: 286,
   paymentTime: new Date('2024-04-16T05:00:49.000Z'),
@@ -7573,7 +7572,7 @@ export const payments = [
 {
   paymentId: 946,
   orderId: 946,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20300,
   fee: 690,
   paymentTime: new Date('2024-04-16T08:01:05.000Z'),
@@ -7581,7 +7580,7 @@ export const payments = [
 {
   paymentId: 947,
   orderId: 947,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5700,
   fee: 188,
   paymentTime: new Date('2024-04-16T09:36:03.000Z'),
@@ -7589,7 +7588,7 @@ export const payments = [
 {
   paymentId: 948,
   orderId: 948,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 19800,
   fee: 473,
   paymentTime: new Date('2024-04-16T10:13:44.000Z'),
@@ -7597,7 +7596,7 @@ export const payments = [
 {
   paymentId: 949,
   orderId: 949,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5800,
   fee: 0,
   paymentTime: new Date('2024-04-16T11:21:12.000Z'),
@@ -7605,7 +7604,7 @@ export const payments = [
 {
   paymentId: 950,
   orderId: 950,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4900,
   fee: 155,
   paymentTime: new Date('2024-04-16T11:37:10.000Z'),
@@ -7613,7 +7612,7 @@ export const payments = [
 {
   paymentId: 951,
   orderId: 951,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9500,
   fee: 0,
   paymentTime: new Date('2024-04-16T11:54:42.000Z'),
@@ -7621,7 +7620,7 @@ export const payments = [
 {
   paymentId: 952,
   orderId: 952,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8500,
   fee: 293,
   paymentTime: new Date('2024-04-16T12:43:43.000Z'),
@@ -7629,7 +7628,7 @@ export const payments = [
 {
   paymentId: 953,
   orderId: 953,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10400,
   fee: 0,
   paymentTime: new Date('2024-04-16T13:53:05.000Z'),
@@ -7637,7 +7636,7 @@ export const payments = [
 {
   paymentId: 954,
   orderId: 954,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11500,
   fee: 389,
   paymentTime: new Date('2024-04-16T14:22:01.000Z'),
@@ -7645,7 +7644,7 @@ export const payments = [
 {
   paymentId: 955,
   orderId: 955,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10600,
   fee: 0,
   paymentTime: new Date('2024-04-16T14:44:13.000Z'),
@@ -7653,7 +7652,7 @@ export const payments = [
 {
   paymentId: 956,
   orderId: 956,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 23200,
   fee: 802,
   paymentTime: new Date('2024-04-17T02:07:09.000Z'),
@@ -7661,7 +7660,7 @@ export const payments = [
 {
   paymentId: 957,
   orderId: 957,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14100,
   fee: 486,
   paymentTime: new Date('2024-04-17T02:33:04.000Z'),
@@ -7669,7 +7668,7 @@ export const payments = [
 {
   paymentId: 958,
   orderId: 958,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13300,
   fee: 442,
   paymentTime: new Date('2024-04-17T03:02:42.000Z'),
@@ -7677,7 +7676,7 @@ export const payments = [
 {
   paymentId: 959,
   orderId: 959,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16100,
   fee: 561,
   paymentTime: new Date('2024-04-17T03:40:59.000Z'),
@@ -7685,7 +7684,7 @@ export const payments = [
 {
   paymentId: 960,
   orderId: 960,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18700,
   fee: 613,
   paymentTime: new Date('2024-04-17T03:53:46.000Z'),
@@ -7693,7 +7692,7 @@ export const payments = [
 {
   paymentId: 961,
   orderId: 961,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17500,
   fee: 533,
   paymentTime: new Date('2024-04-17T03:57:02.000Z'),
@@ -7701,7 +7700,7 @@ export const payments = [
 {
   paymentId: 962,
   orderId: 962,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 24300,
   fee: 807,
   paymentTime: new Date('2024-04-17T08:59:35.000Z'),
@@ -7709,7 +7708,7 @@ export const payments = [
 {
   paymentId: 963,
   orderId: 963,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 21100,
   fee: 701,
   paymentTime: new Date('2024-04-17T08:59:20.000Z'),
@@ -7717,7 +7716,7 @@ export const payments = [
 {
   paymentId: 964,
   orderId: 964,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17000,
   fee: 0,
   paymentTime: new Date('2024-04-17T10:55:36.000Z'),
@@ -7725,7 +7724,7 @@ export const payments = [
 {
   paymentId: 965,
   orderId: 965,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 8200,
   fee: 243,
   paymentTime: new Date('2024-04-17T12:12:01.000Z'),
@@ -7733,7 +7732,7 @@ export const payments = [
 {
   paymentId: 966,
   orderId: 966,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12500,
   fee: 0,
   paymentTime: new Date('2024-04-17T14:47:59.000Z'),
@@ -7741,7 +7740,7 @@ export const payments = [
 {
   paymentId: 967,
   orderId: 967,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15100,
   fee: 510,
   paymentTime: new Date('2024-04-18T02:04:44.000Z'),
@@ -7749,7 +7748,7 @@ export const payments = [
 {
   paymentId: 968,
   orderId: 968,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5600,
   fee: 185,
   paymentTime: new Date('2024-04-18T02:12:23.000Z'),
@@ -7757,7 +7756,7 @@ export const payments = [
 {
   paymentId: 969,
   orderId: 969,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10200,
   fee: 327,
   paymentTime: new Date('2024-04-18T02:32:42.000Z'),
@@ -7765,7 +7764,7 @@ export const payments = [
 {
   paymentId: 970,
   orderId: 970,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12400,
   fee: 0,
   paymentTime: new Date('2024-04-18T02:54:42.000Z'),
@@ -7773,7 +7772,7 @@ export const payments = [
 {
   paymentId: 971,
   orderId: 971,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 22000,
   fee: 686,
   paymentTime: new Date('2024-04-18T02:57:08.000Z'),
@@ -7781,7 +7780,7 @@ export const payments = [
 {
   paymentId: 972,
   orderId: 972,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17300,
   fee: 604,
   paymentTime: new Date('2024-04-18T03:10:51.000Z'),
@@ -7789,7 +7788,7 @@ export const payments = [
 {
   paymentId: 973,
   orderId: 973,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 20800,
   fee: 679,
   paymentTime: new Date('2024-04-18T03:31:53.000Z'),
@@ -7797,7 +7796,7 @@ export const payments = [
 {
   paymentId: 974,
   orderId: 974,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10300,
   fee: 311,
   paymentTime: new Date('2024-04-18T04:07:06.000Z'),
@@ -7805,7 +7804,7 @@ export const payments = [
 {
   paymentId: 975,
   orderId: 975,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10700,
   fee: 268,
   paymentTime: new Date('2024-04-18T04:12:04.000Z'),
@@ -7813,7 +7812,7 @@ export const payments = [
 {
   paymentId: 976,
   orderId: 976,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8500,
   fee: 296,
   paymentTime: new Date('2024-04-18T04:25:56.000Z'),
@@ -7821,7 +7820,7 @@ export const payments = [
 {
   paymentId: 977,
   orderId: 977,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11700,
   fee: 365,
   paymentTime: new Date('2024-04-18T08:25:33.000Z'),
@@ -7829,7 +7828,7 @@ export const payments = [
 {
   paymentId: 978,
   orderId: 978,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10900,
   fee: 370,
   paymentTime: new Date('2024-04-18T08:44:34.000Z'),
@@ -7837,7 +7836,7 @@ export const payments = [
 {
   paymentId: 979,
   orderId: 979,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16000,
   fee: 0,
   paymentTime: new Date('2024-04-18T09:36:33.000Z'),
@@ -7845,7 +7844,7 @@ export const payments = [
 {
   paymentId: 980,
   orderId: 980,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 14400,
   fee: 360,
   paymentTime: new Date('2024-04-18T09:57:34.000Z'),
@@ -7853,7 +7852,7 @@ export const payments = [
 {
   paymentId: 981,
   orderId: 981,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6700,
   fee: 0,
   paymentTime: new Date('2024-04-18T10:07:37.000Z'),
@@ -7861,7 +7860,7 @@ export const payments = [
 {
   paymentId: 982,
   orderId: 982,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11200,
   fee: 280,
   paymentTime: new Date('2024-04-18T10:26:40.000Z'),
@@ -7869,7 +7868,7 @@ export const payments = [
 {
   paymentId: 983,
   orderId: 983,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12500,
   fee: 421,
   paymentTime: new Date('2024-04-18T11:11:25.000Z'),
@@ -7877,7 +7876,7 @@ export const payments = [
 {
   paymentId: 984,
   orderId: 984,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12100,
   fee: 388,
   paymentTime: new Date('2024-04-18T11:24:35.000Z'),
@@ -7885,7 +7884,7 @@ export const payments = [
 {
   paymentId: 985,
   orderId: 985,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13100,
   fee: 323,
   paymentTime: new Date('2024-04-18T11:55:48.000Z'),
@@ -7893,7 +7892,7 @@ export const payments = [
 {
   paymentId: 986,
   orderId: 986,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 3300,
   fee: 83,
   paymentTime: new Date('2024-04-18T12:07:09.000Z'),
@@ -7901,7 +7900,7 @@ export const payments = [
 {
   paymentId: 987,
   orderId: 987,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 8900,
   fee: 245,
   paymentTime: new Date('2024-04-18T13:15:34.000Z'),
@@ -7909,7 +7908,7 @@ export const payments = [
 {
   paymentId: 988,
   orderId: 988,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9200,
   fee: 0,
   paymentTime: new Date('2024-04-18T13:18:59.000Z'),
@@ -7917,7 +7916,7 @@ export const payments = [
 {
   paymentId: 989,
   orderId: 989,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6100,
   fee: 191,
   paymentTime: new Date('2024-04-18T13:43:12.000Z'),
@@ -7925,7 +7924,7 @@ export const payments = [
 {
   paymentId: 990,
   orderId: 990,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 9800,
   fee: 245,
   paymentTime: new Date('2024-04-18T14:10:34.000Z'),
@@ -7933,7 +7932,7 @@ export const payments = [
 {
   paymentId: 991,
   orderId: 991,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 18900,
   fee: 467,
   paymentTime: new Date('2024-04-18T14:59:41.000Z'),
@@ -7941,7 +7940,7 @@ export const payments = [
 {
   paymentId: 992,
   orderId: 992,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9700,
   fee: 237,
   paymentTime: new Date('2024-04-19T02:11:01.000Z'),
@@ -7949,7 +7948,7 @@ export const payments = [
 {
   paymentId: 993,
   orderId: 993,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10900,
   fee: 345,
   paymentTime: new Date('2024-04-19T03:01:19.000Z'),
@@ -7957,7 +7956,7 @@ export const payments = [
 {
   paymentId: 994,
   orderId: 994,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7000,
   fee: 219,
   paymentTime: new Date('2024-04-19T03:04:37.000Z'),
@@ -7965,7 +7964,7 @@ export const payments = [
 {
   paymentId: 995,
   orderId: 995,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13000,
   fee: 0,
   paymentTime: new Date('2024-04-19T03:21:44.000Z'),
@@ -7973,7 +7972,7 @@ export const payments = [
 {
   paymentId: 996,
   orderId: 996,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17300,
   fee: 0,
   paymentTime: new Date('2024-04-19T03:22:41.000Z'),
@@ -7981,7 +7980,7 @@ export const payments = [
 {
   paymentId: 997,
   orderId: 997,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13000,
   fee: 260,
   paymentTime: new Date('2024-04-19T03:39:12.000Z'),
@@ -7989,7 +7988,7 @@ export const payments = [
 {
   paymentId: 998,
   orderId: 998,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9800,
   fee: 322,
   paymentTime: new Date('2024-04-19T03:44:21.000Z'),
@@ -7997,7 +7996,7 @@ export const payments = [
 {
   paymentId: 999,
   orderId: 999,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12600,
   fee: 278,
   paymentTime: new Date('2024-04-19T03:48:49.000Z'),
@@ -8005,7 +8004,7 @@ export const payments = [
 {
   paymentId: 1000,
   orderId: 1000,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11900,
   fee: 371,
   paymentTime: new Date('2024-04-19T03:57:35.000Z'),
@@ -8013,7 +8012,7 @@ export const payments = [
 {
   paymentId: 1001,
   orderId: 1001,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13300,
   fee: 328,
   paymentTime: new Date('2024-04-19T04:12:10.000Z'),
@@ -8021,7 +8020,7 @@ export const payments = [
 {
   paymentId: 1002,
   orderId: 1002,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9400,
   fee: 297,
   paymentTime: new Date('2024-04-19T04:13:33.000Z'),
@@ -8029,7 +8028,7 @@ export const payments = [
 {
   paymentId: 1003,
   orderId: 1003,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7000,
   fee: 175,
   paymentTime: new Date('2024-04-19T04:32:16.000Z'),
@@ -8037,7 +8036,7 @@ export const payments = [
 {
   paymentId: 1004,
   orderId: 1004,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10100,
   fee: 0,
   paymentTime: new Date('2024-04-19T04:40:51.000Z'),
@@ -8045,7 +8044,7 @@ export const payments = [
 {
   paymentId: 1005,
   orderId: 1005,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 14900,
   fee: 436,
   paymentTime: new Date('2024-04-19T04:46:50.000Z'),
@@ -8053,7 +8052,7 @@ export const payments = [
 {
   paymentId: 1006,
   orderId: 1006,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 32500,
   fee: 1149,
   paymentTime: new Date('2024-04-19T04:50:21.000Z'),
@@ -8061,7 +8060,7 @@ export const payments = [
 {
   paymentId: 1007,
   orderId: 1007,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18300,
   fee: 606,
   paymentTime: new Date('2024-04-19T08:07:56.000Z'),
@@ -8069,7 +8068,7 @@ export const payments = [
 {
   paymentId: 1008,
   orderId: 1008,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8400,
   fee: 0,
   paymentTime: new Date('2024-04-19T08:20:53.000Z'),
@@ -8077,7 +8076,7 @@ export const payments = [
 {
   paymentId: 1009,
   orderId: 1009,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11200,
   fee: 0,
   paymentTime: new Date('2024-04-19T08:44:29.000Z'),
@@ -8085,7 +8084,7 @@ export const payments = [
 {
   paymentId: 1010,
   orderId: 1010,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13000,
   fee: 426,
   paymentTime: new Date('2024-04-19T08:53:21.000Z'),
@@ -8093,7 +8092,7 @@ export const payments = [
 {
   paymentId: 1011,
   orderId: 1011,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 22100,
   fee: 553,
   paymentTime: new Date('2024-04-19T10:20:26.000Z'),
@@ -8101,7 +8100,7 @@ export const payments = [
 {
   paymentId: 1012,
   orderId: 1012,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16400,
   fee: 547,
   paymentTime: new Date('2024-04-19T10:41:17.000Z'),
@@ -8109,7 +8108,7 @@ export const payments = [
 {
   paymentId: 1013,
   orderId: 1013,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6000,
   fee: 184,
   paymentTime: new Date('2024-04-19T11:29:53.000Z'),
@@ -8117,7 +8116,7 @@ export const payments = [
 {
   paymentId: 1014,
   orderId: 1014,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4400,
   fee: 0,
   paymentTime: new Date('2024-04-19T12:03:36.000Z'),
@@ -8125,7 +8124,7 @@ export const payments = [
 {
   paymentId: 1015,
   orderId: 1015,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10600,
   fee: 329,
   paymentTime: new Date('2024-04-19T12:18:34.000Z'),
@@ -8133,7 +8132,7 @@ export const payments = [
 {
   paymentId: 1016,
   orderId: 1016,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6300,
   fee: 218,
   paymentTime: new Date('2024-04-19T12:49:33.000Z'),
@@ -8141,7 +8140,7 @@ export const payments = [
 {
   paymentId: 1017,
   orderId: 1017,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6300,
   fee: 158,
   paymentTime: new Date('2024-04-19T13:34:43.000Z'),
@@ -8149,7 +8148,7 @@ export const payments = [
 {
   paymentId: 1018,
   orderId: 1018,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 24600,
   fee: 808,
   paymentTime: new Date('2024-04-20T03:00:45.000Z'),
@@ -8157,7 +8156,7 @@ export const payments = [
 {
   paymentId: 1019,
   orderId: 1019,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12400,
   fee: 372,
   paymentTime: new Date('2024-04-20T03:19:11.000Z'),
@@ -8165,7 +8164,7 @@ export const payments = [
 {
   paymentId: 1020,
   orderId: 1020,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9600,
   fee: 312,
   paymentTime: new Date('2024-04-20T03:27:23.000Z'),
@@ -8173,7 +8172,7 @@ export const payments = [
 {
   paymentId: 1021,
   orderId: 1021,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15700,
   fee: 500,
   paymentTime: new Date('2024-04-20T03:37:39.000Z'),
@@ -8181,7 +8180,7 @@ export const payments = [
 {
   paymentId: 1022,
   orderId: 1022,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 27900,
   fee: 861,
   paymentTime: new Date('2024-04-20T03:46:27.000Z'),
@@ -8189,7 +8188,7 @@ export const payments = [
 {
   paymentId: 1023,
   orderId: 1023,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12000,
   fee: 300,
   paymentTime: new Date('2024-04-20T03:51:24.000Z'),
@@ -8197,7 +8196,7 @@ export const payments = [
 {
   paymentId: 1024,
   orderId: 1024,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8000,
   fee: 292,
   paymentTime: new Date('2024-04-20T04:16:34.000Z'),
@@ -8205,7 +8204,7 @@ export const payments = [
 {
   paymentId: 1025,
   orderId: 1025,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15300,
   fee: 514,
   paymentTime: new Date('2024-04-20T04:19:23.000Z'),
@@ -8213,7 +8212,7 @@ export const payments = [
 {
   paymentId: 1026,
   orderId: 1026,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11400,
   fee: 0,
   paymentTime: new Date('2024-04-20T04:32:27.000Z'),
@@ -8221,7 +8220,7 @@ export const payments = [
 {
   paymentId: 1027,
   orderId: 1027,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9300,
   fee: 291,
   paymentTime: new Date('2024-04-20T04:35:36.000Z'),
@@ -8229,7 +8228,7 @@ export const payments = [
 {
   paymentId: 1028,
   orderId: 1028,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8500,
   fee: 0,
   paymentTime: new Date('2024-04-20T08:06:32.000Z'),
@@ -8237,7 +8236,7 @@ export const payments = [
 {
   paymentId: 1029,
   orderId: 1029,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 12400,
   fee: 350,
   paymentTime: new Date('2024-04-20T08:50:47.000Z'),
@@ -8245,7 +8244,7 @@ export const payments = [
 {
   paymentId: 1030,
   orderId: 1030,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11600,
   fee: 383,
   paymentTime: new Date('2024-04-20T09:03:13.000Z'),
@@ -8253,7 +8252,7 @@ export const payments = [
 {
   paymentId: 1031,
   orderId: 1031,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11500,
   fee: 376,
   paymentTime: new Date('2024-04-20T09:14:07.000Z'),
@@ -8261,7 +8260,7 @@ export const payments = [
 {
   paymentId: 1032,
   orderId: 1032,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11300,
   fee: 348,
   paymentTime: new Date('2024-04-20T10:23:15.000Z'),
@@ -8269,7 +8268,7 @@ export const payments = [
 {
   paymentId: 1033,
   orderId: 1033,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 5800,
   fee: 117,
   paymentTime: new Date('2024-04-20T11:36:47.000Z'),
@@ -8277,7 +8276,7 @@ export const payments = [
 {
   paymentId: 1034,
   orderId: 1034,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 8400,
   fee: 239,
   paymentTime: new Date('2024-04-20T13:35:38.000Z'),
@@ -8285,7 +8284,7 @@ export const payments = [
 {
   paymentId: 1035,
   orderId: 1035,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10100,
   fee: 320,
   paymentTime: new Date('2024-04-20T14:36:47.000Z'),
@@ -8293,7 +8292,7 @@ export const payments = [
 {
   paymentId: 1036,
   orderId: 1036,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 23200,
   fee: 793,
   paymentTime: new Date('2024-04-20T14:59:01.000Z'),
@@ -8301,7 +8300,7 @@ export const payments = [
 {
   paymentId: 1037,
   orderId: 1037,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 21000,
   fee: 705,
   paymentTime: new Date('2024-04-21T02:04:47.000Z'),
@@ -8309,7 +8308,7 @@ export const payments = [
 {
   paymentId: 1038,
   orderId: 1038,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5000,
   fee: 0,
   paymentTime: new Date('2024-04-21T02:06:00.000Z'),
@@ -8317,7 +8316,7 @@ export const payments = [
 {
   paymentId: 1039,
   orderId: 1039,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 18700,
   fee: 378,
   paymentTime: new Date('2024-04-21T02:22:06.000Z'),
@@ -8325,7 +8324,7 @@ export const payments = [
 {
   paymentId: 1040,
   orderId: 1040,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9500,
   fee: 0,
   paymentTime: new Date('2024-04-21T02:26:35.000Z'),
@@ -8333,7 +8332,7 @@ export const payments = [
 {
   paymentId: 1041,
   orderId: 1041,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9000,
   fee: 316,
   paymentTime: new Date('2024-04-21T02:31:48.000Z'),
@@ -8341,7 +8340,7 @@ export const payments = [
 {
   paymentId: 1042,
   orderId: 1042,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17100,
   fee: 607,
   paymentTime: new Date('2024-04-21T03:34:06.000Z'),
@@ -8349,7 +8348,7 @@ export const payments = [
 {
   paymentId: 1043,
   orderId: 1043,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18200,
   fee: 610,
   paymentTime: new Date('2024-04-21T03:55:29.000Z'),
@@ -8357,7 +8356,7 @@ export const payments = [
 {
   paymentId: 1044,
   orderId: 1044,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8900,
   fee: 189,
   paymentTime: new Date('2024-04-21T04:07:12.000Z'),
@@ -8365,7 +8364,7 @@ export const payments = [
 {
   paymentId: 1045,
   orderId: 1045,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10000,
   fee: 241,
   paymentTime: new Date('2024-04-21T04:09:26.000Z'),
@@ -8373,7 +8372,7 @@ export const payments = [
 {
   paymentId: 1046,
   orderId: 1046,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 5200,
   fee: 130,
   paymentTime: new Date('2024-04-21T04:43:08.000Z'),
@@ -8381,7 +8380,7 @@ export const payments = [
 {
   paymentId: 1047,
   orderId: 1047,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 19600,
   fee: 677,
   paymentTime: new Date('2024-04-21T08:23:03.000Z'),
@@ -8389,7 +8388,7 @@ export const payments = [
 {
   paymentId: 1048,
   orderId: 1048,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10900,
   fee: 221,
   paymentTime: new Date('2024-04-21T09:12:52.000Z'),
@@ -8397,7 +8396,7 @@ export const payments = [
 {
   paymentId: 1049,
   orderId: 1049,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8800,
   fee: 183,
   paymentTime: new Date('2024-04-21T09:43:30.000Z'),
@@ -8405,7 +8404,7 @@ export const payments = [
 {
   paymentId: 1050,
   orderId: 1050,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10200,
   fee: 317,
   paymentTime: new Date('2024-04-21T09:59:03.000Z'),
@@ -8413,7 +8412,7 @@ export const payments = [
 {
   paymentId: 1051,
   orderId: 1051,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11700,
   fee: 0,
   paymentTime: new Date('2024-04-21T13:35:07.000Z'),
@@ -8421,7 +8420,7 @@ export const payments = [
 {
   paymentId: 1052,
   orderId: 1052,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12100,
   fee: 303,
   paymentTime: new Date('2024-04-21T13:56:37.000Z'),
@@ -8429,7 +8428,7 @@ export const payments = [
 {
   paymentId: 1053,
   orderId: 1053,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 18700,
   fee: 539,
   paymentTime: new Date('2024-04-21T14:23:55.000Z'),
@@ -8437,7 +8436,7 @@ export const payments = [
 {
   paymentId: 1054,
   orderId: 1054,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6200,
   fee: 235,
   paymentTime: new Date('2024-04-22T02:09:12.000Z'),
@@ -8445,7 +8444,7 @@ export const payments = [
 {
   paymentId: 1055,
   orderId: 1055,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12200,
   fee: 432,
   paymentTime: new Date('2024-04-22T02:32:00.000Z'),
@@ -8453,7 +8452,7 @@ export const payments = [
 {
   paymentId: 1056,
   orderId: 1056,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17100,
   fee: 364,
   paymentTime: new Date('2024-04-22T02:39:27.000Z'),
@@ -8461,7 +8460,7 @@ export const payments = [
 {
   paymentId: 1057,
   orderId: 1057,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8700,
   fee: 216,
   paymentTime: new Date('2024-04-22T02:43:02.000Z'),
@@ -8469,7 +8468,7 @@ export const payments = [
 {
   paymentId: 1058,
   orderId: 1058,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17900,
   fee: 595,
   paymentTime: new Date('2024-04-22T03:24:31.000Z'),
@@ -8477,7 +8476,7 @@ export const payments = [
 {
   paymentId: 1059,
   orderId: 1059,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11200,
   fee: 0,
   paymentTime: new Date('2024-04-22T03:26:51.000Z'),
@@ -8485,7 +8484,7 @@ export const payments = [
 {
   paymentId: 1060,
   orderId: 1060,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 24200,
   fee: 605,
   paymentTime: new Date('2024-04-22T03:43:01.000Z'),
@@ -8493,7 +8492,7 @@ export const payments = [
 {
   paymentId: 1061,
   orderId: 1061,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 12300,
   fee: 362,
   paymentTime: new Date('2024-04-22T04:06:07.000Z'),
@@ -8501,7 +8500,7 @@ export const payments = [
 {
   paymentId: 1062,
   orderId: 1062,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 25600,
   fee: 0,
   paymentTime: new Date('2024-04-22T04:30:05.000Z'),
@@ -8509,7 +8508,7 @@ export const payments = [
 {
   paymentId: 1063,
   orderId: 1063,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15200,
   fee: 0,
   paymentTime: new Date('2024-04-22T04:35:11.000Z'),
@@ -8517,7 +8516,7 @@ export const payments = [
 {
   paymentId: 1064,
   orderId: 1064,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14700,
   fee: 470,
   paymentTime: new Date('2024-04-22T09:19:12.000Z'),
@@ -8525,7 +8524,7 @@ export const payments = [
 {
   paymentId: 1065,
   orderId: 1065,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4500,
   fee: 0,
   paymentTime: new Date('2024-04-22T11:27:41.000Z'),
@@ -8533,7 +8532,7 @@ export const payments = [
 {
   paymentId: 1066,
   orderId: 1066,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4500,
   fee: 145,
   paymentTime: new Date('2024-04-22T11:52:52.000Z'),
@@ -8541,7 +8540,7 @@ export const payments = [
 {
   paymentId: 1067,
   orderId: 1067,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10300,
   fee: 0,
   paymentTime: new Date('2024-04-22T12:11:38.000Z'),
@@ -8549,7 +8548,7 @@ export const payments = [
 {
   paymentId: 1068,
   orderId: 1068,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7400,
   fee: 185,
   paymentTime: new Date('2024-04-22T12:35:59.000Z'),
@@ -8557,7 +8556,7 @@ export const payments = [
 {
   paymentId: 1069,
   orderId: 1069,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7800,
   fee: 0,
   paymentTime: new Date('2024-04-22T12:46:45.000Z'),
@@ -8565,7 +8564,7 @@ export const payments = [
 {
   paymentId: 1070,
   orderId: 1070,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7400,
   fee: 245,
   paymentTime: new Date('2024-04-22T13:11:15.000Z'),
@@ -8573,7 +8572,7 @@ export const payments = [
 {
   paymentId: 1071,
   orderId: 1071,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7200,
   fee: 0,
   paymentTime: new Date('2024-04-22T13:31:23.000Z'),
@@ -8581,7 +8580,7 @@ export const payments = [
 {
   paymentId: 1072,
   orderId: 1072,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6600,
   fee: 0,
   paymentTime: new Date('2024-04-23T02:25:57.000Z'),
@@ -8589,7 +8588,7 @@ export const payments = [
 {
   paymentId: 1073,
   orderId: 1073,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9700,
   fee: 0,
   paymentTime: new Date('2024-04-23T02:43:57.000Z'),
@@ -8597,7 +8596,7 @@ export const payments = [
 {
   paymentId: 1074,
   orderId: 1074,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12900,
   fee: 438,
   paymentTime: new Date('2024-04-23T02:41:45.000Z'),
@@ -8605,7 +8604,7 @@ export const payments = [
 {
   paymentId: 1075,
   orderId: 1075,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13800,
   fee: 0,
   paymentTime: new Date('2024-04-23T02:49:26.000Z'),
@@ -8613,7 +8612,7 @@ export const payments = [
 {
   paymentId: 1076,
   orderId: 1076,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11400,
   fee: 0,
   paymentTime: new Date('2024-04-23T02:53:55.000Z'),
@@ -8621,7 +8620,7 @@ export const payments = [
 {
   paymentId: 1077,
   orderId: 1077,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14100,
   fee: 429,
   paymentTime: new Date('2024-04-23T03:28:20.000Z'),
@@ -8629,7 +8628,7 @@ export const payments = [
 {
   paymentId: 1078,
   orderId: 1078,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7300,
   fee: 0,
   paymentTime: new Date('2024-04-23T03:32:58.000Z'),
@@ -8637,7 +8636,7 @@ export const payments = [
 {
   paymentId: 1079,
   orderId: 1079,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12300,
   fee: 308,
   paymentTime: new Date('2024-04-23T03:34:21.000Z'),
@@ -8645,7 +8644,7 @@ export const payments = [
 {
   paymentId: 1080,
   orderId: 1080,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12800,
   fee: 447,
   paymentTime: new Date('2024-04-23T03:47:50.000Z'),
@@ -8653,7 +8652,7 @@ export const payments = [
 {
   paymentId: 1081,
   orderId: 1081,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20900,
   fee: 650,
   paymentTime: new Date('2024-04-23T04:20:39.000Z'),
@@ -8661,7 +8660,7 @@ export const payments = [
 {
   paymentId: 1082,
   orderId: 1082,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17500,
   fee: 575,
   paymentTime: new Date('2024-04-23T04:25:47.000Z'),
@@ -8669,7 +8668,7 @@ export const payments = [
 {
   paymentId: 1083,
   orderId: 1083,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16300,
   fee: 0,
   paymentTime: new Date('2024-04-23T04:26:02.000Z'),
@@ -8677,7 +8676,7 @@ export const payments = [
 {
   paymentId: 1084,
   orderId: 1084,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 20300,
   fee: 746,
   paymentTime: new Date('2024-04-23T04:53:26.000Z'),
@@ -8685,7 +8684,7 @@ export const payments = [
 {
   paymentId: 1085,
   orderId: 1085,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 8700,
   fee: 261,
   paymentTime: new Date('2024-04-23T08:29:54.000Z'),
@@ -8693,7 +8692,7 @@ export const payments = [
 {
   paymentId: 1086,
   orderId: 1086,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 3800,
   fee: 95,
   paymentTime: new Date('2024-04-23T08:50:50.000Z'),
@@ -8701,7 +8700,7 @@ export const payments = [
 {
   paymentId: 1087,
   orderId: 1087,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12700,
   fee: 308,
   paymentTime: new Date('2024-04-23T08:59:11.000Z'),
@@ -8709,7 +8708,7 @@ export const payments = [
 {
   paymentId: 1088,
   orderId: 1088,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 11800,
   fee: 327,
   paymentTime: new Date('2024-04-23T09:21:11.000Z'),
@@ -8717,7 +8716,7 @@ export const payments = [
 {
   paymentId: 1089,
   orderId: 1089,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12300,
   fee: 378,
   paymentTime: new Date('2024-04-23T09:28:11.000Z'),
@@ -8725,7 +8724,7 @@ export const payments = [
 {
   paymentId: 1090,
   orderId: 1090,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13400,
   fee: 406,
   paymentTime: new Date('2024-04-23T09:52:37.000Z'),
@@ -8733,7 +8732,7 @@ export const payments = [
 {
   paymentId: 1091,
   orderId: 1091,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 12100,
   fee: 354,
   paymentTime: new Date('2024-04-23T10:32:29.000Z'),
@@ -8741,7 +8740,7 @@ export const payments = [
 {
   paymentId: 1092,
   orderId: 1092,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6500,
   fee: 207,
   paymentTime: new Date('2024-04-23T11:29:10.000Z'),
@@ -8749,7 +8748,7 @@ export const payments = [
 {
   paymentId: 1093,
   orderId: 1093,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7200,
   fee: 241,
   paymentTime: new Date('2024-04-23T11:59:51.000Z'),
@@ -8757,7 +8756,7 @@ export const payments = [
 {
   paymentId: 1094,
   orderId: 1094,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6100,
   fee: 194,
   paymentTime: new Date('2024-04-23T12:32:35.000Z'),
@@ -8765,7 +8764,7 @@ export const payments = [
 {
   paymentId: 1095,
   orderId: 1095,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7900,
   fee: 263,
   paymentTime: new Date('2024-04-23T13:26:19.000Z'),
@@ -8773,7 +8772,7 @@ export const payments = [
 {
   paymentId: 1096,
   orderId: 1096,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 5200,
   fee: 119,
   paymentTime: new Date('2024-04-23T13:56:19.000Z'),
@@ -8781,7 +8780,7 @@ export const payments = [
 {
   paymentId: 1097,
   orderId: 1097,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7300,
   fee: 222,
   paymentTime: new Date('2024-04-23T14:01:34.000Z'),
@@ -8789,7 +8788,7 @@ export const payments = [
 {
   paymentId: 1098,
   orderId: 1098,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7500,
   fee: 188,
   paymentTime: new Date('2024-04-23T14:48:35.000Z'),
@@ -8797,7 +8796,7 @@ export const payments = [
 {
   paymentId: 1099,
   orderId: 1099,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11900,
   fee: 295,
   paymentTime: new Date('2024-04-24T02:14:38.000Z'),
@@ -8805,7 +8804,7 @@ export const payments = [
 {
   paymentId: 1100,
   orderId: 1100,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8800,
   fee: 0,
   paymentTime: new Date('2024-04-24T02:46:30.000Z'),
@@ -8813,7 +8812,7 @@ export const payments = [
 {
   paymentId: 1101,
   orderId: 1101,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8000,
   fee: 252,
   paymentTime: new Date('2024-04-24T02:58:50.000Z'),
@@ -8821,7 +8820,7 @@ export const payments = [
 {
   paymentId: 1102,
   orderId: 1102,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15300,
   fee: 471,
   paymentTime: new Date('2024-04-24T03:19:30.000Z'),
@@ -8829,7 +8828,7 @@ export const payments = [
 {
   paymentId: 1103,
   orderId: 1103,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9900,
   fee: 350,
   paymentTime: new Date('2024-04-24T03:22:46.000Z'),
@@ -8837,7 +8836,7 @@ export const payments = [
 {
   paymentId: 1104,
   orderId: 1104,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15800,
   fee: 554,
   paymentTime: new Date('2024-04-24T03:37:51.000Z'),
@@ -8845,7 +8844,7 @@ export const payments = [
 {
   paymentId: 1105,
   orderId: 1105,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12000,
   fee: 300,
   paymentTime: new Date('2024-04-24T03:57:09.000Z'),
@@ -8853,7 +8852,7 @@ export const payments = [
 {
   paymentId: 1106,
   orderId: 1106,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7100,
   fee: 239,
   paymentTime: new Date('2024-04-24T04:38:05.000Z'),
@@ -8861,7 +8860,7 @@ export const payments = [
 {
   paymentId: 1107,
   orderId: 1107,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 22000,
   fee: 526,
   paymentTime: new Date('2024-04-24T04:45:50.000Z'),
@@ -8869,7 +8868,7 @@ export const payments = [
 {
   paymentId: 1108,
   orderId: 1108,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10600,
   fee: 325,
   paymentTime: new Date('2024-04-24T08:04:51.000Z'),
@@ -8877,7 +8876,7 @@ export const payments = [
 {
   paymentId: 1109,
   orderId: 1109,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11200,
   fee: 280,
   paymentTime: new Date('2024-04-24T08:18:21.000Z'),
@@ -8885,7 +8884,7 @@ export const payments = [
 {
   paymentId: 1110,
   orderId: 1110,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16200,
   fee: 340,
   paymentTime: new Date('2024-04-24T08:34:55.000Z'),
@@ -8893,7 +8892,7 @@ export const payments = [
 {
   paymentId: 1111,
   orderId: 1111,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10200,
   fee: 255,
   paymentTime: new Date('2024-04-24T08:56:51.000Z'),
@@ -8901,7 +8900,7 @@ export const payments = [
 {
   paymentId: 1112,
   orderId: 1112,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 28300,
   fee: 0,
   paymentTime: new Date('2024-04-24T08:59:02.000Z'),
@@ -8909,7 +8908,7 @@ export const payments = [
 {
   paymentId: 1113,
   orderId: 1113,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 5300,
   fee: 133,
   paymentTime: new Date('2024-04-24T09:05:55.000Z'),
@@ -8917,7 +8916,7 @@ export const payments = [
 {
   paymentId: 1114,
   orderId: 1114,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5500,
   fee: 167,
   paymentTime: new Date('2024-04-24T09:10:25.000Z'),
@@ -8925,7 +8924,7 @@ export const payments = [
 {
   paymentId: 1115,
   orderId: 1115,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 22100,
   fee: 0,
   paymentTime: new Date('2024-04-24T09:18:52.000Z'),
@@ -8933,7 +8932,7 @@ export const payments = [
 {
   paymentId: 1116,
   orderId: 1116,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12700,
   fee: 456,
   paymentTime: new Date('2024-04-24T09:28:28.000Z'),
@@ -8941,7 +8940,7 @@ export const payments = [
 {
   paymentId: 1117,
   orderId: 1117,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 3500,
   fee: 110,
   paymentTime: new Date('2024-04-24T09:34:47.000Z'),
@@ -8949,7 +8948,7 @@ export const payments = [
 {
   paymentId: 1118,
   orderId: 1118,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11100,
   fee: 0,
   paymentTime: new Date('2024-04-24T09:52:07.000Z'),
@@ -8957,7 +8956,7 @@ export const payments = [
 {
   paymentId: 1119,
   orderId: 1119,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 21100,
   fee: 482,
   paymentTime: new Date('2024-04-24T10:01:05.000Z'),
@@ -8965,7 +8964,7 @@ export const payments = [
 {
   paymentId: 1120,
   orderId: 1120,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15400,
   fee: 530,
   paymentTime: new Date('2024-04-24T10:28:42.000Z'),
@@ -8973,7 +8972,7 @@ export const payments = [
 {
   paymentId: 1121,
   orderId: 1121,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11500,
   fee: 362,
   paymentTime: new Date('2024-04-24T11:31:18.000Z'),
@@ -8981,7 +8980,7 @@ export const payments = [
 {
   paymentId: 1122,
   orderId: 1122,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 3700,
   fee: 135,
   paymentTime: new Date('2024-04-24T13:09:20.000Z'),
@@ -8989,7 +8988,7 @@ export const payments = [
 {
   paymentId: 1123,
   orderId: 1123,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13200,
   fee: 428,
   paymentTime: new Date('2024-04-24T13:41:52.000Z'),
@@ -8997,7 +8996,7 @@ export const payments = [
 {
   paymentId: 1124,
   orderId: 1124,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10000,
   fee: 0,
   paymentTime: new Date('2024-04-24T14:27:41.000Z'),
@@ -9005,7 +9004,7 @@ export const payments = [
 {
   paymentId: 1125,
   orderId: 1125,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12200,
   fee: 414,
   paymentTime: new Date('2024-04-24T14:42:10.000Z'),
@@ -9013,7 +9012,7 @@ export const payments = [
 {
   paymentId: 1126,
   orderId: 1126,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 22100,
   fee: 679,
   paymentTime: new Date('2024-04-24T14:42:08.000Z'),
@@ -9021,7 +9020,7 @@ export const payments = [
 {
   paymentId: 1127,
   orderId: 1127,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 21600,
   fee: 752,
   paymentTime: new Date('2024-04-25T02:10:45.000Z'),
@@ -9029,7 +9028,7 @@ export const payments = [
 {
   paymentId: 1128,
   orderId: 1128,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15900,
   fee: 527,
   paymentTime: new Date('2024-04-25T02:22:57.000Z'),
@@ -9037,7 +9036,7 @@ export const payments = [
 {
   paymentId: 1129,
   orderId: 1129,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 13800,
   fee: 387,
   paymentTime: new Date('2024-04-25T02:26:17.000Z'),
@@ -9045,7 +9044,7 @@ export const payments = [
 {
   paymentId: 1130,
   orderId: 1130,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7200,
   fee: 269,
   paymentTime: new Date('2024-04-25T02:48:18.000Z'),
@@ -9053,7 +9052,7 @@ export const payments = [
 {
   paymentId: 1131,
   orderId: 1131,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7000,
   fee: 0,
   paymentTime: new Date('2024-04-25T02:49:49.000Z'),
@@ -9061,7 +9060,7 @@ export const payments = [
 {
   paymentId: 1132,
   orderId: 1132,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 29400,
   fee: 955,
   paymentTime: new Date('2024-04-25T03:03:16.000Z'),
@@ -9069,7 +9068,7 @@ export const payments = [
 {
   paymentId: 1133,
   orderId: 1133,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11100,
   fee: 0,
   paymentTime: new Date('2024-04-25T04:08:10.000Z'),
@@ -9077,7 +9076,7 @@ export const payments = [
 {
   paymentId: 1134,
   orderId: 1134,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5600,
   fee: 0,
   paymentTime: new Date('2024-04-25T04:08:30.000Z'),
@@ -9085,7 +9084,7 @@ export const payments = [
 {
   paymentId: 1135,
   orderId: 1135,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 14600,
   fee: 365,
   paymentTime: new Date('2024-04-25T04:13:26.000Z'),
@@ -9093,7 +9092,7 @@ export const payments = [
 {
   paymentId: 1136,
   orderId: 1136,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14500,
   fee: 512,
   paymentTime: new Date('2024-04-25T04:20:15.000Z'),
@@ -9101,7 +9100,7 @@ export const payments = [
 {
   paymentId: 1137,
   orderId: 1137,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16100,
   fee: 388,
   paymentTime: new Date('2024-04-25T08:30:59.000Z'),
@@ -9109,7 +9108,7 @@ export const payments = [
 {
   paymentId: 1138,
   orderId: 1138,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 20700,
   fee: 508,
   paymentTime: new Date('2024-04-25T08:46:28.000Z'),
@@ -9117,7 +9116,7 @@ export const payments = [
 {
   paymentId: 1139,
   orderId: 1139,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9300,
   fee: 0,
   paymentTime: new Date('2024-04-25T09:05:43.000Z'),
@@ -9125,7 +9124,7 @@ export const payments = [
 {
   paymentId: 1140,
   orderId: 1140,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14700,
   fee: 0,
   paymentTime: new Date('2024-04-25T09:09:46.000Z'),
@@ -9133,7 +9132,7 @@ export const payments = [
 {
   paymentId: 1141,
   orderId: 1141,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12300,
   fee: 458,
   paymentTime: new Date('2024-04-25T10:23:40.000Z'),
@@ -9141,7 +9140,7 @@ export const payments = [
 {
   paymentId: 1142,
   orderId: 1142,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9000,
   fee: 0,
   paymentTime: new Date('2024-04-25T10:26:59.000Z'),
@@ -9149,7 +9148,7 @@ export const payments = [
 {
   paymentId: 1143,
   orderId: 1143,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10800,
   fee: 342,
   paymentTime: new Date('2024-04-25T10:59:33.000Z'),
@@ -9157,7 +9156,7 @@ export const payments = [
 {
   paymentId: 1144,
   orderId: 1144,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6400,
   fee: 160,
   paymentTime: new Date('2024-04-25T11:13:38.000Z'),
@@ -9165,7 +9164,7 @@ export const payments = [
 {
   paymentId: 1145,
   orderId: 1145,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 10200,
   fee: 305,
   paymentTime: new Date('2024-04-25T11:51:16.000Z'),
@@ -9173,7 +9172,7 @@ export const payments = [
 {
   paymentId: 1146,
   orderId: 1146,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 3900,
   fee: 83,
   paymentTime: new Date('2024-04-25T12:04:25.000Z'),
@@ -9181,7 +9180,7 @@ export const payments = [
 {
   paymentId: 1147,
   orderId: 1147,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4100,
   fee: 140,
   paymentTime: new Date('2024-04-25T12:16:53.000Z'),
@@ -9189,7 +9188,7 @@ export const payments = [
 {
   paymentId: 1148,
   orderId: 1148,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10200,
   fee: 0,
   paymentTime: new Date('2024-04-25T12:21:35.000Z'),
@@ -9197,7 +9196,7 @@ export const payments = [
 {
   paymentId: 1149,
   orderId: 1149,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 5700,
   fee: 141,
   paymentTime: new Date('2024-04-25T12:33:34.000Z'),
@@ -9205,7 +9204,7 @@ export const payments = [
 {
   paymentId: 1150,
   orderId: 1150,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5200,
   fee: 167,
   paymentTime: new Date('2024-04-25T12:42:24.000Z'),
@@ -9213,7 +9212,7 @@ export const payments = [
 {
   paymentId: 1151,
   orderId: 1151,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11800,
   fee: 0,
   paymentTime: new Date('2024-04-25T13:28:42.000Z'),
@@ -9221,7 +9220,7 @@ export const payments = [
 {
   paymentId: 1152,
   orderId: 1152,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8300,
   fee: 0,
   paymentTime: new Date('2024-04-25T13:37:12.000Z'),
@@ -9229,7 +9228,7 @@ export const payments = [
 {
   paymentId: 1153,
   orderId: 1153,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 21700,
   fee: 0,
   paymentTime: new Date('2024-04-25T14:31:04.000Z'),
@@ -9237,7 +9236,7 @@ export const payments = [
 {
   paymentId: 1154,
   orderId: 1154,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15100,
   fee: 511,
   paymentTime: new Date('2024-04-25T14:38:38.000Z'),
@@ -9245,7 +9244,7 @@ export const payments = [
 {
   paymentId: 1155,
   orderId: 1155,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12600,
   fee: 435,
   paymentTime: new Date('2024-04-25T14:50:09.000Z'),
@@ -9253,7 +9252,7 @@ export const payments = [
 {
   paymentId: 1156,
   orderId: 1156,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13200,
   fee: 0,
   paymentTime: new Date('2024-04-25T15:02:45.000Z'),
@@ -9261,7 +9260,7 @@ export const payments = [
 {
   paymentId: 1157,
   orderId: 1157,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 18900,
   fee: 540,
   paymentTime: new Date('2024-04-26T02:09:49.000Z'),
@@ -9269,7 +9268,7 @@ export const payments = [
 {
   paymentId: 1158,
   orderId: 1158,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 19300,
   fee: 472,
   paymentTime: new Date('2024-04-26T02:41:28.000Z'),
@@ -9277,7 +9276,7 @@ export const payments = [
 {
   paymentId: 1159,
   orderId: 1159,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16500,
   fee: 568,
   paymentTime: new Date('2024-04-26T03:03:27.000Z'),
@@ -9285,7 +9284,7 @@ export const payments = [
 {
   paymentId: 1160,
   orderId: 1160,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9800,
   fee: 302,
   paymentTime: new Date('2024-04-26T03:09:59.000Z'),
@@ -9293,7 +9292,7 @@ export const payments = [
 {
   paymentId: 1161,
   orderId: 1161,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 24700,
   fee: 0,
   paymentTime: new Date('2024-04-26T03:24:25.000Z'),
@@ -9301,7 +9300,7 @@ export const payments = [
 {
   paymentId: 1162,
   orderId: 1162,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13600,
   fee: 429,
   paymentTime: new Date('2024-04-26T04:34:54.000Z'),
@@ -9309,7 +9308,7 @@ export const payments = [
 {
   paymentId: 1163,
   orderId: 1163,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7500,
   fee: 0,
   paymentTime: new Date('2024-04-26T04:54:17.000Z'),
@@ -9317,7 +9316,7 @@ export const payments = [
 {
   paymentId: 1164,
   orderId: 1164,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 20700,
   fee: 619,
   paymentTime: new Date('2024-04-26T08:30:31.000Z'),
@@ -9325,7 +9324,7 @@ export const payments = [
 {
   paymentId: 1165,
   orderId: 1165,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18700,
   fee: 583,
   paymentTime: new Date('2024-04-26T08:59:42.000Z'),
@@ -9333,7 +9332,7 @@ export const payments = [
 {
   paymentId: 1166,
   orderId: 1166,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18400,
   fee: 589,
   paymentTime: new Date('2024-04-26T10:09:16.000Z'),
@@ -9341,7 +9340,7 @@ export const payments = [
 {
   paymentId: 1167,
   orderId: 1167,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6400,
   fee: 240,
   paymentTime: new Date('2024-04-26T11:01:01.000Z'),
@@ -9349,7 +9348,7 @@ export const payments = [
 {
   paymentId: 1168,
   orderId: 1168,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13500,
   fee: 0,
   paymentTime: new Date('2024-04-26T13:10:57.000Z'),
@@ -9357,7 +9356,7 @@ export const payments = [
 {
   paymentId: 1169,
   orderId: 1169,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5600,
   fee: 0,
   paymentTime: new Date('2024-04-26T13:45:03.000Z'),
@@ -9365,7 +9364,7 @@ export const payments = [
 {
   paymentId: 1170,
   orderId: 1170,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 26400,
   fee: 852,
   paymentTime: new Date('2024-04-27T02:00:48.000Z'),
@@ -9373,7 +9372,7 @@ export const payments = [
 {
   paymentId: 1171,
   orderId: 1171,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12600,
   fee: 435,
   paymentTime: new Date('2024-04-27T02:15:19.000Z'),
@@ -9381,7 +9380,7 @@ export const payments = [
 {
   paymentId: 1172,
   orderId: 1172,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17300,
   fee: 528,
   paymentTime: new Date('2024-04-27T02:21:38.000Z'),
@@ -9389,7 +9388,7 @@ export const payments = [
 {
   paymentId: 1173,
   orderId: 1173,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9900,
   fee: 0,
   paymentTime: new Date('2024-04-27T03:24:07.000Z'),
@@ -9397,7 +9396,7 @@ export const payments = [
 {
   paymentId: 1174,
   orderId: 1174,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9400,
   fee: 305,
   paymentTime: new Date('2024-04-27T03:27:31.000Z'),
@@ -9405,7 +9404,7 @@ export const payments = [
 {
   paymentId: 1175,
   orderId: 1175,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 22700,
   fee: 730,
   paymentTime: new Date('2024-04-27T03:33:40.000Z'),
@@ -9413,7 +9412,7 @@ export const payments = [
 {
   paymentId: 1176,
   orderId: 1176,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14600,
   fee: 339,
   paymentTime: new Date('2024-04-27T03:42:08.000Z'),
@@ -9421,7 +9420,7 @@ export const payments = [
 {
   paymentId: 1177,
   orderId: 1177,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13600,
   fee: 489,
   paymentTime: new Date('2024-04-27T03:49:57.000Z'),
@@ -9429,7 +9428,7 @@ export const payments = [
 {
   paymentId: 1178,
   orderId: 1178,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17400,
   fee: 623,
   paymentTime: new Date('2024-04-27T03:56:26.000Z'),
@@ -9437,7 +9436,7 @@ export const payments = [
 {
   paymentId: 1179,
   orderId: 1179,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17700,
   fee: 580,
   paymentTime: new Date('2024-04-27T04:02:40.000Z'),
@@ -9445,7 +9444,7 @@ export const payments = [
 {
   paymentId: 1180,
   orderId: 1180,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15300,
   fee: 530,
   paymentTime: new Date('2024-04-27T04:16:03.000Z'),
@@ -9453,7 +9452,7 @@ export const payments = [
 {
   paymentId: 1181,
   orderId: 1181,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 7600,
   fee: 220,
   paymentTime: new Date('2024-04-27T04:14:48.000Z'),
@@ -9461,7 +9460,7 @@ export const payments = [
 {
   paymentId: 1182,
   orderId: 1182,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17000,
   fee: 423,
   paymentTime: new Date('2024-04-27T04:17:34.000Z'),
@@ -9469,7 +9468,7 @@ export const payments = [
 {
   paymentId: 1183,
   orderId: 1183,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11000,
   fee: 335,
   paymentTime: new Date('2024-04-27T08:05:21.000Z'),
@@ -9477,7 +9476,7 @@ export const payments = [
 {
   paymentId: 1184,
   orderId: 1184,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 16900,
   fee: 423,
   paymentTime: new Date('2024-04-27T08:27:42.000Z'),
@@ -9485,7 +9484,7 @@ export const payments = [
 {
   paymentId: 1185,
   orderId: 1185,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 18400,
   fee: 460,
   paymentTime: new Date('2024-04-27T10:06:40.000Z'),
@@ -9493,7 +9492,7 @@ export const payments = [
 {
   paymentId: 1186,
   orderId: 1186,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14300,
   fee: 0,
   paymentTime: new Date('2024-04-27T10:14:10.000Z'),
@@ -9501,7 +9500,7 @@ export const payments = [
 {
   paymentId: 1187,
   orderId: 1187,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 18600,
   fee: 0,
   paymentTime: new Date('2024-04-27T10:18:28.000Z'),
@@ -9509,7 +9508,7 @@ export const payments = [
 {
   paymentId: 1188,
   orderId: 1188,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6000,
   fee: 218,
   paymentTime: new Date('2024-04-27T10:35:33.000Z'),
@@ -9517,7 +9516,7 @@ export const payments = [
 {
   paymentId: 1189,
   orderId: 1189,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18600,
   fee: 591,
   paymentTime: new Date('2024-04-27T10:47:50.000Z'),
@@ -9525,7 +9524,7 @@ export const payments = [
 {
   paymentId: 1190,
   orderId: 1190,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4300,
   fee: 149,
   paymentTime: new Date('2024-04-27T11:18:19.000Z'),
@@ -9533,7 +9532,7 @@ export const payments = [
 {
   paymentId: 1191,
   orderId: 1191,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7900,
   fee: 161,
   paymentTime: new Date('2024-04-27T11:29:19.000Z'),
@@ -9541,7 +9540,7 @@ export const payments = [
 {
   paymentId: 1192,
   orderId: 1192,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8400,
   fee: 264,
   paymentTime: new Date('2024-04-27T11:53:55.000Z'),
@@ -9549,7 +9548,7 @@ export const payments = [
 {
   paymentId: 1193,
   orderId: 1193,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7100,
   fee: 221,
   paymentTime: new Date('2024-04-27T12:02:17.000Z'),
@@ -9557,7 +9556,7 @@ export const payments = [
 {
   paymentId: 1194,
   orderId: 1194,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6500,
   fee: 207,
   paymentTime: new Date('2024-04-27T12:20:14.000Z'),
@@ -9565,7 +9564,7 @@ export const payments = [
 {
   paymentId: 1195,
   orderId: 1195,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10000,
   fee: 305,
   paymentTime: new Date('2024-04-27T13:00:01.000Z'),
@@ -9573,7 +9572,7 @@ export const payments = [
 {
   paymentId: 1196,
   orderId: 1196,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 5600,
   fee: 162,
   paymentTime: new Date('2024-04-27T13:36:20.000Z'),
@@ -9581,7 +9580,7 @@ export const payments = [
 {
   paymentId: 1197,
   orderId: 1197,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9500,
   fee: 294,
   paymentTime: new Date('2024-04-27T13:40:26.000Z'),
@@ -9589,7 +9588,7 @@ export const payments = [
 {
   paymentId: 1198,
   orderId: 1198,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11700,
   fee: 409,
   paymentTime: new Date('2024-04-27T14:15:34.000Z'),
@@ -9597,7 +9596,7 @@ export const payments = [
 {
   paymentId: 1199,
   orderId: 1199,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 25600,
   fee: 0,
   paymentTime: new Date('2024-04-27T14:45:43.000Z'),
@@ -9605,7 +9604,7 @@ export const payments = [
 {
   paymentId: 1200,
   orderId: 1200,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17800,
   fee: 610,
   paymentTime: new Date('2024-04-28T02:04:30.000Z'),
@@ -9613,7 +9612,7 @@ export const payments = [
 {
   paymentId: 1201,
   orderId: 1201,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9400,
   fee: 327,
   paymentTime: new Date('2024-04-28T02:09:13.000Z'),
@@ -9621,7 +9620,7 @@ export const payments = [
 {
   paymentId: 1202,
   orderId: 1202,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12900,
   fee: 0,
   paymentTime: new Date('2024-04-28T02:22:20.000Z'),
@@ -9629,7 +9628,7 @@ export const payments = [
 {
   paymentId: 1203,
   orderId: 1203,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12800,
   fee: 307,
   paymentTime: new Date('2024-04-28T02:24:03.000Z'),
@@ -9637,7 +9636,7 @@ export const payments = [
 {
   paymentId: 1204,
   orderId: 1204,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11900,
   fee: 262,
   paymentTime: new Date('2024-04-28T02:23:04.000Z'),
@@ -9645,7 +9644,7 @@ export const payments = [
 {
   paymentId: 1205,
   orderId: 1205,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13800,
   fee: 461,
   paymentTime: new Date('2024-04-28T02:50:28.000Z'),
@@ -9653,7 +9652,7 @@ export const payments = [
 {
   paymentId: 1206,
   orderId: 1206,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 15000,
   fee: 375,
   paymentTime: new Date('2024-04-28T02:59:55.000Z'),
@@ -9661,7 +9660,7 @@ export const payments = [
 {
   paymentId: 1207,
   orderId: 1207,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8600,
   fee: 203,
   paymentTime: new Date('2024-04-28T03:07:55.000Z'),
@@ -9669,7 +9668,7 @@ export const payments = [
 {
   paymentId: 1208,
   orderId: 1208,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7700,
   fee: 177,
   paymentTime: new Date('2024-04-28T03:07:29.000Z'),
@@ -9677,7 +9676,7 @@ export const payments = [
 {
   paymentId: 1209,
   orderId: 1209,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 14600,
   fee: 365,
   paymentTime: new Date('2024-04-28T03:23:15.000Z'),
@@ -9685,7 +9684,7 @@ export const payments = [
 {
   paymentId: 1210,
   orderId: 1210,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17200,
   fee: 0,
   paymentTime: new Date('2024-04-28T03:53:29.000Z'),
@@ -9693,7 +9692,7 @@ export const payments = [
 {
   paymentId: 1211,
   orderId: 1211,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7300,
   fee: 224,
   paymentTime: new Date('2024-04-28T04:15:47.000Z'),
@@ -9701,7 +9700,7 @@ export const payments = [
 {
   paymentId: 1212,
   orderId: 1212,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14200,
   fee: 447,
   paymentTime: new Date('2024-04-28T04:26:22.000Z'),
@@ -9709,7 +9708,7 @@ export const payments = [
 {
   paymentId: 1213,
   orderId: 1213,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 21300,
   fee: 468,
   paymentTime: new Date('2024-04-28T04:40:33.000Z'),
@@ -9717,7 +9716,7 @@ export const payments = [
 {
   paymentId: 1214,
   orderId: 1214,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8200,
   fee: 275,
   paymentTime: new Date('2024-04-28T04:56:35.000Z'),
@@ -9725,7 +9724,7 @@ export const payments = [
 {
   paymentId: 1215,
   orderId: 1215,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6100,
   fee: 0,
   paymentTime: new Date('2024-04-28T05:02:58.000Z'),
@@ -9733,7 +9732,7 @@ export const payments = [
 {
   paymentId: 1216,
   orderId: 1216,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13800,
   fee: 0,
   paymentTime: new Date('2024-04-28T05:04:36.000Z'),
@@ -9741,7 +9740,7 @@ export const payments = [
 {
   paymentId: 1217,
   orderId: 1217,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13000,
   fee: 285,
   paymentTime: new Date('2024-04-28T08:52:23.000Z'),
@@ -9749,7 +9748,7 @@ export const payments = [
 {
   paymentId: 1218,
   orderId: 1218,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13400,
   fee: 322,
   paymentTime: new Date('2024-04-28T10:05:56.000Z'),
@@ -9757,7 +9756,7 @@ export const payments = [
 {
   paymentId: 1219,
   orderId: 1219,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 18900,
   fee: 0,
   paymentTime: new Date('2024-04-28T10:29:15.000Z'),
@@ -9765,7 +9764,7 @@ export const payments = [
 {
   paymentId: 1220,
   orderId: 1220,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6400,
   fee: 0,
   paymentTime: new Date('2024-04-28T11:05:17.000Z'),
@@ -9773,7 +9772,7 @@ export const payments = [
 {
   paymentId: 1221,
   orderId: 1221,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5800,
   fee: 205,
   paymentTime: new Date('2024-04-28T11:19:03.000Z'),
@@ -9781,7 +9780,7 @@ export const payments = [
 {
   paymentId: 1222,
   orderId: 1222,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7800,
   fee: 292,
   paymentTime: new Date('2024-04-28T11:29:18.000Z'),
@@ -9789,7 +9788,7 @@ export const payments = [
 {
   paymentId: 1223,
   orderId: 1223,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6400,
   fee: 210,
   paymentTime: new Date('2024-04-28T12:35:13.000Z'),
@@ -9797,7 +9796,7 @@ export const payments = [
 {
   paymentId: 1224,
   orderId: 1224,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13900,
   fee: 477,
   paymentTime: new Date('2024-04-28T13:10:44.000Z'),
@@ -9805,7 +9804,7 @@ export const payments = [
 {
   paymentId: 1225,
   orderId: 1225,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8100,
   fee: 0,
   paymentTime: new Date('2024-04-28T13:23:42.000Z'),
@@ -9813,7 +9812,7 @@ export const payments = [
 {
   paymentId: 1226,
   orderId: 1226,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12200,
   fee: 371,
   paymentTime: new Date('2024-04-28T14:59:27.000Z'),
@@ -9821,7 +9820,7 @@ export const payments = [
 {
   paymentId: 1227,
   orderId: 1227,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9800,
   fee: 0,
   paymentTime: new Date('2024-04-29T02:43:28.000Z'),
@@ -9829,7 +9828,7 @@ export const payments = [
 {
   paymentId: 1228,
   orderId: 1228,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 22000,
   fee: 476,
   paymentTime: new Date('2024-04-29T03:06:11.000Z'),
@@ -9837,7 +9836,7 @@ export const payments = [
 {
   paymentId: 1229,
   orderId: 1229,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12100,
   fee: 0,
   paymentTime: new Date('2024-04-29T03:16:00.000Z'),
@@ -9845,7 +9844,7 @@ export const payments = [
 {
   paymentId: 1230,
   orderId: 1230,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 19300,
   fee: 651,
   paymentTime: new Date('2024-04-29T03:25:39.000Z'),
@@ -9853,7 +9852,7 @@ export const payments = [
 {
   paymentId: 1231,
   orderId: 1231,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6100,
   fee: 0,
   paymentTime: new Date('2024-04-29T03:37:54.000Z'),
@@ -9861,7 +9860,7 @@ export const payments = [
 {
   paymentId: 1232,
   orderId: 1232,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7300,
   fee: 0,
   paymentTime: new Date('2024-04-29T03:46:02.000Z'),
@@ -9869,7 +9868,7 @@ export const payments = [
 {
   paymentId: 1233,
   orderId: 1233,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12700,
   fee: 462,
   paymentTime: new Date('2024-04-29T03:51:50.000Z'),
@@ -9877,7 +9876,7 @@ export const payments = [
 {
   paymentId: 1234,
   orderId: 1234,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7500,
   fee: 161,
   paymentTime: new Date('2024-04-29T04:01:38.000Z'),
@@ -9885,7 +9884,7 @@ export const payments = [
 {
   paymentId: 1235,
   orderId: 1235,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15300,
   fee: 465,
   paymentTime: new Date('2024-04-29T04:30:16.000Z'),
@@ -9893,7 +9892,7 @@ export const payments = [
 {
   paymentId: 1236,
   orderId: 1236,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13000,
   fee: 274,
   paymentTime: new Date('2024-04-29T04:28:48.000Z'),
@@ -9901,7 +9900,7 @@ export const payments = [
 {
   paymentId: 1237,
   orderId: 1237,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8800,
   fee: 280,
   paymentTime: new Date('2024-04-29T04:33:50.000Z'),
@@ -9909,7 +9908,7 @@ export const payments = [
 {
   paymentId: 1238,
   orderId: 1238,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14200,
   fee: 326,
   paymentTime: new Date('2024-04-29T04:41:03.000Z'),
@@ -9917,7 +9916,7 @@ export const payments = [
 {
   paymentId: 1239,
   orderId: 1239,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15300,
   fee: 495,
   paymentTime: new Date('2024-04-29T08:23:06.000Z'),
@@ -9925,7 +9924,7 @@ export const payments = [
 {
   paymentId: 1240,
   orderId: 1240,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 21600,
   fee: 688,
   paymentTime: new Date('2024-04-29T08:52:47.000Z'),
@@ -9933,7 +9932,7 @@ export const payments = [
 {
   paymentId: 1241,
   orderId: 1241,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 21300,
   fee: 0,
   paymentTime: new Date('2024-04-29T08:57:40.000Z'),
@@ -9941,7 +9940,7 @@ export const payments = [
 {
   paymentId: 1242,
   orderId: 1242,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 23300,
   fee: 0,
   paymentTime: new Date('2024-04-29T09:07:20.000Z'),
@@ -9949,7 +9948,7 @@ export const payments = [
 {
   paymentId: 1243,
   orderId: 1243,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14200,
   fee: 436,
   paymentTime: new Date('2024-04-29T09:51:49.000Z'),
@@ -9957,7 +9956,7 @@ export const payments = [
 {
   paymentId: 1244,
   orderId: 1244,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 16300,
   fee: 557,
   paymentTime: new Date('2024-04-29T10:08:43.000Z'),
@@ -9965,7 +9964,7 @@ export const payments = [
 {
   paymentId: 1245,
   orderId: 1245,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13200,
   fee: 460,
   paymentTime: new Date('2024-04-29T10:13:26.000Z'),
@@ -9973,7 +9972,7 @@ export const payments = [
 {
   paymentId: 1246,
   orderId: 1246,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8100,
   fee: 276,
   paymentTime: new Date('2024-04-29T11:41:38.000Z'),
@@ -9981,7 +9980,7 @@ export const payments = [
 {
   paymentId: 1247,
   orderId: 1247,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11800,
   fee: 405,
   paymentTime: new Date('2024-04-29T11:47:23.000Z'),
@@ -9989,7 +9988,7 @@ export const payments = [
 {
   paymentId: 1248,
   orderId: 1248,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5700,
   fee: 0,
   paymentTime: new Date('2024-04-29T11:51:53.000Z'),
@@ -9997,7 +9996,7 @@ export const payments = [
 {
   paymentId: 1249,
   orderId: 1249,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6600,
   fee: 222,
   paymentTime: new Date('2024-04-29T11:55:33.000Z'),
@@ -10005,7 +10004,7 @@ export const payments = [
 {
   paymentId: 1250,
   orderId: 1250,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6600,
   fee: 215,
   paymentTime: new Date('2024-04-29T12:09:19.000Z'),
@@ -10013,7 +10012,7 @@ export const payments = [
 {
   paymentId: 1251,
   orderId: 1251,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8200,
   fee: 205,
   paymentTime: new Date('2024-04-29T12:12:54.000Z'),
@@ -10021,7 +10020,7 @@ export const payments = [
 {
   paymentId: 1252,
   orderId: 1252,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 9300,
   fee: 263,
   paymentTime: new Date('2024-04-29T12:31:16.000Z'),
@@ -10029,7 +10028,7 @@ export const payments = [
 {
   paymentId: 1253,
   orderId: 1253,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4400,
   fee: 0,
   paymentTime: new Date('2024-04-29T12:47:47.000Z'),
@@ -10037,7 +10036,7 @@ export const payments = [
 {
   paymentId: 1254,
   orderId: 1254,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9000,
   fee: 277,
   paymentTime: new Date('2024-04-29T13:42:45.000Z'),
@@ -10045,7 +10044,7 @@ export const payments = [
 {
   paymentId: 1255,
   orderId: 1255,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 18800,
   fee: 401,
   paymentTime: new Date('2024-04-29T14:48:04.000Z'),
@@ -10053,7 +10052,7 @@ export const payments = [
 {
   paymentId: 1256,
   orderId: 1256,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14400,
   fee: 467,
   paymentTime: new Date('2024-04-30T02:03:27.000Z'),
@@ -10061,7 +10060,7 @@ export const payments = [
 {
   paymentId: 1257,
   orderId: 1257,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15000,
   fee: 505,
   paymentTime: new Date('2024-04-30T02:20:48.000Z'),
@@ -10069,7 +10068,7 @@ export const payments = [
 {
   paymentId: 1258,
   orderId: 1258,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11300,
   fee: 0,
   paymentTime: new Date('2024-04-30T03:17:17.000Z'),
@@ -10077,7 +10076,7 @@ export const payments = [
 {
   paymentId: 1259,
   orderId: 1259,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14200,
   fee: 474,
   paymentTime: new Date('2024-04-30T03:28:43.000Z'),
@@ -10085,7 +10084,7 @@ export const payments = [
 {
   paymentId: 1260,
   orderId: 1260,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 25100,
   fee: 846,
   paymentTime: new Date('2024-04-30T03:28:03.000Z'),
@@ -10093,7 +10092,7 @@ export const payments = [
 {
   paymentId: 1261,
   orderId: 1261,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 16500,
   fee: 503,
   paymentTime: new Date('2024-04-30T03:47:16.000Z'),
@@ -10101,7 +10100,7 @@ export const payments = [
 {
   paymentId: 1262,
   orderId: 1262,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6800,
   fee: 206,
   paymentTime: new Date('2024-04-30T03:48:57.000Z'),
@@ -10109,7 +10108,7 @@ export const payments = [
 {
   paymentId: 1263,
   orderId: 1263,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8300,
   fee: 304,
   paymentTime: new Date('2024-04-30T03:50:30.000Z'),
@@ -10117,7 +10116,7 @@ export const payments = [
 {
   paymentId: 1264,
   orderId: 1264,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7100,
   fee: 261,
   paymentTime: new Date('2024-04-30T03:47:53.000Z'),
@@ -10125,7 +10124,7 @@ export const payments = [
 {
   paymentId: 1265,
   orderId: 1265,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12100,
   fee: 0,
   paymentTime: new Date('2024-04-30T03:58:38.000Z'),
@@ -10133,7 +10132,7 @@ export const payments = [
 {
   paymentId: 1266,
   orderId: 1266,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14400,
   fee: 529,
   paymentTime: new Date('2024-04-30T04:41:10.000Z'),
@@ -10141,7 +10140,7 @@ export const payments = [
 {
   paymentId: 1267,
   orderId: 1267,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6100,
   fee: 153,
   paymentTime: new Date('2024-04-30T05:00:11.000Z'),
@@ -10149,7 +10148,7 @@ export const payments = [
 {
   paymentId: 1268,
   orderId: 1268,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 21700,
   fee: 0,
   paymentTime: new Date('2024-04-30T04:59:47.000Z'),
@@ -10157,7 +10156,7 @@ export const payments = [
 {
   paymentId: 1269,
   orderId: 1269,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 4800,
   fee: 120,
   paymentTime: new Date('2024-04-30T08:13:35.000Z'),
@@ -10165,7 +10164,7 @@ export const payments = [
 {
   paymentId: 1270,
   orderId: 1270,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16700,
   fee: 0,
   paymentTime: new Date('2024-04-30T08:29:38.000Z'),
@@ -10173,7 +10172,7 @@ export const payments = [
 {
   paymentId: 1271,
   orderId: 1271,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12500,
   fee: 313,
   paymentTime: new Date('2024-04-30T09:07:35.000Z'),
@@ -10181,7 +10180,7 @@ export const payments = [
 {
   paymentId: 1272,
   orderId: 1272,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 16300,
   fee: 487,
   paymentTime: new Date('2024-04-30T09:50:26.000Z'),
@@ -10189,7 +10188,7 @@ export const payments = [
 {
   paymentId: 1273,
   orderId: 1273,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 18000,
   fee: 383,
   paymentTime: new Date('2024-04-30T09:58:24.000Z'),
@@ -10197,7 +10196,7 @@ export const payments = [
 {
   paymentId: 1274,
   orderId: 1274,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12500,
   fee: 255,
   paymentTime: new Date('2024-04-30T10:22:24.000Z'),
@@ -10205,7 +10204,7 @@ export const payments = [
 {
   paymentId: 1275,
   orderId: 1275,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9700,
   fee: 240,
   paymentTime: new Date('2024-04-30T10:19:56.000Z'),
@@ -10213,7 +10212,7 @@ export const payments = [
 {
   paymentId: 1276,
   orderId: 1276,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 18100,
   fee: 403,
   paymentTime: new Date('2024-04-30T10:31:41.000Z'),
@@ -10221,7 +10220,7 @@ export const payments = [
 {
   paymentId: 1277,
   orderId: 1277,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5700,
   fee: 194,
   paymentTime: new Date('2024-04-30T11:06:18.000Z'),
@@ -10229,7 +10228,7 @@ export const payments = [
 {
   paymentId: 1278,
   orderId: 1278,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 5100,
   fee: 128,
   paymentTime: new Date('2024-04-30T11:38:12.000Z'),
@@ -10237,7 +10236,7 @@ export const payments = [
 {
   paymentId: 1279,
   orderId: 1279,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12400,
   fee: 310,
   paymentTime: new Date('2024-04-30T12:22:03.000Z'),
@@ -10245,7 +10244,7 @@ export const payments = [
 {
   paymentId: 1280,
   orderId: 1280,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6100,
   fee: 224,
   paymentTime: new Date('2024-04-30T12:59:09.000Z'),
@@ -10253,7 +10252,7 @@ export const payments = [
 {
   paymentId: 1281,
   orderId: 1281,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 13500,
   fee: 387,
   paymentTime: new Date('2024-04-30T14:36:40.000Z'),
@@ -10261,7 +10260,7 @@ export const payments = [
 {
   paymentId: 1282,
   orderId: 1282,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4200,
   fee: 155,
   paymentTime: new Date('2024-04-30T14:36:04.000Z'),
@@ -10269,7 +10268,7 @@ export const payments = [
 {
   paymentId: 1283,
   orderId: 1283,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 4300,
   fee: 108,
   paymentTime: new Date('2024-05-01T02:27:56.000Z'),
@@ -10277,7 +10276,7 @@ export const payments = [
 {
   paymentId: 1284,
   orderId: 1284,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20900,
   fee: 0,
   paymentTime: new Date('2024-05-01T02:36:27.000Z'),
@@ -10285,7 +10284,7 @@ export const payments = [
 {
   paymentId: 1285,
   orderId: 1285,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13800,
   fee: 0,
   paymentTime: new Date('2024-05-01T02:43:31.000Z'),
@@ -10293,7 +10292,7 @@ export const payments = [
 {
   paymentId: 1286,
   orderId: 1286,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8600,
   fee: 0,
   paymentTime: new Date('2024-05-01T02:47:57.000Z'),
@@ -10301,7 +10300,7 @@ export const payments = [
 {
   paymentId: 1287,
   orderId: 1287,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 19100,
   fee: 625,
   paymentTime: new Date('2024-05-01T02:57:17.000Z'),
@@ -10309,7 +10308,7 @@ export const payments = [
 {
   paymentId: 1288,
   orderId: 1288,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12800,
   fee: 446,
   paymentTime: new Date('2024-05-01T03:16:15.000Z'),
@@ -10317,7 +10316,7 @@ export const payments = [
 {
   paymentId: 1289,
   orderId: 1289,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17200,
   fee: 563,
   paymentTime: new Date('2024-05-01T03:32:23.000Z'),
@@ -10325,7 +10324,7 @@ export const payments = [
 {
   paymentId: 1290,
   orderId: 1290,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7600,
   fee: 0,
   paymentTime: new Date('2024-05-01T03:32:27.000Z'),
@@ -10333,7 +10332,7 @@ export const payments = [
 {
   paymentId: 1291,
   orderId: 1291,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15600,
   fee: 0,
   paymentTime: new Date('2024-05-01T03:53:14.000Z'),
@@ -10341,7 +10340,7 @@ export const payments = [
 {
   paymentId: 1292,
   orderId: 1292,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9200,
   fee: 308,
   paymentTime: new Date('2024-05-01T03:51:09.000Z'),
@@ -10349,7 +10348,7 @@ export const payments = [
 {
   paymentId: 1293,
   orderId: 1293,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 23400,
   fee: 565,
   paymentTime: new Date('2024-05-01T04:06:00.000Z'),
@@ -10357,7 +10356,7 @@ export const payments = [
 {
   paymentId: 1294,
   orderId: 1294,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17500,
   fee: 548,
   paymentTime: new Date('2024-05-01T04:04:51.000Z'),
@@ -10365,7 +10364,7 @@ export const payments = [
 {
   paymentId: 1295,
   orderId: 1295,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6900,
   fee: 220,
   paymentTime: new Date('2024-05-01T04:13:24.000Z'),
@@ -10373,7 +10372,7 @@ export const payments = [
 {
   paymentId: 1296,
   orderId: 1296,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 3100,
   fee: 0,
   paymentTime: new Date('2024-05-01T04:22:19.000Z'),
@@ -10381,7 +10380,7 @@ export const payments = [
 {
   paymentId: 1297,
   orderId: 1297,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6200,
   fee: 202,
   paymentTime: new Date('2024-05-01T04:37:56.000Z'),
@@ -10389,7 +10388,7 @@ export const payments = [
 {
   paymentId: 1298,
   orderId: 1298,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20800,
   fee: 0,
   paymentTime: new Date('2024-05-01T04:46:40.000Z'),
@@ -10397,7 +10396,7 @@ export const payments = [
 {
   paymentId: 1299,
   orderId: 1299,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10800,
   fee: 270,
   paymentTime: new Date('2024-05-01T04:55:10.000Z'),
@@ -10405,7 +10404,7 @@ export const payments = [
 {
   paymentId: 1300,
   orderId: 1300,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 29700,
   fee: 990,
   paymentTime: new Date('2024-05-01T08:03:48.000Z'),
@@ -10413,7 +10412,7 @@ export const payments = [
 {
   paymentId: 1301,
   orderId: 1301,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 19800,
   fee: 710,
   paymentTime: new Date('2024-05-01T09:17:36.000Z'),
@@ -10421,7 +10420,7 @@ export const payments = [
 {
   paymentId: 1302,
   orderId: 1302,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8900,
   fee: 298,
   paymentTime: new Date('2024-05-01T09:56:32.000Z'),
@@ -10429,7 +10428,7 @@ export const payments = [
 {
   paymentId: 1303,
   orderId: 1303,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 14200,
   fee: 355,
   paymentTime: new Date('2024-05-01T10:25:30.000Z'),
@@ -10437,7 +10436,7 @@ export const payments = [
 {
   paymentId: 1304,
   orderId: 1304,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13000,
   fee: 408,
   paymentTime: new Date('2024-05-01T10:43:29.000Z'),
@@ -10445,7 +10444,7 @@ export const payments = [
 {
   paymentId: 1305,
   orderId: 1305,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10000,
   fee: 320,
   paymentTime: new Date('2024-05-01T11:37:46.000Z'),
@@ -10453,7 +10452,7 @@ export const payments = [
 {
   paymentId: 1306,
   orderId: 1306,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5200,
   fee: 0,
   paymentTime: new Date('2024-05-01T11:54:02.000Z'),
@@ -10461,7 +10460,7 @@ export const payments = [
 {
   paymentId: 1307,
   orderId: 1307,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6700,
   fee: 252,
   paymentTime: new Date('2024-05-01T12:57:35.000Z'),
@@ -10469,7 +10468,7 @@ export const payments = [
 {
   paymentId: 1308,
   orderId: 1308,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4200,
   fee: 133,
   paymentTime: new Date('2024-05-01T13:11:56.000Z'),
@@ -10477,7 +10476,7 @@ export const payments = [
 {
   paymentId: 1309,
   orderId: 1309,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 3700,
   fee: 93,
   paymentTime: new Date('2024-05-01T13:33:53.000Z'),
@@ -10485,7 +10484,7 @@ export const payments = [
 {
   paymentId: 1310,
   orderId: 1310,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18200,
   fee: 577,
   paymentTime: new Date('2024-05-02T02:07:23.000Z'),
@@ -10493,7 +10492,7 @@ export const payments = [
 {
   paymentId: 1311,
   orderId: 1311,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10700,
   fee: 374,
   paymentTime: new Date('2024-05-02T02:15:02.000Z'),
@@ -10501,7 +10500,7 @@ export const payments = [
 {
   paymentId: 1312,
   orderId: 1312,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15900,
   fee: 0,
   paymentTime: new Date('2024-05-02T02:57:14.000Z'),
@@ -10509,7 +10508,7 @@ export const payments = [
 {
   paymentId: 1313,
   orderId: 1313,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15200,
   fee: 0,
   paymentTime: new Date('2024-05-02T02:54:49.000Z'),
@@ -10517,7 +10516,7 @@ export const payments = [
 {
   paymentId: 1314,
   orderId: 1314,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13200,
   fee: 422,
   paymentTime: new Date('2024-05-02T02:54:35.000Z'),
@@ -10525,7 +10524,7 @@ export const payments = [
 {
   paymentId: 1315,
   orderId: 1315,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16300,
   fee: 0,
   paymentTime: new Date('2024-05-02T03:11:42.000Z'),
@@ -10533,7 +10532,7 @@ export const payments = [
 {
   paymentId: 1316,
   orderId: 1316,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18100,
   fee: 583,
   paymentTime: new Date('2024-05-02T03:13:56.000Z'),
@@ -10541,7 +10540,7 @@ export const payments = [
 {
   paymentId: 1317,
   orderId: 1317,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11700,
   fee: 420,
   paymentTime: new Date('2024-05-02T03:13:18.000Z'),
@@ -10549,7 +10548,7 @@ export const payments = [
 {
   paymentId: 1318,
   orderId: 1318,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5500,
   fee: 208,
   paymentTime: new Date('2024-05-02T03:20:37.000Z'),
@@ -10557,7 +10556,7 @@ export const payments = [
 {
   paymentId: 1319,
   orderId: 1319,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17400,
   fee: 584,
   paymentTime: new Date('2024-05-02T03:37:27.000Z'),
@@ -10565,7 +10564,7 @@ export const payments = [
 {
   paymentId: 1320,
   orderId: 1320,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14600,
   fee: 551,
   paymentTime: new Date('2024-05-02T03:44:51.000Z'),
@@ -10573,7 +10572,7 @@ export const payments = [
 {
   paymentId: 1321,
   orderId: 1321,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 29000,
   fee: 912,
   paymentTime: new Date('2024-05-02T04:03:35.000Z'),
@@ -10581,7 +10580,7 @@ export const payments = [
 {
   paymentId: 1322,
   orderId: 1322,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14100,
   fee: 462,
   paymentTime: new Date('2024-05-02T04:09:46.000Z'),
@@ -10589,7 +10588,7 @@ export const payments = [
 {
   paymentId: 1323,
   orderId: 1323,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13600,
   fee: 418,
   paymentTime: new Date('2024-05-02T04:14:25.000Z'),
@@ -10597,7 +10596,7 @@ export const payments = [
 {
   paymentId: 1324,
   orderId: 1324,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17700,
   fee: 550,
   paymentTime: new Date('2024-05-02T04:34:56.000Z'),
@@ -10605,7 +10604,7 @@ export const payments = [
 {
   paymentId: 1325,
   orderId: 1325,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12600,
   fee: 265,
   paymentTime: new Date('2024-05-02T04:53:31.000Z'),
@@ -10613,7 +10612,7 @@ export const payments = [
 {
   paymentId: 1326,
   orderId: 1326,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 16200,
   fee: 509,
   paymentTime: new Date('2024-05-02T05:01:30.000Z'),
@@ -10621,7 +10620,7 @@ export const payments = [
 {
   paymentId: 1327,
   orderId: 1327,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 23900,
   fee: 0,
   paymentTime: new Date('2024-05-02T08:19:11.000Z'),
@@ -10629,7 +10628,7 @@ export const payments = [
 {
   paymentId: 1328,
   orderId: 1328,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 18900,
   fee: 548,
   paymentTime: new Date('2024-05-02T08:26:03.000Z'),
@@ -10637,7 +10636,7 @@ export const payments = [
 {
   paymentId: 1329,
   orderId: 1329,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14800,
   fee: 0,
   paymentTime: new Date('2024-05-02T08:56:51.000Z'),
@@ -10645,7 +10644,7 @@ export const payments = [
 {
   paymentId: 1330,
   orderId: 1330,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9000,
   fee: 0,
   paymentTime: new Date('2024-05-02T09:31:18.000Z'),
@@ -10653,7 +10652,7 @@ export const payments = [
 {
   paymentId: 1331,
   orderId: 1331,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 24000,
   fee: 696,
   paymentTime: new Date('2024-05-02T09:37:13.000Z'),
@@ -10661,7 +10660,7 @@ export const payments = [
 {
   paymentId: 1332,
   orderId: 1332,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13700,
   fee: 417,
   paymentTime: new Date('2024-05-02T09:59:25.000Z'),
@@ -10669,7 +10668,7 @@ export const payments = [
 {
   paymentId: 1333,
   orderId: 1333,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17700,
   fee: 360,
   paymentTime: new Date('2024-05-02T10:18:52.000Z'),
@@ -10677,7 +10676,7 @@ export const payments = [
 {
   paymentId: 1334,
   orderId: 1334,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 4400,
   fee: 100,
   paymentTime: new Date('2024-05-02T12:03:35.000Z'),
@@ -10685,7 +10684,7 @@ export const payments = [
 {
   paymentId: 1335,
   orderId: 1335,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5600,
   fee: 174,
   paymentTime: new Date('2024-05-02T12:14:28.000Z'),
@@ -10693,7 +10692,7 @@ export const payments = [
 {
   paymentId: 1336,
   orderId: 1336,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7100,
   fee: 233,
   paymentTime: new Date('2024-05-02T13:21:32.000Z'),
@@ -10701,7 +10700,7 @@ export const payments = [
 {
   paymentId: 1337,
   orderId: 1337,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5900,
   fee: 0,
   paymentTime: new Date('2024-05-02T13:46:13.000Z'),
@@ -10709,7 +10708,7 @@ export const payments = [
 {
   paymentId: 1338,
   orderId: 1338,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12600,
   fee: 287,
   paymentTime: new Date('2024-05-02T14:32:25.000Z'),
@@ -10717,7 +10716,7 @@ export const payments = [
 {
   paymentId: 1339,
   orderId: 1339,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9300,
   fee: 0,
   paymentTime: new Date('2024-05-02T14:58:41.000Z'),
@@ -10725,7 +10724,7 @@ export const payments = [
 {
   paymentId: 1340,
   orderId: 1340,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13500,
   fee: 455,
   paymentTime: new Date('2024-05-03T02:13:04.000Z'),
@@ -10733,7 +10732,7 @@ export const payments = [
 {
   paymentId: 1341,
   orderId: 1341,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9000,
   fee: 271,
   paymentTime: new Date('2024-05-03T03:03:14.000Z'),
@@ -10741,7 +10740,7 @@ export const payments = [
 {
   paymentId: 1342,
   orderId: 1342,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17400,
   fee: 559,
   paymentTime: new Date('2024-05-03T03:14:18.000Z'),
@@ -10749,7 +10748,7 @@ export const payments = [
 {
   paymentId: 1343,
   orderId: 1343,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14700,
   fee: 366,
   paymentTime: new Date('2024-05-03T03:15:34.000Z'),
@@ -10757,7 +10756,7 @@ export const payments = [
 {
   paymentId: 1344,
   orderId: 1344,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6400,
   fee: 193,
   paymentTime: new Date('2024-05-03T03:54:29.000Z'),
@@ -10765,7 +10764,7 @@ export const payments = [
 {
   paymentId: 1345,
   orderId: 1345,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 16400,
   fee: 410,
   paymentTime: new Date('2024-05-03T04:17:05.000Z'),
@@ -10773,7 +10772,7 @@ export const payments = [
 {
   paymentId: 1346,
   orderId: 1346,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 19500,
   fee: 657,
   paymentTime: new Date('2024-05-03T04:16:36.000Z'),
@@ -10781,7 +10780,7 @@ export const payments = [
 {
   paymentId: 1347,
   orderId: 1347,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8000,
   fee: 269,
   paymentTime: new Date('2024-05-03T04:19:22.000Z'),
@@ -10789,7 +10788,7 @@ export const payments = [
 {
   paymentId: 1348,
   orderId: 1348,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19700,
   fee: 0,
   paymentTime: new Date('2024-05-03T04:37:44.000Z'),
@@ -10797,7 +10796,7 @@ export const payments = [
 {
   paymentId: 1349,
   orderId: 1349,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 19100,
   fee: 716,
   paymentTime: new Date('2024-05-03T08:02:59.000Z'),
@@ -10805,7 +10804,7 @@ export const payments = [
 {
   paymentId: 1350,
   orderId: 1350,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13500,
   fee: 472,
   paymentTime: new Date('2024-05-03T08:55:27.000Z'),
@@ -10813,7 +10812,7 @@ export const payments = [
 {
   paymentId: 1351,
   orderId: 1351,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 5700,
   fee: 168,
   paymentTime: new Date('2024-05-03T09:25:10.000Z'),
@@ -10821,7 +10820,7 @@ export const payments = [
 {
   paymentId: 1352,
   orderId: 1352,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5800,
   fee: 199,
   paymentTime: new Date('2024-05-03T09:42:41.000Z'),
@@ -10829,7 +10828,7 @@ export const payments = [
 {
   paymentId: 1353,
   orderId: 1353,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 4600,
   fee: 105,
   paymentTime: new Date('2024-05-03T11:28:21.000Z'),
@@ -10837,7 +10836,7 @@ export const payments = [
 {
   paymentId: 1354,
   orderId: 1354,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8000,
   fee: 257,
   paymentTime: new Date('2024-05-03T12:27:52.000Z'),
@@ -10845,7 +10844,7 @@ export const payments = [
 {
   paymentId: 1355,
   orderId: 1355,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 2900,
   fee: 73,
   paymentTime: new Date('2024-05-03T12:46:42.000Z'),
@@ -10853,7 +10852,7 @@ export const payments = [
 {
   paymentId: 1356,
   orderId: 1356,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8600,
   fee: 191,
   paymentTime: new Date('2024-05-03T12:53:37.000Z'),
@@ -10861,7 +10860,7 @@ export const payments = [
 {
   paymentId: 1357,
   orderId: 1357,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11500,
   fee: 233,
   paymentTime: new Date('2024-05-03T13:33:56.000Z'),
@@ -10869,7 +10868,7 @@ export const payments = [
 {
   paymentId: 1358,
   orderId: 1358,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 4600,
   fee: 115,
   paymentTime: new Date('2024-05-03T14:38:24.000Z'),
@@ -10877,7 +10876,7 @@ export const payments = [
 {
   paymentId: 1359,
   orderId: 1359,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19400,
   fee: 0,
   paymentTime: new Date('2024-05-03T14:49:20.000Z'),
@@ -10885,7 +10884,7 @@ export const payments = [
 {
   paymentId: 1360,
   orderId: 1360,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13100,
   fee: 422,
   paymentTime: new Date('2024-05-04T02:05:15.000Z'),
@@ -10893,7 +10892,7 @@ export const payments = [
 {
   paymentId: 1361,
   orderId: 1361,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18000,
   fee: 568,
   paymentTime: new Date('2024-05-04T02:29:19.000Z'),
@@ -10901,7 +10900,7 @@ export const payments = [
 {
   paymentId: 1362,
   orderId: 1362,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8000,
   fee: 0,
   paymentTime: new Date('2024-05-04T02:59:07.000Z'),
@@ -10909,7 +10908,7 @@ export const payments = [
 {
   paymentId: 1363,
   orderId: 1363,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14400,
   fee: 510,
   paymentTime: new Date('2024-05-04T03:25:38.000Z'),
@@ -10917,7 +10916,7 @@ export const payments = [
 {
   paymentId: 1364,
   orderId: 1364,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13800,
   fee: 0,
   paymentTime: new Date('2024-05-04T03:38:45.000Z'),
@@ -10925,7 +10924,7 @@ export const payments = [
 {
   paymentId: 1365,
   orderId: 1365,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9900,
   fee: 200,
   paymentTime: new Date('2024-05-04T03:40:34.000Z'),
@@ -10933,7 +10932,7 @@ export const payments = [
 {
   paymentId: 1366,
   orderId: 1366,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12800,
   fee: 0,
   paymentTime: new Date('2024-05-04T04:17:38.000Z'),
@@ -10941,7 +10940,7 @@ export const payments = [
 {
   paymentId: 1367,
   orderId: 1367,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6400,
   fee: 141,
   paymentTime: new Date('2024-05-04T08:02:13.000Z'),
@@ -10949,7 +10948,7 @@ export const payments = [
 {
   paymentId: 1368,
   orderId: 1368,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14000,
   fee: 324,
   paymentTime: new Date('2024-05-04T08:52:11.000Z'),
@@ -10957,7 +10956,7 @@ export const payments = [
 {
   paymentId: 1369,
   orderId: 1369,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8600,
   fee: 309,
   paymentTime: new Date('2024-05-04T09:08:11.000Z'),
@@ -10965,7 +10964,7 @@ export const payments = [
 {
   paymentId: 1370,
   orderId: 1370,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16200,
   fee: 507,
   paymentTime: new Date('2024-05-04T09:18:08.000Z'),
@@ -10973,7 +10972,7 @@ export const payments = [
 {
   paymentId: 1371,
   orderId: 1371,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17000,
   fee: 567,
   paymentTime: new Date('2024-05-04T10:03:02.000Z'),
@@ -10981,7 +10980,7 @@ export const payments = [
 {
   paymentId: 1372,
   orderId: 1372,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7700,
   fee: 261,
   paymentTime: new Date('2024-05-04T13:58:14.000Z'),
@@ -10989,7 +10988,7 @@ export const payments = [
 {
   paymentId: 1373,
   orderId: 1373,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20900,
   fee: 0,
   paymentTime: new Date('2024-05-04T14:27:12.000Z'),
@@ -10997,7 +10996,7 @@ export const payments = [
 {
   paymentId: 1374,
   orderId: 1374,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 30200,
   fee: 943,
   paymentTime: new Date('2024-05-04T14:57:42.000Z'),
@@ -11005,7 +11004,7 @@ export const payments = [
 {
   paymentId: 1375,
   orderId: 1375,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7100,
   fee: 148,
   paymentTime: new Date('2024-05-05T03:02:34.000Z'),
@@ -11013,7 +11012,7 @@ export const payments = [
 {
   paymentId: 1376,
   orderId: 1376,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14800,
   fee: 0,
   paymentTime: new Date('2024-05-05T03:24:41.000Z'),
@@ -11021,7 +11020,7 @@ export const payments = [
 {
   paymentId: 1377,
   orderId: 1377,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 23800,
   fee: 554,
   paymentTime: new Date('2024-05-05T03:28:55.000Z'),
@@ -11029,7 +11028,7 @@ export const payments = [
 {
   paymentId: 1378,
   orderId: 1378,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 13800,
   fee: 345,
   paymentTime: new Date('2024-05-05T03:31:01.000Z'),
@@ -11037,7 +11036,7 @@ export const payments = [
 {
   paymentId: 1379,
   orderId: 1379,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7700,
   fee: 261,
   paymentTime: new Date('2024-05-05T04:01:21.000Z'),
@@ -11045,7 +11044,7 @@ export const payments = [
 {
   paymentId: 1380,
   orderId: 1380,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6900,
   fee: 210,
   paymentTime: new Date('2024-05-05T04:30:26.000Z'),
@@ -11053,7 +11052,7 @@ export const payments = [
 {
   paymentId: 1381,
   orderId: 1381,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6800,
   fee: 167,
   paymentTime: new Date('2024-05-05T04:58:53.000Z'),
@@ -11061,7 +11060,7 @@ export const payments = [
 {
   paymentId: 1382,
   orderId: 1382,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15300,
   fee: 0,
   paymentTime: new Date('2024-05-05T08:13:56.000Z'),
@@ -11069,7 +11068,7 @@ export const payments = [
 {
   paymentId: 1383,
   orderId: 1383,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 13200,
   fee: 330,
   paymentTime: new Date('2024-05-05T08:13:25.000Z'),
@@ -11077,7 +11076,7 @@ export const payments = [
 {
   paymentId: 1384,
   orderId: 1384,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 23800,
   fee: 0,
   paymentTime: new Date('2024-05-05T08:47:08.000Z'),
@@ -11085,7 +11084,7 @@ export const payments = [
 {
   paymentId: 1385,
   orderId: 1385,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7100,
   fee: 0,
   paymentTime: new Date('2024-05-05T11:34:53.000Z'),
@@ -11093,7 +11092,7 @@ export const payments = [
 {
   paymentId: 1386,
   orderId: 1386,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8600,
   fee: 273,
   paymentTime: new Date('2024-05-05T11:40:50.000Z'),
@@ -11101,7 +11100,7 @@ export const payments = [
 {
   paymentId: 1387,
   orderId: 1387,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10800,
   fee: 270,
   paymentTime: new Date('2024-05-05T11:44:24.000Z'),
@@ -11109,7 +11108,7 @@ export const payments = [
 {
   paymentId: 1388,
   orderId: 1388,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 4800,
   fee: 140,
   paymentTime: new Date('2024-05-05T12:12:33.000Z'),
@@ -11117,7 +11116,7 @@ export const payments = [
 {
   paymentId: 1389,
   orderId: 1389,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4200,
   fee: 0,
   paymentTime: new Date('2024-05-05T13:03:07.000Z'),
@@ -11125,7 +11124,7 @@ export const payments = [
 {
   paymentId: 1390,
   orderId: 1390,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7100,
   fee: 255,
   paymentTime: new Date('2024-05-05T13:51:00.000Z'),
@@ -11133,7 +11132,7 @@ export const payments = [
 {
   paymentId: 1391,
   orderId: 1391,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7500,
   fee: 188,
   paymentTime: new Date('2024-05-05T15:01:57.000Z'),
@@ -11141,7 +11140,7 @@ export const payments = [
 {
   paymentId: 1392,
   orderId: 1392,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20300,
   fee: 0,
   paymentTime: new Date('2024-05-06T02:06:27.000Z'),
@@ -11149,7 +11148,7 @@ export const payments = [
 {
   paymentId: 1393,
   orderId: 1393,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16700,
   fee: 565,
   paymentTime: new Date('2024-05-06T03:44:04.000Z'),
@@ -11157,7 +11156,7 @@ export const payments = [
 {
   paymentId: 1394,
   orderId: 1394,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16600,
   fee: 517,
   paymentTime: new Date('2024-05-06T03:51:14.000Z'),
@@ -11165,7 +11164,7 @@ export const payments = [
 {
   paymentId: 1395,
   orderId: 1395,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5500,
   fee: 0,
   paymentTime: new Date('2024-05-06T05:02:35.000Z'),
@@ -11173,7 +11172,7 @@ export const payments = [
 {
   paymentId: 1396,
   orderId: 1396,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7500,
   fee: 242,
   paymentTime: new Date('2024-05-06T08:37:56.000Z'),
@@ -11181,7 +11180,7 @@ export const payments = [
 {
   paymentId: 1397,
   orderId: 1397,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17300,
   fee: 609,
   paymentTime: new Date('2024-05-06T09:27:49.000Z'),
@@ -11189,7 +11188,7 @@ export const payments = [
 {
   paymentId: 1398,
   orderId: 1398,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7800,
   fee: 234,
   paymentTime: new Date('2024-05-06T10:08:02.000Z'),
@@ -11197,7 +11196,7 @@ export const payments = [
 {
   paymentId: 1399,
   orderId: 1399,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6300,
   fee: 140,
   paymentTime: new Date('2024-05-06T11:20:27.000Z'),
@@ -11205,7 +11204,7 @@ export const payments = [
 {
   paymentId: 1400,
   orderId: 1400,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4800,
   fee: 0,
   paymentTime: new Date('2024-05-06T11:25:40.000Z'),
@@ -11213,7 +11212,7 @@ export const payments = [
 {
   paymentId: 1401,
   orderId: 1401,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9700,
   fee: 319,
   paymentTime: new Date('2024-05-06T12:40:43.000Z'),
@@ -11221,7 +11220,7 @@ export const payments = [
 {
   paymentId: 1402,
   orderId: 1402,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6500,
   fee: 163,
   paymentTime: new Date('2024-05-06T13:15:47.000Z'),
@@ -11229,7 +11228,7 @@ export const payments = [
 {
   paymentId: 1403,
   orderId: 1403,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5400,
   fee: 195,
   paymentTime: new Date('2024-05-06T14:03:21.000Z'),
@@ -11237,7 +11236,7 @@ export const payments = [
 {
   paymentId: 1404,
   orderId: 1404,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10100,
   fee: 0,
   paymentTime: new Date('2024-05-07T02:29:56.000Z'),
@@ -11245,7 +11244,7 @@ export const payments = [
 {
   paymentId: 1405,
   orderId: 1405,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8700,
   fee: 266,
   paymentTime: new Date('2024-05-07T02:55:27.000Z'),
@@ -11253,7 +11252,7 @@ export const payments = [
 {
   paymentId: 1406,
   orderId: 1406,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15000,
   fee: 472,
   paymentTime: new Date('2024-05-07T02:55:36.000Z'),
@@ -11261,7 +11260,7 @@ export const payments = [
 {
   paymentId: 1407,
   orderId: 1407,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17600,
   fee: 662,
   paymentTime: new Date('2024-05-07T03:46:23.000Z'),
@@ -11269,7 +11268,7 @@ export const payments = [
 {
   paymentId: 1408,
   orderId: 1408,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 19000,
   fee: 722,
   paymentTime: new Date('2024-05-07T04:01:32.000Z'),
@@ -11277,7 +11276,7 @@ export const payments = [
 {
   paymentId: 1409,
   orderId: 1409,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15800,
   fee: 0,
   paymentTime: new Date('2024-05-07T04:18:57.000Z'),
@@ -11285,7 +11284,7 @@ export const payments = [
 {
   paymentId: 1410,
   orderId: 1410,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16400,
   fee: 0,
   paymentTime: new Date('2024-05-07T04:41:47.000Z'),
@@ -11293,7 +11292,7 @@ export const payments = [
 {
   paymentId: 1411,
   orderId: 1411,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11100,
   fee: 370,
   paymentTime: new Date('2024-05-07T04:57:28.000Z'),
@@ -11301,7 +11300,7 @@ export const payments = [
 {
   paymentId: 1412,
   orderId: 1412,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 14100,
   fee: 414,
   paymentTime: new Date('2024-05-07T04:58:00.000Z'),
@@ -11309,7 +11308,7 @@ export const payments = [
 {
   paymentId: 1413,
   orderId: 1413,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10200,
   fee: 374,
   paymentTime: new Date('2024-05-07T08:53:23.000Z'),
@@ -11317,7 +11316,7 @@ export const payments = [
 {
   paymentId: 1414,
   orderId: 1414,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6800,
   fee: 220,
   paymentTime: new Date('2024-05-07T08:57:44.000Z'),
@@ -11325,7 +11324,7 @@ export const payments = [
 {
   paymentId: 1415,
   orderId: 1415,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11700,
   fee: 386,
   paymentTime: new Date('2024-05-07T09:13:26.000Z'),
@@ -11333,7 +11332,7 @@ export const payments = [
 {
   paymentId: 1416,
   orderId: 1416,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 20500,
   fee: 746,
   paymentTime: new Date('2024-05-07T09:54:01.000Z'),
@@ -11341,7 +11340,7 @@ export const payments = [
 {
   paymentId: 1417,
   orderId: 1417,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 2700,
   fee: 84,
   paymentTime: new Date('2024-05-07T11:20:38.000Z'),
@@ -11349,7 +11348,7 @@ export const payments = [
 {
   paymentId: 1418,
   orderId: 1418,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5400,
   fee: 173,
   paymentTime: new Date('2024-05-07T12:04:52.000Z'),
@@ -11357,7 +11356,7 @@ export const payments = [
 {
   paymentId: 1419,
   orderId: 1419,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8400,
   fee: 277,
   paymentTime: new Date('2024-05-07T12:43:51.000Z'),
@@ -11365,7 +11364,7 @@ export const payments = [
 {
   paymentId: 1420,
   orderId: 1420,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 3100,
   fee: 112,
   paymentTime: new Date('2024-05-07T12:46:36.000Z'),
@@ -11373,7 +11372,7 @@ export const payments = [
 {
   paymentId: 1421,
   orderId: 1421,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5900,
   fee: 187,
   paymentTime: new Date('2024-05-07T13:54:13.000Z'),
@@ -11381,7 +11380,7 @@ export const payments = [
 {
   paymentId: 1422,
   orderId: 1422,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11700,
   fee: 379,
   paymentTime: new Date('2024-05-07T13:59:49.000Z'),
@@ -11389,7 +11388,7 @@ export const payments = [
 {
   paymentId: 1423,
   orderId: 1423,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15700,
   fee: 0,
   paymentTime: new Date('2024-05-08T02:19:56.000Z'),
@@ -11397,7 +11396,7 @@ export const payments = [
 {
   paymentId: 1424,
   orderId: 1424,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4900,
   fee: 0,
   paymentTime: new Date('2024-05-08T02:19:38.000Z'),
@@ -11405,7 +11404,7 @@ export const payments = [
 {
   paymentId: 1425,
   orderId: 1425,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9500,
   fee: 290,
   paymentTime: new Date('2024-05-08T02:21:41.000Z'),
@@ -11413,7 +11412,7 @@ export const payments = [
 {
   paymentId: 1426,
   orderId: 1426,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8500,
   fee: 276,
   paymentTime: new Date('2024-05-08T02:30:11.000Z'),
@@ -11421,7 +11420,7 @@ export const payments = [
 {
   paymentId: 1427,
   orderId: 1427,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8200,
   fee: 249,
   paymentTime: new Date('2024-05-08T02:56:08.000Z'),
@@ -11429,7 +11428,7 @@ export const payments = [
 {
   paymentId: 1428,
   orderId: 1428,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17900,
   fee: 0,
   paymentTime: new Date('2024-05-08T03:24:12.000Z'),
@@ -11437,7 +11436,7 @@ export const payments = [
 {
   paymentId: 1429,
   orderId: 1429,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6500,
   fee: 196,
   paymentTime: new Date('2024-05-08T03:50:30.000Z'),
@@ -11445,7 +11444,7 @@ export const payments = [
 {
   paymentId: 1430,
   orderId: 1430,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7800,
   fee: 177,
   paymentTime: new Date('2024-05-08T04:05:29.000Z'),
@@ -11453,7 +11452,7 @@ export const payments = [
 {
   paymentId: 1431,
   orderId: 1431,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 25100,
   fee: 732,
   paymentTime: new Date('2024-05-08T04:09:33.000Z'),
@@ -11461,7 +11460,7 @@ export const payments = [
 {
   paymentId: 1432,
   orderId: 1432,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10000,
   fee: 304,
   paymentTime: new Date('2024-05-08T04:27:47.000Z'),
@@ -11469,7 +11468,7 @@ export const payments = [
 {
   paymentId: 1433,
   orderId: 1433,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8700,
   fee: 329,
   paymentTime: new Date('2024-05-08T04:45:48.000Z'),
@@ -11477,7 +11476,7 @@ export const payments = [
 {
   paymentId: 1434,
   orderId: 1434,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9100,
   fee: 294,
   paymentTime: new Date('2024-05-08T08:26:47.000Z'),
@@ -11485,7 +11484,7 @@ export const payments = [
 {
   paymentId: 1435,
   orderId: 1435,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 16100,
   fee: 585,
   paymentTime: new Date('2024-05-08T08:53:37.000Z'),
@@ -11493,7 +11492,7 @@ export const payments = [
 {
   paymentId: 1436,
   orderId: 1436,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10700,
   fee: 391,
   paymentTime: new Date('2024-05-08T09:30:07.000Z'),
@@ -11501,7 +11500,7 @@ export const payments = [
 {
   paymentId: 1437,
   orderId: 1437,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6200,
   fee: 234,
   paymentTime: new Date('2024-05-08T09:42:16.000Z'),
@@ -11509,7 +11508,7 @@ export const payments = [
 {
   paymentId: 1438,
   orderId: 1438,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11300,
   fee: 283,
   paymentTime: new Date('2024-05-08T10:34:35.000Z'),
@@ -11517,7 +11516,7 @@ export const payments = [
 {
   paymentId: 1439,
   orderId: 1439,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 22200,
   fee: 698,
   paymentTime: new Date('2024-05-08T10:42:26.000Z'),
@@ -11525,7 +11524,7 @@ export const payments = [
 {
   paymentId: 1440,
   orderId: 1440,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7000,
   fee: 223,
   paymentTime: new Date('2024-05-08T11:13:41.000Z'),
@@ -11533,7 +11532,7 @@ export const payments = [
 {
   paymentId: 1441,
   orderId: 1441,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8900,
   fee: 284,
   paymentTime: new Date('2024-05-08T11:22:24.000Z'),
@@ -11541,7 +11540,7 @@ export const payments = [
 {
   paymentId: 1442,
   orderId: 1442,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6600,
   fee: 218,
   paymentTime: new Date('2024-05-08T12:22:56.000Z'),
@@ -11549,7 +11548,7 @@ export const payments = [
 {
   paymentId: 1443,
   orderId: 1443,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6600,
   fee: 141,
   paymentTime: new Date('2024-05-08T13:26:09.000Z'),
@@ -11557,7 +11556,7 @@ export const payments = [
 {
   paymentId: 1444,
   orderId: 1444,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 19200,
   fee: 480,
   paymentTime: new Date('2024-05-08T14:03:36.000Z'),
@@ -11565,7 +11564,7 @@ export const payments = [
 {
   paymentId: 1445,
   orderId: 1445,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11200,
   fee: 425,
   paymentTime: new Date('2024-05-08T14:11:44.000Z'),
@@ -11573,7 +11572,7 @@ export const payments = [
 {
   paymentId: 1446,
   orderId: 1446,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4900,
   fee: 148,
   paymentTime: new Date('2024-05-08T14:23:44.000Z'),
@@ -11581,7 +11580,7 @@ export const payments = [
 {
   paymentId: 1447,
   orderId: 1447,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10200,
   fee: 307,
   paymentTime: new Date('2024-05-09T02:31:34.000Z'),
@@ -11589,7 +11588,7 @@ export const payments = [
 {
   paymentId: 1448,
   orderId: 1448,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 15800,
   fee: 461,
   paymentTime: new Date('2024-05-09T02:32:25.000Z'),
@@ -11597,7 +11596,7 @@ export const payments = [
 {
   paymentId: 1449,
   orderId: 1449,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17000,
   fee: 557,
   paymentTime: new Date('2024-05-09T02:41:16.000Z'),
@@ -11605,7 +11604,7 @@ export const payments = [
 {
   paymentId: 1450,
   orderId: 1450,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 14100,
   fee: 353,
   paymentTime: new Date('2024-05-09T03:17:44.000Z'),
@@ -11613,7 +11612,7 @@ export const payments = [
 {
   paymentId: 1451,
   orderId: 1451,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12300,
   fee: 0,
   paymentTime: new Date('2024-05-09T03:37:19.000Z'),
@@ -11621,7 +11620,7 @@ export const payments = [
 {
   paymentId: 1452,
   orderId: 1452,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6900,
   fee: 168,
   paymentTime: new Date('2024-05-09T04:26:43.000Z'),
@@ -11629,7 +11628,7 @@ export const payments = [
 {
   paymentId: 1453,
   orderId: 1453,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16800,
   fee: 347,
   paymentTime: new Date('2024-05-09T04:54:23.000Z'),
@@ -11637,7 +11636,7 @@ export const payments = [
 {
   paymentId: 1454,
   orderId: 1454,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13900,
   fee: 487,
   paymentTime: new Date('2024-05-09T08:30:14.000Z'),
@@ -11645,7 +11644,7 @@ export const payments = [
 {
   paymentId: 1455,
   orderId: 1455,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 16500,
   fee: 494,
   paymentTime: new Date('2024-05-09T08:40:27.000Z'),
@@ -11653,7 +11652,7 @@ export const payments = [
 {
   paymentId: 1456,
   orderId: 1456,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 19300,
   fee: 694,
   paymentTime: new Date('2024-05-09T08:56:55.000Z'),
@@ -11661,7 +11660,7 @@ export const payments = [
 {
   paymentId: 1457,
   orderId: 1457,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20300,
   fee: 689,
   paymentTime: new Date('2024-05-09T09:15:38.000Z'),
@@ -11669,7 +11668,7 @@ export const payments = [
 {
   paymentId: 1458,
   orderId: 1458,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8700,
   fee: 316,
   paymentTime: new Date('2024-05-09T10:11:33.000Z'),
@@ -11677,7 +11676,7 @@ export const payments = [
 {
   paymentId: 1459,
   orderId: 1459,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8300,
   fee: 249,
   paymentTime: new Date('2024-05-09T11:21:43.000Z'),
@@ -11685,7 +11684,7 @@ export const payments = [
 {
   paymentId: 1460,
   orderId: 1460,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6700,
   fee: 0,
   paymentTime: new Date('2024-05-09T13:42:31.000Z'),
@@ -11693,7 +11692,7 @@ export const payments = [
 {
   paymentId: 1461,
   orderId: 1461,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5400,
   fee: 183,
   paymentTime: new Date('2024-05-09T13:51:51.000Z'),
@@ -11701,7 +11700,7 @@ export const payments = [
 {
   paymentId: 1462,
   orderId: 1462,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 18500,
   fee: 540,
   paymentTime: new Date('2024-05-09T14:13:05.000Z'),
@@ -11709,7 +11708,7 @@ export const payments = [
 {
   paymentId: 1463,
   orderId: 1463,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 5700,
   fee: 162,
   paymentTime: new Date('2024-05-09T14:51:50.000Z'),
@@ -11717,7 +11716,7 @@ export const payments = [
 {
   paymentId: 1464,
   orderId: 1464,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16500,
   fee: 537,
   paymentTime: new Date('2024-05-09T14:52:48.000Z'),
@@ -11725,7 +11724,7 @@ export const payments = [
 {
   paymentId: 1465,
   orderId: 1465,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12100,
   fee: 396,
   paymentTime: new Date('2024-05-10T02:03:09.000Z'),
@@ -11733,7 +11732,7 @@ export const payments = [
 {
   paymentId: 1466,
   orderId: 1466,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 21000,
   fee: 655,
   paymentTime: new Date('2024-05-10T02:28:53.000Z'),
@@ -11741,7 +11740,7 @@ export const payments = [
 {
   paymentId: 1467,
   orderId: 1467,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13800,
   fee: 0,
   paymentTime: new Date('2024-05-10T02:38:24.000Z'),
@@ -11749,7 +11748,7 @@ export const payments = [
 {
   paymentId: 1468,
   orderId: 1468,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9300,
   fee: 346,
   paymentTime: new Date('2024-05-10T03:08:47.000Z'),
@@ -11757,7 +11756,7 @@ export const payments = [
 {
   paymentId: 1469,
   orderId: 1469,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12200,
   fee: 435,
   paymentTime: new Date('2024-05-10T03:18:21.000Z'),
@@ -11765,7 +11764,7 @@ export const payments = [
 {
   paymentId: 1470,
   orderId: 1470,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10400,
   fee: 0,
   paymentTime: new Date('2024-05-10T03:42:56.000Z'),
@@ -11773,7 +11772,7 @@ export const payments = [
 {
   paymentId: 1471,
   orderId: 1471,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 21000,
   fee: 714,
   paymentTime: new Date('2024-05-10T03:45:46.000Z'),
@@ -11781,7 +11780,7 @@ export const payments = [
 {
   paymentId: 1472,
   orderId: 1472,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 22500,
   fee: 0,
   paymentTime: new Date('2024-05-10T04:13:10.000Z'),
@@ -11789,7 +11788,7 @@ export const payments = [
 {
   paymentId: 1473,
   orderId: 1473,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8900,
   fee: 179,
   paymentTime: new Date('2024-05-10T04:18:02.000Z'),
@@ -11797,7 +11796,7 @@ export const payments = [
 {
   paymentId: 1474,
   orderId: 1474,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15600,
   fee: 0,
   paymentTime: new Date('2024-05-10T04:29:32.000Z'),
@@ -11805,7 +11804,7 @@ export const payments = [
 {
   paymentId: 1475,
   orderId: 1475,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16100,
   fee: 373,
   paymentTime: new Date('2024-05-10T04:39:52.000Z'),
@@ -11813,7 +11812,7 @@ export const payments = [
 {
   paymentId: 1476,
   orderId: 1476,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6800,
   fee: 0,
   paymentTime: new Date('2024-05-10T04:40:44.000Z'),
@@ -11821,7 +11820,7 @@ export const payments = [
 {
   paymentId: 1477,
   orderId: 1477,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6200,
   fee: 141,
   paymentTime: new Date('2024-05-10T04:45:10.000Z'),
@@ -11829,7 +11828,7 @@ export const payments = [
 {
   paymentId: 1478,
   orderId: 1478,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9200,
   fee: 0,
   paymentTime: new Date('2024-05-10T04:50:19.000Z'),
@@ -11837,7 +11836,7 @@ export const payments = [
 {
   paymentId: 1479,
   orderId: 1479,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 26600,
   fee: 883,
   paymentTime: new Date('2024-05-10T04:56:07.000Z'),
@@ -11845,7 +11844,7 @@ export const payments = [
 {
   paymentId: 1480,
   orderId: 1480,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7500,
   fee: 277,
   paymentTime: new Date('2024-05-10T09:14:20.000Z'),
@@ -11853,7 +11852,7 @@ export const payments = [
 {
   paymentId: 1481,
   orderId: 1481,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10800,
   fee: 335,
   paymentTime: new Date('2024-05-10T09:34:14.000Z'),
@@ -11861,7 +11860,7 @@ export const payments = [
 {
   paymentId: 1482,
   orderId: 1482,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15400,
   fee: 484,
   paymentTime: new Date('2024-05-10T10:40:35.000Z'),
@@ -11869,7 +11868,7 @@ export const payments = [
 {
   paymentId: 1483,
   orderId: 1483,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9000,
   fee: 305,
   paymentTime: new Date('2024-05-10T11:59:07.000Z'),
@@ -11877,7 +11876,7 @@ export const payments = [
 {
   paymentId: 1484,
   orderId: 1484,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9600,
   fee: 319,
   paymentTime: new Date('2024-05-10T13:13:01.000Z'),
@@ -11885,7 +11884,7 @@ export const payments = [
 {
   paymentId: 1485,
   orderId: 1485,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9700,
   fee: 299,
   paymentTime: new Date('2024-05-10T14:48:49.000Z'),
@@ -11893,7 +11892,7 @@ export const payments = [
 {
   paymentId: 1486,
   orderId: 1486,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12500,
   fee: 0,
   paymentTime: new Date('2024-05-11T02:15:54.000Z'),
@@ -11901,7 +11900,7 @@ export const payments = [
 {
   paymentId: 1487,
   orderId: 1487,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7400,
   fee: 0,
   paymentTime: new Date('2024-05-11T02:32:36.000Z'),
@@ -11909,7 +11908,7 @@ export const payments = [
 {
   paymentId: 1488,
   orderId: 1488,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10200,
   fee: 0,
   paymentTime: new Date('2024-05-11T02:59:14.000Z'),
@@ -11917,7 +11916,7 @@ export const payments = [
 {
   paymentId: 1489,
   orderId: 1489,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17500,
   fee: 0,
   paymentTime: new Date('2024-05-11T03:02:35.000Z'),
@@ -11925,7 +11924,7 @@ export const payments = [
 {
   paymentId: 1490,
   orderId: 1490,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 23700,
   fee: 802,
   paymentTime: new Date('2024-05-11T03:07:32.000Z'),
@@ -11933,7 +11932,7 @@ export const payments = [
 {
   paymentId: 1491,
   orderId: 1491,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16800,
   fee: 363,
   paymentTime: new Date('2024-05-11T03:32:30.000Z'),
@@ -11941,7 +11940,7 @@ export const payments = [
 {
   paymentId: 1492,
   orderId: 1492,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13500,
   fee: 0,
   paymentTime: new Date('2024-05-11T03:28:34.000Z'),
@@ -11949,7 +11948,7 @@ export const payments = [
 {
   paymentId: 1493,
   orderId: 1493,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12200,
   fee: 0,
   paymentTime: new Date('2024-05-11T03:42:36.000Z'),
@@ -11957,7 +11956,7 @@ export const payments = [
 {
   paymentId: 1494,
   orderId: 1494,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16700,
   fee: 0,
   paymentTime: new Date('2024-05-11T03:41:23.000Z'),
@@ -11965,7 +11964,7 @@ export const payments = [
 {
   paymentId: 1495,
   orderId: 1495,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14900,
   fee: 478,
   paymentTime: new Date('2024-05-11T04:08:06.000Z'),
@@ -11973,7 +11972,7 @@ export const payments = [
 {
   paymentId: 1496,
   orderId: 1496,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8600,
   fee: 0,
   paymentTime: new Date('2024-05-11T04:10:53.000Z'),
@@ -11981,7 +11980,7 @@ export const payments = [
 {
   paymentId: 1497,
   orderId: 1497,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 23100,
   fee: 703,
   paymentTime: new Date('2024-05-11T08:33:37.000Z'),
@@ -11989,7 +11988,7 @@ export const payments = [
 {
   paymentId: 1498,
   orderId: 1498,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10100,
   fee: 336,
   paymentTime: new Date('2024-05-11T08:41:37.000Z'),
@@ -11997,7 +11996,7 @@ export const payments = [
 {
   paymentId: 1499,
   orderId: 1499,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 11600,
   fee: 326,
   paymentTime: new Date('2024-05-11T08:57:43.000Z'),
@@ -12005,7 +12004,7 @@ export const payments = [
 {
   paymentId: 1500,
   orderId: 1500,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12600,
   fee: 463,
   paymentTime: new Date('2024-05-11T09:41:53.000Z'),
@@ -12013,7 +12012,7 @@ export const payments = [
 {
   paymentId: 1501,
   orderId: 1501,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9700,
   fee: 316,
   paymentTime: new Date('2024-05-11T11:10:38.000Z'),
@@ -12021,7 +12020,7 @@ export const payments = [
 {
   paymentId: 1502,
   orderId: 1502,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 4700,
   fee: 99,
   paymentTime: new Date('2024-05-11T11:23:46.000Z'),
@@ -12029,7 +12028,7 @@ export const payments = [
 {
   paymentId: 1503,
   orderId: 1503,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12100,
   fee: 0,
   paymentTime: new Date('2024-05-11T13:39:38.000Z'),
@@ -12037,7 +12036,7 @@ export const payments = [
 {
   paymentId: 1504,
   orderId: 1504,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5200,
   fee: 0,
   paymentTime: new Date('2024-05-11T13:51:34.000Z'),
@@ -12045,7 +12044,7 @@ export const payments = [
 {
   paymentId: 1505,
   orderId: 1505,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16300,
   fee: 561,
   paymentTime: new Date('2024-05-11T14:48:14.000Z'),
@@ -12053,7 +12052,7 @@ export const payments = [
 {
   paymentId: 1506,
   orderId: 1506,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10600,
   fee: 218,
   paymentTime: new Date('2024-05-12T02:42:07.000Z'),
@@ -12061,7 +12060,7 @@ export const payments = [
 {
   paymentId: 1507,
   orderId: 1507,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12000,
   fee: 282,
   paymentTime: new Date('2024-05-12T02:52:08.000Z'),
@@ -12069,7 +12068,7 @@ export const payments = [
 {
   paymentId: 1508,
   orderId: 1508,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7600,
   fee: 0,
   paymentTime: new Date('2024-05-12T03:21:19.000Z'),
@@ -12077,7 +12076,7 @@ export const payments = [
 {
   paymentId: 1509,
   orderId: 1509,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 20000,
   fee: 438,
   paymentTime: new Date('2024-05-12T08:49:55.000Z'),
@@ -12085,7 +12084,7 @@ export const payments = [
 {
   paymentId: 1510,
   orderId: 1510,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 9700,
   fee: 276,
   paymentTime: new Date('2024-05-12T09:23:43.000Z'),
@@ -12093,7 +12092,7 @@ export const payments = [
 {
   paymentId: 1511,
   orderId: 1511,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9300,
   fee: 326,
   paymentTime: new Date('2024-05-12T09:42:21.000Z'),
@@ -12101,7 +12100,7 @@ export const payments = [
 {
   paymentId: 1512,
   orderId: 1512,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 26200,
   fee: 537,
   paymentTime: new Date('2024-05-12T10:36:44.000Z'),
@@ -12109,7 +12108,7 @@ export const payments = [
 {
   paymentId: 1513,
   orderId: 1513,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 3800,
   fee: 138,
   paymentTime: new Date('2024-05-12T11:50:30.000Z'),
@@ -12117,7 +12116,7 @@ export const payments = [
 {
   paymentId: 1514,
   orderId: 1514,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13900,
   fee: 316,
   paymentTime: new Date('2024-05-12T14:50:26.000Z'),
@@ -12125,7 +12124,7 @@ export const payments = [
 {
   paymentId: 1515,
   orderId: 1515,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 14900,
   fee: 434,
   paymentTime: new Date('2024-05-12T14:57:16.000Z'),
@@ -12133,7 +12132,7 @@ export const payments = [
 {
   paymentId: 1516,
   orderId: 1516,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9800,
   fee: 322,
   paymentTime: new Date('2024-05-13T03:39:58.000Z'),
@@ -12141,7 +12140,7 @@ export const payments = [
 {
   paymentId: 1517,
   orderId: 1517,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11200,
   fee: 0,
   paymentTime: new Date('2024-05-13T04:05:43.000Z'),
@@ -12149,7 +12148,7 @@ export const payments = [
 {
   paymentId: 1518,
   orderId: 1518,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14500,
   fee: 453,
   paymentTime: new Date('2024-05-13T04:30:11.000Z'),
@@ -12157,7 +12156,7 @@ export const payments = [
 {
   paymentId: 1519,
   orderId: 1519,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11600,
   fee: 0,
   paymentTime: new Date('2024-05-13T04:35:18.000Z'),
@@ -12165,7 +12164,7 @@ export const payments = [
 {
   paymentId: 1520,
   orderId: 1520,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10800,
   fee: 328,
   paymentTime: new Date('2024-05-13T04:42:14.000Z'),
@@ -12173,7 +12172,7 @@ export const payments = [
 {
   paymentId: 1521,
   orderId: 1521,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16300,
   fee: 0,
   paymentTime: new Date('2024-05-13T04:43:18.000Z'),
@@ -12181,7 +12180,7 @@ export const payments = [
 {
   paymentId: 1522,
   orderId: 1522,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 9900,
   fee: 248,
   paymentTime: new Date('2024-05-13T08:26:16.000Z'),
@@ -12189,7 +12188,7 @@ export const payments = [
 {
   paymentId: 1523,
   orderId: 1523,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11400,
   fee: 0,
   paymentTime: new Date('2024-05-13T08:36:25.000Z'),
@@ -12197,7 +12196,7 @@ export const payments = [
 {
   paymentId: 1524,
   orderId: 1524,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 23400,
   fee: 555,
   paymentTime: new Date('2024-05-13T08:42:35.000Z'),
@@ -12205,7 +12204,7 @@ export const payments = [
 {
   paymentId: 1525,
   orderId: 1525,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10500,
   fee: 322,
   paymentTime: new Date('2024-05-13T09:03:26.000Z'),
@@ -12213,7 +12212,7 @@ export const payments = [
 {
   paymentId: 1526,
   orderId: 1526,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8000,
   fee: 0,
   paymentTime: new Date('2024-05-13T09:25:16.000Z'),
@@ -12221,7 +12220,7 @@ export const payments = [
 {
   paymentId: 1527,
   orderId: 1527,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13300,
   fee: 458,
   paymentTime: new Date('2024-05-14T02:46:29.000Z'),
@@ -12229,7 +12228,7 @@ export const payments = [
 {
   paymentId: 1528,
   orderId: 1528,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 4800,
   fee: 105,
   paymentTime: new Date('2024-05-14T02:48:58.000Z'),
@@ -12237,7 +12236,7 @@ export const payments = [
 {
   paymentId: 1529,
   orderId: 1529,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18200,
   fee: 595,
   paymentTime: new Date('2024-05-14T03:25:07.000Z'),
@@ -12245,7 +12244,7 @@ export const payments = [
 {
   paymentId: 1530,
   orderId: 1530,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12000,
   fee: 381,
   paymentTime: new Date('2024-05-14T04:15:15.000Z'),
@@ -12253,7 +12252,7 @@ export const payments = [
 {
   paymentId: 1531,
   orderId: 1531,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 15100,
   fee: 324,
   paymentTime: new Date('2024-05-14T04:32:56.000Z'),
@@ -12261,7 +12260,7 @@ export const payments = [
 {
   paymentId: 1532,
   orderId: 1532,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10600,
   fee: 265,
   paymentTime: new Date('2024-05-14T04:33:04.000Z'),
@@ -12269,7 +12268,7 @@ export const payments = [
 {
   paymentId: 1533,
   orderId: 1533,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 22400,
   fee: 704,
   paymentTime: new Date('2024-05-14T04:33:13.000Z'),
@@ -12277,7 +12276,7 @@ export const payments = [
 {
   paymentId: 1534,
   orderId: 1534,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11700,
   fee: 377,
   paymentTime: new Date('2024-05-14T04:35:08.000Z'),
@@ -12285,7 +12284,7 @@ export const payments = [
 {
   paymentId: 1535,
   orderId: 1535,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13200,
   fee: 425,
   paymentTime: new Date('2024-05-14T08:00:37.000Z'),
@@ -12293,7 +12292,7 @@ export const payments = [
 {
   paymentId: 1536,
   orderId: 1536,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 13600,
   fee: 340,
   paymentTime: new Date('2024-05-14T08:23:37.000Z'),
@@ -12301,7 +12300,7 @@ export const payments = [
 {
   paymentId: 1537,
   orderId: 1537,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12500,
   fee: 313,
   paymentTime: new Date('2024-05-14T09:08:52.000Z'),
@@ -12309,7 +12308,7 @@ export const payments = [
 {
   paymentId: 1538,
   orderId: 1538,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11400,
   fee: 285,
   paymentTime: new Date('2024-05-14T09:14:57.000Z'),
@@ -12317,7 +12316,7 @@ export const payments = [
 {
   paymentId: 1539,
   orderId: 1539,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5500,
   fee: 0,
   paymentTime: new Date('2024-05-14T09:16:06.000Z'),
@@ -12325,7 +12324,7 @@ export const payments = [
 {
   paymentId: 1540,
   orderId: 1540,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 8200,
   fee: 238,
   paymentTime: new Date('2024-05-14T09:56:58.000Z'),
@@ -12333,7 +12332,7 @@ export const payments = [
 {
   paymentId: 1541,
   orderId: 1541,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11300,
   fee: 393,
   paymentTime: new Date('2024-05-14T11:32:03.000Z'),
@@ -12341,7 +12340,7 @@ export const payments = [
 {
   paymentId: 1542,
   orderId: 1542,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10700,
   fee: 336,
   paymentTime: new Date('2024-05-14T12:31:32.000Z'),
@@ -12349,7 +12348,7 @@ export const payments = [
 {
   paymentId: 1543,
   orderId: 1543,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4500,
   fee: 0,
   paymentTime: new Date('2024-05-14T12:55:19.000Z'),
@@ -12357,7 +12356,7 @@ export const payments = [
 {
   paymentId: 1544,
   orderId: 1544,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9200,
   fee: 0,
   paymentTime: new Date('2024-05-14T13:48:56.000Z'),
@@ -12365,7 +12364,7 @@ export const payments = [
 {
   paymentId: 1545,
   orderId: 1545,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13600,
   fee: 0,
   paymentTime: new Date('2024-05-15T02:56:42.000Z'),
@@ -12373,7 +12372,7 @@ export const payments = [
 {
   paymentId: 1546,
   orderId: 1546,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13200,
   fee: 488,
   paymentTime: new Date('2024-05-15T03:11:48.000Z'),
@@ -12381,7 +12380,7 @@ export const payments = [
 {
   paymentId: 1547,
   orderId: 1547,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 21600,
   fee: 0,
   paymentTime: new Date('2024-05-15T03:16:23.000Z'),
@@ -12389,7 +12388,7 @@ export const payments = [
 {
   paymentId: 1548,
   orderId: 1548,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 26900,
   fee: 854,
   paymentTime: new Date('2024-05-15T03:28:38.000Z'),
@@ -12397,7 +12396,7 @@ export const payments = [
 {
   paymentId: 1549,
   orderId: 1549,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7600,
   fee: 251,
   paymentTime: new Date('2024-05-15T03:28:48.000Z'),
@@ -12405,7 +12404,7 @@ export const payments = [
 {
   paymentId: 1550,
   orderId: 1550,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11100,
   fee: 274,
   paymentTime: new Date('2024-05-15T03:30:06.000Z'),
@@ -12413,7 +12412,7 @@ export const payments = [
 {
   paymentId: 1551,
   orderId: 1551,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11100,
   fee: 355,
   paymentTime: new Date('2024-05-15T03:46:20.000Z'),
@@ -12421,7 +12420,7 @@ export const payments = [
 {
   paymentId: 1552,
   orderId: 1552,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 27300,
   fee: 575,
   paymentTime: new Date('2024-05-15T03:44:27.000Z'),
@@ -12429,7 +12428,7 @@ export const payments = [
 {
   paymentId: 1553,
   orderId: 1553,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12200,
   fee: 395,
   paymentTime: new Date('2024-05-15T04:01:11.000Z'),
@@ -12437,7 +12436,7 @@ export const payments = [
 {
   paymentId: 1554,
   orderId: 1554,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 16500,
   fee: 373,
   paymentTime: new Date('2024-05-15T04:06:19.000Z'),
@@ -12445,7 +12444,7 @@ export const payments = [
 {
   paymentId: 1555,
   orderId: 1555,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9100,
   fee: 297,
   paymentTime: new Date('2024-05-15T04:09:50.000Z'),
@@ -12453,7 +12452,7 @@ export const payments = [
 {
   paymentId: 1556,
   orderId: 1556,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 4400,
   fee: 110,
   paymentTime: new Date('2024-05-15T04:32:56.000Z'),
@@ -12461,7 +12460,7 @@ export const payments = [
 {
   paymentId: 1557,
   orderId: 1557,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8800,
   fee: 201,
   paymentTime: new Date('2024-05-15T04:48:45.000Z'),
@@ -12469,7 +12468,7 @@ export const payments = [
 {
   paymentId: 1558,
   orderId: 1558,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15900,
   fee: 0,
   paymentTime: new Date('2024-05-15T08:28:33.000Z'),
@@ -12477,7 +12476,7 @@ export const payments = [
 {
   paymentId: 1559,
   orderId: 1559,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9500,
   fee: 0,
   paymentTime: new Date('2024-05-15T08:48:54.000Z'),
@@ -12485,7 +12484,7 @@ export const payments = [
 {
   paymentId: 1560,
   orderId: 1560,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10700,
   fee: 0,
   paymentTime: new Date('2024-05-15T09:11:10.000Z'),
@@ -12493,7 +12492,7 @@ export const payments = [
 {
   paymentId: 1561,
   orderId: 1561,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8800,
   fee: 218,
   paymentTime: new Date('2024-05-15T09:38:14.000Z'),
@@ -12501,7 +12500,7 @@ export const payments = [
 {
   paymentId: 1562,
   orderId: 1562,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10600,
   fee: 0,
   paymentTime: new Date('2024-05-15T09:49:38.000Z'),
@@ -12509,7 +12508,7 @@ export const payments = [
 {
   paymentId: 1563,
   orderId: 1563,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11500,
   fee: 288,
   paymentTime: new Date('2024-05-15T10:42:29.000Z'),
@@ -12517,7 +12516,7 @@ export const payments = [
 {
   paymentId: 1564,
   orderId: 1564,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11400,
   fee: 351,
   paymentTime: new Date('2024-05-15T11:12:23.000Z'),
@@ -12525,7 +12524,7 @@ export const payments = [
 {
   paymentId: 1565,
   orderId: 1565,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6100,
   fee: 203,
   paymentTime: new Date('2024-05-15T11:27:36.000Z'),
@@ -12533,7 +12532,7 @@ export const payments = [
 {
   paymentId: 1566,
   orderId: 1566,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8500,
   fee: 0,
   paymentTime: new Date('2024-05-15T11:24:06.000Z'),
@@ -12541,7 +12540,7 @@ export const payments = [
 {
   paymentId: 1567,
   orderId: 1567,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6200,
   fee: 155,
   paymentTime: new Date('2024-05-15T12:43:18.000Z'),
@@ -12549,7 +12548,7 @@ export const payments = [
 {
   paymentId: 1568,
   orderId: 1568,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10000,
   fee: 0,
   paymentTime: new Date('2024-05-16T02:15:11.000Z'),
@@ -12557,7 +12556,7 @@ export const payments = [
 {
   paymentId: 1569,
   orderId: 1569,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 26200,
   fee: 900,
   paymentTime: new Date('2024-05-16T02:20:52.000Z'),
@@ -12565,7 +12564,7 @@ export const payments = [
 {
   paymentId: 1570,
   orderId: 1570,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7200,
   fee: 170,
   paymentTime: new Date('2024-05-16T02:25:01.000Z'),
@@ -12573,7 +12572,7 @@ export const payments = [
 {
   paymentId: 1571,
   orderId: 1571,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 16100,
   fee: 403,
   paymentTime: new Date('2024-05-16T03:22:01.000Z'),
@@ -12581,7 +12580,7 @@ export const payments = [
 {
   paymentId: 1572,
   orderId: 1572,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 18200,
   fee: 0,
   paymentTime: new Date('2024-05-16T03:28:31.000Z'),
@@ -12589,7 +12588,7 @@ export const payments = [
 {
   paymentId: 1573,
   orderId: 1573,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 28600,
   fee: 0,
   paymentTime: new Date('2024-05-16T03:35:31.000Z'),
@@ -12597,7 +12596,7 @@ export const payments = [
 {
   paymentId: 1574,
   orderId: 1574,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13600,
   fee: 0,
   paymentTime: new Date('2024-05-16T04:47:40.000Z'),
@@ -12605,7 +12604,7 @@ export const payments = [
 {
   paymentId: 1575,
   orderId: 1575,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 16100,
   fee: 580,
   paymentTime: new Date('2024-05-16T04:52:50.000Z'),
@@ -12613,7 +12612,7 @@ export const payments = [
 {
   paymentId: 1576,
   orderId: 1576,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15600,
   fee: 567,
   paymentTime: new Date('2024-05-16T08:49:46.000Z'),
@@ -12621,7 +12620,7 @@ export const payments = [
 {
   paymentId: 1577,
   orderId: 1577,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 15500,
   fee: 363,
   paymentTime: new Date('2024-05-16T10:00:38.000Z'),
@@ -12629,7 +12628,7 @@ export const payments = [
 {
   paymentId: 1578,
   orderId: 1578,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6700,
   fee: 154,
   paymentTime: new Date('2024-05-16T12:21:00.000Z'),
@@ -12637,7 +12636,7 @@ export const payments = [
 {
   paymentId: 1579,
   orderId: 1579,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5400,
   fee: 181,
   paymentTime: new Date('2024-05-16T12:38:51.000Z'),
@@ -12645,7 +12644,7 @@ export const payments = [
 {
   paymentId: 1580,
   orderId: 1580,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 3900,
   fee: 118,
   paymentTime: new Date('2024-05-16T12:53:50.000Z'),
@@ -12653,7 +12652,7 @@ export const payments = [
 {
   paymentId: 1581,
   orderId: 1581,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5300,
   fee: 199,
   paymentTime: new Date('2024-05-16T13:25:35.000Z'),
@@ -12661,7 +12660,7 @@ export const payments = [
 {
   paymentId: 1582,
   orderId: 1582,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9200,
   fee: 313,
   paymentTime: new Date('2024-05-16T13:44:40.000Z'),
@@ -12669,7 +12668,7 @@ export const payments = [
 {
   paymentId: 1583,
   orderId: 1583,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 13600,
   fee: 340,
   paymentTime: new Date('2024-05-16T14:34:56.000Z'),
@@ -12677,7 +12676,7 @@ export const payments = [
 {
   paymentId: 1584,
   orderId: 1584,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18600,
   fee: 618,
   paymentTime: new Date('2024-05-17T02:07:00.000Z'),
@@ -12685,7 +12684,7 @@ export const payments = [
 {
   paymentId: 1585,
   orderId: 1585,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 17800,
   fee: 614,
   paymentTime: new Date('2024-05-17T02:10:29.000Z'),
@@ -12693,7 +12692,7 @@ export const payments = [
 {
   paymentId: 1586,
   orderId: 1586,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 9000,
   fee: 269,
   paymentTime: new Date('2024-05-17T02:19:33.000Z'),
@@ -12701,7 +12700,7 @@ export const payments = [
 {
   paymentId: 1587,
   orderId: 1587,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17700,
   fee: 0,
   paymentTime: new Date('2024-05-17T02:22:42.000Z'),
@@ -12709,7 +12708,7 @@ export const payments = [
 {
   paymentId: 1588,
   orderId: 1588,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11700,
   fee: 392,
   paymentTime: new Date('2024-05-17T02:40:56.000Z'),
@@ -12717,7 +12716,7 @@ export const payments = [
 {
   paymentId: 1589,
   orderId: 1589,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12800,
   fee: 399,
   paymentTime: new Date('2024-05-17T02:54:15.000Z'),
@@ -12725,7 +12724,7 @@ export const payments = [
 {
   paymentId: 1590,
   orderId: 1590,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 21500,
   fee: 699,
   paymentTime: new Date('2024-05-17T03:00:10.000Z'),
@@ -12733,7 +12732,7 @@ export const payments = [
 {
   paymentId: 1591,
   orderId: 1591,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12400,
   fee: 0,
   paymentTime: new Date('2024-05-17T03:01:16.000Z'),
@@ -12741,7 +12740,7 @@ export const payments = [
 {
   paymentId: 1592,
   orderId: 1592,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8600,
   fee: 318,
   paymentTime: new Date('2024-05-17T03:07:47.000Z'),
@@ -12749,7 +12748,7 @@ export const payments = [
 {
   paymentId: 1593,
   orderId: 1593,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13500,
   fee: 455,
   paymentTime: new Date('2024-05-17T03:44:24.000Z'),
@@ -12757,7 +12756,7 @@ export const payments = [
 {
   paymentId: 1594,
   orderId: 1594,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13000,
   fee: 411,
   paymentTime: new Date('2024-05-17T03:58:05.000Z'),
@@ -12765,7 +12764,7 @@ export const payments = [
 {
   paymentId: 1595,
   orderId: 1595,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8400,
   fee: 0,
   paymentTime: new Date('2024-05-17T03:59:44.000Z'),
@@ -12773,7 +12772,7 @@ export const payments = [
 {
   paymentId: 1596,
   orderId: 1596,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12200,
   fee: 388,
   paymentTime: new Date('2024-05-17T04:07:16.000Z'),
@@ -12781,7 +12780,7 @@ export const payments = [
 {
   paymentId: 1597,
   orderId: 1597,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11900,
   fee: 0,
   paymentTime: new Date('2024-05-17T04:47:36.000Z'),
@@ -12789,7 +12788,7 @@ export const payments = [
 {
   paymentId: 1598,
   orderId: 1598,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10700,
   fee: 329,
   paymentTime: new Date('2024-05-17T09:36:41.000Z'),
@@ -12797,7 +12796,7 @@ export const payments = [
 {
   paymentId: 1599,
   orderId: 1599,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12100,
   fee: 382,
   paymentTime: new Date('2024-05-17T10:03:43.000Z'),
@@ -12805,7 +12804,7 @@ export const payments = [
 {
   paymentId: 1600,
   orderId: 1600,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8700,
   fee: 207,
   paymentTime: new Date('2024-05-17T10:24:49.000Z'),
@@ -12813,7 +12812,7 @@ export const payments = [
 {
   paymentId: 1601,
   orderId: 1601,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9500,
   fee: 319,
   paymentTime: new Date('2024-05-17T11:06:41.000Z'),
@@ -12821,7 +12820,7 @@ export const payments = [
 {
   paymentId: 1602,
   orderId: 1602,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4600,
   fee: 145,
   paymentTime: new Date('2024-05-17T11:19:09.000Z'),
@@ -12829,7 +12828,7 @@ export const payments = [
 {
   paymentId: 1603,
   orderId: 1603,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5400,
   fee: 166,
   paymentTime: new Date('2024-05-17T12:26:00.000Z'),
@@ -12837,7 +12836,7 @@ export const payments = [
 {
   paymentId: 1604,
   orderId: 1604,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11300,
   fee: 425,
   paymentTime: new Date('2024-05-17T14:49:46.000Z'),
@@ -12845,7 +12844,7 @@ export const payments = [
 {
   paymentId: 1605,
   orderId: 1605,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9600,
   fee: 0,
   paymentTime: new Date('2024-05-17T14:59:12.000Z'),
@@ -12853,7 +12852,7 @@ export const payments = [
 {
   paymentId: 1606,
   orderId: 1606,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 22700,
   fee: 469,
   paymentTime: new Date('2024-05-18T02:01:53.000Z'),
@@ -12861,7 +12860,7 @@ export const payments = [
 {
   paymentId: 1607,
   orderId: 1607,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 12200,
   fee: 350,
   paymentTime: new Date('2024-05-18T02:19:03.000Z'),
@@ -12869,7 +12868,7 @@ export const payments = [
 {
   paymentId: 1608,
   orderId: 1608,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 7300,
   fee: 214,
   paymentTime: new Date('2024-05-18T02:18:43.000Z'),
@@ -12877,7 +12876,7 @@ export const payments = [
 {
   paymentId: 1609,
   orderId: 1609,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 16600,
   fee: 469,
   paymentTime: new Date('2024-05-18T02:20:13.000Z'),
@@ -12885,7 +12884,7 @@ export const payments = [
 {
   paymentId: 1610,
   orderId: 1610,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11400,
   fee: 246,
   paymentTime: new Date('2024-05-18T02:31:00.000Z'),
@@ -12893,7 +12892,7 @@ export const payments = [
 {
   paymentId: 1611,
   orderId: 1611,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16200,
   fee: 0,
   paymentTime: new Date('2024-05-18T02:36:55.000Z'),
@@ -12901,7 +12900,7 @@ export const payments = [
 {
   paymentId: 1612,
   orderId: 1612,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16300,
   fee: 0,
   paymentTime: new Date('2024-05-18T02:40:10.000Z'),
@@ -12909,7 +12908,7 @@ export const payments = [
 {
   paymentId: 1613,
   orderId: 1613,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5800,
   fee: 188,
   paymentTime: new Date('2024-05-18T02:42:30.000Z'),
@@ -12917,7 +12916,7 @@ export const payments = [
 {
   paymentId: 1614,
   orderId: 1614,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8300,
   fee: 293,
   paymentTime: new Date('2024-05-18T03:42:36.000Z'),
@@ -12925,7 +12924,7 @@ export const payments = [
 {
   paymentId: 1615,
   orderId: 1615,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4100,
   fee: 0,
   paymentTime: new Date('2024-05-18T04:16:30.000Z'),
@@ -12933,7 +12932,7 @@ export const payments = [
 {
   paymentId: 1616,
   orderId: 1616,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18400,
   fee: 628,
   paymentTime: new Date('2024-05-18T04:25:05.000Z'),
@@ -12941,7 +12940,7 @@ export const payments = [
 {
   paymentId: 1617,
   orderId: 1617,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 22600,
   fee: 0,
   paymentTime: new Date('2024-05-18T04:31:35.000Z'),
@@ -12949,7 +12948,7 @@ export const payments = [
 {
   paymentId: 1618,
   orderId: 1618,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15100,
   fee: 457,
   paymentTime: new Date('2024-05-18T04:32:36.000Z'),
@@ -12957,7 +12956,7 @@ export const payments = [
 {
   paymentId: 1619,
   orderId: 1619,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14700,
   fee: 477,
   paymentTime: new Date('2024-05-18T04:59:21.000Z'),
@@ -12965,7 +12964,7 @@ export const payments = [
 {
   paymentId: 1620,
   orderId: 1620,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19200,
   fee: 0,
   paymentTime: new Date('2024-05-18T08:55:18.000Z'),
@@ -12973,7 +12972,7 @@ export const payments = [
 {
   paymentId: 1621,
   orderId: 1621,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14500,
   fee: 0,
   paymentTime: new Date('2024-05-18T10:09:52.000Z'),
@@ -12981,7 +12980,7 @@ export const payments = [
 {
   paymentId: 1622,
   orderId: 1622,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 19500,
   fee: 583,
   paymentTime: new Date('2024-05-18T10:23:11.000Z'),
@@ -12989,7 +12988,7 @@ export const payments = [
 {
   paymentId: 1623,
   orderId: 1623,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14800,
   fee: 463,
   paymentTime: new Date('2024-05-18T10:52:37.000Z'),
@@ -12997,7 +12996,7 @@ export const payments = [
 {
   paymentId: 1624,
   orderId: 1624,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11800,
   fee: 362,
   paymentTime: new Date('2024-05-18T11:25:47.000Z'),
@@ -13005,7 +13004,7 @@ export const payments = [
 {
   paymentId: 1625,
   orderId: 1625,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4500,
   fee: 162,
   paymentTime: new Date('2024-05-18T14:02:56.000Z'),
@@ -13013,7 +13012,7 @@ export const payments = [
 {
   paymentId: 1626,
   orderId: 1626,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11600,
   fee: 377,
   paymentTime: new Date('2024-05-18T13:58:58.000Z'),
@@ -13021,7 +13020,7 @@ export const payments = [
 {
   paymentId: 1627,
   orderId: 1627,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5600,
   fee: 0,
   paymentTime: new Date('2024-05-18T14:28:32.000Z'),
@@ -13029,7 +13028,7 @@ export const payments = [
 {
   paymentId: 1628,
   orderId: 1628,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10900,
   fee: 372,
   paymentTime: new Date('2024-05-19T02:05:11.000Z'),
@@ -13037,7 +13036,7 @@ export const payments = [
 {
   paymentId: 1629,
   orderId: 1629,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9900,
   fee: 319,
   paymentTime: new Date('2024-05-19T02:19:09.000Z'),
@@ -13045,7 +13044,7 @@ export const payments = [
 {
   paymentId: 1630,
   orderId: 1630,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8100,
   fee: 252,
   paymentTime: new Date('2024-05-19T02:31:31.000Z'),
@@ -13053,7 +13052,7 @@ export const payments = [
 {
   paymentId: 1631,
   orderId: 1631,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 17800,
   fee: 515,
   paymentTime: new Date('2024-05-19T02:30:14.000Z'),
@@ -13061,7 +13060,7 @@ export const payments = [
 {
   paymentId: 1632,
   orderId: 1632,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13000,
   fee: 439,
   paymentTime: new Date('2024-05-19T03:07:46.000Z'),
@@ -13069,7 +13068,7 @@ export const payments = [
 {
   paymentId: 1633,
   orderId: 1633,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13000,
   fee: 447,
   paymentTime: new Date('2024-05-19T03:08:46.000Z'),
@@ -13077,7 +13076,7 @@ export const payments = [
 {
   paymentId: 1634,
   orderId: 1634,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11100,
   fee: 236,
   paymentTime: new Date('2024-05-19T03:09:48.000Z'),
@@ -13085,7 +13084,7 @@ export const payments = [
 {
   paymentId: 1635,
   orderId: 1635,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13300,
   fee: 0,
   paymentTime: new Date('2024-05-19T03:12:34.000Z'),
@@ -13093,7 +13092,7 @@ export const payments = [
 {
   paymentId: 1636,
   orderId: 1636,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14200,
   fee: 0,
   paymentTime: new Date('2024-05-19T03:12:12.000Z'),
@@ -13101,7 +13100,7 @@ export const payments = [
 {
   paymentId: 1637,
   orderId: 1637,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12800,
   fee: 320,
   paymentTime: new Date('2024-05-19T03:39:57.000Z'),
@@ -13109,7 +13108,7 @@ export const payments = [
 {
   paymentId: 1638,
   orderId: 1638,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15300,
   fee: 0,
   paymentTime: new Date('2024-05-19T03:42:28.000Z'),
@@ -13117,7 +13116,7 @@ export const payments = [
 {
   paymentId: 1639,
   orderId: 1639,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14500,
   fee: 478,
   paymentTime: new Date('2024-05-19T03:54:10.000Z'),
@@ -13125,7 +13124,7 @@ export const payments = [
 {
   paymentId: 1640,
   orderId: 1640,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9900,
   fee: 332,
   paymentTime: new Date('2024-05-19T04:05:01.000Z'),
@@ -13133,7 +13132,7 @@ export const payments = [
 {
   paymentId: 1641,
   orderId: 1641,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7000,
   fee: 225,
   paymentTime: new Date('2024-05-19T04:21:55.000Z'),
@@ -13141,7 +13140,7 @@ export const payments = [
 {
   paymentId: 1642,
   orderId: 1642,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16900,
   fee: 0,
   paymentTime: new Date('2024-05-19T04:31:04.000Z'),
@@ -13149,7 +13148,7 @@ export const payments = [
 {
   paymentId: 1643,
   orderId: 1643,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18500,
   fee: 578,
   paymentTime: new Date('2024-05-19T05:01:33.000Z'),
@@ -13157,7 +13156,7 @@ export const payments = [
 {
   paymentId: 1644,
   orderId: 1644,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11400,
   fee: 285,
   paymentTime: new Date('2024-05-19T08:57:05.000Z'),
@@ -13165,7 +13164,7 @@ export const payments = [
 {
   paymentId: 1645,
   orderId: 1645,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10500,
   fee: 333,
   paymentTime: new Date('2024-05-19T10:12:46.000Z'),
@@ -13173,7 +13172,7 @@ export const payments = [
 {
   paymentId: 1646,
   orderId: 1646,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6200,
   fee: 140,
   paymentTime: new Date('2024-05-19T10:25:25.000Z'),
@@ -13181,7 +13180,7 @@ export const payments = [
 {
   paymentId: 1647,
   orderId: 1647,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15700,
   fee: 0,
   paymentTime: new Date('2024-05-19T10:44:02.000Z'),
@@ -13189,7 +13188,7 @@ export const payments = [
 {
   paymentId: 1648,
   orderId: 1648,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5600,
   fee: 0,
   paymentTime: new Date('2024-05-19T11:42:29.000Z'),
@@ -13197,7 +13196,7 @@ export const payments = [
 {
   paymentId: 1649,
   orderId: 1649,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14300,
   fee: 461,
   paymentTime: new Date('2024-05-19T11:41:08.000Z'),
@@ -13205,7 +13204,7 @@ export const payments = [
 {
   paymentId: 1650,
   orderId: 1650,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13600,
   fee: 0,
   paymentTime: new Date('2024-05-19T12:03:47.000Z'),
@@ -13213,7 +13212,7 @@ export const payments = [
 {
   paymentId: 1651,
   orderId: 1651,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8800,
   fee: 282,
   paymentTime: new Date('2024-05-19T12:30:26.000Z'),
@@ -13221,7 +13220,7 @@ export const payments = [
 {
   paymentId: 1652,
   orderId: 1652,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10500,
   fee: 250,
   paymentTime: new Date('2024-05-19T12:46:04.000Z'),
@@ -13229,7 +13228,7 @@ export const payments = [
 {
   paymentId: 1653,
   orderId: 1653,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9800,
   fee: 0,
   paymentTime: new Date('2024-05-19T13:13:14.000Z'),
@@ -13237,7 +13236,7 @@ export const payments = [
 {
   paymentId: 1654,
   orderId: 1654,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10500,
   fee: 384,
   paymentTime: new Date('2024-05-19T13:13:33.000Z'),
@@ -13245,7 +13244,7 @@ export const payments = [
 {
   paymentId: 1655,
   orderId: 1655,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 16100,
   fee: 453,
   paymentTime: new Date('2024-05-20T02:05:20.000Z'),
@@ -13253,7 +13252,7 @@ export const payments = [
 {
   paymentId: 1656,
   orderId: 1656,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9200,
   fee: 0,
   paymentTime: new Date('2024-05-20T02:40:58.000Z'),
@@ -13261,7 +13260,7 @@ export const payments = [
 {
   paymentId: 1657,
   orderId: 1657,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7700,
   fee: 248,
   paymentTime: new Date('2024-05-20T02:47:08.000Z'),
@@ -13269,7 +13268,7 @@ export const payments = [
 {
   paymentId: 1658,
   orderId: 1658,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 14600,
   fee: 317,
   paymentTime: new Date('2024-05-20T03:11:09.000Z'),
@@ -13277,7 +13276,7 @@ export const payments = [
 {
   paymentId: 1659,
   orderId: 1659,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6500,
   fee: 0,
   paymentTime: new Date('2024-05-20T03:29:10.000Z'),
@@ -13285,7 +13284,7 @@ export const payments = [
 {
   paymentId: 1660,
   orderId: 1660,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4900,
   fee: 0,
   paymentTime: new Date('2024-05-20T03:38:54.000Z'),
@@ -13293,7 +13292,7 @@ export const payments = [
 {
   paymentId: 1661,
   orderId: 1661,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15500,
   fee: 526,
   paymentTime: new Date('2024-05-20T03:45:15.000Z'),
@@ -13301,7 +13300,7 @@ export const payments = [
 {
   paymentId: 1662,
   orderId: 1662,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 24200,
   fee: 523,
   paymentTime: new Date('2024-05-20T03:48:23.000Z'),
@@ -13309,7 +13308,7 @@ export const payments = [
 {
   paymentId: 1663,
   orderId: 1663,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18800,
   fee: 568,
   paymentTime: new Date('2024-05-20T03:55:54.000Z'),
@@ -13317,7 +13316,7 @@ export const payments = [
 {
   paymentId: 1664,
   orderId: 1664,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15000,
   fee: 482,
   paymentTime: new Date('2024-05-20T04:02:04.000Z'),
@@ -13325,7 +13324,7 @@ export const payments = [
 {
   paymentId: 1665,
   orderId: 1665,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 28500,
   fee: 1058,
   paymentTime: new Date('2024-05-20T04:43:20.000Z'),
@@ -13333,7 +13332,7 @@ export const payments = [
 {
   paymentId: 1666,
   orderId: 1666,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12200,
   fee: 0,
   paymentTime: new Date('2024-05-20T08:21:22.000Z'),
@@ -13341,7 +13340,7 @@ export const payments = [
 {
   paymentId: 1667,
   orderId: 1667,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 18600,
   fee: 465,
   paymentTime: new Date('2024-05-20T10:45:26.000Z'),
@@ -13349,7 +13348,7 @@ export const payments = [
 {
   paymentId: 1668,
   orderId: 1668,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8000,
   fee: 200,
   paymentTime: new Date('2024-05-20T11:30:13.000Z'),
@@ -13357,7 +13356,7 @@ export const payments = [
 {
   paymentId: 1669,
   orderId: 1669,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 10500,
   fee: 257,
   paymentTime: new Date('2024-05-20T11:43:59.000Z'),
@@ -13365,7 +13364,7 @@ export const payments = [
 {
   paymentId: 1670,
   orderId: 1670,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6300,
   fee: 0,
   paymentTime: new Date('2024-05-20T11:46:20.000Z'),
@@ -13373,7 +13372,7 @@ export const payments = [
 {
   paymentId: 1671,
   orderId: 1671,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7100,
   fee: 0,
   paymentTime: new Date('2024-05-20T12:50:47.000Z'),
@@ -13381,7 +13380,7 @@ export const payments = [
 {
   paymentId: 1672,
   orderId: 1672,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12300,
   fee: 398,
   paymentTime: new Date('2024-05-20T12:50:01.000Z'),
@@ -13389,7 +13388,7 @@ export const payments = [
 {
   paymentId: 1673,
   orderId: 1673,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7600,
   fee: 252,
   paymentTime: new Date('2024-05-20T12:52:39.000Z'),
@@ -13397,7 +13396,7 @@ export const payments = [
 {
   paymentId: 1674,
   orderId: 1674,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 3600,
   fee: 0,
   paymentTime: new Date('2024-05-20T13:19:08.000Z'),
@@ -13405,7 +13404,7 @@ export const payments = [
 {
   paymentId: 1675,
   orderId: 1675,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 3900,
   fee: 108,
   paymentTime: new Date('2024-05-20T13:16:00.000Z'),
@@ -13413,7 +13412,7 @@ export const payments = [
 {
   paymentId: 1676,
   orderId: 1676,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6100,
   fee: 0,
   paymentTime: new Date('2024-05-20T13:56:21.000Z'),
@@ -13421,7 +13420,7 @@ export const payments = [
 {
   paymentId: 1677,
   orderId: 1677,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13500,
   fee: 407,
   paymentTime: new Date('2024-05-21T02:14:33.000Z'),
@@ -13429,7 +13428,7 @@ export const payments = [
 {
   paymentId: 1678,
   orderId: 1678,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12100,
   fee: 0,
   paymentTime: new Date('2024-05-21T02:43:37.000Z'),
@@ -13437,7 +13436,7 @@ export const payments = [
 {
   paymentId: 1679,
   orderId: 1679,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12900,
   fee: 410,
   paymentTime: new Date('2024-05-21T03:03:00.000Z'),
@@ -13445,7 +13444,7 @@ export const payments = [
 {
   paymentId: 1680,
   orderId: 1680,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10500,
   fee: 361,
   paymentTime: new Date('2024-05-21T03:12:24.000Z'),
@@ -13453,7 +13452,7 @@ export const payments = [
 {
   paymentId: 1681,
   orderId: 1681,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20300,
   fee: 0,
   paymentTime: new Date('2024-05-21T03:15:58.000Z'),
@@ -13461,7 +13460,7 @@ export const payments = [
 {
   paymentId: 1682,
   orderId: 1682,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14600,
   fee: 0,
   paymentTime: new Date('2024-05-21T03:29:25.000Z'),
@@ -13469,7 +13468,7 @@ export const payments = [
 {
   paymentId: 1683,
   orderId: 1683,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 17700,
   fee: 502,
   paymentTime: new Date('2024-05-21T04:08:52.000Z'),
@@ -13477,7 +13476,7 @@ export const payments = [
 {
   paymentId: 1684,
   orderId: 1684,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 30800,
   fee: 643,
   paymentTime: new Date('2024-05-21T04:27:26.000Z'),
@@ -13485,7 +13484,7 @@ export const payments = [
 {
   paymentId: 1685,
   orderId: 1685,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4400,
   fee: 146,
   paymentTime: new Date('2024-05-21T04:51:21.000Z'),
@@ -13493,7 +13492,7 @@ export const payments = [
 {
   paymentId: 1686,
   orderId: 1686,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11500,
   fee: 0,
   paymentTime: new Date('2024-05-21T08:12:33.000Z'),
@@ -13501,7 +13500,7 @@ export const payments = [
 {
   paymentId: 1687,
   orderId: 1687,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12400,
   fee: 445,
   paymentTime: new Date('2024-05-21T09:27:52.000Z'),
@@ -13509,7 +13508,7 @@ export const payments = [
 {
   paymentId: 1688,
   orderId: 1688,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16200,
   fee: 0,
   paymentTime: new Date('2024-05-21T10:10:11.000Z'),
@@ -13517,7 +13516,7 @@ export const payments = [
 {
   paymentId: 1689,
   orderId: 1689,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 16600,
   fee: 415,
   paymentTime: new Date('2024-05-21T10:09:45.000Z'),
@@ -13525,7 +13524,7 @@ export const payments = [
 {
   paymentId: 1690,
   orderId: 1690,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9800,
   fee: 215,
   paymentTime: new Date('2024-05-21T10:25:06.000Z'),
@@ -13533,7 +13532,7 @@ export const payments = [
 {
   paymentId: 1691,
   orderId: 1691,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6500,
   fee: 163,
   paymentTime: new Date('2024-05-21T11:01:17.000Z'),
@@ -13541,7 +13540,7 @@ export const payments = [
 {
   paymentId: 1692,
   orderId: 1692,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4200,
   fee: 130,
   paymentTime: new Date('2024-05-21T11:44:48.000Z'),
@@ -13549,7 +13548,7 @@ export const payments = [
 {
   paymentId: 1693,
   orderId: 1693,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10300,
   fee: 384,
   paymentTime: new Date('2024-05-21T11:49:06.000Z'),
@@ -13557,7 +13556,7 @@ export const payments = [
 {
   paymentId: 1694,
   orderId: 1694,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 4200,
   fee: 0,
   paymentTime: new Date('2024-05-21T11:56:18.000Z'),
@@ -13565,7 +13564,7 @@ export const payments = [
 {
   paymentId: 1695,
   orderId: 1695,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10300,
   fee: 311,
   paymentTime: new Date('2024-05-21T12:11:45.000Z'),
@@ -13573,7 +13572,7 @@ export const payments = [
 {
   paymentId: 1696,
   orderId: 1696,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5500,
   fee: 0,
   paymentTime: new Date('2024-05-21T12:54:06.000Z'),
@@ -13581,7 +13580,7 @@ export const payments = [
 {
   paymentId: 1697,
   orderId: 1697,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4400,
   fee: 147,
   paymentTime: new Date('2024-05-21T12:51:26.000Z'),
@@ -13589,7 +13588,7 @@ export const payments = [
 {
   paymentId: 1698,
   orderId: 1698,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 9700,
   fee: 283,
   paymentTime: new Date('2024-05-21T13:20:34.000Z'),
@@ -13597,7 +13596,7 @@ export const payments = [
 {
   paymentId: 1699,
   orderId: 1699,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 22500,
   fee: 795,
   paymentTime: new Date('2024-05-21T14:12:54.000Z'),
@@ -13605,7 +13604,7 @@ export const payments = [
 {
   paymentId: 1700,
   orderId: 1700,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 21800,
   fee: 791,
   paymentTime: new Date('2024-05-21T14:16:16.000Z'),
@@ -13613,7 +13612,7 @@ export const payments = [
 {
   paymentId: 1701,
   orderId: 1701,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 20000,
   fee: 458,
   paymentTime: new Date('2024-05-21T14:34:29.000Z'),
@@ -13621,7 +13620,7 @@ export const payments = [
 {
   paymentId: 1702,
   orderId: 1702,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 16600,
   fee: 620,
   paymentTime: new Date('2024-05-22T02:09:02.000Z'),
@@ -13629,7 +13628,7 @@ export const payments = [
 {
   paymentId: 1703,
   orderId: 1703,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13500,
   fee: 0,
   paymentTime: new Date('2024-05-22T02:42:03.000Z'),
@@ -13637,7 +13636,7 @@ export const payments = [
 {
   paymentId: 1704,
   orderId: 1704,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6500,
   fee: 147,
   paymentTime: new Date('2024-05-22T03:02:48.000Z'),
@@ -13645,7 +13644,7 @@ export const payments = [
 {
   paymentId: 1705,
   orderId: 1705,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11300,
   fee: 254,
   paymentTime: new Date('2024-05-22T03:07:23.000Z'),
@@ -13653,7 +13652,7 @@ export const payments = [
 {
   paymentId: 1706,
   orderId: 1706,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13600,
   fee: 309,
   paymentTime: new Date('2024-05-22T03:10:47.000Z'),
@@ -13661,7 +13660,7 @@ export const payments = [
 {
   paymentId: 1707,
   orderId: 1707,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16100,
   fee: 0,
   paymentTime: new Date('2024-05-22T03:10:50.000Z'),
@@ -13669,7 +13668,7 @@ export const payments = [
 {
   paymentId: 1708,
   orderId: 1708,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12700,
   fee: 404,
   paymentTime: new Date('2024-05-22T03:14:27.000Z'),
@@ -13677,7 +13676,7 @@ export const payments = [
 {
   paymentId: 1709,
   orderId: 1709,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 19000,
   fee: 672,
   paymentTime: new Date('2024-05-22T03:38:23.000Z'),
@@ -13685,7 +13684,7 @@ export const payments = [
 {
   paymentId: 1710,
   orderId: 1710,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12300,
   fee: 291,
   paymentTime: new Date('2024-05-22T04:06:27.000Z'),
@@ -13693,7 +13692,7 @@ export const payments = [
 {
   paymentId: 1711,
   orderId: 1711,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13100,
   fee: 0,
   paymentTime: new Date('2024-05-22T04:24:01.000Z'),
@@ -13701,7 +13700,7 @@ export const payments = [
 {
   paymentId: 1712,
   orderId: 1712,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11600,
   fee: 264,
   paymentTime: new Date('2024-05-22T04:28:52.000Z'),
@@ -13709,7 +13708,7 @@ export const payments = [
 {
   paymentId: 1713,
   orderId: 1713,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 23300,
   fee: 687,
   paymentTime: new Date('2024-05-22T04:45:48.000Z'),
@@ -13717,7 +13716,7 @@ export const payments = [
 {
   paymentId: 1714,
   orderId: 1714,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10000,
   fee: 302,
   paymentTime: new Date('2024-05-22T04:49:36.000Z'),
@@ -13725,7 +13724,7 @@ export const payments = [
 {
   paymentId: 1715,
   orderId: 1715,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 14300,
   fee: 454,
   paymentTime: new Date('2024-05-22T08:18:34.000Z'),
@@ -13733,7 +13732,7 @@ export const payments = [
 {
   paymentId: 1716,
   orderId: 1716,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18100,
   fee: 662,
   paymentTime: new Date('2024-05-22T08:46:28.000Z'),
@@ -13741,7 +13740,7 @@ export const payments = [
 {
   paymentId: 1717,
   orderId: 1717,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8000,
   fee: 276,
   paymentTime: new Date('2024-05-22T08:55:59.000Z'),
@@ -13749,7 +13748,7 @@ export const payments = [
 {
   paymentId: 1718,
   orderId: 1718,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6100,
   fee: 153,
   paymentTime: new Date('2024-05-22T09:01:41.000Z'),
@@ -13757,7 +13756,7 @@ export const payments = [
 {
   paymentId: 1719,
   orderId: 1719,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 19900,
   fee: 608,
   paymentTime: new Date('2024-05-22T09:29:29.000Z'),
@@ -13765,7 +13764,7 @@ export const payments = [
 {
   paymentId: 1720,
   orderId: 1720,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6200,
   fee: 235,
   paymentTime: new Date('2024-05-22T09:48:04.000Z'),
@@ -13773,7 +13772,7 @@ export const payments = [
 {
   paymentId: 1721,
   orderId: 1721,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13900,
   fee: 445,
   paymentTime: new Date('2024-05-22T10:36:03.000Z'),
@@ -13781,7 +13780,7 @@ export const payments = [
 {
   paymentId: 1722,
   orderId: 1722,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6900,
   fee: 149,
   paymentTime: new Date('2024-05-22T10:45:16.000Z'),
@@ -13789,7 +13788,7 @@ export const payments = [
 {
   paymentId: 1723,
   orderId: 1723,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11600,
   fee: 290,
   paymentTime: new Date('2024-05-22T11:26:25.000Z'),
@@ -13797,7 +13796,7 @@ export const payments = [
 {
   paymentId: 1724,
   orderId: 1724,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7800,
   fee: 195,
   paymentTime: new Date('2024-05-22T11:48:10.000Z'),
@@ -13805,7 +13804,7 @@ export const payments = [
 {
   paymentId: 1725,
   orderId: 1725,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5900,
   fee: 0,
   paymentTime: new Date('2024-05-22T11:45:53.000Z'),
@@ -13813,7 +13812,7 @@ export const payments = [
 {
   paymentId: 1726,
   orderId: 1726,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12000,
   fee: 0,
   paymentTime: new Date('2024-05-22T12:29:18.000Z'),
@@ -13821,7 +13820,7 @@ export const payments = [
 {
   paymentId: 1727,
   orderId: 1727,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12300,
   fee: 371,
   paymentTime: new Date('2024-05-22T12:51:55.000Z'),
@@ -13829,7 +13828,7 @@ export const payments = [
 {
   paymentId: 1728,
   orderId: 1728,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5200,
   fee: 165,
   paymentTime: new Date('2024-05-22T13:35:45.000Z'),
@@ -13837,7 +13836,7 @@ export const payments = [
 {
   paymentId: 1729,
   orderId: 1729,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9500,
   fee: 287,
   paymentTime: new Date('2024-05-22T13:56:46.000Z'),
@@ -13845,7 +13844,7 @@ export const payments = [
 {
   paymentId: 1730,
   orderId: 1730,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15000,
   fee: 0,
   paymentTime: new Date('2024-05-23T02:54:44.000Z'),
@@ -13853,7 +13852,7 @@ export const payments = [
 {
   paymentId: 1731,
   orderId: 1731,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13800,
   fee: 282,
   paymentTime: new Date('2024-05-23T03:16:41.000Z'),
@@ -13861,7 +13860,7 @@ export const payments = [
 {
   paymentId: 1732,
   orderId: 1732,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10900,
   fee: 334,
   paymentTime: new Date('2024-05-23T03:35:27.000Z'),
@@ -13869,7 +13868,7 @@ export const payments = [
 {
   paymentId: 1733,
   orderId: 1733,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17200,
   fee: 427,
   paymentTime: new Date('2024-05-23T04:25:19.000Z'),
@@ -13877,7 +13876,7 @@ export const payments = [
 {
   paymentId: 1734,
   orderId: 1734,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10500,
   fee: 0,
   paymentTime: new Date('2024-05-23T04:44:45.000Z'),
@@ -13885,7 +13884,7 @@ export const payments = [
 {
   paymentId: 1735,
   orderId: 1735,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5300,
   fee: 0,
   paymentTime: new Date('2024-05-23T08:39:41.000Z'),
@@ -13893,7 +13892,7 @@ export const payments = [
 {
   paymentId: 1736,
   orderId: 1736,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 21300,
   fee: 533,
   paymentTime: new Date('2024-05-23T08:39:53.000Z'),
@@ -13901,7 +13900,7 @@ export const payments = [
 {
   paymentId: 1737,
   orderId: 1737,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6500,
   fee: 0,
   paymentTime: new Date('2024-05-23T09:12:49.000Z'),
@@ -13909,7 +13908,7 @@ export const payments = [
 {
   paymentId: 1738,
   orderId: 1738,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12300,
   fee: 379,
   paymentTime: new Date('2024-05-23T09:34:30.000Z'),
@@ -13917,7 +13916,7 @@ export const payments = [
 {
   paymentId: 1739,
   orderId: 1739,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 11500,
   fee: 343,
   paymentTime: new Date('2024-05-23T09:43:11.000Z'),
@@ -13925,7 +13924,7 @@ export const payments = [
 {
   paymentId: 1740,
   orderId: 1740,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11900,
   fee: 0,
   paymentTime: new Date('2024-05-23T09:51:42.000Z'),
@@ -13933,7 +13932,7 @@ export const payments = [
 {
   paymentId: 1741,
   orderId: 1741,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 21700,
   fee: 700,
   paymentTime: new Date('2024-05-23T10:50:30.000Z'),
@@ -13941,7 +13940,7 @@ export const payments = [
 {
   paymentId: 1742,
   orderId: 1742,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 26800,
   fee: 791,
   paymentTime: new Date('2024-05-23T11:02:03.000Z'),
@@ -13949,7 +13948,7 @@ export const payments = [
 {
   paymentId: 1743,
   orderId: 1743,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 9700,
   fee: 240,
   paymentTime: new Date('2024-05-23T11:41:41.000Z'),
@@ -13957,7 +13956,7 @@ export const payments = [
 {
   paymentId: 1744,
   orderId: 1744,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10000,
   fee: 325,
   paymentTime: new Date('2024-05-23T11:51:12.000Z'),
@@ -13965,7 +13964,7 @@ export const payments = [
 {
   paymentId: 1745,
   orderId: 1745,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 27800,
   fee: 0,
   paymentTime: new Date('2024-05-24T02:08:58.000Z'),
@@ -13973,7 +13972,7 @@ export const payments = [
 {
   paymentId: 1746,
   orderId: 1746,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20800,
   fee: 647,
   paymentTime: new Date('2024-05-24T02:16:19.000Z'),
@@ -13981,7 +13980,7 @@ export const payments = [
 {
   paymentId: 1747,
   orderId: 1747,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 27100,
   fee: 0,
   paymentTime: new Date('2024-05-24T02:27:40.000Z'),
@@ -13989,7 +13988,7 @@ export const payments = [
 {
   paymentId: 1748,
   orderId: 1748,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9400,
   fee: 329,
   paymentTime: new Date('2024-05-24T02:41:36.000Z'),
@@ -13997,7 +13996,7 @@ export const payments = [
 {
   paymentId: 1749,
   orderId: 1749,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8400,
   fee: 261,
   paymentTime: new Date('2024-05-24T03:19:24.000Z'),
@@ -14005,7 +14004,7 @@ export const payments = [
 {
   paymentId: 1750,
   orderId: 1750,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13200,
   fee: 0,
   paymentTime: new Date('2024-05-24T03:27:53.000Z'),
@@ -14013,7 +14012,7 @@ export const payments = [
 {
   paymentId: 1751,
   orderId: 1751,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6900,
   fee: 238,
   paymentTime: new Date('2024-05-24T03:37:57.000Z'),
@@ -14021,7 +14020,7 @@ export const payments = [
 {
   paymentId: 1752,
   orderId: 1752,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 7900,
   fee: 192,
   paymentTime: new Date('2024-05-24T03:35:08.000Z'),
@@ -14029,7 +14028,7 @@ export const payments = [
 {
   paymentId: 1753,
   orderId: 1753,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7500,
   fee: 0,
   paymentTime: new Date('2024-05-24T03:48:55.000Z'),
@@ -14037,7 +14036,7 @@ export const payments = [
 {
   paymentId: 1754,
   orderId: 1754,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11200,
   fee: 374,
   paymentTime: new Date('2024-05-24T03:57:17.000Z'),
@@ -14045,7 +14044,7 @@ export const payments = [
 {
   paymentId: 1755,
   orderId: 1755,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 13700,
   fee: 343,
   paymentTime: new Date('2024-05-24T03:59:45.000Z'),
@@ -14053,7 +14052,7 @@ export const payments = [
 {
   paymentId: 1756,
   orderId: 1756,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12300,
   fee: 0,
   paymentTime: new Date('2024-05-24T04:11:53.000Z'),
@@ -14061,7 +14060,7 @@ export const payments = [
 {
   paymentId: 1757,
   orderId: 1757,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10200,
   fee: 319,
   paymentTime: new Date('2024-05-24T04:43:06.000Z'),
@@ -14069,7 +14068,7 @@ export const payments = [
 {
   paymentId: 1758,
   orderId: 1758,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15400,
   fee: 575,
   paymentTime: new Date('2024-05-24T04:49:56.000Z'),
@@ -14077,7 +14076,7 @@ export const payments = [
 {
   paymentId: 1759,
   orderId: 1759,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 17500,
   fee: 525,
   paymentTime: new Date('2024-05-24T08:53:53.000Z'),
@@ -14085,7 +14084,7 @@ export const payments = [
 {
   paymentId: 1760,
   orderId: 1760,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 15400,
   fee: 385,
   paymentTime: new Date('2024-05-24T09:04:51.000Z'),
@@ -14093,7 +14092,7 @@ export const payments = [
 {
   paymentId: 1761,
   orderId: 1761,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6700,
   fee: 219,
   paymentTime: new Date('2024-05-24T09:17:12.000Z'),
@@ -14101,7 +14100,7 @@ export const payments = [
 {
   paymentId: 1762,
   orderId: 1762,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 30900,
   fee: 1044,
   paymentTime: new Date('2024-05-24T09:43:51.000Z'),
@@ -14109,7 +14108,7 @@ export const payments = [
 {
   paymentId: 1763,
   orderId: 1763,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 10700,
   fee: 346,
   paymentTime: new Date('2024-05-24T10:01:40.000Z'),
@@ -14117,7 +14116,7 @@ export const payments = [
 {
   paymentId: 1764,
   orderId: 1764,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14900,
   fee: 0,
   paymentTime: new Date('2024-05-24T10:17:36.000Z'),
@@ -14125,7 +14124,7 @@ export const payments = [
 {
   paymentId: 1765,
   orderId: 1765,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 8100,
   fee: 276,
   paymentTime: new Date('2024-05-24T11:15:21.000Z'),
@@ -14133,7 +14132,7 @@ export const payments = [
 {
   paymentId: 1766,
   orderId: 1766,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6000,
   fee: 205,
   paymentTime: new Date('2024-05-24T11:19:21.000Z'),
@@ -14141,7 +14140,7 @@ export const payments = [
 {
   paymentId: 1767,
   orderId: 1767,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 6200,
   fee: 155,
   paymentTime: new Date('2024-05-24T11:34:26.000Z'),
@@ -14149,7 +14148,7 @@ export const payments = [
 {
   paymentId: 1768,
   orderId: 1768,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 8500,
   fee: 213,
   paymentTime: new Date('2024-05-24T11:49:09.000Z'),
@@ -14157,7 +14156,7 @@ export const payments = [
 {
   paymentId: 1769,
   orderId: 1769,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10300,
   fee: 0,
   paymentTime: new Date('2024-05-24T11:53:07.000Z'),
@@ -14165,7 +14164,7 @@ export const payments = [
 {
   paymentId: 1770,
   orderId: 1770,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7100,
   fee: 231,
   paymentTime: new Date('2024-05-24T12:37:15.000Z'),
@@ -14173,7 +14172,7 @@ export const payments = [
 {
   paymentId: 1771,
   orderId: 1771,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 5600,
   fee: 195,
   paymentTime: new Date('2024-05-24T12:41:40.000Z'),
@@ -14181,7 +14180,7 @@ export const payments = [
 {
   paymentId: 1772,
   orderId: 1772,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14900,
   fee: 501,
   paymentTime: new Date('2024-05-24T14:21:25.000Z'),
@@ -14189,7 +14188,7 @@ export const payments = [
 {
   paymentId: 1773,
   orderId: 1773,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8100,
   fee: 279,
   paymentTime: new Date('2024-05-24T14:44:38.000Z'),
@@ -14197,7 +14196,7 @@ export const payments = [
 {
   paymentId: 1774,
   orderId: 1774,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12500,
   fee: 0,
   paymentTime: new Date('2024-05-24T14:58:04.000Z'),
@@ -14205,7 +14204,7 @@ export const payments = [
 {
   paymentId: 1775,
   orderId: 1775,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9400,
   fee: 302,
   paymentTime: new Date('2024-05-25T02:09:38.000Z'),
@@ -14213,7 +14212,7 @@ export const payments = [
 {
   paymentId: 1776,
   orderId: 1776,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 16500,
   fee: 492,
   paymentTime: new Date('2024-05-25T02:12:47.000Z'),
@@ -14221,7 +14220,7 @@ export const payments = [
 {
   paymentId: 1777,
   orderId: 1777,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19500,
   fee: 0,
   paymentTime: new Date('2024-05-25T02:13:55.000Z'),
@@ -14229,7 +14228,7 @@ export const payments = [
 {
   paymentId: 1778,
   orderId: 1778,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12400,
   fee: 390,
   paymentTime: new Date('2024-05-25T02:28:29.000Z'),
@@ -14237,7 +14236,7 @@ export const payments = [
 {
   paymentId: 1779,
   orderId: 1779,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 14400,
   fee: 360,
   paymentTime: new Date('2024-05-25T02:29:54.000Z'),
@@ -14245,7 +14244,7 @@ export const payments = [
 {
   paymentId: 1780,
   orderId: 1780,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20400,
   fee: 711,
   paymentTime: new Date('2024-05-25T02:46:31.000Z'),
@@ -14253,7 +14252,7 @@ export const payments = [
 {
   paymentId: 1781,
   orderId: 1781,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8200,
   fee: 247,
   paymentTime: new Date('2024-05-25T03:18:00.000Z'),
@@ -14261,7 +14260,7 @@ export const payments = [
 {
   paymentId: 1782,
   orderId: 1782,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 21400,
   fee: 0,
   paymentTime: new Date('2024-05-25T03:20:45.000Z'),
@@ -14269,7 +14268,7 @@ export const payments = [
 {
   paymentId: 1783,
   orderId: 1783,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 7800,
   fee: 0,
   paymentTime: new Date('2024-05-25T03:33:26.000Z'),
@@ -14277,7 +14276,7 @@ export const payments = [
 {
   paymentId: 1784,
   orderId: 1784,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6000,
   fee: 0,
   paymentTime: new Date('2024-05-25T03:51:31.000Z'),
@@ -14285,7 +14284,7 @@ export const payments = [
 {
   paymentId: 1785,
   orderId: 1785,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 7500,
   fee: 227,
   paymentTime: new Date('2024-05-25T03:46:54.000Z'),
@@ -14293,7 +14292,7 @@ export const payments = [
 {
   paymentId: 1786,
   orderId: 1786,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 13300,
   fee: 425,
   paymentTime: new Date('2024-05-25T04:06:37.000Z'),
@@ -14301,7 +14300,7 @@ export const payments = [
 {
   paymentId: 1787,
   orderId: 1787,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 17700,
   fee: 555,
   paymentTime: new Date('2024-05-25T04:30:52.000Z'),
@@ -14309,7 +14308,7 @@ export const payments = [
 {
   paymentId: 1788,
   orderId: 1788,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14200,
   fee: 0,
   paymentTime: new Date('2024-05-25T04:35:53.000Z'),
@@ -14317,7 +14316,7 @@ export const payments = [
 {
   paymentId: 1789,
   orderId: 1789,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 10300,
   fee: 351,
   paymentTime: new Date('2024-05-25T04:52:01.000Z'),
@@ -14325,7 +14324,7 @@ export const payments = [
 {
   paymentId: 1790,
   orderId: 1790,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 5600,
   fee: 123,
   paymentTime: new Date('2024-05-25T09:15:16.000Z'),
@@ -14333,7 +14332,7 @@ export const payments = [
 {
   paymentId: 1791,
   orderId: 1791,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 18900,
   fee: 609,
   paymentTime: new Date('2024-05-25T09:17:17.000Z'),
@@ -14341,7 +14340,7 @@ export const payments = [
 {
   paymentId: 1792,
   orderId: 1792,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 10200,
   fee: 304,
   paymentTime: new Date('2024-05-25T09:43:49.000Z'),
@@ -14349,7 +14348,7 @@ export const payments = [
 {
   paymentId: 1793,
   orderId: 1793,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 18600,
   fee: 623,
   paymentTime: new Date('2024-05-25T09:45:44.000Z'),
@@ -14357,7 +14356,7 @@ export const payments = [
 {
   paymentId: 1794,
   orderId: 1794,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13900,
   fee: 0,
   paymentTime: new Date('2024-05-25T10:19:08.000Z'),
@@ -14365,7 +14364,7 @@ export const payments = [
 {
   paymentId: 1795,
   orderId: 1795,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 4800,
   fee: 165,
   paymentTime: new Date('2024-05-25T10:37:00.000Z'),
@@ -14373,7 +14372,7 @@ export const payments = [
 {
   paymentId: 1796,
   orderId: 1796,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9300,
   fee: 330,
   paymentTime: new Date('2024-05-25T10:44:38.000Z'),
@@ -14381,7 +14380,7 @@ export const payments = [
 {
   paymentId: 1797,
   orderId: 1797,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 16500,
   fee: 619,
   paymentTime: new Date('2024-05-25T10:46:27.000Z'),
@@ -14389,7 +14388,7 @@ export const payments = [
 {
   paymentId: 1798,
   orderId: 1798,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 7700,
   fee: 225,
   paymentTime: new Date('2024-05-25T11:11:28.000Z'),
@@ -14397,7 +14396,7 @@ export const payments = [
 {
   paymentId: 1799,
   orderId: 1799,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 5500,
   fee: 189,
   paymentTime: new Date('2024-05-25T12:38:18.000Z'),
@@ -14405,7 +14404,7 @@ export const payments = [
 {
   paymentId: 1800,
   orderId: 1800,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9300,
   fee: 351,
   paymentTime: new Date('2024-05-25T13:14:45.000Z'),
@@ -14413,7 +14412,7 @@ export const payments = [
 {
   paymentId: 1801,
   orderId: 1801,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 3300,
   fee: 113,
   paymentTime: new Date('2024-05-25T13:34:42.000Z'),
@@ -14421,7 +14420,7 @@ export const payments = [
 {
   paymentId: 1802,
   orderId: 1802,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6700,
   fee: 152,
   paymentTime: new Date('2024-05-25T13:57:59.000Z'),
@@ -14429,7 +14428,7 @@ export const payments = [
 {
   paymentId: 1803,
   orderId: 1803,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 13200,
   fee: 449,
   paymentTime: new Date('2024-05-25T14:10:11.000Z'),
@@ -14437,7 +14436,7 @@ export const payments = [
 {
   paymentId: 1804,
   orderId: 1804,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11000,
   fee: 341,
   paymentTime: new Date('2024-05-26T02:03:51.000Z'),
@@ -14445,7 +14444,7 @@ export const payments = [
 {
   paymentId: 1805,
   orderId: 1805,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20000,
   fee: 619,
   paymentTime: new Date('2024-05-26T02:07:47.000Z'),
@@ -14453,7 +14452,7 @@ export const payments = [
 {
   paymentId: 1806,
   orderId: 1806,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6900,
   fee: 0,
   paymentTime: new Date('2024-05-26T02:27:38.000Z'),
@@ -14461,7 +14460,7 @@ export const payments = [
 {
   paymentId: 1807,
   orderId: 1807,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9700,
   fee: 0,
   paymentTime: new Date('2024-05-26T03:01:16.000Z'),
@@ -14469,7 +14468,7 @@ export const payments = [
 {
   paymentId: 1808,
   orderId: 1808,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19500,
   fee: 0,
   paymentTime: new Date('2024-05-26T03:02:30.000Z'),
@@ -14477,7 +14476,7 @@ export const payments = [
 {
   paymentId: 1809,
   orderId: 1809,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14400,
   fee: 0,
   paymentTime: new Date('2024-05-26T03:12:42.000Z'),
@@ -14485,7 +14484,7 @@ export const payments = [
 {
   paymentId: 1810,
   orderId: 1810,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20700,
   fee: 712,
   paymentTime: new Date('2024-05-26T03:22:32.000Z'),
@@ -14493,7 +14492,7 @@ export const payments = [
 {
   paymentId: 1811,
   orderId: 1811,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17300,
   fee: 0,
   paymentTime: new Date('2024-05-26T03:50:11.000Z'),
@@ -14501,7 +14500,7 @@ export const payments = [
 {
   paymentId: 1812,
   orderId: 1812,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6600,
   fee: 204,
   paymentTime: new Date('2024-05-26T04:21:40.000Z'),
@@ -14509,7 +14508,7 @@ export const payments = [
 {
   paymentId: 1813,
   orderId: 1813,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17500,
   fee: 380,
   paymentTime: new Date('2024-05-26T04:55:55.000Z'),
@@ -14517,7 +14516,7 @@ export const payments = [
 {
   paymentId: 1814,
   orderId: 1814,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 8500,
   fee: 0,
   paymentTime: new Date('2024-05-26T08:55:04.000Z'),
@@ -14525,7 +14524,7 @@ export const payments = [
 {
   paymentId: 1815,
   orderId: 1815,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 17800,
   fee: 377,
   paymentTime: new Date('2024-05-26T09:28:21.000Z'),
@@ -14533,7 +14532,7 @@ export const payments = [
 {
   paymentId: 1816,
   orderId: 1816,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12200,
   fee: 261,
   paymentTime: new Date('2024-05-26T10:02:55.000Z'),
@@ -14541,7 +14540,7 @@ export const payments = [
 {
   paymentId: 1817,
   orderId: 1817,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8100,
   fee: 246,
   paymentTime: new Date('2024-05-26T10:11:43.000Z'),
@@ -14549,7 +14548,7 @@ export const payments = [
 {
   paymentId: 1818,
   orderId: 1818,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 22700,
   fee: 783,
   paymentTime: new Date('2024-05-26T10:10:20.000Z'),
@@ -14557,7 +14556,7 @@ export const payments = [
 {
   paymentId: 1819,
   orderId: 1819,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 22000,
   fee: 771,
   paymentTime: new Date('2024-05-26T10:52:23.000Z'),
@@ -14565,7 +14564,7 @@ export const payments = [
 {
   paymentId: 1820,
   orderId: 1820,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8000,
   fee: 261,
   paymentTime: new Date('2024-05-26T10:59:55.000Z'),
@@ -14573,7 +14572,7 @@ export const payments = [
 {
   paymentId: 1821,
   orderId: 1821,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 6400,
   fee: 157,
   paymentTime: new Date('2024-05-26T11:46:35.000Z'),
@@ -14581,7 +14580,7 @@ export const payments = [
 {
   paymentId: 1822,
   orderId: 1822,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13900,
   fee: 0,
   paymentTime: new Date('2024-05-26T12:24:02.000Z'),
@@ -14589,7 +14588,7 @@ export const payments = [
 {
   paymentId: 1823,
   orderId: 1823,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6700,
   fee: 230,
   paymentTime: new Date('2024-05-26T13:30:19.000Z'),
@@ -14597,7 +14596,7 @@ export const payments = [
 {
   paymentId: 1824,
   orderId: 1824,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10200,
   fee: 255,
   paymentTime: new Date('2024-05-26T14:13:21.000Z'),
@@ -14605,7 +14604,7 @@ export const payments = [
 {
   paymentId: 1825,
   orderId: 1825,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12400,
   fee: 310,
   paymentTime: new Date('2024-05-26T14:38:07.000Z'),
@@ -14613,7 +14612,7 @@ export const payments = [
 {
   paymentId: 1826,
   orderId: 1826,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 18800,
   fee: 0,
   paymentTime: new Date('2024-05-27T02:20:06.000Z'),
@@ -14621,7 +14620,7 @@ export const payments = [
 {
   paymentId: 1827,
   orderId: 1827,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16200,
   fee: 555,
   paymentTime: new Date('2024-05-27T03:08:06.000Z'),
@@ -14629,7 +14628,7 @@ export const payments = [
 {
   paymentId: 1828,
   orderId: 1828,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16200,
   fee: 500,
   paymentTime: new Date('2024-05-27T03:11:47.000Z'),
@@ -14637,7 +14636,7 @@ export const payments = [
 {
   paymentId: 1829,
   orderId: 1829,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14200,
   fee: 515,
   paymentTime: new Date('2024-05-27T03:15:43.000Z'),
@@ -14645,7 +14644,7 @@ export const payments = [
 {
   paymentId: 1830,
   orderId: 1830,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 18700,
   fee: 539,
   paymentTime: new Date('2024-05-27T03:20:20.000Z'),
@@ -14653,7 +14652,7 @@ export const payments = [
 {
   paymentId: 1831,
   orderId: 1831,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 20700,
   fee: 0,
   paymentTime: new Date('2024-05-27T03:29:16.000Z'),
@@ -14661,7 +14660,7 @@ export const payments = [
 {
   paymentId: 1832,
   orderId: 1832,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 11100,
   fee: 353,
   paymentTime: new Date('2024-05-27T03:40:02.000Z'),
@@ -14669,7 +14668,7 @@ export const payments = [
 {
   paymentId: 1833,
   orderId: 1833,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12600,
   fee: 315,
   paymentTime: new Date('2024-05-27T03:54:32.000Z'),
@@ -14677,7 +14676,7 @@ export const payments = [
 {
   paymentId: 1834,
   orderId: 1834,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10900,
   fee: 0,
   paymentTime: new Date('2024-05-27T03:57:16.000Z'),
@@ -14685,7 +14684,7 @@ export const payments = [
 {
   paymentId: 1835,
   orderId: 1835,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14000,
   fee: 0,
   paymentTime: new Date('2024-05-27T04:10:05.000Z'),
@@ -14693,7 +14692,7 @@ export const payments = [
 {
   paymentId: 1836,
   orderId: 1836,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 13300,
   fee: 376,
   paymentTime: new Date('2024-05-27T04:16:48.000Z'),
@@ -14701,7 +14700,7 @@ export const payments = [
 {
   paymentId: 1837,
   orderId: 1837,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 11200,
   fee: 238,
   paymentTime: new Date('2024-05-27T05:00:29.000Z'),
@@ -14709,7 +14708,7 @@ export const payments = [
 {
   paymentId: 1838,
   orderId: 1838,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 12600,
   fee: 363,
   paymentTime: new Date('2024-05-27T08:08:07.000Z'),
@@ -14717,7 +14716,7 @@ export const payments = [
 {
   paymentId: 1839,
   orderId: 1839,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 6600,
   fee: 214,
   paymentTime: new Date('2024-05-27T08:25:26.000Z'),
@@ -14725,7 +14724,7 @@ export const payments = [
 {
   paymentId: 1840,
   orderId: 1840,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 15700,
   fee: 484,
   paymentTime: new Date('2024-05-27T08:49:48.000Z'),
@@ -14733,7 +14732,7 @@ export const payments = [
 {
   paymentId: 1841,
   orderId: 1841,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7100,
   fee: 178,
   paymentTime: new Date('2024-05-27T09:16:26.000Z'),
@@ -14741,7 +14740,7 @@ export const payments = [
 {
   paymentId: 1842,
   orderId: 1842,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 12700,
   fee: 318,
   paymentTime: new Date('2024-05-27T09:30:30.000Z'),
@@ -14749,7 +14748,7 @@ export const payments = [
 {
   paymentId: 1843,
   orderId: 1843,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 4900,
   fee: 103,
   paymentTime: new Date('2024-05-27T12:57:14.000Z'),
@@ -14757,7 +14756,7 @@ export const payments = [
 {
   paymentId: 1844,
   orderId: 1844,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 5800,
   fee: 0,
   paymentTime: new Date('2024-05-27T13:15:53.000Z'),
@@ -14765,7 +14764,7 @@ export const payments = [
 {
   paymentId: 1845,
   orderId: 1845,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 22900,
   fee: 0,
   paymentTime: new Date('2024-05-28T02:10:48.000Z'),
@@ -14773,7 +14772,7 @@ export const payments = [
 {
   paymentId: 1846,
   orderId: 1846,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12600,
   fee: 269,
   paymentTime: new Date('2024-05-28T02:39:24.000Z'),
@@ -14781,7 +14780,7 @@ export const payments = [
 {
   paymentId: 1847,
   orderId: 1847,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15800,
   fee: 546,
   paymentTime: new Date('2024-05-28T02:39:43.000Z'),
@@ -14789,7 +14788,7 @@ export const payments = [
 {
   paymentId: 1848,
   orderId: 1848,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 9200,
   fee: 0,
   paymentTime: new Date('2024-05-28T02:49:54.000Z'),
@@ -14797,7 +14796,7 @@ export const payments = [
 {
   paymentId: 1849,
   orderId: 1849,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17500,
   fee: 0,
   paymentTime: new Date('2024-05-28T02:59:09.000Z'),
@@ -14805,7 +14804,7 @@ export const payments = [
 {
   paymentId: 1850,
   orderId: 1850,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11400,
   fee: 360,
   paymentTime: new Date('2024-05-28T03:19:06.000Z'),
@@ -14813,7 +14812,7 @@ export const payments = [
 {
   paymentId: 1851,
   orderId: 1851,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 9200,
   fee: 310,
   paymentTime: new Date('2024-05-28T03:30:05.000Z'),
@@ -14821,7 +14820,7 @@ export const payments = [
 {
   paymentId: 1852,
   orderId: 1852,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 8700,
   fee: 214,
   paymentTime: new Date('2024-05-28T03:47:25.000Z'),
@@ -14829,7 +14828,7 @@ export const payments = [
 {
   paymentId: 1853,
   orderId: 1853,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16500,
   fee: 0,
   paymentTime: new Date('2024-05-28T04:05:36.000Z'),
@@ -14837,7 +14836,7 @@ export const payments = [
 {
   paymentId: 1854,
   orderId: 1854,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 13800,
   fee: 345,
   paymentTime: new Date('2024-05-28T04:04:33.000Z'),
@@ -14845,7 +14844,7 @@ export const payments = [
 {
   paymentId: 1855,
   orderId: 1855,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 7500,
   fee: 188,
   paymentTime: new Date('2024-05-28T04:28:02.000Z'),
@@ -14853,7 +14852,7 @@ export const payments = [
 {
   paymentId: 1856,
   orderId: 1856,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7100,
   fee: 215,
   paymentTime: new Date('2024-05-28T08:38:49.000Z'),
@@ -14861,7 +14860,7 @@ export const payments = [
 {
   paymentId: 1857,
   orderId: 1857,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 7000,
   fee: 201,
   paymentTime: new Date('2024-05-28T09:27:33.000Z'),
@@ -14869,7 +14868,7 @@ export const payments = [
 {
   paymentId: 1858,
   orderId: 1858,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 23800,
   fee: 550,
   paymentTime: new Date('2024-05-28T09:38:40.000Z'),
@@ -14877,7 +14876,7 @@ export const payments = [
 {
   paymentId: 1859,
   orderId: 1859,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 19200,
   fee: 0,
   paymentTime: new Date('2024-05-28T10:22:00.000Z'),
@@ -14885,7 +14884,7 @@ export const payments = [
 {
   paymentId: 1860,
   orderId: 1860,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 6300,
   fee: 231,
   paymentTime: new Date('2024-05-28T11:35:09.000Z'),
@@ -14893,7 +14892,7 @@ export const payments = [
 {
   paymentId: 1861,
   orderId: 1861,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12000,
   fee: 383,
   paymentTime: new Date('2024-05-28T12:32:30.000Z'),
@@ -14901,7 +14900,7 @@ export const payments = [
 {
   paymentId: 1862,
   orderId: 1862,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 12700,
   fee: 287,
   paymentTime: new Date('2024-05-28T13:51:31.000Z'),
@@ -14909,7 +14908,7 @@ export const payments = [
 {
   paymentId: 1863,
   orderId: 1863,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13900,
   fee: 0,
   paymentTime: new Date('2024-05-29T02:18:34.000Z'),
@@ -14917,7 +14916,7 @@ export const payments = [
 {
   paymentId: 1864,
   orderId: 1864,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 22800,
   fee: 0,
   paymentTime: new Date('2024-05-29T02:29:29.000Z'),
@@ -14925,7 +14924,7 @@ export const payments = [
 {
   paymentId: 1865,
   orderId: 1865,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 16100,
   fee: 511,
   paymentTime: new Date('2024-05-29T02:32:49.000Z'),
@@ -14933,7 +14932,7 @@ export const payments = [
 {
   paymentId: 1866,
   orderId: 1866,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8200,
   fee: 280,
   paymentTime: new Date('2024-05-29T04:10:09.000Z'),
@@ -14941,7 +14940,7 @@ export const payments = [
 {
   paymentId: 1867,
   orderId: 1867,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11500,
   fee: 0,
   paymentTime: new Date('2024-05-29T04:53:26.000Z'),
@@ -14949,7 +14948,7 @@ export const payments = [
 {
   paymentId: 1868,
   orderId: 1868,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 14600,
   fee: 466,
   paymentTime: new Date('2024-05-29T09:14:06.000Z'),
@@ -14957,7 +14956,7 @@ export const payments = [
 {
   paymentId: 1869,
   orderId: 1869,
-  paymentMethod: LINE_PAY,
+  paymentMethod: PaymentMethod.LINE_PAY,
   amount: 17200,
   fee: 488,
   paymentTime: new Date('2024-05-29T09:32:10.000Z'),
@@ -14965,7 +14964,7 @@ export const payments = [
 {
   paymentId: 1870,
   orderId: 1870,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 14600,
   fee: 0,
   paymentTime: new Date('2024-05-29T10:50:46.000Z'),
@@ -14973,7 +14972,7 @@ export const payments = [
 {
   paymentId: 1871,
   orderId: 1871,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 4700,
   fee: 151,
   paymentTime: new Date('2024-05-29T11:36:45.000Z'),
@@ -14981,7 +14980,7 @@ export const payments = [
 {
   paymentId: 1872,
   orderId: 1872,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10800,
   fee: 0,
   paymentTime: new Date('2024-05-29T13:05:11.000Z'),
@@ -14989,7 +14988,7 @@ export const payments = [
 {
   paymentId: 1873,
   orderId: 1873,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 13000,
   fee: 0,
   paymentTime: new Date('2024-05-30T02:20:08.000Z'),
@@ -14997,7 +14996,7 @@ export const payments = [
 {
   paymentId: 1874,
   orderId: 1874,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12400,
   fee: 0,
   paymentTime: new Date('2024-05-30T02:52:24.000Z'),
@@ -15005,7 +15004,7 @@ export const payments = [
 {
   paymentId: 1875,
   orderId: 1875,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11600,
   fee: 290,
   paymentTime: new Date('2024-05-30T03:53:17.000Z'),
@@ -15013,7 +15012,7 @@ export const payments = [
 {
   paymentId: 1876,
   orderId: 1876,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 23100,
   fee: 771,
   paymentTime: new Date('2024-05-30T04:04:58.000Z'),
@@ -15021,7 +15020,7 @@ export const payments = [
 {
   paymentId: 1877,
   orderId: 1877,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 13300,
   fee: 333,
   paymentTime: new Date('2024-05-30T04:12:24.000Z'),
@@ -15029,7 +15028,7 @@ export const payments = [
 {
   paymentId: 1878,
   orderId: 1878,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 8500,
   fee: 282,
   paymentTime: new Date('2024-05-30T04:19:21.000Z'),
@@ -15037,7 +15036,7 @@ export const payments = [
 {
   paymentId: 1879,
   orderId: 1879,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 7700,
   fee: 246,
   paymentTime: new Date('2024-05-30T08:28:28.000Z'),
@@ -15045,7 +15044,7 @@ export const payments = [
 {
   paymentId: 1880,
   orderId: 1880,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11800,
   fee: 393,
   paymentTime: new Date('2024-05-30T09:11:36.000Z'),
@@ -15053,7 +15052,7 @@ export const payments = [
 {
   paymentId: 1881,
   orderId: 1881,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 10900,
   fee: 273,
   paymentTime: new Date('2024-05-30T09:37:10.000Z'),
@@ -15061,7 +15060,7 @@ export const payments = [
 {
   paymentId: 1882,
   orderId: 1882,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 16500,
   fee: 0,
   paymentTime: new Date('2024-05-30T09:47:25.000Z'),
@@ -15069,7 +15068,7 @@ export const payments = [
 {
   paymentId: 1883,
   orderId: 1883,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20400,
   fee: 615,
   paymentTime: new Date('2024-05-30T10:43:13.000Z'),
@@ -15077,7 +15076,7 @@ export const payments = [
 {
   paymentId: 1884,
   orderId: 1884,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 10300,
   fee: 289,
   paymentTime: new Date('2024-05-30T12:56:39.000Z'),
@@ -15085,7 +15084,7 @@ export const payments = [
 {
   paymentId: 1885,
   orderId: 1885,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 6000,
   fee: 0,
   paymentTime: new Date('2024-05-30T14:06:42.000Z'),
@@ -15093,7 +15092,7 @@ export const payments = [
 {
   paymentId: 1886,
   orderId: 1886,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9700,
   fee: 317,
   paymentTime: new Date('2024-05-30T14:44:32.000Z'),
@@ -15101,7 +15100,7 @@ export const payments = [
 {
   paymentId: 1887,
   orderId: 1887,
-  paymentMethod: QR_CODE_ONSITE,
+  paymentMethod: PaymentMethod.QR_CODE_ONSITE,
   amount: 13400,
   fee: 284,
   paymentTime: new Date('2024-05-31T02:09:25.000Z'),
@@ -15109,7 +15108,7 @@ export const payments = [
 {
   paymentId: 1888,
   orderId: 1888,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 11800,
   fee: 295,
   paymentTime: new Date('2024-05-31T02:23:05.000Z'),
@@ -15117,7 +15116,7 @@ export const payments = [
 {
   paymentId: 1889,
   orderId: 1889,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 20200,
   fee: 638,
   paymentTime: new Date('2024-05-31T03:22:36.000Z'),
@@ -15125,7 +15124,7 @@ export const payments = [
 {
   paymentId: 1890,
   orderId: 1890,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 15600,
   fee: 0,
   paymentTime: new Date('2024-05-31T03:52:06.000Z'),
@@ -15133,7 +15132,7 @@ export const payments = [
 {
   paymentId: 1891,
   orderId: 1891,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 12800,
   fee: 397,
   paymentTime: new Date('2024-05-31T03:58:30.000Z'),
@@ -15141,7 +15140,7 @@ export const payments = [
 {
   paymentId: 1892,
   orderId: 1892,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11900,
   fee: 399,
   paymentTime: new Date('2024-05-31T03:59:04.000Z'),
@@ -15149,7 +15148,7 @@ export const payments = [
 {
   paymentId: 1893,
   orderId: 1893,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 12600,
   fee: 0,
   paymentTime: new Date('2024-05-31T04:21:15.000Z'),
@@ -15157,7 +15156,7 @@ export const payments = [
 {
   paymentId: 1894,
   orderId: 1894,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 12400,
   fee: 423,
   paymentTime: new Date('2024-05-31T04:46:13.000Z'),
@@ -15165,7 +15164,7 @@ export const payments = [
 {
   paymentId: 1895,
   orderId: 1895,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 10300,
   fee: 0,
   paymentTime: new Date('2024-05-31T04:44:44.000Z'),
@@ -15173,7 +15172,7 @@ export const payments = [
 {
   paymentId: 1896,
   orderId: 1896,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 11100,
   fee: 0,
   paymentTime: new Date('2024-05-31T04:51:43.000Z'),
@@ -15181,7 +15180,7 @@ export const payments = [
 {
   paymentId: 1897,
   orderId: 1897,
-  paymentMethod: CREDIT_CARD_ONSITE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONSITE,
   amount: 22000,
   fee: 670,
   paymentTime: new Date('2024-05-31T09:23:27.000Z'),
@@ -15189,7 +15188,7 @@ export const payments = [
 {
   paymentId: 1898,
   orderId: 1898,
-  paymentMethod: PAYPAY,
+  paymentMethod: PaymentMethod.PAYPAY,
   amount: 14700,
   fee: 368,
   paymentTime: new Date('2024-05-31T09:38:35.000Z'),
@@ -15197,7 +15196,7 @@ export const payments = [
 {
   paymentId: 1899,
   orderId: 1899,
-  paymentMethod: CASH,
+  paymentMethod: PaymentMethod.CASH,
   amount: 17600,
   fee: 0,
   paymentTime: new Date('2024-05-31T10:08:41.000Z'),
@@ -15205,7 +15204,7 @@ export const payments = [
 {
   paymentId: 1900,
   orderId: 1900,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 11200,
   fee: 333,
   paymentTime: new Date('2024-05-31T11:19:18.000Z'),
@@ -15213,7 +15212,7 @@ export const payments = [
 {
   paymentId: 1901,
   orderId: 1901,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 9600,
   fee: 312,
   paymentTime: new Date('2024-05-31T13:51:07.000Z'),
@@ -15221,7 +15220,7 @@ export const payments = [
 {
   paymentId: 1902,
   orderId: 1902,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 11800,
   fee: 404,
   paymentTime: new Date('2024-05-31T14:09:21.000Z'),
@@ -15229,7 +15228,7 @@ export const payments = [
 {
   paymentId: 1903,
   orderId: 1903,
-  paymentMethod: RAKUTEN_PAY,
+  paymentMethod: PaymentMethod.RAKUTEN_PAY,
   amount: 22700,
   fee: 614,
   paymentTime: new Date('2024-05-31T14:27:04.000Z'),
@@ -15237,7 +15236,7 @@ export const payments = [
 {
   paymentId: 1904,
   orderId: 1904,
-  paymentMethod: CREDIT_CARD_ONLINE,
+  paymentMethod: PaymentMethod.CREDIT_CARD_ONLINE,
   amount: 15500,
   fee: 562,
   paymentTime: new Date('2024-05-31T14:59:19.000Z'),

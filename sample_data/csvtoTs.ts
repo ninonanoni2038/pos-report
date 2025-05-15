@@ -21,14 +21,22 @@ const headers = headerLine.split(',');
 
 // 型ヒントを抽出
 const columnTypes: Record<string, 'int' | 'string' | 'date' | 'enum'> = {};
+const enumTypes: Record<string, string> = {}; // enumのカラム名とenum型名のマッピング
 const columnNames = headers.map(h => {
-  const match = h.match(/^(.*?)(?::(int|date|enum))?$/);
+  const match = h.match(/^(.*?)(?::(int|date|enum)(?:\((.*?)\))?)?$/);
   if (match) {
     const name = match[1];
     const type = match[2] === 'int' ? 'int' :
                 match[2] === 'date' ? 'date' :
                 match[2] === 'enum' ? 'enum' : 'string';
     columnTypes[name] = type;
+    
+    // enum型の場合、enum名を保存（指定がなければカラム名から生成）
+    if (type === 'enum') {
+      // カラム名から型名を生成（先頭を大文字に）
+      const enumName = `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
+      enumTypes[name] = enumName;
+    }
     return name;
   }
   return h;
@@ -49,7 +57,7 @@ const converted = records.map((row: any) => {
     } else if (columnTypes[key] === 'date') {
       newRow[key] = row[key]; // 文字列のまま保持し、TS出力時にnew Dateで出力
     } else if (columnTypes[key] === 'enum') {
-      newRow[key] = row[key]; // 文字列のまま保持し、TS出力時にそのまま出力（enum値として）
+      newRow[key] = row[key]; // 文字列のまま保持
     } else {
       newRow[key] = row[key];
     }
@@ -66,7 +74,7 @@ function toTsLiteral(obj: any): string {
     if (columnTypes[k] === 'date') {
       return `  ${k}: new Date('${v}'),`;
     } else if (columnTypes[k] === 'enum') {
-      return `  ${k}: ${v},`; // enum値はクォートなしで出力
+      return `  ${k}: ${enumTypes[k]}.${v},`; // enum値はenum型名.値の形式で出力
     } else if (typeof v === 'string') {
       return `  ${k}: '${v}',`;
     } else {
@@ -78,7 +86,33 @@ ${props.join('\n')}
 }`;
 }
 
-const tsArray = `export const ${varName} = [
+// 使用されているenum型の定義を生成
+function generateEnumDefinitions(): string {
+  const enumDefs: string[] = [];
+  
+  for (const [columnName, enumName] of Object.entries(enumTypes)) {
+    // 使用されているenum値を収集
+    const enumValues = new Set<string>();
+    for (const record of converted) {
+      if (record[columnName]) {
+        enumValues.add(record[columnName]);
+      }
+    }
+    
+    if (enumValues.size > 0) {
+      const enumValuesStr = Array.from(enumValues)
+        .map(value => `  ${value} = '${value}'`)
+        .join(',\n');
+      
+      enumDefs.push(`export enum ${enumName} {\n${enumValuesStr}\n}`);
+    }
+  }
+  
+  return enumDefs.join('\n\n') + (enumDefs.length > 0 ? '\n\n' : '');
+}
+
+const enumDefinitions = generateEnumDefinitions();
+const tsArray = `${enumDefinitions}export const ${varName} = [
 ${converted.map(toTsLiteral).join(',\n')}
 ] as const;\n`;
 
