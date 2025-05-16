@@ -1,6 +1,9 @@
 import React from 'react';
 import { Surface, Text, Border, Object as ObjectColor } from '../../styles/semanticColors';
-import { formatDate } from '../../utils/formatters';
+import { formatDate, getDateWithWeekdayColor } from '../../utils/formatters';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/pro-solid-svg-icons/faChevronLeft';
+import { faChevronRight } from '@fortawesome/pro-solid-svg-icons/faChevronRight';
 
 interface PeriodSelectorProps {
   currentDate: Date;
@@ -31,40 +34,51 @@ const PeriodSelector: React.FC<PeriodSelectorProps> = ({
     }}>
       <div style={{ marginRight: 'auto', display: 'flex', alignItems: 'center' }}>
         <span style={{ color: Text.Secondary, marginRight: 8 }}>日報</span>
-        <button 
+        <button
           onClick={onPrevDay}
           style={{
             border: 'none',
             background: 'transparent',
             cursor: 'pointer',
             color: ObjectColor.AccentPrimary,
-            fontSize: 18,
             padding: '0 8px'
           }}
         >
-          &lt;
+          <FontAwesomeIcon icon={faChevronLeft} size="lg" />
         </button>
-        <div style={{ 
-          padding: '6px 16px', 
+        <div style={{
+          padding: '6px 16px',
           border: `1px solid ${Border.LowEmphasis}`,
           borderRadius: 4,
           margin: '0 8px',
-          fontWeight: 'bold'
+          fontWeight: 'bold',
+          width: '180px',  // 固定幅を設定
+          textAlign: 'center', // テキストを中央揃え
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
         }}>
-          {formatDate(currentDate)}
+          {(() => {
+            const { dateText, weekdayText, weekdayColor } = getDateWithWeekdayColor(currentDate);
+            return (
+              <>
+                {dateText}
+                <span style={{ color: weekdayColor }}>{weekdayText}</span>
+              </>
+            );
+          })()}
         </div>
-        <button 
+        <button
           onClick={onNextDay}
           style={{
             border: 'none',
             background: 'transparent',
             cursor: 'pointer',
             color: ObjectColor.AccentPrimary,
-            fontSize: 18,
             padding: '0 8px'
           }}
         >
-          &gt;
+          <FontAwesomeIcon icon={faChevronRight} size="lg" />
         </button>
       </div>
       <button 

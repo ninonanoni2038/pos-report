@@ -36,7 +36,7 @@ import { products } from '../sample_data/products/products';
  */
 const SalesAnalysisPage: React.FC = () => {
   // 状態管理
-  const [currentDate, setCurrentDate] = useState<Date>(new Date('2024-03-01'));
+  const [currentDate, setCurrentDate] = useState<Date>(new Date('2024-05-16'));
   
   // 日付操作ハンドラ
   const handlePrevDay = () => {
@@ -52,7 +52,7 @@ const SalesAnalysisPage: React.FC = () => {
   };
   
   const handleToday = () => {
-    setCurrentDate(new Date('2024-03-01')); // サンプルデータの日付に合わせる
+    setCurrentDate(new Date('2024-05-16')); // サンプルデータの日付に合わせる
   };
 
   // データ処理
