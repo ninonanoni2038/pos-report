@@ -5,7 +5,6 @@ import {
   Order,
   Payment,
   SalesKPI,
-  PaymentMethodData,
   ProductSalesData,
   DailyCustomerData,
   HourlyCustomerData
@@ -15,7 +14,6 @@ import {
 import PeriodSelector from '../components/sales/PeriodSelector';
 import KpiCard from '../components/sales/KpiCard';
 import CustomerPeakChart from '../components/sales/CustomerPeakChart';
-import PaymentMethodChart from '../components/sales/PaymentMethodChart';
 import TopProductsChart from '../components/sales/TopProductsChart';
 import SalesDetailTable from '../components/sales/SalesDetailTable';
 import CustomerDetailTable from '../components/sales/CustomerDetailTable';
@@ -36,7 +34,6 @@ import {
   generateHourlyCustomersData,
   generateHalfHourlyCustomersData,
   generateTwoHourlyCustomersData,
-  generatePaymentMethodData,
   generateTopProductsData,
   filterDailyOrderItems,
   // 月報表示用の関数
@@ -152,7 +149,6 @@ const SalesAnalysisPage: React.FC = () => {
   };
 
   let customerData: DailyCustomerDataType | MonthlyCustomerDataType;
-  let paymentMethodData: PaymentMethodData[];
   let topProducts: ProductSalesData[];
 
   // 比較用のKPI値
@@ -261,9 +257,6 @@ const SalesAnalysisPage: React.FC = () => {
     };
   }
   
-  // 共通データ処理
-  paymentMethodData = generatePaymentMethodData(filteredPayments);
-  
   // 売れ筋商品データ生成
   const orderIds = filteredOrders.map(order => order.orderId);
   const filteredOrderItems = filterDailyOrderItems(order_items, orderIds);
@@ -330,16 +323,33 @@ const SalesAnalysisPage: React.FC = () => {
       </div>
       
       {/* グラフセクション */}
-      <div style={{ display: 'flex', marginBottom: 24, gap: 16 }}>
-        <CustomerPeakChart
-          {...customerData}
-          displayMode={displayMode}
-        />
-        <PaymentMethodChart data={paymentMethodData} />
+      <div style={{
+        display: 'flex',
+        marginBottom: 24,
+        gap: 16,
+        height: 500,
+        boxSizing: 'border-box'
+      }}>
+        <div style={{
+          flex: 1,
+          width: '50%',
+          height: '100%',
+          boxSizing: 'border-box'
+        }}>
+          <CustomerPeakChart
+            {...customerData}
+            displayMode={displayMode}
+          />
+        </div>
+        <div style={{
+          flex: 1,
+          width: '50%',
+          height: '100%',
+          boxSizing: 'border-box'
+        }}>
+          <TopProductsChart data={topProducts} />
+        </div>
       </div>
-      
-      {/* 売れ筋商品ランキング */}
-      <TopProductsChart data={topProducts} />
       
       {/* 詳細情報 */}
       <div style={{ 

@@ -296,7 +296,11 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
       background: Surface.Primary,
       padding: 16,
       borderRadius: 8,
-      boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+      boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      boxSizing: 'border-box'
     }}>
       {/* ヘッダー部分 - 縦に積み重ねるレイアウト */}
       <div style={{
@@ -415,7 +419,7 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
           </h4>
         </div>
       </div>
-      <div style={{ height: 300 }}>
+      <div style={{ flex: 1 }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={completeData}

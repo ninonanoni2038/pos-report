@@ -23,15 +23,18 @@ interface TopProductsChartProps {
  */
 const TopProductsChart: React.FC<TopProductsChartProps> = ({ data }) => {
   return (
-    <div style={{ 
-      background: Surface.Primary, 
-      padding: 16, 
+    <div style={{
+      background: Surface.Primary,
+      padding: 16,
       borderRadius: 8,
       boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-      marginBottom: 24
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      boxSizing: 'border-box'
     }}>
-      <h3 style={{ margin: '0 0 16px 0', color: Text.HighEmphasis }}>売れ筋商品ランキングTop5</h3>
-      <div style={{ height: 300 }}>
+      <h3 style={{ margin: '0 0 16px 0', color: Text.HighEmphasis }}>売れ筋商品</h3>
+      <div style={{ flex: 1 }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             layout="vertical"

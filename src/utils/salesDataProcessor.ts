@@ -256,7 +256,7 @@ export const generateTopProductsData = (
       };
     })
     .sort((a, b) => b.amount - a.amount)
-    .slice(0, 5);
+    .slice(0, 10);
 };
 
 /**
