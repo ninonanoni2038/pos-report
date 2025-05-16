@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // 期間設定
-const startDate = new Date('2024-03-01');
+const startDate = new Date('2023-03-01');
 const endDate = new Date('2024-05-31');
 const customerMax = 100;
 const minOrdersPerDay = 10;
