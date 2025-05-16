@@ -34,7 +34,7 @@ const TabButton: React.FC<TabButtonProps> = ({ active, onClick, children }) => {
         padding: '6px 12px',
         marginRight: 8,
         background: active ? ObjectColor.AccentPrimary : Surface.Primary,
-        color: active ? Surface.Primary : Text.Secondary,
+        color: active ? Surface.Primary : Text.MediumEmphasis,
         border: `1px solid ${active ? ObjectColor.AccentPrimary : Border.LowEmphasis}`,
         borderRadius: 4,
         cursor: 'pointer',
@@ -166,7 +166,7 @@ const PeriodSelector: React.FC<PeriodSelectorProps> = ({
             padding: '6px 12px',
             borderRadius: 4,
             cursor: 'pointer',
-            color: Text.Secondary
+            color: Text.MediumEmphasis
           }}
         >
           今日

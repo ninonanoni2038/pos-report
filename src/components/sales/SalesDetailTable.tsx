@@ -21,7 +21,7 @@ const SalesDetailTable: React.FC<SalesDetailTableProps> = ({ data }) => {
 
   return (
     <div style={{ marginBottom: 24 }}>
-      <h4 style={{ margin: '0 0 8px 0', color: Text.Primary }}>売上</h4>
+      <h4 style={{ margin: '0 0 8px 0', color: Text.HighEmphasis }}>売上</h4>
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <tbody>
           <tr>

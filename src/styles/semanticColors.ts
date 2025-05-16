@@ -2,10 +2,11 @@ import { PrimaryGold, Gray, Red, Green, Orange, Blue, WhiteAlpha } from './primi
 
 // 1. Text 系
 export const Text = {
-  Primary: Gray[80],
-  Secondary: Gray[70],
-  Tertiary: Gray[60],
+  HighEmphasis: Gray[80],
+  MediumEmphasis: Gray[70],
+  LowEmphasis: Gray[60],
   Disabled: Gray[50],
+  AccentPrimary: PrimaryGold[60],
   Link: Blue[60],
   // OnBrand: WhiteAlpha[100],
   Danger: Red[60],

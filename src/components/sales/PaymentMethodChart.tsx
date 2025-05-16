@@ -30,7 +30,7 @@ const PaymentMethodChart: React.FC<PaymentMethodChartProps> = ({ data }) => {
       borderRadius: 8,
       boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
     }}>
-      <h3 style={{ margin: '0 0 16px 0', color: Text.Primary }}>決済手段構成</h3>
+      <h3 style={{ margin: '0 0 16px 0', color: Text.HighEmphasis }}>決済手段構成</h3>
       <div style={{ height: 300 }}>
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>

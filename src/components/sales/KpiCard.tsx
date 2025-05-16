@@ -46,10 +46,10 @@ const KpiCard: React.FC<KpiCardProps> = ({
         }
       }}
     >
-      <div style={{ color: Text.Secondary, marginBottom: 8, fontSize: 14 }}>{title}</div>
-      <div style={{ color: Text.Primary, fontWeight: 'bold', fontSize: 24 }}>{value}</div>
+      <div style={{ color: Text.MediumEmphasis, marginBottom: 8, fontSize: 14 }}>{title}</div>
+      <div style={{ color: Text.HighEmphasis, fontWeight: 'bold', fontSize: 24 }}>{value}</div>
       {subValue && (
-        <div style={{ color: Text.Tertiary, fontSize: 12, marginTop: 4 }}>{subValue}</div>
+        <div style={{ color: Text.LowEmphasis, fontSize: 12, marginTop: 4 }}>{subValue}</div>
       )}
     </div>
   );

@@ -31,10 +31,10 @@ const ColorSwatchList: React.FC<{
   const swatchHeight = 80;
   return (
     <div style={{ marginBottom: 40 }}>
-      <h2 style={{ fontSize: 20, marginBottom: 12, color: Text.Primary }}>{title}</h2>
+      <h2 style={{ fontSize: 20, marginBottom: 12, color: Text.HighEmphasis }}>{title}</h2>
       <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
         {Object.entries(colors).map(([key, value]) => (
-          <div key={key} style={{ textAlign: 'center', marginBottom: 8, color: Text.Primary }}>
+          <div key={key} style={{ textAlign: 'center', marginBottom: 8, color: Text.HighEmphasis }}>
             <div style={{
               width: swatchWidth,
               height: swatchHeight,
@@ -44,8 +44,8 @@ const ColorSwatchList: React.FC<{
               marginBottom: 8,
               boxShadow: '0 1px 2px rgba(0,0,0,0.03)'
             }} />
-            <div style={{ fontSize: 12, color: Text.Secondary, width: swatchWidth, overflowWrap: 'break-word' }}>{key}</div>
-            <div style={{ fontSize: 12, color: Text.Primary, width: swatchWidth, overflowWrap: 'break-word', textOverflow: 'ellipsis' }}>{value}</div>
+            <div style={{ fontSize: 12, color: Text.MediumEmphasis, width: swatchWidth, overflowWrap: 'break-word' }}>{key}</div>
+            <div style={{ fontSize: 12, color: Text.HighEmphasis, width: swatchWidth, overflowWrap: 'break-word', textOverflow: 'ellipsis' }}>{value}</div>
           </div>
         ))}
       </div>
@@ -56,13 +56,13 @@ const ColorSwatchList: React.FC<{
 const ColorPaletteViewer: React.FC = () => {
   return (
     <div style={{ padding: 32, fontFamily: 'sans-serif', background: Background.Default, minHeight: '100vh' }}>
-      <h1 style={{ fontSize: 32, marginBottom: 16, color: Text.Primary }}>Color Palette Viewer</h1>
-	  <div style={{color: Text.Tertiary, fontSize: 13, marginBottom: 32}}>
+      <h1 style={{ fontSize: 32, marginBottom: 16, color: Text.HighEmphasis }}>Color Palette Viewer</h1>
+   <div style={{color: Text.LowEmphasis, fontSize: 13, marginBottom: 32}}>
         ※このページは開発者向けのカラーパレット可視化用です。将来的にはStorybookでの表示を推奨。
       </div>
       {/* Primitive Color */}
-	  <h2 style={{ fontSize: 24, marginBottom: 16, color: Text.Primary }}>Semantic Color Tokens</h2>
-        <div style={{color: Text.Tertiary, fontSize: 13, marginBottom: 32}}>
+	  <h2 style={{ fontSize: 24, marginBottom: 16, color: Text.HighEmphasis }}>Semantic Color Tokens</h2>
+	       <div style={{color: Text.LowEmphasis, fontSize: 13, marginBottom: 32}}>
           Primitiveカラー一覧
         </div>
       {primitiveSets.map(set => (
@@ -70,8 +70,8 @@ const ColorPaletteViewer: React.FC = () => {
       ))}
       {/* Semantic Color */}
       <div style={{ marginTop: 64, marginBottom: 24, borderTop: `2px dashed ${Border.LowEmphasis}`, paddingTop: 32 }}>
-        <h2 style={{ fontSize: 24, marginBottom: 16, color: Text.Primary }}>Semantic Color Tokens</h2>
-        <div style={{color: Text.Tertiary, fontSize: 13, marginBottom: 32}}>
+        <h2 style={{ fontSize: 24, marginBottom: 16, color: Text.HighEmphasis }}>Semantic Color Tokens</h2>
+        <div style={{color: Text.LowEmphasis, fontSize: 13, marginBottom: 32}}>
           Semanticカラー（意味ベースのカラートークン）一覧
         </div>
         {semanticSets.map(set => (

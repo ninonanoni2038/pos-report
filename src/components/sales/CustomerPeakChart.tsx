@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BarChart,
   Bar,
@@ -75,7 +75,7 @@ const TabButton: React.FC<TabButtonProps> = ({ isActive, onClick, label }) => (
     onClick={onClick}
     style={{
       background: isActive ? ObjectColor.AccentPrimary : Surface.Primary,
-      color: isActive ? Surface.Primary : Text.Primary,
+      color: isActive ? Surface.Primary : Text.HighEmphasis,
       border: 'none',
       padding: '8px 16px',
       fontSize: '14px',
@@ -125,6 +125,13 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
   
   // 日報/月報モード
   const isMonthlyMode = props.displayMode === ReportDisplayMode.MONTHLY;
+  
+  // 月報モードに切り替えた時に、不適切な比較モードをリセットする
+  useEffect(() => {
+    if (isMonthlyMode && (comparisonMode === 'previousDay' || comparisonMode === 'previousWeek')) {
+      setComparisonMode('none');
+    }
+  }, [isMonthlyMode, comparisonMode]);
   
   // 現在のデータを取得（日報/月報モードに応じて）
   const getCurrentData = () => {
@@ -299,7 +306,7 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
         marginBottom: '16px'
       }}>
         {/* 1. 見出し */}
-        <h3 style={{ margin: 0, color: Text.Primary }}>客ピーク</h3>
+        <h3 style={{ margin: 0, color: Text.HighEmphasis }}>客ピーク</h3>
         
         {/* 2. 操作系UIを横並びに */}
         <div style={{
@@ -356,17 +363,26 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
                 borderRadius: '4px',
                 border: `1px solid ${Border.LowEmphasis}`,
                 backgroundColor: Surface.Primary,
-                color: Text.Primary,
+                color: Text.HighEmphasis,
                 fontSize: '14px',
                 cursor: 'pointer',
                 outline: 'none'
               }}
             >
-              {COMPARISON_OPTIONS.map(option => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
+              {isMonthlyMode
+                ? COMPARISON_OPTIONS.filter(option =>
+                    option.value === 'none' || option.value === 'previousYear'
+                  ).map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))
+                : COMPARISON_OPTIONS.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))
+              }
             </select>
           </div>
         </div>
@@ -375,24 +391,24 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
         <div style={{ display: 'flex', gap: '16px' }}>
           <h4 style={{
             margin: 0,
-            color: displayMode === 'partySize' ? Text.Primary : Text.Secondary,
+            color: displayMode === 'partySize' ? Text.HighEmphasis : Text.MediumEmphasis,
             fontWeight: displayMode === 'partySize' ? 'bold' : 'normal'
           }}>
             合計客数: {totalPeople}人
             {comparisonMode !== 'none' && comparisonData && (
-              <span style={{ fontSize: '12px', marginLeft: '8px', color: Text.Secondary }}>
+              <span style={{ fontSize: '12px', marginLeft: '8px', color: Text.MediumEmphasis }}>
                 ({getComparisonModeLabel(comparisonMode)}: {comparisonTotalPeople}人)
               </span>
             )}
           </h4>
           <h4 style={{
             margin: 0,
-            color: displayMode === 'count' ? Text.Primary : Text.Secondary,
+            color: displayMode === 'count' ? Text.HighEmphasis : Text.MediumEmphasis,
             fontWeight: displayMode === 'count' ? 'bold' : 'normal'
           }}>
             合計客組数: {totalGroups}組
             {comparisonMode !== 'none' && comparisonData && (
-              <span style={{ fontSize: '12px', marginLeft: '8px', color: Text.Secondary }}>
+              <span style={{ fontSize: '12px', marginLeft: '8px', color: Text.MediumEmphasis }}>
                 ({getComparisonModeLabel(comparisonMode)}: {comparisonTotalGroups}組)
               </span>
             )}
