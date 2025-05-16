@@ -62,7 +62,13 @@ export const calculateKPIs = (dailyOrders: readonly Order[], dailyPayments: read
   
   const totalSales = dailyPayments.reduce((sum: number, payment: Payment) => sum + payment.amount, 0);
   const totalCustomers = dailyOrders.length;
-  const averagePerCustomer = totalCustomers > 0 ? totalSales / totalCustomers : 0;
+  
+  // 総人数を計算
+  const totalPartySize = dailyOrders.reduce((sum, order) => sum + order.partySize, 0);
+  
+  // 客単価を人数で計算
+  const averagePerCustomer = totalPartySize > 0 ? totalSales / totalPartySize : 0;
+  
   const totalFees = dailyPayments.reduce((sum: number, payment: Payment) => sum + payment.fee, 0);
   const netSales = totalSales - totalFees;
   
@@ -345,7 +351,13 @@ export const calculateMonthlyKPIs = (monthlyOrders: readonly Order[], monthlyPay
   
   const totalSales = monthlyPayments.reduce((sum: number, payment: Payment) => sum + payment.amount, 0);
   const totalCustomers = monthlyOrders.length;
-  const averagePerCustomer = totalCustomers > 0 ? totalSales / totalCustomers : 0;
+  
+  // 総人数を計算
+  const totalPartySize = monthlyOrders.reduce((sum, order) => sum + order.partySize, 0);
+  
+  // 客単価を人数で計算
+  const averagePerCustomer = totalPartySize > 0 ? totalSales / totalPartySize : 0;
+  
   const totalFees = monthlyPayments.reduce((sum: number, payment: Payment) => sum + payment.fee, 0);
   const netSales = totalSales - totalFees;
   

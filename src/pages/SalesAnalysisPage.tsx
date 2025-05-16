@@ -20,6 +20,13 @@ import TopProductsChart from '../components/sales/TopProductsChart';
 import SalesDetailTable from '../components/sales/SalesDetailTable';
 import CustomerDetailTable from '../components/sales/CustomerDetailTable';
 
+// FontAwesomeアイコンのインポート
+import {
+  faMoneyBillWave,
+  faUsers,
+  faReceipt
+} from '@fortawesome/pro-solid-svg-icons';
+
 // ユーティリティのインポート
 import { formatCurrency } from '../utils/formatters';
 import {
@@ -148,6 +155,16 @@ const SalesAnalysisPage: React.FC = () => {
   let paymentMethodData: PaymentMethodData[];
   let topProducts: ProductSalesData[];
 
+  // 比較用のKPI値
+  let previousDayKpis: SalesKPI | null = null;
+  let previousWeekKpis: SalesKPI | null = null;
+  let previousMonthKpis: SalesKPI | null = null;
+  let previousYearKpis: SalesKPI | null = null;
+  
+  // 比較用の注文データ
+  let previousDayOrdersData: Order[] = [];
+  let previousMonthOrdersData: Order[] = [];
+
   if (displayMode === DisplayMode.DAILY) {
     // 日報モードのデータ処理
     filteredOrders = filterDailyOrders(orders, currentDate);
@@ -157,36 +174,42 @@ const SalesAnalysisPage: React.FC = () => {
     // 前日のデータ
     const previousDayDate = new Date(currentDate);
     previousDayDate.setDate(previousDayDate.getDate() - 1);
-    const previousDayOrders = filterDailyOrders(orders, previousDayDate);
+    previousDayOrdersData = filterDailyOrders(orders, previousDayDate);
+    const previousDayPayments = filterDailyPayments(payments, previousDayDate);
+    previousDayKpis = calculateKPIs(previousDayOrdersData, previousDayPayments);
     
     // 前週同曜日のデータ
     const previousWeekDate = new Date(currentDate);
     previousWeekDate.setDate(previousWeekDate.getDate() - 7);
     const previousWeekOrders = filterDailyOrders(orders, previousWeekDate);
+    const previousWeekPayments = filterDailyPayments(payments, previousWeekDate);
+    previousWeekKpis = calculateKPIs(previousWeekOrders, previousWeekPayments);
     
     // 前年同日のデータ
     const previousYearDate = new Date(currentDate);
     previousYearDate.setFullYear(previousYearDate.getFullYear() - 1);
     const previousYearOrders = filterDailyOrders(orders, previousYearDate);
+    const previousYearPayments = filterDailyPayments(payments, previousYearDate);
+    previousYearKpis = calculateKPIs(previousYearOrders, previousYearPayments);
     
     // KPI計算
     kpis = calculateKPIs(filteredOrders, filteredPayments);
     
     // グラフデータ生成 - 1時間区切り
     const hourlyCustomersData = generateHourlyCustomersData(filteredOrders);
-    const previousDayHourlyCustomersData = generateHourlyCustomersData(previousDayOrders);
+    const previousDayHourlyCustomersData = generateHourlyCustomersData(previousDayOrdersData);
     const previousWeekHourlyCustomersData = generateHourlyCustomersData(previousWeekOrders);
     const previousYearHourlyCustomersData = generateHourlyCustomersData(previousYearOrders);
     
     // グラフデータ生成 - 30分区切り
     const halfHourlyCustomersData = generateHalfHourlyCustomersData(filteredOrders);
-    const previousDayHalfHourlyCustomersData = generateHalfHourlyCustomersData(previousDayOrders);
+    const previousDayHalfHourlyCustomersData = generateHalfHourlyCustomersData(previousDayOrdersData);
     const previousWeekHalfHourlyCustomersData = generateHalfHourlyCustomersData(previousWeekOrders);
     const previousYearHalfHourlyCustomersData = generateHalfHourlyCustomersData(previousYearOrders);
     
     // グラフデータ生成 - 2時間区切り
     const twoHourlyCustomersData = generateTwoHourlyCustomersData(filteredOrders);
-    const previousDayTwoHourlyCustomersData = generateTwoHourlyCustomersData(previousDayOrders);
+    const previousDayTwoHourlyCustomersData = generateTwoHourlyCustomersData(previousDayOrdersData);
     const previousWeekTwoHourlyCustomersData = generateTwoHourlyCustomersData(previousWeekOrders);
     const previousYearTwoHourlyCustomersData = generateTwoHourlyCustomersData(previousYearOrders);
     
@@ -209,22 +232,26 @@ const SalesAnalysisPage: React.FC = () => {
     filteredOrders = filterMonthlyOrders(orders, currentDate);
     filteredPayments = filterMonthlyPayments(payments, currentDate);
     
-    // KPI計算
-    kpis = calculateMonthlyKPIs(filteredOrders, filteredPayments);
-    
-    // 日別客数データ生成
-    const dailyCustomersData = generateDailyCustomersData(filteredOrders);
-    
     // 前月のデータ
     const previousMonthDate = new Date(currentDate);
     previousMonthDate.setMonth(previousMonthDate.getMonth() - 1);
-    const previousMonthOrders = filterMonthlyOrders(orders, previousMonthDate);
-    const previousMonthDailyCustomersData = generateDailyCustomersData(previousMonthOrders);
+    previousMonthOrdersData = filterMonthlyOrders(orders, previousMonthDate);
+    const previousMonthPayments = filterMonthlyPayments(payments, previousMonthDate);
+    previousMonthKpis = calculateMonthlyKPIs(previousMonthOrdersData, previousMonthPayments);
     
     // 前年同月のデータ
     const previousYearDate = new Date(currentDate);
     previousYearDate.setFullYear(previousYearDate.getFullYear() - 1);
     const previousYearOrders = filterMonthlyOrders(orders, previousYearDate);
+    const previousYearPayments = filterMonthlyPayments(payments, previousYearDate);
+    previousYearKpis = calculateMonthlyKPIs(previousYearOrders, previousYearPayments);
+    
+    // KPI計算
+    kpis = calculateMonthlyKPIs(filteredOrders, filteredPayments);
+    
+    // 日別客数データ生成
+    const dailyCustomersData = generateDailyCustomersData(filteredOrders);
+    const previousMonthDailyCustomersData = generateDailyCustomersData(previousMonthOrdersData);
     const previousYearDailyCustomersData = generateDailyCustomersData(previousYearOrders);
     
     customerData = {
@@ -242,7 +269,13 @@ const SalesAnalysisPage: React.FC = () => {
   const filteredOrderItems = filterDailyOrderItems(order_items, orderIds);
   topProducts = generateTopProductsData(filteredOrderItems, products);
   
+  // KPIから値を取得
   const { totalSales, totalCustomers, averagePerCustomer } = kpis;
+  
+  // 総人数を計算（組数ではなく実際の人数）
+  // 注：calculateKPIs関数で既に人数ベースの客単価を計算しているため、
+  // ここでの計算は表示用のみ
+  const totalPartySize = filteredOrders.reduce((sum, order) => sum + order.partySize, 0);
 
   return (
     <div style={{ padding: 24 }}>
@@ -260,21 +293,39 @@ const SalesAnalysisPage: React.FC = () => {
       
       {/* KPIカード */}
       <div style={{ display: 'flex', marginBottom: 24 }}>
-        <KpiCard 
-          title="売上金額" 
+        <KpiCard
+          title="売上金額"
           value={formatCurrency(totalSales)}
-          subValue="前日比: +5.2%"
+          icon={faMoneyBillWave}
+          currentValue={totalSales}
+          previousValue={displayMode === DisplayMode.DAILY
+            ? previousDayKpis?.totalSales
+            : previousMonthKpis?.totalSales}
+          comparisonType={displayMode === DisplayMode.DAILY ? 'day' : 'month'}
+          valueUnit="円"
           onClick={() => console.log('売上詳細へ')}
         />
-        <KpiCard 
-          title="総客数" 
-          value={`${totalCustomers}組`}
-          subValue="前日比: +3組"
+        <KpiCard
+          title="総客数"
+          value={`${totalPartySize}`}
+          icon={faUsers}
+          currentValue={totalPartySize}
+          previousValue={displayMode === DisplayMode.DAILY
+            ? previousDayOrdersData.reduce((sum, order) => sum + order.partySize, 0)
+            : previousMonthOrdersData.reduce((sum, order) => sum + order.partySize, 0)}
+          comparisonType={displayMode === DisplayMode.DAILY ? 'day' : 'month'}
+          valueUnit="人"
         />
-        <KpiCard 
-          title="客単価" 
+        <KpiCard
+          title="客単価"
           value={formatCurrency(averagePerCustomer)}
-          subValue="前日比: +2.1%"
+          icon={faReceipt}
+          currentValue={averagePerCustomer}
+          previousValue={displayMode === DisplayMode.DAILY
+            ? previousDayKpis?.averagePerCustomer
+            : previousMonthKpis?.averagePerCustomer}
+          comparisonType={displayMode === DisplayMode.DAILY ? 'day' : 'month'}
+          valueUnit="円"
         />
       </div>
       

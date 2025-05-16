@@ -56,7 +56,11 @@ export const getDateWithWeekdayColor = (date: Date): {
  * @returns 日本円形式でフォーマットされた金額文字列（例: ¥1,234）
  */
 export const formatCurrency = (amount: number): string => {
-  return amount.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' });
+  // 小数点以下を丸める
+  const roundedAmount = Math.round(amount);
+  
+  // 「¥123,456」ではなく「123,456円」の形式で表示
+  return roundedAmount.toLocaleString('ja-JP');
 };
 
 /**
