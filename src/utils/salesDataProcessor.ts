@@ -89,36 +89,97 @@ export const calculateKPIs = (dailyOrders: readonly Order[], dailyPayments: read
  * @param dailyOrders 日別注文データ
  * @returns 時間帯別客数データ
  */
-export const generateHourlyCustomersData = (dailyOrders: readonly Order[]): HourlyCustomerData[] => {
-  const hourlyData: { [hour: string]: { count: number, partySize: number } } = {};
+/**
+ * 時間帯のフォーマット関数の型定義
+ */
+type TimeFormatter = (date: Date) => string;
+
+/**
+ * 時間帯データを生成する汎用関数
+ * @param dailyOrders 日別注文データ
+ * @param formatTime 時間帯フォーマット関数
+ * @param sortFn ソート関数（オプション）
+ * @returns 時間帯別客数データ
+ */
+const generateTimeBasedCustomersData = (
+  dailyOrders: readonly Order[],
+  formatTime: TimeFormatter,
+  sortFn?: (a: HourlyCustomerData, b: HourlyCustomerData) => number
+): HourlyCustomerData[] => {
+  const timeData: { [timeKey: string]: { count: number, partySize: number } } = {};
   
   dailyOrders.forEach((order: Order) => {
     const orderDate = new Date(order.completedAt);
-    const hour = orderDate.getHours();
-    const hourKey = `${hour}:00`;
+    const timeKey = formatTime(orderDate);
     
-    if (hourlyData[hourKey]) {
-      hourlyData[hourKey].count++;
-      hourlyData[hourKey].partySize += order.partySize;
+    if (timeData[timeKey]) {
+      timeData[timeKey].count++;
+      timeData[timeKey].partySize += order.partySize;
     } else {
-      hourlyData[hourKey] = {
+      timeData[timeKey] = {
         count: 1,
         partySize: order.partySize
       };
     }
   });
   
-  return Object.entries(hourlyData)
+  const result = Object.entries(timeData)
     .map(([hour, data]) => ({
       hour,
       count: data.count,
       partySize: data.partySize
-    }))
-    .sort((a, b) => {
-      const hourA = parseInt(a.hour.split(':')[0]);
-      const hourB = parseInt(b.hour.split(':')[0]);
-      return hourA - hourB;
-    });
+    }));
+  
+  return sortFn ? result.sort(sortFn) : result;
+};
+
+/**
+ * 時間のソート関数
+ */
+const sortByHour = (a: HourlyCustomerData, b: HourlyCustomerData): number => {
+  const hourA = parseInt(a.hour.split(':')[0]);
+  const hourB = parseInt(b.hour.split(':')[0]);
+  return hourA - hourB;
+};
+
+/**
+ * 時間と分のソート関数
+ */
+const sortByHourAndMinute = (a: HourlyCustomerData, b: HourlyCustomerData): number => {
+  const [hourA, minuteA] = a.hour.split(':').map(Number);
+  const [hourB, minuteB] = b.hour.split(':').map(Number);
+  if (hourA !== hourB) return hourA - hourB;
+  return minuteA - minuteB;
+};
+
+// 1時間区切りの時間帯別客数データを生成
+export const generateHourlyCustomersData = (dailyOrders: readonly Order[]): HourlyCustomerData[] => {
+  const formatHourly = (date: Date): string => `${date.getHours()}:00`;
+  return generateTimeBasedCustomersData(dailyOrders, formatHourly, sortByHour);
+};
+
+// 30分区切りの時間帯別客数データを生成
+export const generateHalfHourlyCustomersData = (dailyOrders: readonly Order[]): HourlyCustomerData[] => {
+  const formatHalfHourly = (date: Date): string => {
+    const hour = date.getHours();
+    const minute = date.getMinutes();
+    // 0-29分は「XX:00」、30-59分は「XX:30」に集計
+    return minute < 30
+      ? `${hour.toString().padStart(2, '0')}:00`
+      : `${hour.toString().padStart(2, '0')}:30`;
+  };
+  return generateTimeBasedCustomersData(dailyOrders, formatHalfHourly, sortByHourAndMinute);
+};
+
+// 2時間区切りの時間帯別客数データを生成
+export const generateTwoHourlyCustomersData = (dailyOrders: readonly Order[]): HourlyCustomerData[] => {
+  const formatTwoHourly = (date: Date): string => {
+    const hour = date.getHours();
+    // 2時間単位でグループ化（0-1時は「00:00-02:00」など）
+    const twoHourBlock = Math.floor(hour / 2) * 2;
+    return `${twoHourBlock.toString().padStart(2, '0')}:00-${(twoHourBlock + 2).toString().padStart(2, '0')}:00`;
+  };
+  return generateTimeBasedCustomersData(dailyOrders, formatTwoHourly, sortByHour);
 };
 
 /**

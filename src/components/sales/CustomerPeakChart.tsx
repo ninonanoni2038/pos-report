@@ -12,12 +12,27 @@ import {
 import { Surface, Text, Border, Object as ObjectColor } from '../../styles/semanticColors';
 import { HourlyCustomerData } from '../../types/sales';
 
+// 刻み幅の型定義
+type TimeScale = '30min' | '1hour' | '2hour';
+
 interface CustomerPeakChartProps {
-  data: HourlyCustomerData[];
+  // 各刻み幅のデータ
+  hourlyData: HourlyCustomerData[];
+  halfHourlyData: HourlyCustomerData[];
+  twoHourlyData: HourlyCustomerData[];
+  
   // 比較用データはすべてオプショナルにしておく
-  previousDayData?: HourlyCustomerData[];
-  previousWeekData?: HourlyCustomerData[];
-  previousYearData?: HourlyCustomerData[];
+  previousDayHourlyData?: HourlyCustomerData[];
+  previousDayHalfHourlyData?: HourlyCustomerData[];
+  previousDayTwoHourlyData?: HourlyCustomerData[];
+  
+  previousWeekHourlyData?: HourlyCustomerData[];
+  previousWeekHalfHourlyData?: HourlyCustomerData[];
+  previousWeekTwoHourlyData?: HourlyCustomerData[];
+  
+  previousYearHourlyData?: HourlyCustomerData[];
+  previousYearHalfHourlyData?: HourlyCustomerData[];
+  previousYearTwoHourlyData?: HourlyCustomerData[];
 }
 
 /**
@@ -39,53 +54,160 @@ const COMPARISON_OPTIONS = [
 ];
 
 
-const CustomerPeakChart: React.FC<CustomerPeakChartProps> = ({
-  data,
-  previousDayData,
-  previousWeekData,
-  previousYearData
-}) => {
+// 共通のタブボタンコンポーネント
+interface TabButtonProps {
+  isActive: boolean;
+  onClick: () => void;
+  label: string;
+}
+
+const TabButton: React.FC<TabButtonProps> = ({ isActive, onClick, label }) => (
+  <button
+    onClick={onClick}
+    style={{
+      background: isActive ? ObjectColor.AccentPrimary : Surface.Primary,
+      color: isActive ? Surface.Primary : Text.Primary,
+      border: 'none',
+      padding: '8px 16px',
+      fontSize: '14px',
+      cursor: 'pointer',
+      fontWeight: isActive ? 'bold' : 'normal',
+      transition: 'background-color 0.2s'
+    }}
+  >
+    {label}
+  </button>
+);
+
+// 共通のタブグループコンポーネント
+interface TabGroupProps {
+  children: React.ReactNode;
+}
+
+const TabGroup: React.FC<TabGroupProps> = ({ children }) => (
+  <div style={{
+    display: 'flex',
+    borderRadius: '8px',
+    overflow: 'hidden',
+    border: `1px solid ${Border.LowEmphasis}`,
+    width: 'fit-content'
+  }}>
+    {children}
+  </div>
+);
+
+// 比較モードの表示名を取得するヘルパー関数
+const getComparisonModeLabel = (mode: ComparisonMode): string => {
+  switch (mode) {
+    case 'previousDay': return '前日';
+    case 'previousWeek': return '前週同曜日';
+    case 'previousYear': return '前年同日';
+    default: return '';
+  }
+};
+
+const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
   // 表示モードの状態（デフォルトは客数）
   const [displayMode, setDisplayMode] = useState<DisplayMode>('partySize');
   // 比較モードの状態（デフォルトは比較なし）
   const [comparisonMode, setComparisonMode] = useState<ComparisonMode>('none');
+  // 刻み幅の状態（デフォルトは1時間）
+  const [timeScale, setTimeScale] = useState<TimeScale>('1hour');
+  
+  // 現在の刻み幅に応じたデータを取得
+  const getCurrentData = () => {
+    switch (timeScale) {
+      case '30min': return props.halfHourlyData;
+      case '1hour': return props.hourlyData;
+      case '2hour': return props.twoHourlyData;
+      default: return props.hourlyData;
+    }
+  };
+  
+  // 現在の比較モードと刻み幅に応じた比較データを取得
+  const getComparisonData = () => {
+    if (comparisonMode === 'none') return null;
+    
+    switch (comparisonMode) {
+      case 'previousDay':
+        return timeScale === '30min' ? props.previousDayHalfHourlyData :
+               timeScale === '1hour' ? props.previousDayHourlyData :
+               props.previousDayTwoHourlyData;
+      case 'previousWeek':
+        return timeScale === '30min' ? props.previousWeekHalfHourlyData :
+               timeScale === '1hour' ? props.previousWeekHourlyData :
+               props.previousWeekTwoHourlyData;
+      case 'previousYear':
+        return timeScale === '30min' ? props.previousYearHalfHourlyData :
+               timeScale === '1hour' ? props.previousYearHourlyData :
+               props.previousYearTwoHourlyData;
+      default:
+        return null;
+    }
+  };
+  
+  // 現在のデータ
+  const currentData = getCurrentData();
+  // 比較データ
+  const comparisonData = getComparisonData();
   
   // 合計客組数と合計人数を計算
-  const totalGroups = data.reduce((sum, item) => sum + item.count, 0);
-  const totalPeople = data.reduce((sum, item) => sum + item.partySize, 0);
+  const totalGroups = currentData.reduce((sum, item) => sum + item.count, 0);
+  const totalPeople = currentData.reduce((sum, item) => sum + item.partySize, 0);
   
-  // 前日の合計客組数と合計人数を計算（前日データがある場合）
-  const previousTotalGroups = previousDayData
-    ? previousDayData.reduce((sum, item) => sum + item.count, 0)
+  // 比較データの合計客組数と合計人数を計算（比較データがある場合）
+  const comparisonTotalGroups = comparisonData
+    ? comparisonData.reduce((sum, item) => sum + item.count, 0)
     : 0;
-  const previousTotalPeople = previousDayData
-    ? previousDayData.reduce((sum, item) => sum + item.partySize, 0)
+  const comparisonTotalPeople = comparisonData
+    ? comparisonData.reduce((sum, item) => sum + item.partySize, 0)
     : 0;
   
-  // 10:00から24:00までの時間帯を生成
-  const hourTicks = Array.from({ length: 15 }, (_, i) => `${(i + 10).toString().padStart(2, '0')}:00`);
+  // 刻み幅に応じた時間帯の目盛りを生成
+  const getHourTicks = () => {
+    switch (timeScale) {
+      case '30min':
+        // 10:00から24:00までの30分区切りの時間帯を生成
+        return Array.from({ length: 29 }, (_, i) => {
+          const hour = Math.floor(i / 2) + 10;
+          const minute = i % 2 === 0 ? '00' : '30';
+          return `${hour.toString().padStart(2, '0')}:${minute}`;
+        });
+      case '1hour':
+        // 10:00から24:00までの1時間区切りの時間帯を生成
+        return Array.from({ length: 15 }, (_, i) => `${(i + 10).toString().padStart(2, '0')}:00`);
+      case '2hour':
+        // 10:00から24:00までの2時間区切りの時間帯を生成
+        return Array.from({ length: 8 }, (_, i) => {
+          const startHour = i * 2 + 10;
+          const endHour = startHour + 2;
+          return `${startHour.toString().padStart(2, '0')}:00-${endHour.toString().padStart(2, '0')}:00`;
+        });
+      default:
+        return Array.from({ length: 15 }, (_, i) => `${(i + 10).toString().padStart(2, '0')}:00`);
+    }
+  };
+  
+  const hourTicks = getHourTicks();
   
   // データがない時間帯も含めた完全なデータセットを作成
   const completeData = hourTicks.map(hour => {
-    const existingData = data.find(item => item.hour === hour);
+    // 現在のデータから該当する時間帯のデータを検索
+    const existingData = currentData.find(item => item.hour === hour);
     const currentCount = existingData ? existingData.count : 0;
     const currentPartySize = existingData ? existingData.partySize : 0;
     
-    // 比較データを取得（データがある場合）
-    const previousDayHourData = previousDayData?.find(item => item.hour === hour);
-    const previousWeekHourData = previousWeekData?.find(item => item.hour === hour);
-    const previousYearHourData = previousYearData?.find(item => item.hour === hour);
+    // 比較データから該当する時間帯のデータを検索
+    const comparisonHourData = comparisonData?.find(item => item.hour === hour);
+    const comparisonCount = comparisonHourData ? comparisonHourData.count : 0;
+    const comparisonPartySize = comparisonHourData ? comparisonHourData.partySize : 0;
     
     return {
       hour,
       count: currentCount,
       partySize: currentPartySize,
-      previousDayCount: previousDayHourData ? previousDayHourData.count : 0,
-      previousDayPartySize: previousDayHourData ? previousDayHourData.partySize : 0,
-      previousWeekCount: previousWeekHourData ? previousWeekHourData.count : 0,
-      previousWeekPartySize: previousWeekHourData ? previousWeekHourData.partySize : 0,
-      previousYearCount: previousYearHourData ? previousYearHourData.count : 0,
-      previousYearPartySize: previousYearHourData ? previousYearHourData.partySize : 0
+      comparisonCount: comparisonCount,
+      comparisonPartySize: comparisonPartySize
     };
   });
   
@@ -113,51 +235,45 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = ({
         {/* 1. 見出し */}
         <h3 style={{ margin: 0, color: Text.Primary }}>客ピーク</h3>
         
-        {/* 2. タブUIと比較モードドロップダウンを横並びに */}
+        {/* 2. 操作系UIを横並びに */}
         <div style={{
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          gap: '16px'
         }}>
-          {/* タブUI */}
-          <div style={{
-            display: 'flex',
-            borderRadius: '8px',
-            overflow: 'hidden',
-            border: `1px solid ${Border.LowEmphasis}`,
-            width: 'fit-content'
-          }}>
-            <button
+          {/* 表示モード切替タブUI */}
+          <TabGroup>
+            <TabButton
+              isActive={displayMode === 'partySize'}
               onClick={() => setDisplayMode('partySize')}
-              style={{
-                background: displayMode === 'partySize' ? ObjectColor.AccentPrimary : Surface.Primary,
-                color: displayMode === 'partySize' ? Surface.Primary : Text.Primary,
-                border: 'none',
-                padding: '8px 16px',
-                fontSize: '14px',
-                cursor: 'pointer',
-                fontWeight: displayMode === 'partySize' ? 'bold' : 'normal',
-                transition: 'background-color 0.2s'
-              }}
-            >
-              客数
-            </button>
-            <button
+              label="客数"
+            />
+            <TabButton
+              isActive={displayMode === 'count'}
               onClick={() => setDisplayMode('count')}
-              style={{
-                background: displayMode === 'count' ? ObjectColor.AccentPrimary : Surface.Primary,
-                color: displayMode === 'count' ? Surface.Primary : Text.Primary,
-                border: 'none',
-                padding: '8px 16px',
-                fontSize: '14px',
-                cursor: 'pointer',
-                fontWeight: displayMode === 'count' ? 'bold' : 'normal',
-                transition: 'background-color 0.2s'
-              }}
-            >
-              客組数
-            </button>
-          </div>
+              label="客組数"
+            />
+          </TabGroup>
+          
+          {/* 刻み幅切替タブUI */}
+          <TabGroup>
+            <TabButton
+              isActive={timeScale === '30min'}
+              onClick={() => setTimeScale('30min')}
+              label="30分"
+            />
+            <TabButton
+              isActive={timeScale === '1hour'}
+              onClick={() => setTimeScale('1hour')}
+              label="1時間"
+            />
+            <TabButton
+              isActive={timeScale === '2hour'}
+              onClick={() => setTimeScale('2hour')}
+              label="2時間"
+            />
+          </TabGroup>
           
           {/* 比較モードドロップダウン */}
           <div style={{
@@ -195,19 +311,9 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = ({
             fontWeight: displayMode === 'partySize' ? 'bold' : 'normal'
           }}>
             合計客数: {totalPeople}人
-            {comparisonMode === 'previousDay' && previousDayData && (
+            {comparisonMode !== 'none' && comparisonData && (
               <span style={{ fontSize: '12px', marginLeft: '8px', color: Text.Secondary }}>
-                (前日: {previousTotalPeople}人)
-              </span>
-            )}
-            {comparisonMode === 'previousWeek' && previousWeekData && (
-              <span style={{ fontSize: '12px', marginLeft: '8px', color: Text.Secondary }}>
-                (前週同曜日: {previousWeekData.reduce((sum, item) => sum + item.partySize, 0)}人)
-              </span>
-            )}
-            {comparisonMode === 'previousYear' && previousYearData && (
-              <span style={{ fontSize: '12px', marginLeft: '8px', color: Text.Secondary }}>
-                (前年同日: {previousYearData.reduce((sum, item) => sum + item.partySize, 0)}人)
+                ({getComparisonModeLabel(comparisonMode)}: {comparisonTotalPeople}人)
               </span>
             )}
           </h4>
@@ -217,19 +323,9 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = ({
             fontWeight: displayMode === 'count' ? 'bold' : 'normal'
           }}>
             合計客組数: {totalGroups}組
-            {comparisonMode === 'previousDay' && previousDayData && (
+            {comparisonMode !== 'none' && comparisonData && (
               <span style={{ fontSize: '12px', marginLeft: '8px', color: Text.Secondary }}>
-                (前日: {previousTotalGroups}組)
-              </span>
-            )}
-            {comparisonMode === 'previousWeek' && previousWeekData && (
-              <span style={{ fontSize: '12px', marginLeft: '8px', color: Text.Secondary }}>
-                (前週同曜日: {previousWeekData.reduce((sum, item) => sum + item.count, 0)}組)
-              </span>
-            )}
-            {comparisonMode === 'previousYear' && previousYearData && (
-              <span style={{ fontSize: '12px', marginLeft: '8px', color: Text.Secondary }}>
-                (前年同日: {previousYearData.reduce((sum, item) => sum + item.count, 0)}組)
+                ({getComparisonModeLabel(comparisonMode)}: {comparisonTotalGroups}組)
               </span>
             )}
           </h4>
@@ -257,24 +353,10 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = ({
               fill={ObjectColor.AccentPrimary}
             />
             {/* 比較データのバー */}
-            {comparisonMode === 'previousDay' && previousDayData && (
+            {comparisonMode !== 'none' && comparisonData && (
               <Bar
-                dataKey={displayMode === 'count' ? 'previousDayCount' : 'previousDayPartySize'}
-                name={`前日${displayMode === 'count' ? '客組数' : '客数'}`}
-                fill={ObjectColor.AcceentSecondary}
-              />
-            )}
-            {comparisonMode === 'previousWeek' && previousWeekData && (
-              <Bar
-                dataKey={displayMode === 'count' ? 'previousWeekCount' : 'previousWeekPartySize'}
-                name={`前週同曜日${displayMode === 'count' ? '客組数' : '客数'}`}
-                fill={ObjectColor.AcceentSecondary}
-              />
-            )}
-            {comparisonMode === 'previousYear' && previousYearData && (
-              <Bar
-                dataKey={displayMode === 'count' ? 'previousYearCount' : 'previousYearPartySize'}
-                name={`前年同日${displayMode === 'count' ? '客組数' : '客数'}`}
+                dataKey={displayMode === 'count' ? 'comparisonCount' : 'comparisonPartySize'}
+                name={`${getComparisonModeLabel(comparisonMode)}${displayMode === 'count' ? '客組数' : '客数'}`}
                 fill={ObjectColor.AcceentSecondary}
               />
             )}

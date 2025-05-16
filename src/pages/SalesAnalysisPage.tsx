@@ -12,11 +12,13 @@ import CustomerDetailTable from '../components/sales/CustomerDetailTable';
 
 // ユーティリティのインポート
 import { formatCurrency } from '../utils/formatters';
-import { 
+import {
   filterDailyOrders,
   filterDailyPayments,
   calculateKPIs,
   generateHourlyCustomersData,
+  generateHalfHourlyCustomersData,
+  generateTwoHourlyCustomersData,
   generatePaymentMethodData,
   generateTopProductsData,
   filterDailyOrderItems
@@ -77,11 +79,24 @@ const SalesAnalysisPage: React.FC = () => {
   const kpis = calculateKPIs(dailyOrders, dailyPayments);
   const { totalSales, totalCustomers, averagePerCustomer } = kpis;
   
-  // グラフデータ生成
+  // グラフデータ生成 - 1時間区切り
   const hourlyCustomersData = generateHourlyCustomersData(dailyOrders);
   const previousDayHourlyCustomersData = generateHourlyCustomersData(previousDayOrders);
   const previousWeekHourlyCustomersData = generateHourlyCustomersData(previousWeekOrders);
   const previousYearHourlyCustomersData = generateHourlyCustomersData(previousYearOrders);
+  
+  // グラフデータ生成 - 30分区切り
+  const halfHourlyCustomersData = generateHalfHourlyCustomersData(dailyOrders);
+  const previousDayHalfHourlyCustomersData = generateHalfHourlyCustomersData(previousDayOrders);
+  const previousWeekHalfHourlyCustomersData = generateHalfHourlyCustomersData(previousWeekOrders);
+  const previousYearHalfHourlyCustomersData = generateHalfHourlyCustomersData(previousYearOrders);
+  
+  // グラフデータ生成 - 2時間区切り
+  const twoHourlyCustomersData = generateTwoHourlyCustomersData(dailyOrders);
+  const previousDayTwoHourlyCustomersData = generateTwoHourlyCustomersData(previousDayOrders);
+  const previousWeekTwoHourlyCustomersData = generateTwoHourlyCustomersData(previousWeekOrders);
+  const previousYearTwoHourlyCustomersData = generateTwoHourlyCustomersData(previousYearOrders);
+  
   const paymentMethodData = generatePaymentMethodData(dailyPayments);
   
   // 売れ筋商品データ生成
@@ -122,10 +137,18 @@ const SalesAnalysisPage: React.FC = () => {
       {/* グラフセクション */}
       <div style={{ display: 'flex', marginBottom: 24, gap: 16 }}>
         <CustomerPeakChart
-          data={hourlyCustomersData}
-          previousDayData={previousDayHourlyCustomersData}
-          previousWeekData={previousWeekHourlyCustomersData}
-          previousYearData={previousYearHourlyCustomersData}
+          hourlyData={hourlyCustomersData}
+          halfHourlyData={halfHourlyCustomersData}
+          twoHourlyData={twoHourlyCustomersData}
+          previousDayHourlyData={previousDayHourlyCustomersData}
+          previousDayHalfHourlyData={previousDayHalfHourlyCustomersData}
+          previousDayTwoHourlyData={previousDayTwoHourlyCustomersData}
+          previousWeekHourlyData={previousWeekHourlyCustomersData}
+          previousWeekHalfHourlyData={previousWeekHalfHourlyCustomersData}
+          previousWeekTwoHourlyData={previousWeekTwoHourlyCustomersData}
+          previousYearHourlyData={previousYearHourlyCustomersData}
+          previousYearHalfHourlyData={previousYearHalfHourlyCustomersData}
+          previousYearTwoHourlyData={previousYearTwoHourlyCustomersData}
         />
         <PaymentMethodChart data={paymentMethodData} />
       </div>
