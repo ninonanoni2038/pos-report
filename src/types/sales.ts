@@ -67,6 +67,11 @@ export interface ProductSalesData {
   name: string;
   amount: number;
   count: number;
+  profit: number;
+  productId: number;
+  menu?: string;
+  category?: string;
+  subCategory?: string;
 }
 
 // 日別客数データの型定義（月報表示用）

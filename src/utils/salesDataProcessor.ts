@@ -224,7 +224,16 @@ export const generateTopProductsData = (
   dailyOrderItems: readonly OrderItem[],
   products: readonly Product[]
 ): ProductSalesData[] => {
+  // すべての商品に対して初期値を設定
   const productSales: { [productId: number]: { count: number; amount: number } } = {};
+  
+  // すべての商品を初期化（売上0として）
+  products.forEach((product) => {
+    productSales[product.productId] = {
+      count: 0,
+      amount: 0
+    };
+  });
   
   // 商品ごとの売上を集計
   dailyOrderItems.forEach((item: OrderItem) => {
@@ -232,31 +241,29 @@ export const generateTopProductsData = (
     
     if (product) {
       const amount = product.price * item.quantity;
-      
-      if (productSales[item.productId]) {
-        productSales[item.productId].count += item.quantity;
-        productSales[item.productId].amount += amount;
-      } else {
-        productSales[item.productId] = {
-          count: item.quantity,
-          amount: amount
-        };
-      }
+      productSales[item.productId].count += item.quantity;
+      productSales[item.productId].amount += amount;
     }
   });
   
-  // 売上金額順にソート
+  // すべての商品データを返す（売れていない商品も含む）
   return Object.entries(productSales)
     .map(([productId, data]) => {
       const product = products.find((p: Product) => p.productId === parseInt(productId));
+      if (!product) return null; // 商品が見つからない場合はスキップ
+      
       return {
-        name: product ? product.productName : `商品ID: ${productId}`,
+        name: product.productName,
         amount: data.amount,
-        count: data.count
+        count: data.count,
+        profit: product.profit * data.count,
+        productId: parseInt(productId),
+        menu: product.menu,
+        category: product.category,
+        subCategory: product.subCategory
       };
     })
-    .sort((a, b) => b.amount - a.amount)
-    .slice(0, 10);
+    .filter((item) => item !== null) as ProductSalesData[]; // nullをフィルタリング
 };
 
 /**

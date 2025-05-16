@@ -1,15 +1,5 @@
-import React from 'react';
-import { 
-  BarChart, 
-  Bar, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  Legend, 
-  ResponsiveContainer 
-} from 'recharts';
-import { Surface, Text, Object as ObjectColor } from '../../styles/semanticColors';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Surface, Text, Border, Object as ObjectColor } from '../../styles/semanticColors';
 import { ProductSalesData } from '../../types/sales';
 import { formatCurrency } from '../../utils/formatters';
 
@@ -19,9 +9,104 @@ interface TopProductsChartProps {
 
 /**
  * 売れ筋商品ランキングコンポーネント
- * 売上金額順に上位5商品を横棒グラフで表示する
+ * 売上金額順に上位10商品をテーブルで表示する
  */
 const TopProductsChart: React.FC<TopProductsChartProps> = ({ data }) => {
+  // 状態管理
+  const [sortConfig, setSortConfig] = useState<{ key: keyof ProductSalesData; direction: 'asc' | 'desc' }>({
+    key: 'amount',
+    direction: 'desc'
+  });
+  const [filters, setFilters] = useState({ menu: 'all', category: 'all', subCategory: 'all' });
+  const [searchTerm, setSearchTerm] = useState('');
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
+
+  // 検索用デバウンス処理
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm);
+    }, 300);
+    
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [searchTerm]);
+
+  // ソート関数
+  const handleSort = (key: keyof ProductSalesData) => {
+    setSortConfig(prevConfig => ({
+      key,
+      direction: prevConfig.key === key && prevConfig.direction === 'desc' ? 'asc' : 'desc'
+    }));
+  };
+
+  // 利用可能なフィルターオプションの計算
+  const filterOptions = useMemo(() => {
+    // Setを配列に変換してから展開
+    const menuSet = new Set(data.map(item => item.menu).filter(Boolean) as string[]);
+    const menus = ['all', ...Array.from(menuSet)];
+    
+    const categorySet = new Set(
+      data
+        .filter(item => filters.menu === 'all' || item.menu === filters.menu)
+        .map(item => item.category)
+        .filter(Boolean) as string[]
+    );
+    const categories = ['all', ...Array.from(categorySet)];
+    
+    const subCategorySet = new Set(
+      data
+        .filter(item =>
+          (filters.menu === 'all' || item.menu === filters.menu) &&
+          (filters.category === 'all' || item.category === filters.category)
+        )
+        .map(item => item.subCategory)
+        .filter(Boolean) as string[]
+    );
+    const subCategories = ['all', ...Array.from(subCategorySet)];
+    
+    console.log('Available menus:', menus);
+    
+    return { menus, categories, subCategories };
+  }, [data, filters.menu, filters.category]);
+
+  // フィルタリングと検索を適用したデータ
+  const filteredData = useMemo(() => {
+    return data.filter(item =>
+      (filters.menu === 'all' || item.menu === filters.menu) &&
+      (filters.category === 'all' || item.category === filters.category) &&
+      (filters.subCategory === 'all' || item.subCategory === filters.subCategory) &&
+      (debouncedSearchTerm === '' ||
+        item.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase()))
+    );
+  }, [data, filters, debouncedSearchTerm]);
+
+  // ソート済みデータの計算
+  const sortedData = useMemo(() => {
+    const sorted = [...filteredData];
+    sorted.sort((a, b) => {
+      // オプショナルプロパティの場合、undefinedの可能性を考慮
+      const valueA = a[sortConfig.key] ?? 0;
+      const valueB = b[sortConfig.key] ?? 0;
+      
+      if (valueA < valueB) {
+        return sortConfig.direction === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return sortConfig.direction === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+    // 表示件数を制限（必要に応じて）
+    return sorted.slice(0, 30);
+  }, [filteredData, sortConfig]);
+
+  // ソートアイコンの表示
+  const getSortIcon = (key: keyof ProductSalesData) => {
+    if (sortConfig.key !== key) return '▽';
+    return sortConfig.direction === 'asc' ? '△' : '▼';
+  };
+
   return (
     <div style={{
       background: Surface.Primary,
@@ -33,22 +118,176 @@ const TopProductsChart: React.FC<TopProductsChartProps> = ({ data }) => {
       flexDirection: 'column',
       boxSizing: 'border-box'
     }}>
-      <h3 style={{ margin: '0 0 16px 0', color: Text.HighEmphasis }}>売れ筋商品</h3>
-      <div style={{ flex: 1 }}>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            layout="vertical"
-            data={data}
-            margin={{ top: 5, right: 30, left: 100, bottom: 5 }}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+        <h3 style={{ margin: 0, color: Text.HighEmphasis }}>売れ筋商品</h3>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <select
+            value={filters.menu}
+            onChange={(e) => setFilters(prev => ({ ...prev, menu: e.target.value, category: 'all', subCategory: 'all' }))}
+            style={{
+              padding: '4px 8px',
+              borderRadius: 4,
+              border: `1px solid ${Border.LowEmphasis}`,
+              backgroundColor: Surface.Primary
+            }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis type="number" />
-            <YAxis type="category" dataKey="name" />
-            <Tooltip formatter={(value) => formatCurrency(value as number)} />
-            <Legend />
-            <Bar dataKey="amount" name="売上金額" fill={ObjectColor.AccentPrimary} />
-          </BarChart>
-        </ResponsiveContainer>
+            <option value="all">すべてのメニュー</option>
+            {filterOptions.menus.filter(menu => menu !== 'all').map(menu => (
+              <option key={menu} value={menu}>{menu}</option>
+            ))}
+          </select>
+          
+          <select
+            value={filters.category}
+            onChange={(e) => setFilters(prev => ({ ...prev, category: e.target.value, subCategory: 'all' }))}
+            style={{
+              padding: '4px 8px',
+              borderRadius: 4,
+              border: `1px solid ${Border.LowEmphasis}`,
+              backgroundColor: Surface.Primary
+            }}
+          >
+            <option value="all">すべてのカテゴリ</option>
+            {filterOptions.categories.filter(category => category !== 'all').map(category => (
+              <option key={category} value={category}>{category}</option>
+            ))}
+          </select>
+          
+          <select
+            value={filters.subCategory}
+            onChange={(e) => setFilters(prev => ({ ...prev, subCategory: e.target.value }))}
+            style={{
+              padding: '4px 8px',
+              borderRadius: 4,
+              border: `1px solid ${Border.LowEmphasis}`,
+              backgroundColor: Surface.Primary
+            }}
+          >
+            <option value="all">すべてのサブカテゴリ</option>
+            {filterOptions.subCategories.filter(subCategory => subCategory !== 'all').map(subCategory => (
+              <option key={subCategory} value={subCategory}>{subCategory}</option>
+            ))}
+          </select>
+          
+          <input
+            type="text"
+            placeholder="🔍 検索"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={{
+              padding: '4px 8px',
+              borderRadius: 4,
+              border: `1px solid ${Border.LowEmphasis}`,
+              backgroundColor: Surface.Primary
+            }}
+          />
+        </div>
+      </div>
+      <div style={{ flex: 1, overflow: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead style={{ position: 'sticky', top: 0, background: Surface.Primary }}>
+            <tr>
+              <th style={{
+                width: '40%',
+                textAlign: 'left',
+                padding: '8px 16px',
+                borderBottom: `1px solid ${Border.LowEmphasis}`
+              }}>
+                商品名
+                <span
+                  onClick={() => handleSort('name')}
+                  style={{ cursor: 'pointer', marginLeft: 4 }}
+                  title="商品名で並び替え"
+                >
+                  {getSortIcon('name')}
+                </span>
+              </th>
+              <th style={{
+                textAlign: 'right',
+                padding: '8px 16px',
+                borderBottom: `1px solid ${Border.LowEmphasis}`
+              }}>
+                売上金額 (円)
+                <span
+                  onClick={() => handleSort('amount')}
+                  style={{ cursor: 'pointer', marginLeft: 4 }}
+                  title="売上金額で並び替え"
+                >
+                  {getSortIcon('amount')}
+                </span>
+              </th>
+              <th style={{
+                textAlign: 'right',
+                padding: '8px 16px',
+                borderBottom: `1px solid ${Border.LowEmphasis}`
+              }}>
+                売上個数 (個)
+                <span
+                  onClick={() => handleSort('count')}
+                  style={{ cursor: 'pointer', marginLeft: 4 }}
+                  title="売上個数で並び替え"
+                >
+                  {getSortIcon('count')}
+                </span>
+              </th>
+              <th style={{
+                textAlign: 'right',
+                padding: '8px 16px',
+                borderBottom: `1px solid ${Border.LowEmphasis}`
+              }}>
+                粗利 (円)
+                <span
+                  onClick={() => handleSort('profit')}
+                  style={{ cursor: 'pointer', marginLeft: 4 }}
+                  title="粗利で並び替え"
+                >
+                  {getSortIcon('profit')}
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedData.map((item, index) => (
+              <tr key={index} style={{
+                backgroundColor: index % 2 === 0 ? Surface.Primary : Surface.Secondary
+              }}>
+                <td style={{
+                  padding: '8px 16px',
+                  borderBottom: `1px solid ${Border.LowEmphasis}`,
+                  maxWidth: '40%',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical'
+                }}>
+                  {item.name}
+                </td>
+                <td style={{
+                  textAlign: 'right',
+                  padding: '8px 16px',
+                  borderBottom: `1px solid ${Border.LowEmphasis}`
+                }}>
+                  {formatCurrency(item.amount)}
+                </td>
+                <td style={{
+                  textAlign: 'right',
+                  padding: '8px 16px',
+                  borderBottom: `1px solid ${Border.LowEmphasis}`
+                }}>
+                  {item.count.toLocaleString()}
+                </td>
+                <td style={{
+                  textAlign: 'right',
+                  padding: '8px 16px',
+                  borderBottom: `1px solid ${Border.LowEmphasis}`
+                }}>
+                  {formatCurrency(item.profit)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
