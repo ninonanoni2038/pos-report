@@ -6,7 +6,8 @@ import {
   SalesKPI, 
   HourlyCustomerData,
   PaymentMethodData,
-  ProductSalesData
+  ProductSalesData,
+  DailyCustomerData
 } from '../types/sales';
 import { PaymentMethod } from '../sample_data/payments/payments';
 
@@ -263,4 +264,106 @@ export const filterDailyOrderItems = (
   dailyOrderIds: readonly number[]
 ): OrderItem[] => {
   return orderItems.filter((item: OrderItem) => dailyOrderIds.includes(item.orderId));
+};
+
+/**
+ * 指定された年月の注文データをフィルタリングする
+ * @param orders 全注文データ
+ * @param date フィルタリングする年月の日付
+ * @returns 指定年月の注文データ
+ */
+export const filterMonthlyOrders = (orders: readonly Order[], date: Date): Order[] => {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  
+  return orders.filter((order: Order) => {
+    const orderDate = new Date(order.completedAt);
+    return orderDate.getFullYear() === year && orderDate.getMonth() === month;
+  });
+};
+
+/**
+ * 指定された年月の決済データをフィルタリングする
+ * @param payments 全決済データ
+ * @param date フィルタリングする年月の日付
+ * @returns 指定年月の決済データ
+ */
+export const filterMonthlyPayments = (payments: readonly Payment[], date: Date): Payment[] => {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  
+  return payments.filter((payment: Payment) => {
+    const paymentDate = new Date(payment.paymentTime);
+    return paymentDate.getFullYear() === year && paymentDate.getMonth() === month;
+  });
+};
+
+/**
+ * 月内の日別客数データを生成する
+ * @param monthlyOrders 月別注文データ
+ * @returns 日別客数データ
+ */
+export const generateDailyCustomersData = (monthlyOrders: readonly Order[]): DailyCustomerData[] => {
+  const dailyData: { [dateKey: string]: { count: number, partySize: number } } = {};
+  
+  monthlyOrders.forEach((order: Order) => {
+    const orderDate = new Date(order.completedAt);
+    const day = orderDate.getDate();
+    const dateKey = day.toString();
+    
+    if (dailyData[dateKey]) {
+      dailyData[dateKey].count++;
+      dailyData[dateKey].partySize += order.partySize;
+    } else {
+      dailyData[dateKey] = {
+        count: 1,
+        partySize: order.partySize
+      };
+    }
+  });
+  
+  // 日付順にソート
+  return Object.entries(dailyData)
+    .map(([day, data]) => ({
+      day,
+      count: data.count,
+      partySize: data.partySize
+    }))
+    .sort((a, b) => parseInt(a.day) - parseInt(b.day));
+};
+
+/**
+ * 月次データに基づいてKPIを計算する
+ * @param monthlyOrders 月別注文データ
+ * @param monthlyPayments 月別決済データ
+ * @returns 計算されたKPI
+ */
+export const calculateMonthlyKPIs = (monthlyOrders: readonly Order[], monthlyPayments: readonly Payment[]): SalesKPI => {
+  // 現地決済とオンライン決済の分類
+  const onsitePaymentMethods = [PaymentMethod.CASH, PaymentMethod.CREDIT_CARD_ONSITE, PaymentMethod.QR_CODE_ONSITE];
+  const onlinePaymentMethods = [PaymentMethod.CREDIT_CARD_ONLINE, PaymentMethod.PAYPAY, PaymentMethod.LINE_PAY, PaymentMethod.RAKUTEN_PAY];
+  
+  const totalSales = monthlyPayments.reduce((sum: number, payment: Payment) => sum + payment.amount, 0);
+  const totalCustomers = monthlyOrders.length;
+  const averagePerCustomer = totalCustomers > 0 ? totalSales / totalCustomers : 0;
+  const totalFees = monthlyPayments.reduce((sum: number, payment: Payment) => sum + payment.fee, 0);
+  const netSales = totalSales - totalFees;
+  
+  const onsitePayments = monthlyPayments
+    .filter((payment: Payment) => onsitePaymentMethods.includes(payment.paymentMethod))
+    .reduce((sum: number, payment: Payment) => sum + payment.amount, 0);
+    
+  const onlinePayments = monthlyPayments
+    .filter((payment: Payment) => onlinePaymentMethods.includes(payment.paymentMethod))
+    .reduce((sum: number, payment: Payment) => sum + payment.amount, 0);
+  
+  return {
+    totalSales,
+    totalCustomers,
+    averagePerCustomer,
+    totalFees,
+    netSales,
+    onsitePayments,
+    onlinePayments
+  };
 };

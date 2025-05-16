@@ -10,18 +10,22 @@ import {
   ResponsiveContainer
 } from 'recharts';
 import { Surface, Text, Border, Object as ObjectColor } from '../../styles/semanticColors';
-import { HourlyCustomerData } from '../../types/sales';
+import { HourlyCustomerData, DailyCustomerData } from '../../types/sales';
+import { DisplayMode as ReportDisplayMode } from '../../types/displayMode';
 
 // 刻み幅の型定義
 type TimeScale = '30min' | '1hour' | '2hour';
 
 interface CustomerPeakChartProps {
-  // 各刻み幅のデータ
-  hourlyData: HourlyCustomerData[];
-  halfHourlyData: HourlyCustomerData[];
-  twoHourlyData: HourlyCustomerData[];
+  // 表示モード（日報/月報）
+  displayMode?: ReportDisplayMode;
   
-  // 比較用データはすべてオプショナルにしておく
+  // 日報モード用データ
+  hourlyData?: HourlyCustomerData[];
+  halfHourlyData?: HourlyCustomerData[];
+  twoHourlyData?: HourlyCustomerData[];
+  
+  // 日報モード用比較データ
   previousDayHourlyData?: HourlyCustomerData[];
   previousDayHalfHourlyData?: HourlyCustomerData[];
   previousDayTwoHourlyData?: HourlyCustomerData[];
@@ -33,6 +37,11 @@ interface CustomerPeakChartProps {
   previousYearHourlyData?: HourlyCustomerData[];
   previousYearHalfHourlyData?: HourlyCustomerData[];
   previousYearTwoHourlyData?: HourlyCustomerData[];
+  
+  // 月報モード用データ
+  dailyData?: DailyCustomerData[];
+  previousMonthDailyData?: DailyCustomerData[];
+  previousYearDailyData?: DailyCustomerData[];
 }
 
 /**
@@ -114,102 +123,159 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
   // 刻み幅の状態（デフォルトは1時間）
   const [timeScale, setTimeScale] = useState<TimeScale>('1hour');
   
-  // 現在の刻み幅に応じたデータを取得
+  // 日報/月報モード
+  const isMonthlyMode = props.displayMode === ReportDisplayMode.MONTHLY;
+  
+  // 現在のデータを取得（日報/月報モードに応じて）
   const getCurrentData = () => {
-    switch (timeScale) {
-      case '30min': return props.halfHourlyData;
-      case '1hour': return props.hourlyData;
-      case '2hour': return props.twoHourlyData;
-      default: return props.hourlyData;
+    if (isMonthlyMode) {
+      // 月報モードの場合は日別データを返す
+      return props.dailyData || [];
+    } else {
+      // 日報モードの場合は時間帯別データを返す
+      switch (timeScale) {
+        case '30min': return props.halfHourlyData || [];
+        case '1hour': return props.hourlyData || [];
+        case '2hour': return props.twoHourlyData || [];
+        default: return props.hourlyData || [];
+      }
     }
   };
   
-  // 現在の比較モードと刻み幅に応じた比較データを取得
+  // 比較データを取得（日報/月報モードに応じて）
   const getComparisonData = () => {
     if (comparisonMode === 'none') return null;
     
-    switch (comparisonMode) {
-      case 'previousDay':
-        return timeScale === '30min' ? props.previousDayHalfHourlyData :
-               timeScale === '1hour' ? props.previousDayHourlyData :
-               props.previousDayTwoHourlyData;
-      case 'previousWeek':
-        return timeScale === '30min' ? props.previousWeekHalfHourlyData :
-               timeScale === '1hour' ? props.previousWeekHourlyData :
-               props.previousWeekTwoHourlyData;
-      case 'previousYear':
-        return timeScale === '30min' ? props.previousYearHalfHourlyData :
-               timeScale === '1hour' ? props.previousYearHourlyData :
-               props.previousYearTwoHourlyData;
-      default:
-        return null;
+    if (isMonthlyMode) {
+      // 月報モードの場合
+      switch (comparisonMode) {
+        case 'previousDay':
+        case 'previousWeek':
+          // 月報モードでは前日/前週は前月として扱う
+          return props.previousMonthDailyData;
+        case 'previousYear':
+          return props.previousYearDailyData;
+        default:
+          return null;
+      }
+    } else {
+      // 日報モードの場合
+      switch (comparisonMode) {
+        case 'previousDay':
+          return timeScale === '30min' ? props.previousDayHalfHourlyData :
+                 timeScale === '1hour' ? props.previousDayHourlyData :
+                 props.previousDayTwoHourlyData;
+        case 'previousWeek':
+          return timeScale === '30min' ? props.previousWeekHalfHourlyData :
+                 timeScale === '1hour' ? props.previousWeekHourlyData :
+                 props.previousWeekTwoHourlyData;
+        case 'previousYear':
+          return timeScale === '30min' ? props.previousYearHourlyData :
+                 timeScale === '1hour' ? props.previousYearHourlyData :
+                 props.previousYearTwoHourlyData;
+        default:
+          return null;
+      }
     }
   };
   
-  // 現在のデータ
-  const currentData = getCurrentData();
-  // 比較データ
-  const comparisonData = getComparisonData();
+  // 現在のデータと比較データ
+  const currentData: (HourlyCustomerData | DailyCustomerData)[] = getCurrentData();
+  const comparisonData: (HourlyCustomerData | DailyCustomerData)[] | null | undefined = getComparisonData();
   
   // 合計客組数と合計人数を計算
-  const totalGroups = currentData.reduce((sum, item) => sum + item.count, 0);
-  const totalPeople = currentData.reduce((sum, item) => sum + item.partySize, 0);
+  const totalGroups = currentData.reduce<number>((sum, item) => sum + item.count, 0);
+  const totalPeople = currentData.reduce<number>((sum, item) => sum + item.partySize, 0);
   
   // 比較データの合計客組数と合計人数を計算（比較データがある場合）
   const comparisonTotalGroups = comparisonData
-    ? comparisonData.reduce((sum, item) => sum + item.count, 0)
+    ? comparisonData.reduce<number>((sum, item) => sum + item.count, 0)
     : 0;
   const comparisonTotalPeople = comparisonData
-    ? comparisonData.reduce((sum, item) => sum + item.partySize, 0)
+    ? comparisonData.reduce<number>((sum, item) => sum + item.partySize, 0)
     : 0;
   
-  // 刻み幅に応じた時間帯の目盛りを生成
-  const getHourTicks = () => {
-    switch (timeScale) {
-      case '30min':
-        // 10:00から24:00までの30分区切りの時間帯を生成
-        return Array.from({ length: 29 }, (_, i) => {
-          const hour = Math.floor(i / 2) + 10;
-          const minute = i % 2 === 0 ? '00' : '30';
-          return `${hour.toString().padStart(2, '0')}:${minute}`;
-        });
-      case '1hour':
-        // 10:00から24:00までの1時間区切りの時間帯を生成
-        return Array.from({ length: 15 }, (_, i) => `${(i + 10).toString().padStart(2, '0')}:00`);
-      case '2hour':
-        // 10:00から24:00までの2時間区切りの時間帯を生成
-        return Array.from({ length: 8 }, (_, i) => {
-          const startHour = i * 2 + 10;
-          const endHour = startHour + 2;
-          return `${startHour.toString().padStart(2, '0')}:00-${endHour.toString().padStart(2, '0')}:00`;
-        });
-      default:
-        return Array.from({ length: 15 }, (_, i) => `${(i + 10).toString().padStart(2, '0')}:00`);
-    }
-  };
+  // X軸の目盛りとデータを生成（日報/月報モードに応じて）
+  let xAxisTicks: string[] = [];
+  let completeData: any[] = [];
   
-  const hourTicks = getHourTicks();
-  
-  // データがない時間帯も含めた完全なデータセットを作成
-  const completeData = hourTicks.map(hour => {
-    // 現在のデータから該当する時間帯のデータを検索
-    const existingData = currentData.find(item => item.hour === hour);
-    const currentCount = existingData ? existingData.count : 0;
-    const currentPartySize = existingData ? existingData.partySize : 0;
+  if (isMonthlyMode) {
+    // 月報モード: 1日から31日までの日付を生成
+    xAxisTicks = Array.from({ length: 31 }, (_, i) => (i + 1).toString());
     
-    // 比較データから該当する時間帯のデータを検索
-    const comparisonHourData = comparisonData?.find(item => item.hour === hour);
-    const comparisonCount = comparisonHourData ? comparisonHourData.count : 0;
-    const comparisonPartySize = comparisonHourData ? comparisonHourData.partySize : 0;
-    
-    return {
-      hour,
-      count: currentCount,
-      partySize: currentPartySize,
-      comparisonCount: comparisonCount,
-      comparisonPartySize: comparisonPartySize
+    // データがない日も含めた完全なデータセットを作成
+    completeData = xAxisTicks.map(day => {
+      // 現在のデータから該当する日のデータを検索
+      const dailyData = currentData as DailyCustomerData[];
+      const existingData = dailyData.find(item => item.day === day);
+      const currentCount = existingData ? existingData.count : 0;
+      const currentPartySize = existingData ? existingData.partySize : 0;
+      
+      // 比較データから該当する日のデータを検索
+      const comparisonDailyData = comparisonData as DailyCustomerData[] | null;
+      const comparisonDayData = comparisonDailyData?.find(item => item.day === day);
+      const comparisonCount = comparisonDayData ? comparisonDayData.count : 0;
+      const comparisonPartySize = comparisonDayData ? comparisonDayData.partySize : 0;
+      
+      return {
+        day,
+        count: currentCount,
+        partySize: currentPartySize,
+        comparisonCount: comparisonCount,
+        comparisonPartySize: comparisonPartySize
+      };
+    });
+  } else {
+    // 日報モード: 刻み幅に応じた時間帯の目盛りを生成
+    const getHourTicks = () => {
+      switch (timeScale) {
+        case '30min':
+          // 10:00から24:00までの30分区切りの時間帯を生成
+          return Array.from({ length: 29 }, (_, i) => {
+            const hour = Math.floor(i / 2) + 10;
+            const minute = i % 2 === 0 ? '00' : '30';
+            return `${hour.toString().padStart(2, '0')}:${minute}`;
+          });
+        case '1hour':
+          // 10:00から24:00までの1時間区切りの時間帯を生成
+          return Array.from({ length: 15 }, (_, i) => `${(i + 10).toString().padStart(2, '0')}:00`);
+        case '2hour':
+          // 10:00から24:00までの2時間区切りの時間帯を生成
+          return Array.from({ length: 8 }, (_, i) => {
+            const startHour = i * 2 + 10;
+            const endHour = startHour + 2;
+            return `${startHour.toString().padStart(2, '0')}:00-${endHour.toString().padStart(2, '0')}:00`;
+          });
+        default:
+          return Array.from({ length: 15 }, (_, i) => `${(i + 10).toString().padStart(2, '0')}:00`);
+      }
     };
-  });
+    
+    xAxisTicks = getHourTicks();
+    
+    // データがない時間帯も含めた完全なデータセットを作成
+    completeData = xAxisTicks.map(hour => {
+      // 現在のデータから該当する時間帯のデータを検索
+      const hourlyData = currentData as HourlyCustomerData[];
+      const existingData = hourlyData.find(item => item.hour === hour);
+      const currentCount = existingData ? existingData.count : 0;
+      const currentPartySize = existingData ? existingData.partySize : 0;
+      
+      // 比較データから該当する時間帯のデータを検索
+      const comparisonHourlyData = comparisonData as HourlyCustomerData[] | null;
+      const comparisonHourData = comparisonHourlyData?.find(item => item.hour === hour);
+      const comparisonCount = comparisonHourData ? comparisonHourData.count : 0;
+      const comparisonPartySize = comparisonHourData ? comparisonHourData.partySize : 0;
+      
+      return {
+        hour,
+        count: currentCount,
+        partySize: currentPartySize,
+        comparisonCount: comparisonCount,
+        comparisonPartySize: comparisonPartySize
+      };
+    });
+  }
   
   // 表示モードを切り替える関数
   const toggleDisplayMode = () => {
@@ -256,24 +322,26 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
             />
           </TabGroup>
           
-          {/* 刻み幅切替タブUI */}
-          <TabGroup>
-            <TabButton
-              isActive={timeScale === '30min'}
-              onClick={() => setTimeScale('30min')}
-              label="30分"
-            />
-            <TabButton
-              isActive={timeScale === '1hour'}
-              onClick={() => setTimeScale('1hour')}
-              label="1時間"
-            />
-            <TabButton
-              isActive={timeScale === '2hour'}
-              onClick={() => setTimeScale('2hour')}
-              label="2時間"
-            />
-          </TabGroup>
+          {/* 刻み幅切替タブUI - 日報モードの場合のみ表示 */}
+          {!isMonthlyMode && (
+            <TabGroup>
+              <TabButton
+                isActive={timeScale === '30min'}
+                onClick={() => setTimeScale('30min')}
+                label="30分"
+              />
+              <TabButton
+                isActive={timeScale === '1hour'}
+                onClick={() => setTimeScale('1hour')}
+                label="1時間"
+              />
+              <TabButton
+                isActive={timeScale === '2hour'}
+                onClick={() => setTimeScale('2hour')}
+                label="2時間"
+              />
+            </TabGroup>
+          )}
           
           {/* 比較モードドロップダウン */}
           <div style={{
@@ -340,8 +408,8 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
-              dataKey="hour"
-              ticks={hourTicks}
+              dataKey={isMonthlyMode ? "day" : "hour"}
+              ticks={xAxisTicks}
               tickFormatter={(value) => value}
             />
             <YAxis />
@@ -357,7 +425,7 @@ const CustomerPeakChart: React.FC<CustomerPeakChartProps> = (props) => {
               <Bar
                 dataKey={displayMode === 'count' ? 'comparisonCount' : 'comparisonPartySize'}
                 name={`${getComparisonModeLabel(comparisonMode)}${displayMode === 'count' ? '客組数' : '客数'}`}
-                fill={ObjectColor.AcceentSecondary}
+                fill={ObjectColor.AccentSecondary}
               />
             )}
           </BarChart>

@@ -68,3 +68,10 @@ export interface ProductSalesData {
   amount: number;
   count: number;
 }
+
+// 日別客数データの型定義（月報表示用）
+export interface DailyCustomerData {
+  day: string;
+  count: number;  // 客組数
+  partySize: number; // 客人数
+}

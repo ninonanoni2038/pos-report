@@ -48,7 +48,7 @@ export const Object = {
   LowEmphasis: Gray[40],
   Disable: Gray[30],
   AccentPrimary: PrimaryGold[60],
-  AcceentSecondary: PrimaryGold[40],
+  AccentSecondary: PrimaryGold[40],
   Danger: Red[60],
   Success: Green[60],
   Info: Blue[60],

@@ -58,3 +58,14 @@ export const getDateWithWeekdayColor = (date: Date): {
 export const formatCurrency = (amount: number): string => {
   return amount.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' });
 };
+
+/**
+ * 年月フォーマット用ユーティリティ
+ * @param date フォーマットする日付
+ * @returns 日本語形式でフォーマットされた年月文字列（例: 2024年5月）
+ */
+export const formatYearMonth = (date: Date): string => {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  return `${year}年${month}月`;
+};
