@@ -5,6 +5,7 @@ export interface Order {
   orderId: number;
   completedAt: Date;
   customerId: number;
+  partySize: number; // 客の人数
 }
 
 // 注文アイテムの型定義
@@ -51,7 +52,8 @@ export interface SalesKPI {
 // 時間帯別客数データの型定義
 export interface HourlyCustomerData {
   hour: string;
-  count: number;
+  count: number;  // 客組数
+  partySize: number; // 客人数
 }
 
 // 決済方法別データの型定義

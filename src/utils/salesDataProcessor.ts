@@ -90,22 +90,30 @@ export const calculateKPIs = (dailyOrders: readonly Order[], dailyPayments: read
  * @returns 時間帯別客数データ
  */
 export const generateHourlyCustomersData = (dailyOrders: readonly Order[]): HourlyCustomerData[] => {
-  const hourlyCustomers: { [hour: string]: number } = {};
+  const hourlyData: { [hour: string]: { count: number, partySize: number } } = {};
   
   dailyOrders.forEach((order: Order) => {
     const orderDate = new Date(order.completedAt);
     const hour = orderDate.getHours();
     const hourKey = `${hour}:00`;
     
-    if (hourlyCustomers[hourKey]) {
-      hourlyCustomers[hourKey]++;
+    if (hourlyData[hourKey]) {
+      hourlyData[hourKey].count++;
+      hourlyData[hourKey].partySize += order.partySize;
     } else {
-      hourlyCustomers[hourKey] = 1;
+      hourlyData[hourKey] = {
+        count: 1,
+        partySize: order.partySize
+      };
     }
   });
   
-  return Object.entries(hourlyCustomers)
-    .map(([hour, count]) => ({ hour, count }))
+  return Object.entries(hourlyData)
+    .map(([hour, data]) => ({
+      hour,
+      count: data.count,
+      partySize: data.partySize
+    }))
     .sort((a, b) => {
       const hourA = parseInt(a.hour.split(':')[0]);
       const hourB = parseInt(b.hour.split(':')[0]);

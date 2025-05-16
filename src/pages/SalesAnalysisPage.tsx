@@ -57,12 +57,31 @@ const SalesAnalysisPage: React.FC = () => {
   const dailyOrders = filterDailyOrders(orders, currentDate);
   const dailyPayments = filterDailyPayments(payments, currentDate);
   
+  // 比較用データを取得
+  // 前日のデータ
+  const previousDayDate = new Date(currentDate);
+  previousDayDate.setDate(previousDayDate.getDate() - 1);
+  const previousDayOrders = filterDailyOrders(orders, previousDayDate);
+  
+  // 前週同曜日のデータ
+  const previousWeekDate = new Date(currentDate);
+  previousWeekDate.setDate(previousWeekDate.getDate() - 7);
+  const previousWeekOrders = filterDailyOrders(orders, previousWeekDate);
+  
+  // 前年同日のデータ
+  const previousYearDate = new Date(currentDate);
+  previousYearDate.setFullYear(previousYearDate.getFullYear() - 1);
+  const previousYearOrders = filterDailyOrders(orders, previousYearDate);
+  
   // KPI計算
   const kpis = calculateKPIs(dailyOrders, dailyPayments);
   const { totalSales, totalCustomers, averagePerCustomer } = kpis;
   
   // グラフデータ生成
   const hourlyCustomersData = generateHourlyCustomersData(dailyOrders);
+  const previousDayHourlyCustomersData = generateHourlyCustomersData(previousDayOrders);
+  const previousWeekHourlyCustomersData = generateHourlyCustomersData(previousWeekOrders);
+  const previousYearHourlyCustomersData = generateHourlyCustomersData(previousYearOrders);
   const paymentMethodData = generatePaymentMethodData(dailyPayments);
   
   // 売れ筋商品データ生成
@@ -102,7 +121,12 @@ const SalesAnalysisPage: React.FC = () => {
       
       {/* グラフセクション */}
       <div style={{ display: 'flex', marginBottom: 24, gap: 16 }}>
-        <CustomerPeakChart data={hourlyCustomersData} />
+        <CustomerPeakChart
+          data={hourlyCustomersData}
+          previousDayData={previousDayHourlyCustomersData}
+          previousWeekData={previousWeekHourlyCustomersData}
+          previousYearData={previousYearHourlyCustomersData}
+        />
         <PaymentMethodChart data={paymentMethodData} />
       </div>
       
