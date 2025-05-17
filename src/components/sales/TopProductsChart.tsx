@@ -5,13 +5,21 @@ import { formatCurrency } from '../../utils/formatters';
 
 interface TopProductsChartProps {
   data: ProductSalesData[];
+  totalAmount: number;  // その日/月の売上合計
+  totalCount: number;   // その日/月の売上個数合計
+  totalProfit: number;  // その日/月の粗利合計
 }
 
 /**
  * 売れ筋商品ランキングコンポーネント
  * 売上金額順に上位10商品をテーブルで表示する
  */
-const TopProductsChart: React.FC<TopProductsChartProps> = ({ data }) => {
+const TopProductsChart: React.FC<TopProductsChartProps> = ({
+  data,
+  totalAmount,
+  totalCount,
+  totalProfit
+}) => {
   // 状態管理
   const [sortConfig, setSortConfig] = useState<{ key: keyof ProductSalesData; direction: 'asc' | 'desc' }>({
     key: 'amount',
@@ -31,6 +39,16 @@ const TopProductsChart: React.FC<TopProductsChartProps> = ({ data }) => {
       clearTimeout(timerId);
     };
   }, [searchTerm]);
+
+  // ヘルパー関数
+  const calculatePercentage = (value: number, total: number): number => {
+    if (total === 0) return 0;
+    return (value / total) * 100;
+  };
+
+  const formatPercentage = (percentage: number): string => {
+    return `${percentage.toFixed(1)}%`;
+  };
 
   // ソート関数
   const handleSort = (key: keyof ProductSalesData) => {
@@ -207,7 +225,7 @@ const TopProductsChart: React.FC<TopProductsChartProps> = ({ data }) => {
                 padding: '8px 16px',
                 borderBottom: `1px solid ${Border.LowEmphasis}`
               }}>
-                売上金額 (円)
+                売上金額
                 <span
                   onClick={() => handleSort('amount')}
                   style={{ cursor: 'pointer', marginLeft: 4 }}
@@ -221,7 +239,7 @@ const TopProductsChart: React.FC<TopProductsChartProps> = ({ data }) => {
                 padding: '8px 16px',
                 borderBottom: `1px solid ${Border.LowEmphasis}`
               }}>
-                売上個数 (個)
+                売上個数
                 <span
                   onClick={() => handleSort('count')}
                   style={{ cursor: 'pointer', marginLeft: 4 }}
@@ -235,7 +253,7 @@ const TopProductsChart: React.FC<TopProductsChartProps> = ({ data }) => {
                 padding: '8px 16px',
                 borderBottom: `1px solid ${Border.LowEmphasis}`
               }}>
-                粗利 (円)
+                粗利
                 <span
                   onClick={() => handleSort('profit')}
                   style={{ cursor: 'pointer', marginLeft: 4 }}
@@ -253,11 +271,11 @@ const TopProductsChart: React.FC<TopProductsChartProps> = ({ data }) => {
               }}>
                 <td style={{
                   padding: '8px 16px',
-                  borderBottom: `1px solid ${Border.LowEmphasis}`,
+                //   borderBottom: `1px solid ${Border.LowEmphasis}`,
                   maxWidth: '40%',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
-                  display: '-webkit-box',
+                //   display: '-webkit-box',
                   WebkitLineClamp: 2,
                   WebkitBoxOrient: 'vertical'
                 }}>
@@ -268,21 +286,42 @@ const TopProductsChart: React.FC<TopProductsChartProps> = ({ data }) => {
                   padding: '8px 16px',
                   borderBottom: `1px solid ${Border.LowEmphasis}`
                 }}>
-                  {formatCurrency(item.amount)}
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                    <div style={{ fontWeight: 'bold' }}>
+                      {formatPercentage(calculatePercentage(item.amount, totalAmount))}
+                    </div>
+                    <div style={{ fontSize: '0.8em', color: Text.MediumEmphasis }}>
+                      ({formatCurrency(item.amount)})
+                    </div>
+                  </div>
                 </td>
                 <td style={{
                   textAlign: 'right',
                   padding: '8px 16px',
                   borderBottom: `1px solid ${Border.LowEmphasis}`
                 }}>
-                  {item.count.toLocaleString()}
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                    <div style={{ fontWeight: 'bold' }}>
+                      {formatPercentage(calculatePercentage(item.count, totalCount))}
+                    </div>
+                    <div style={{ fontSize: '0.8em', color: Text.MediumEmphasis }}>
+                      ({item.count.toLocaleString()}個)
+                    </div>
+                  </div>
                 </td>
                 <td style={{
                   textAlign: 'right',
                   padding: '8px 16px',
                   borderBottom: `1px solid ${Border.LowEmphasis}`
                 }}>
-                  {formatCurrency(item.profit)}
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                    <div style={{ fontWeight: 'bold' }}>
+                      {formatPercentage(calculatePercentage(item.profit, totalProfit))}
+                    </div>
+                    <div style={{ fontSize: '0.8em', color: Text.MediumEmphasis }}>
+                      ({formatCurrency(item.profit)})
+                    </div>
+                  </div>
                 </td>
               </tr>
             ))}

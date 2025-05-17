@@ -347,7 +347,12 @@ const SalesAnalysisPage: React.FC = () => {
           height: '100%',
           boxSizing: 'border-box'
         }}>
-          <TopProductsChart data={topProducts} />
+          <TopProductsChart
+            data={topProducts}
+            totalAmount={kpis.totalSales}
+            totalCount={filteredOrderItems.reduce((sum, item) => sum + item.quantity, 0)}
+            totalProfit={kpis.netSales}
+          />
         </div>
       </div>
       
