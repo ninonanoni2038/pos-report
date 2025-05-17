@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/pro-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/pro-solid-svg-icons/faChevronRight';
 import { DisplayMode, DisplayModeLabel } from '../../types/displayMode';
+import { TabButton as CommonTabButton } from '../common/tabs';
 
 interface PeriodSelectorProps {
   displayMode: DisplayMode;
@@ -17,33 +18,25 @@ interface PeriodSelectorProps {
   onModeChange: (mode: DisplayMode) => void;
 }
 
+/**
+ * PeriodSelector用のタブボタンコンポーネント
+ * 共通のTabButtonコンポーネントをラップして、PeriodSelector用のスタイルを適用する
+ */
 interface TabButtonProps {
   active: boolean;
   onClick: () => void;
   children: React.ReactNode;
 }
 
-/**
- * タブボタンコンポーネント
- */
 const TabButton: React.FC<TabButtonProps> = ({ active, onClick, children }) => {
   return (
-    <button
-      onClick={onClick}
-      style={{
-        padding: '6px 12px',
-        marginRight: 8,
-        background: active ? ObjectColor.AccentPrimary : Surface.Primary,
-        color: active ? Surface.Primary : Text.MediumEmphasis,
-        border: `1px solid ${active ? ObjectColor.AccentPrimary : Border.LowEmphasis}`,
-        borderRadius: 4,
-        cursor: 'pointer',
-        fontWeight: active ? 'bold' : 'normal',
-        transition: 'all 0.2s ease'
-      }}
-    >
-      {children}
-    </button>
+    <div style={{ marginRight: 8 }}>
+      <CommonTabButton
+        isActive={active}
+        onClick={onClick}
+        label={children as string}
+      />
+    </div>
   );
 };
 

@@ -4,13 +4,14 @@ import { ProductSalesData } from '../../types/sales';
 import { formatCurrency } from '../../utils/formatters';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion } from '@fortawesome/pro-solid-svg-icons';
+import { Tooltip } from '../common/tooltip';
+import {
+  ABCAnalysisItem,
+  DEFAULT_ABC_THRESHOLDS,
+  performABCAnalysis,
+  getRankBackgroundColor
+} from '../../utils/calculations/abcAnalysis';
 
-// ABC分析のためのデータ型（内部使用）
-interface ABCAnalysisItem extends ProductSalesData {
-  amountRank: 'A' | 'B' | 'C';
-  countRank: 'A' | 'B' | 'C';
-  profitRank: 'A' | 'B' | 'C';
-}
 
 interface TopProductsChartProps {
   data: ProductSalesData[];
@@ -23,147 +24,13 @@ interface TopProductsChartProps {
   };
 }
 
-// デフォルトのABC分析閾値
-const DEFAULT_ABC_THRESHOLDS = {
-  a: 70,
-  b: 90
-};
 
 /**
  * 売れ筋商品ランキングコンポーネント
  * 売上金額順に上位10商品をテーブルで表示する
  */
-// ABC分析を行う関数
-const performABCAnalysis = (
-  data: ProductSalesData[],
-  totalAmount: number,
-  totalCount: number,
-  totalProfit: number,
-  thresholds: { a: number; b: number } = DEFAULT_ABC_THRESHOLDS
-): ABCAnalysisItem[] => {
-  // 各指標でソートしたデータを準備
-  const amountSorted = [...data].sort((a, b) => b.amount - a.amount);
-  const countSorted = [...data].sort((a, b) => b.count - a.count);
-  const profitSorted = [...data].sort((a, b) => b.profit - a.profit);
-  
-  // 各商品のIDをキーにしたランクのマップを作成
-  const amountMap = new Map<number, 'A' | 'B' | 'C'>();
-  const countMap = new Map<number, 'A' | 'B' | 'C'>();
-  const profitMap = new Map<number, 'A' | 'B' | 'C'>();
-  
-  // 売上金額の累積割合とランクを計算
-  let cumulativeAmount = 0;
-  amountSorted.forEach(item => {
-    const percentage = totalAmount > 0 ? (item.amount / totalAmount) * 100 : 0;
-    cumulativeAmount += percentage;
-    const rank = cumulativeAmount <= thresholds.a ? 'A' : cumulativeAmount <= thresholds.b ? 'B' : 'C';
-    amountMap.set(item.productId, rank);
-  });
-  
-  // 売上個数の累積割合とランクを計算
-  let cumulativeCount = 0;
-  countSorted.forEach(item => {
-    const percentage = totalCount > 0 ? (item.count / totalCount) * 100 : 0;
-    cumulativeCount += percentage;
-    const rank = cumulativeCount <= thresholds.a ? 'A' : cumulativeCount <= thresholds.b ? 'B' : 'C';
-    countMap.set(item.productId, rank);
-  });
-  
-  // 粗利の累積割合とランクを計算
-  let cumulativeProfit = 0;
-  profitSorted.forEach(item => {
-    const percentage = totalProfit > 0 ? (item.profit / totalProfit) * 100 : 0;
-    cumulativeProfit += percentage;
-    const rank = cumulativeProfit <= thresholds.a ? 'A' : cumulativeProfit <= thresholds.b ? 'B' : 'C';
-    profitMap.set(item.productId, rank);
-  });
-  
-  // 元のデータにランクを追加
-  return data.map(item => {
-    return {
-      ...item,
-      amountRank: amountMap.get(item.productId) || 'C',
-      countRank: countMap.get(item.productId) || 'C',
-      profitRank: profitMap.get(item.productId) || 'C'
-    };
-  });
-};
-
-// ランクに応じた背景色を取得する関数
-const getRankBackgroundColor = (rank: 'A' | 'B' | 'C'): string => {
-  switch (rank) {
-    case 'A':
-      return Surface.AccentPrimaryTint01;
-    case 'B':
-      return Surface.AccentPrimaryTint02;
-    case 'C':
-      return Surface.AccentPrimaryTint03;
-    default:
-      return Surface.AccentPrimaryTint03;
-  }
-};
 
 // Tooltipコンポーネント
-interface TooltipProps {
-  text: string;
-  children: React.ReactNode;
-}
-
-const Tooltip: React.FC<TooltipProps> = ({ text, children }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const childRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseEnter = () => {
-    if (childRef.current) {
-      const rect = childRef.current.getBoundingClientRect();
-      setPosition({
-        x: rect.left + rect.width / 2,
-        y: rect.top - 5
-      });
-    }
-    setIsVisible(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsVisible(false);
-  };
-
-  return (
-    <div
-      ref={childRef}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={{ display: 'inline-block' }}
-    >
-      {children}
-      {isVisible && (
-        <div
-          style={{
-            position: 'fixed',
-            left: position.x,
-            top: position.y,
-            transform: 'translate(-50%, -100%)',
-            backgroundColor: Surface.Primary,
-            color: Text.HighEmphasis,
-            padding: '4px 8px',
-            borderRadius: 4,
-            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-            zIndex: 1000,
-            fontSize: '0.8rem',
-            maxWidth: '200px',
-            textAlign: 'center',
-            pointerEvents: 'none',
-            border: `1px solid ${Border.LowEmphasis}`,
-            whiteSpace: 'nowrap'
-          }}
-        >
-          {text}
-        </div>
-      )}
-    </div>
-  );
-};
 
 const TopProductsChart: React.FC<TopProductsChartProps> = ({
   data,

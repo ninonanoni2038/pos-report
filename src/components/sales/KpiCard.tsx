@@ -3,12 +3,16 @@ import { Surface, Text, Object } from '../../styles/semanticColors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
-  faArrowUp,
-  faArrowDown,
   faMoneyBillWave,  // 売上金額用
   faUsers,          // 総客数用
   faReceipt         // 客単価用
 } from '@fortawesome/pro-solid-svg-icons';
+import {
+  determineTrend,
+  getTrendColor,
+  getTrendIcon,
+  calculateComparison
+} from '../../utils/calculations/trendCalculations';
 
 interface KpiCardProps {
   title: string;                      // カードのタイトル
@@ -27,62 +31,6 @@ interface KpiCardProps {
 /**
  * サブ値から増減を判断する関数
  */
-const determineTrend = (subValue: string): 'up' | 'down' | 'neutral' => {
-  if (!subValue) return 'neutral';
-  
-  if (subValue.includes('+')) return 'up';
-  if (subValue.includes('-')) return 'down';
-  
-  return 'neutral';
-};
-
-/**
- * 増減に応じた色を返す関数
- */
-const getTrendColor = (trend: 'up' | 'down' | 'neutral') => {
-  switch (trend) {
-    case 'up': return Object.Success;
-    case 'down': return Object.Danger;
-    default: return Text.LowEmphasis;
-  }
-};
-
-/**
- * 増減に応じたアイコンを返す関数
- */
-const getTrendIcon = (trend: 'up' | 'down' | 'neutral') => {
-  switch (trend) {
-    case 'up': return faArrowUp;
-    case 'down': return faArrowDown;
-    default: return null;
-  }
-};
-
-/**
- * 実データから比較値を算出する関数
- */
-const calculateComparison = (
-  current: number,
-  previous: number,
-  type: 'day' | 'week' | 'month' | 'year',
-  valueUnit: string = ''
-): string => {
-  if (previous === undefined || previous === null) return '';
-  
-  // 差分を計算し、小数点以下を丸める
-  const diff = Math.round(current - previous);
-  
-  let prefix = '';
-  switch (type) {
-    case 'day': prefix = '前日から'; break;
-    case 'week': prefix = '前週から'; break;
-    case 'month': prefix = '前月から'; break;
-    case 'year': prefix = '前年から'; break;
-  }
-  
-  const sign = diff >= 0 ? '+' : '';
-  return `${prefix} ${sign}${diff.toLocaleString()}${valueUnit}`;
-};
 
 /**
  * KPIカードコンポーネント
