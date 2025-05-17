@@ -62,6 +62,36 @@ export interface PaymentMethodData {
   value: number;
 }
 
+// 時間帯別売上データの型定義
+export interface HourlySalesData {
+  hour: string;
+  totalSales: number;
+  netSales: number;
+  fees: number;
+  profit: number;
+  averagePerCustomer: number;
+}
+
+// 日別売上データの型定義
+export interface DailySalesData {
+  day: string;
+  totalSales: number;
+  netSales: number;
+  fees: number;
+  profit: number;
+  averagePerCustomer: number;
+}
+
+// 詳細データテーブル用のデータ型定義
+export interface DetailedSalesData {
+  periods: string[];
+  totalSales: number[];
+  netSales: number[];
+  fees: number[];
+  profit: number[];
+  averagePerCustomer: number[];
+}
+
 // 商品売上データの型定義
 export interface ProductSalesData {
   name: string;

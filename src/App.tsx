@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ColorPaletteViewer from './pages/ColorPaletteViewer';
 import SalesAnalysisPage from './pages/SalesAnalysisPage';
+import SalesAnalysisDetailPage from './pages/SalesAnalysisDetailPage';
 import MainLayout from './layouts/MainLayout';
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
             <Routes>
               <Route path="/" element={<SalesAnalysisPage />} />
               <Route path="/sales" element={<SalesAnalysisPage />} />
+              <Route path="/analysis-detail" element={<SalesAnalysisDetailPage />} />
               {/* 他のページをここに追加 */}
             </Routes>
           </MainLayout>

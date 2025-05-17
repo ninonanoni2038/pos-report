@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Object, Surface, Border, Text, Background } from '../styles/semanticColors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -20,32 +21,33 @@ const menuItems = [
   {
     category: 'レストラン',
     items: [
-      { name: '予約', icon: faCalendarAlt },
-      { name: '注文', icon: faShoppingCart },
-      { name: 'キッチモニター', icon: faUtensils },
-      { name: '設定', icon: faCog }
+      { name: '予約', icon: faCalendarAlt, path: '/reservation' },
+      { name: '注文', icon: faShoppingCart, path: '/orders' },
+      { name: 'キッチモニター', icon: faUtensils, path: '/kitchen' },
+      { name: '設定', icon: faCog, path: '/settings' }
     ]
   },
   {
     category: 'テイクアウト',
     items: [
-      { name: '注文', icon: faShoppingCart },
-      { name: '設定', icon: faCog }
+      { name: '注文', icon: faShoppingCart, path: '/takeout-orders' },
+      { name: '設定', icon: faCog, path: '/takeout-settings' }
     ]
   },
   {
     category: '顧客管理',
     items: [
-      { name: '顧客一覧', icon: faUsers },
-      { name: 'メッセージ', icon: faEnvelope },
-      { name: '顧客へ一斉送信', icon: faBullhorn },
-      { name: '設定', icon: faCog }
+      { name: '顧客一覧', icon: faUsers, path: '/customers' },
+      { name: 'メッセージ', icon: faEnvelope, path: '/messages' },
+      { name: '顧客へ一斉送信', icon: faBullhorn, path: '/broadcast' },
+      { name: '設定', icon: faCog, path: '/customer-settings' }
     ]
   },
   {
     category: '分析',
     items: [
-      { name: '売上分析', icon: faChartBar }
+      { name: '売上分析', icon: faChartBar, path: '/sales' },
+      { name: '売上分析詳細', icon: faChartBar, path: '/analysis-detail' }
     ]
   }
 ];
@@ -53,6 +55,7 @@ const menuItems = [
 const SideMenu: React.FC = () => {
   const primary = Object.AccentPrimary;
   const primaryLight = Surface.AccentPrimaryTint03;
+  const location = useLocation();
   return (
     <div
       style={{
@@ -125,34 +128,39 @@ const SideMenu: React.FC = () => {
             {/* サブカテゴリアイテム */}
             <div>
               {category.items.map((item, itemIdx) => {
-                const isActive = category.category === '分析' && item.name === '売上分析';
+                const isActive = location.pathname === item.path;
                 return (
-                  <div
+                  <Link
+                    to={item.path}
                     key={`item-${categoryIdx}-${itemIdx}`}
-                    style={{
-                      padding: '10px 16px 10px 24px',
-                      color: isActive ? primary : Text.HighEmphasis,
-                      background: isActive ? primaryLight : 'transparent',
-                      borderRadius: 6,
-                      margin: '4px 8px',
-                      fontWeight: isActive ? 'bold' : 'normal',
-                      cursor: 'pointer',
-                      transition: 'background 0.2s',
-                      fontSize: '16px',
-                      display: 'flex',
-                      alignItems: 'center',
-                    }}
+                    style={{ textDecoration: 'none' }}
                   >
-                    <FontAwesomeIcon
-                      icon={item.icon}
+                    <div
                       style={{
-                        marginRight: '12px',
-                        width: '16px',
-                        color: isActive ? primary : Object.MediumEmphasis
+                        padding: '10px 16px 10px 24px',
+                        color: isActive ? primary : Text.HighEmphasis,
+                        background: isActive ? primaryLight : 'transparent',
+                        borderRadius: 6,
+                        margin: '4px 8px',
+                        fontWeight: isActive ? 'bold' : 'normal',
+                        cursor: 'pointer',
+                        transition: 'background 0.2s',
+                        fontSize: '16px',
+                        display: 'flex',
+                        alignItems: 'center',
                       }}
-                    />
-                    {item.name}
-                  </div>
+                    >
+                      <FontAwesomeIcon
+                        icon={item.icon}
+                        style={{
+                          marginRight: '12px',
+                          width: '16px',
+                          color: isActive ? primary : Object.MediumEmphasis
+                        }}
+                      />
+                      {item.name}
+                    </div>
+                  </Link>
                 );
               })}
             </div>
@@ -174,27 +182,37 @@ const SideMenu: React.FC = () => {
   );
 };
 
-const Header: React.FC = () => (
-  <div style={{
-    height: 64,
-    background: Surface.Primary,
-    borderBottom: `1px solid ${Border.LowEmphasis}`,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center', // 中央揃えに変更
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: Object.AccentPrimary, // 色を AccentPrimary に変更
-    position: 'fixed',
-    top: 0,
-    left: SIDE_MENU_WIDTH,
-    right: 0,
-    zIndex: 90,
-    boxSizing: 'border-box',
-  }}>
-    売上分析
-  </div>
-);
+const Header: React.FC = () => {
+  const location = useLocation();
+  
+  // パスに基づいてタイトルを決定
+  let title = '売上分析';
+  if (location.pathname === '/analysis-detail') {
+    title = '売上分析詳細';
+  }
+  
+  return (
+    <div style={{
+      height: 64,
+      background: Surface.Primary,
+      borderBottom: `1px solid ${Border.LowEmphasis}`,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center', // 中央揃えに変更
+      fontWeight: 'bold',
+      fontSize: 22,
+      color: Object.AccentPrimary, // 色を AccentPrimary に変更
+      position: 'fixed',
+      top: 0,
+      left: SIDE_MENU_WIDTH,
+      right: 0,
+      zIndex: 90,
+      boxSizing: 'border-box',
+    }}>
+      {title}
+    </div>
+  );
+};
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div style={{

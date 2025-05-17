@@ -1,13 +1,16 @@
-import { 
-  Order, 
-  OrderItem, 
-  Product, 
-  Payment, 
-  SalesKPI, 
+import {
+  Order,
+  OrderItem,
+  Product,
+  Payment,
+  SalesKPI,
   HourlyCustomerData,
   PaymentMethodData,
   ProductSalesData,
-  DailyCustomerData
+  DailyCustomerData,
+  HourlySalesData,
+  DailySalesData,
+  DetailedSalesData
 } from '../types/sales';
 import { PaymentMethod } from '../sample_data/payments/payments';
 
@@ -384,5 +387,189 @@ export const calculateMonthlyKPIs = (monthlyOrders: readonly Order[], monthlyPay
     netSales,
     onsitePayments,
     onlinePayments
+  };
+};
+
+/**
+ * 指定された月の注文アイテムをフィルタリングする
+ * @param orderItems 全注文アイテムデータ
+ * @param monthlyOrderIds 月別注文ID配列
+ * @returns 指定月の注文アイテム
+ */
+export const filterMonthlyOrderItems = (
+  orderItems: readonly OrderItem[],
+  monthlyOrderIds: readonly number[]
+): OrderItem[] => {
+  return orderItems.filter((item: OrderItem) => monthlyOrderIds.includes(item.orderId));
+};
+
+/**
+ * 時間帯別売上データを生成する
+ * @param dailyOrders 日別注文データ
+ * @param dailyPayments 日別決済データ
+ * @param dailyOrderItems 日別注文アイテムデータ
+ * @param products 商品データ
+ * @returns 時間帯別売上データ
+ */
+export const generateHourlySalesData = (
+  dailyOrders: readonly Order[],
+  dailyPayments: readonly Payment[],
+  dailyOrderItems: readonly OrderItem[],
+  products: readonly Product[]
+): HourlySalesData[] => {
+  // 時間帯ごとのデータを格納するオブジェクト
+  const hourlyData: { [hour: string]: {
+    totalSales: number;
+    fees: number;
+    count: number;
+    partySize: number;
+    profit: number;
+  }} = {};
+
+  // 時間帯ごとの注文を集計
+  dailyOrders.forEach(order => {
+    const orderDate = new Date(order.completedAt);
+    const hour = `${orderDate.getHours()}:00`;
+
+    if (!hourlyData[hour]) {
+      hourlyData[hour] = {
+        totalSales: 0,
+        fees: 0,
+        count: 0,
+        partySize: 0,
+        profit: 0
+      };
+    }
+
+    hourlyData[hour].count++;
+    hourlyData[hour].partySize += order.partySize;
+
+    // この注文に関連する決済を検索
+    const orderPayments = dailyPayments.filter(payment => payment.orderId === order.orderId);
+    orderPayments.forEach(payment => {
+      hourlyData[hour].totalSales += payment.amount;
+      hourlyData[hour].fees += payment.fee;
+    });
+
+    // この注文に関連する注文アイテムを検索して粗利を計算
+    const orderItems = dailyOrderItems.filter(item => item.orderId === order.orderId);
+    orderItems.forEach(item => {
+      const product = products.find(p => p.productId === item.productId);
+      if (product) {
+        hourlyData[hour].profit += product.profit * item.quantity;
+      }
+    });
+  });
+
+  // 結果を配列に変換
+  return Object.entries(hourlyData)
+    .map(([hour, data]) => ({
+      hour,
+      totalSales: data.totalSales,
+      netSales: data.totalSales - data.fees,
+      fees: data.fees,
+      profit: data.profit,
+      averagePerCustomer: data.partySize > 0 ? data.totalSales / data.partySize : 0
+    }))
+    .sort((a, b) => {
+      const hourA = parseInt(a.hour.split(':')[0]);
+      const hourB = parseInt(b.hour.split(':')[0]);
+      return hourA - hourB;
+    });
+};
+
+/**
+ * 日別売上データを生成する
+ * @param monthlyOrders 月別注文データ
+ * @param monthlyPayments 月別決済データ
+ * @param monthlyOrderItems 月別注文アイテムデータ
+ * @param products 商品データ
+ * @returns 日別売上データ
+ */
+export const generateDailySalesData = (
+  monthlyOrders: readonly Order[],
+  monthlyPayments: readonly Payment[],
+  monthlyOrderItems: readonly OrderItem[],
+  products: readonly Product[]
+): DailySalesData[] => {
+  // 日付ごとのデータを格納するオブジェクト
+  const dailyData: { [day: string]: {
+    totalSales: number;
+    fees: number;
+    count: number;
+    partySize: number;
+    profit: number;
+  }} = {};
+
+  // 日付ごとの注文を集計
+  monthlyOrders.forEach(order => {
+    const orderDate = new Date(order.completedAt);
+    const day = orderDate.getDate().toString();
+
+    if (!dailyData[day]) {
+      dailyData[day] = {
+        totalSales: 0,
+        fees: 0,
+        count: 0,
+        partySize: 0,
+        profit: 0
+      };
+    }
+
+    dailyData[day].count++;
+    dailyData[day].partySize += order.partySize;
+
+    // この注文に関連する決済を検索
+    const orderPayments = monthlyPayments.filter(payment => payment.orderId === order.orderId);
+    orderPayments.forEach(payment => {
+      dailyData[day].totalSales += payment.amount;
+      dailyData[day].fees += payment.fee;
+    });
+
+    // この注文に関連する注文アイテムを検索して粗利を計算
+    const orderItems = monthlyOrderItems.filter(item => item.orderId === order.orderId);
+    orderItems.forEach(item => {
+      const product = products.find(p => p.productId === item.productId);
+      if (product) {
+        dailyData[day].profit += product.profit * item.quantity;
+      }
+    });
+  });
+
+  // 結果を配列に変換
+  return Object.entries(dailyData)
+    .map(([day, data]) => ({
+      day,
+      totalSales: data.totalSales,
+      netSales: data.totalSales - data.fees,
+      fees: data.fees,
+      profit: data.profit,
+      averagePerCustomer: data.partySize > 0 ? data.totalSales / data.partySize : 0
+    }))
+    .sort((a, b) => parseInt(a.day) - parseInt(b.day));
+};
+
+/**
+ * 詳細データテーブル用のデータを計算する
+ * @param salesData 時間帯別/日別売上データ
+ * @returns 詳細データテーブル用のデータ
+ */
+export const calculateDetailedSalesData = (
+  salesData: HourlySalesData[] | DailySalesData[]
+): DetailedSalesData => {
+  const periods = salesData.map(data => 'hour' in data ? data.hour : data.day);
+  const totalSales = salesData.map(data => data.totalSales);
+  const netSales = salesData.map(data => data.netSales);
+  const fees = salesData.map(data => data.fees);
+  const profit = salesData.map(data => data.profit);
+  const averagePerCustomer = salesData.map(data => data.averagePerCustomer);
+
+  return {
+    periods,
+    totalSales,
+    netSales,
+    fees,
+    profit,
+    averagePerCustomer
   };
 };
