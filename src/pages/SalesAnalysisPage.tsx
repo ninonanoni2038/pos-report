@@ -363,7 +363,7 @@ const SalesAnalysisPage: React.FC = () => {
         borderRadius: 8,
         boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
       }}>
-        <h3 style={{ margin: '0 0 16px 0' }}>詳細情報</h3>
+        <h3 style={{ margin: '0 0 16px 0' }}>詳細情報（既存仕様のもの）</h3>
         
         {/* 売上セクション */}
         <SalesDetailTable data={kpis} />

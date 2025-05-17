@@ -27,9 +27,11 @@ export const Background = {
 export const Surface = {
   Primary: WhiteAlpha[100],
   Secondary: Gray[10],
-  Teritary: Gray[20],
+  Tertiary: Gray[20],
   AccentPrimary: PrimaryGold[60],
-  AccentPrimaryLight: PrimaryGold[20],
+  AccentPrimaryTint01: PrimaryGold[30],
+  AccentPrimaryTint02: PrimaryGold[20],
+  AccentPrimaryTint03: PrimaryGold[10],
 };
 // 4. Border / Divider 系
 export const Border = {

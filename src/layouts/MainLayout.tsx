@@ -52,7 +52,7 @@ const menuItems = [
 
 const SideMenu: React.FC = () => {
   const primary = Object.AccentPrimary;
-  const primaryLight = Surface.AccentPrimaryLight;
+  const primaryLight = Surface.AccentPrimaryTint03;
   return (
     <div
       style={{
