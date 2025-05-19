@@ -149,6 +149,35 @@ const TopProductsChart: React.FC<TopProductsChartProps> = ({
     return sortConfig.direction === 'asc' ? '△' : '▼';
   };
 
+  // データがない場合は「データがありません」と表示
+  if (!data || data.length === 0) {
+    return (
+      <div style={{
+        background: Surface.Primary,
+        padding: 16,
+        borderRadius: 8,
+        boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        boxSizing: 'border-box'
+      }}>
+        <div style={{
+          padding: '24px',
+          textAlign: 'center',
+          color: Text.MediumEmphasis,
+          border: `1px dashed ${Border.LowEmphasis}`,
+          borderRadius: 8,
+          width: '80%'
+        }}>
+          この期間のデータはありません
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={{
       background: Surface.Primary,

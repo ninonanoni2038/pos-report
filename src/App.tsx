@@ -18,6 +18,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/dev/colors" element={<ColorPaletteViewer />} />
+		<Route path="/" element={<Navigate to="/sales" replace />} />
         <Route path="/*" element={
           <MainLayout>
             <Routes>

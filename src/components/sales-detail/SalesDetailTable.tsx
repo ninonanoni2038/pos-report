@@ -10,6 +10,24 @@ interface SalesDetailTableProps {
 }
 
 const SalesDetailTable: React.FC<SalesDetailTableProps> = ({ data, displayMode }) => {
+  // データがない場合は「データがありません」と表示
+  if (!data || !data.periods || data.periods.length === 0) {
+    return (
+      <div>
+        <h3 style={{ margin: '0 0 16px 0' }}>詳細データ</h3>
+        <div style={{
+          padding: '24px',
+          textAlign: 'center',
+          color: Text.MediumEmphasis,
+          border: `1px dashed ${Border.LowEmphasis}`,
+          borderRadius: 8
+        }}>
+          この期間のデータはありません
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h3 style={{ margin: '0 0 16px 0' }}>詳細データ</h3>
@@ -17,49 +35,49 @@ const SalesDetailTable: React.FC<SalesDetailTableProps> = ({ data, displayMode }
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr>
-              <th style={{ 
-                textAlign: 'left', 
-                padding: '8px 16px', 
+              <th style={{
+                textAlign: 'left',
+                padding: '8px 16px',
                 borderBottom: `1px solid ${Border.LowEmphasis}`,
                 color: Text.HighEmphasis
               }}>
                 {displayMode === DisplayMode.DAILY ? '時間' : '日付'}
               </th>
-              <th style={{ 
-                textAlign: 'right', 
-                padding: '8px 16px', 
+              <th style={{
+                textAlign: 'right',
+                padding: '8px 16px',
                 borderBottom: `1px solid ${Border.LowEmphasis}`,
                 color: Text.HighEmphasis
               }}>
                 総売上
               </th>
-              <th style={{ 
-                textAlign: 'right', 
-                padding: '8px 16px', 
+              <th style={{
+                textAlign: 'right',
+                padding: '8px 16px',
                 borderBottom: `1px solid ${Border.LowEmphasis}`,
                 color: Text.HighEmphasis
               }}>
                 純売上
               </th>
-              <th style={{ 
-                textAlign: 'right', 
-                padding: '8px 16px', 
+              <th style={{
+                textAlign: 'right',
+                padding: '8px 16px',
                 borderBottom: `1px solid ${Border.LowEmphasis}`,
                 color: Text.HighEmphasis
               }}>
                 手数料
               </th>
-              <th style={{ 
-                textAlign: 'right', 
-                padding: '8px 16px', 
+              <th style={{
+                textAlign: 'right',
+                padding: '8px 16px',
                 borderBottom: `1px solid ${Border.LowEmphasis}`,
                 color: Text.HighEmphasis
               }}>
                 粗利益
               </th>
-              <th style={{ 
-                textAlign: 'right', 
-                padding: '8px 16px', 
+              <th style={{
+                textAlign: 'right',
+                padding: '8px 16px',
                 borderBottom: `1px solid ${Border.LowEmphasis}`,
                 color: Text.HighEmphasis
               }}>

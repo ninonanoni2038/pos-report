@@ -128,7 +128,10 @@ const SideMenu: React.FC = () => {
             {/* サブカテゴリアイテム */}
             <div>
               {category.items.map((item, itemIdx) => {
-                const isActive = location.pathname === item.path;
+                // パスの前方一致でアクティブ状態を判定
+                // 例: /analysis-detail/period では /analysis-detail もアクティブになる
+                const isActive = location.pathname === item.path ||
+                                (item.path !== '/' && location.pathname.startsWith(`${item.path}/`));
                 return (
                   <Link
                     to={item.path}
@@ -187,7 +190,7 @@ const Header: React.FC = () => {
   
   // パスに基づいてタイトルを決定
   let title = '売上分析';
-  if (location.pathname === '/analysis-detail') {
+  if (location.pathname === '/analysis-detail' || location.pathname.startsWith('/analysis-detail/')) {
     title = '売上分析詳細';
   }
   

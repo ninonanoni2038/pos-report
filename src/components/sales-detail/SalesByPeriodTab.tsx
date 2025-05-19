@@ -65,6 +65,7 @@ const SalesByPeriodTab: React.FC<SalesByPeriodTabProps> = ({
 
   // 総売上金額を計算
   const totalSales = useMemo(() => {
+    if (!salesData || salesData.length === 0) return 0;
     return (salesData as Array<{ totalSales: number }>).reduce((sum: number, data) => sum + data.totalSales, 0);
   }, [salesData]);
 

@@ -13,6 +13,26 @@ const SalesLineChart: React.FC<SalesLineChartProps> = ({ data, valueType }) => {
   // データキーを決定
   const dataKey = valueType === 'amount' ? 'totalSales' : 'rate';
   
+  // データが空の場合は「データがありません」と表示
+  if (!data || data.length === 0) {
+    return (
+      <div style={{
+        height: 300,
+        marginTop: 16,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        border: '1px dashed #ccc',
+        borderRadius: 8,
+        color: '#999',
+        fontSize: '16px',
+        fontWeight: 'bold'
+      }}>
+        この期間のデータはありません
+      </div>
+    );
+  }
+  
   // X軸のデータキーを決定
   const xAxisDataKey = 'hour' in data[0] ? 'hour' : 'day';
   

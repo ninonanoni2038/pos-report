@@ -47,6 +47,29 @@ const PaymentMethodCard: React.FC<PaymentMethodCardProps> = ({ data, totalAmount
     setHoveredIndex(null);
   };
 
+  // データがない場合は「データがありません」と表示
+  if (!data || data.length === 0) {
+    return (
+      <div style={{
+        background: Surface.Primary,
+        padding: 16,
+        borderRadius: 8,
+        boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+      }}>
+        <h3 style={{ margin: '0 0 16px 0', color: Text.HighEmphasis }}>決済手段構成</h3>
+        <div style={{
+          padding: '24px',
+          textAlign: 'center',
+          color: Text.MediumEmphasis,
+          border: `1px dashed ${Border.LowEmphasis}`,
+          borderRadius: 8
+        }}>
+          この期間のデータはありません
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={{
       background: Surface.Primary,
