@@ -46,7 +46,7 @@ const menuItems = [
   {
     category: '分析',
     items: [
-      { name: '売上分析', icon: faChartBar, path: '/sales' },
+      { name: '日報・月報', icon: faChartBar, path: '/sales' },
       { name: '売上分析詳細', icon: faChartBar, path: '/analysis-detail' }
     ]
   }

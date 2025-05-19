@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { DisplayMode } from '../../types/displayMode';
 import { Order, Payment, PaymentMethodData } from '../../types/sales';
-import PaymentMethodChart from '../sales/PaymentMethodChart';
+import PaymentMethodCard from '../sales/PaymentMethodCard';
 import PaymentMethodTable from './PaymentMethodTable';
 import { Surface, Text, Border } from '../../styles/semanticColors';
 import {
@@ -19,6 +19,10 @@ interface SalesByPaymentMethodTabProps {
   payments: readonly Payment[];
 }
 
+/**
+ * 支払い方法別売上タブコンポーネント
+ * 支払い方法別の売上データを表示する
+ */
 const SalesByPaymentMethodTab: React.FC<SalesByPaymentMethodTabProps> = ({
   displayMode,
   currentDate,
@@ -48,34 +52,26 @@ const SalesByPaymentMethodTab: React.FC<SalesByPaymentMethodTabProps> = ({
 
   return (
     <div>
-      {/* 円グラフ */}
-      <div style={{
+      {/* 円グラフとリスト表示を同一カード内に */}
+      <div style={{ marginBottom: 24 }}>
+        <PaymentMethodCard
+          data={paymentMethodData}
+          totalAmount={totalAmount}
+        />
+      </div>
+      
+      {/* データテーブル */}
+      {/* <div style={{
         background: Surface.Primary,
         padding: 16,
         borderRadius: 8,
         boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-        marginBottom: 24
-      }}>
-        <h3 style={{ margin: '0 0 16px 0' }}>全ての支払い方法</h3>
-        <div style={{ height: 300 }}>
-          <PaymentMethodChart
-            data={paymentMethodData}
-          />
-        </div>
-      </div>
-      
-      {/* データテーブル */}
-      <div style={{
-        background: Surface.Primary,
-        padding: 16,
-        borderRadius: 8,
-        boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
       }}>
         <PaymentMethodTable
           data={paymentMethodData}
           totalAmount={totalAmount}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

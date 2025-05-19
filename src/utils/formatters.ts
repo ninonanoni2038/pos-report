@@ -73,3 +73,22 @@ export const formatYearMonth = (date: Date): string => {
   const month = date.getMonth() + 1;
   return `${year}年${month}月`;
 };
+
+/**
+ * 支払い方法名を日本語に変換するユーティリティ
+ * @param method 支払い方法名（英語）
+ * @returns 日本語に変換された支払い方法名
+ */
+export const formatPaymentMethodName = (method: string): string => {
+  const methodMap: { [key: string]: string } = {
+    'cash': '現金',
+    'credit card online': 'オンライン決済 クレジットカード',
+    'credit card onsite': '現地決済 クレジットカード',
+    'qr code onsite': 'QRコード決済',
+    'paypay': 'Paypay',
+    'line pay': 'LinePay',
+    'rakuten pay': '楽天Pay'
+  };
+  
+  return methodMap[method.toLowerCase()] || method;
+};
