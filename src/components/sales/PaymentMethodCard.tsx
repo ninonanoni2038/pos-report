@@ -53,7 +53,6 @@ const PaymentMethodCard: React.FC<PaymentMethodCardProps> = ({ data, totalAmount
       padding: 16,
       borderRadius: 8,
       boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-    //   height: 400 // カードの高さを固定
     }}>
       <h3 style={{ margin: '0 0 16px 0', color: Text.HighEmphasis }}>決済手段構成</h3>
       
@@ -61,7 +60,6 @@ const PaymentMethodCard: React.FC<PaymentMethodCardProps> = ({ data, totalAmount
         display: 'flex',
         flexWrap: 'wrap',
         gap: 24,
-        height: 'calc(100% - 40px)', // ヘッダー分を引いた高さ
         alignItems: 'center' // 縦方向に中央揃え
       }}>
         {/* リスト表示（左側） */}
@@ -118,7 +116,7 @@ const PaymentMethodCard: React.FC<PaymentMethodCardProps> = ({ data, totalAmount
         </div>
         
         {/* 円グラフ（右側） */}
-        <div style={{ flex: '1 1 300px', minWidth: 0, height: '100%' }}>
+        <div style={{ flex: '1 1 300px', minWidth: 0, height: 300 }}>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie

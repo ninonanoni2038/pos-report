@@ -59,19 +59,6 @@ const SalesByPaymentMethodTab: React.FC<SalesByPaymentMethodTabProps> = ({
           totalAmount={totalAmount}
         />
       </div>
-      
-      {/* データテーブル */}
-      {/* <div style={{
-        background: Surface.Primary,
-        padding: 16,
-        borderRadius: 8,
-        boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-      }}>
-        <PaymentMethodTable
-          data={paymentMethodData}
-          totalAmount={totalAmount}
-        />
-      </div> */}
     </div>
   );
 };
