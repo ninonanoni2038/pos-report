@@ -189,8 +189,10 @@ const TopProductsChart: React.FC<TopProductsChartProps> = ({
       flexDirection: 'column',
       boxSizing: 'border-box'
     }}>
+      <div style={{display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <h3 style={{ margin: 0, color: Text.HighEmphasis }}>売れ筋商品</h3>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-        <h3 style={{ margin: 0, color: Text.HighEmphasis }}>売れ筋商品</h3>
+        
         <div style={{ display: 'flex', gap: 8 }}>
           <select
             value={filters.menu}
@@ -322,7 +324,7 @@ const TopProductsChart: React.FC<TopProductsChartProps> = ({
           </div>
         </Tooltip>
       </div>
-
+	  </div>
       <div style={{ flex: 1, overflow: 'auto' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead style={{ position: 'sticky', top: 0, background: Surface.Primary }}>
